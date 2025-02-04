@@ -3,7 +3,7 @@
 > 维护：xxx
 
 ## 鼠身体区域预测
-![mice_body_mask](/assets/images/mice_body_mask.jpg)
+![mice_body_mask](../../assets/images/mice_body_mask.jpg)
 
 ```bash
 conda activate mmdet
@@ -28,7 +28,7 @@ python -m lilab.mmdet_single.s1_mmdet_videos2pkl_single . \
 
 ## 鼠头区域预测
 头部区域重点显示
-![mice_head_mask](/assets/images/mice_head_mask.jpg)
+![mice_head_mask](../../assets/images/mice_head_mask.jpg)
 ```bash
 conda activate mmdet
 

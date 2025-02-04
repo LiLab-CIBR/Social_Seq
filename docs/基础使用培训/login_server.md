@@ -43,7 +43,7 @@ ssh chenxinfeng@10.50.6.51
 在 windows 客户电脑中，按住 `Win R` 快捷键，在弹出的 **运行** 窗口中，输入 `mstc` 指令。弹出远程桌面登录窗口。
 输入服务器的IP地址，**连接**。接着输入用户名和密码。
 
-![img](/assets/images/ubuntu_remote_desktop.jpg)
+![img](../../assets/images/ubuntu_remote_desktop.jpg)
 
 在一般场景下，都推荐使用 VSCODE 作为服务器连接工具。并且建议在 VSCODE 中安装 `CodeGeeX` 这种AI编程助手（需要注册）。
 

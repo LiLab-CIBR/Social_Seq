@@ -55,7 +55,7 @@ ls -lh work_dirs/mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.*
 
 ## 标注大鼠3D关键点
 首先，使用 Label3D_Manager 进行数据标注。Label3D_manager 是在官方版本上做更改，以适应OBS 录制的视频，已经使用大鼠的14个关键点。
-![anno](/assets/images/rat_annotation_keypoint.jpg)
+![anno](../../assets/images/rat_annotation_keypoint.jpg)
 
 
 ```
