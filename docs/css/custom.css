@@ -1,0 +1,10 @@
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px; /* 添加一些间距 */
+}
+
+.image-row img {
+    width: 32%; /* 自动宽度 */
+    height: auto;
+}
