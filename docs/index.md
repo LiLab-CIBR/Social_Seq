@@ -2,7 +2,7 @@
 
 这是 Social-Seq 项目的一些说明文档。使用 Social-seq 解析动物密切接触时的三维姿态，社交类别，以及社交背后的情绪状态。通过构造实时行为分类系统，有望治疗孤独症（ASD）社交障碍。
 
-![img](/assets/images/figure_abstract.jpg)
+![img](../assets/images/figure_abstract.jpg)
 
 ## 包含内容
 * `硬软件系统安装` - 安装多相机系统，调试OBS，启用F2同步助手。

@@ -4,9 +4,9 @@
 
 ## 分割多动物
 <div class="image-row">
-    <img src="/assets/images/rat_raw_video.jpg" alt="Raw Video">
-    <img src="/assets/images/rat_mask_video.jpg" alt="Mask Video">
-    <img src="/assets/images/rat_voxel_video.jpg" alt="Voxel Video">
+    <img src="../../assets/images/rat_raw_video.jpg" alt="Raw Video">
+    <img src="../../assets/images/rat_mask_video.jpg" alt="Mask Video">
+    <img src="../../assets/images/rat_voxel_video.jpg" alt="Voxel Video">
 </div>
 
 ```bash
@@ -53,7 +53,7 @@ ls $vdir/*.segpkl | sed 's/.segpkl/.mp4/' | xargs -n 1 -P 8 -I {} python -m lila
 ## 预测关键点
 <div class="image-row">
     <!-- <img src="/assets/images/rat_raw_video.jpg" alt="Raw Video"> -->
-    <img src="/assets/images/rat_pose_video.jpg" alt="Mask Video">
+    <img src="../../assets/images/rat_pose_video.jpg" alt="Mask Video">
     <!-- <img src="/assets/images/rat_voxel_video.jpg" alt="Voxel Video"> -->
 </div>
 
