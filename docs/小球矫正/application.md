@@ -37,11 +37,12 @@ bash $LILAB_DIR/multiview_scripts_dev/p_calibration.sh $vfile carl
 ## 标定结果展示
 在生成的 `*ball_keypoint.mp4` 中查看绿色预测点与小球的吻合程度。生成的 `*.calibpkl` 是多相机模型文件，用于后续的3D重建。
 
-![ball_keypoint](/assets/images/ball_calibrated.jpg)
+![ball_keypoint](../../assets/images/ball_calibrated.jpg)
 
 ## 标定的精度评价
 查看代码运行的输出。其中 `Reprojection errors` 是重投影误差，表示预测点与实际点之间的距离。误差越小，标定精度越高。通常允许在 `4.0+-2.0` 像素内。
-![ball_keypoint](/assets/images/ball_calibrated_precision.jpg)
+
+![ball_keypoint](../../assets/images/ball_calibrated_precision.jpg)
 
 !!! error "错误"
     运行p_calibration.sh时输出error pixel过大/keypoint视频中绿点无法正确的跟随小球，说明校正不正确。既有可能是2D识别小球有很大偏差。需要重新打标，见《ball的扩增训练》
