@@ -135,17 +135,17 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="_1">社交三维姿态重构</h1>
-<p><img alt="pipeline" src="/assets/images/rat_social_pose_pipeline.jpg" />
+<p><img alt="pipeline" src="../../assets/images/rat_social_pose_pipeline.jpg" />
 原始的多视角视频，经过<code>分割</code>, <code>关键点重构</code> 和 <code>平滑</code> 之后，获取稳定的3D姿态坐标。</p>
 <h2 id="_2">原始视频</h2>
 <p>视频来自 OBS Studio 录制的9视角相机视频。多相机画面经过了时间同步，误差在1帧及以内，可以忽略。</p>
-<p><img alt="pipeline" src="/assets/images/rat_raw_video.jpg" /></p>
+<p><img alt="pipeline" src="../../assets/images/rat_raw_video.jpg" /></p>
 <h2 id="_3">分割</h2>
 <p>使用Mask-RCNN模型，识别黑、白鼠的身份，并分割像素区域。</p>
-<p><img alt="pipeline" src="/assets/images/rat_mask_video.jpg" /></p>
+<p><img alt="pipeline" src="../../assets/images/rat_mask_video.jpg" /></p>
 <h2 id="_4">关键点重构</h2>
 <p>执行 DANNCE 关键点预测 + 神经网络平滑，获取3D姿态。</p>
-<p><img alt="pipeline" src="/assets/images/rat_pose_video.jpg" /></p>
+<p><img alt="pipeline" src="../../assets/images/rat_pose_video.jpg" /></p>
               
             </div>
           </div><footer>

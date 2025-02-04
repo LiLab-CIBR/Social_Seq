@@ -139,7 +139,7 @@
                 <h1 id="_1">数据集制作&amp;模型更新</h1>
 <h2 id="_2">标注大鼠分割</h2>
 <p>首先，使用 Labelme 软件进行数据标注。用 <code>Polygon</code> 工具，创建黑鼠 <code>rat_black</code> 和白鼠 <code>rat_white</code>的标签。
-<img alt="anno" src="/assets/images/rat_labelme_anno.jpg" /></p>
+<img alt="anno" src="../../assets/images/rat_labelme_anno.jpg" /></p>
 <h2 id="_3">更新分割模型</h2>
 <p>逐行运行下面的代码，其中 <code>mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py</code> 是模型的配置文件（默认，推荐）。有需求可以改成其它的模型配置。</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># 1. 数据制备： labelme to coco</span>
