@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>代码流程 - Social-Seq doc</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u4ee3\u7801\u6d41\u7a0b";
+        var mkdocs_page_input_path = "\u5355\u9f20\u4e09\u7ef4\u59ff\u6001\u91cd\u6784/process.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Social-Seq doc
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">首页</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">关于</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">基础使用培训</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/">连接进入服务器</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/basic_command/">一些基础技能</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/installed_models/">已安装的深度学习模型</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小鼠图像分割增强</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E9%BC%A0%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E5%A2%9E%E5%BC%BA/process/">代码流程</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E9%BC%A0%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E5%A2%9E%E5%BC%BA/application/">应用场景</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E9%BC%A0%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E5%A2%9E%E5%BC%BA/dataset/">数据集制作&模型更新</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小球矫正</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/process/">代码流程</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">应用场景</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/dataset/">数据集制作&模型更新</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">单鼠三维姿态计算</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">代码流程</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">完整代码</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../application/">应用场景</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../dataset/">数据集制作&模型更新</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">社交三维姿态计算 (Social)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">代码流程</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">应用场景</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">数据集制作&模型更新</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">社交序列标签 (Seq)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/process/">代码流程</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/">应用场景</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/dataset/">聚类和模板制作</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Social-Seq doc</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">单鼠三维姿态计算</li>
+      <li class="breadcrumb-item active">代码流程</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">单只大鼠三维姿态重构</h1>
+<blockquote>
+<p>开发者：xxx
+维护：xxx</p>
+</blockquote>
+<p>需要：
+* <code>*.calib</code> - 小球矫正文件。
+* <code>vdir/*.mp4</code> - 大鼠9视角视频。
+* <code>volsize</code> - 动物占据的立体空间，以背为中心点。</p>
+<h2 id="_2">完整代码</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">## 1 必选项参数</span>
+<span class="nv">vdir</span><span class="o">=</span><span class="s1">&#39;/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/zyq_to_dzy/20221116/solo&#39;</span><span class="w">  </span><span class="c1"># 要分析的视频文件/文件夹</span>
+<span class="nv">vdir</span><span class="o">=</span><span class="s1">&#39;/mnt/liying.cibr.ac_cn_Data_Temp/multiview_9/zyq_to_dzy/20221123/solo&#39;</span>
+<span class="nv">vcalib</span><span class="o">=</span><span class="sb">`</span>ls<span class="w"> </span>/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/dzy_oyy_ball/checked/0328-0330/solo/*.calibpkl<span class="sb">`</span><span class="w">    </span><span class="c1"># 小球矫正的文件</span>
+<span class="nv">volsize</span><span class="o">=</span><span class="m">210</span>
+<span class="c1">#vdir=/mnt/liying.cibr.ac_cn_Data_Temp/multiview_9/oyy/test_singlerat2022-11-24_17-08-23_baseline_rat1.mp4</span>
+<span class="c1">##  volsize for rats</span>
+<span class="c1"># |         | Male | Female |</span>
+<span class="c1"># | ------- | ---- | ------ |</span>
+<span class="c1"># | DAY35   | 160  | 160    |</span>
+<span class="c1"># | DAY50   | 190  | 180    |</span>
+<span class="c1"># | DAY75   | 220  | 200    |</span>
+<span class="c1"># | DAY成年 | 220  | 210    |</span>
+
+<span class="c1">## 2. 推荐（默认）的模型文件</span>
+<span class="nv">config</span><span class="o">=</span><span class="s1">&#39;/home/liying_lab/chenxinfeng/DATA/mmpose/res50_coco_com2d_512x320_oyy.py&#39;</span><span class="w">           </span><span class="c1"># com2d 的模型配置文件</span>
+<span class="nv">dannce_project</span><span class="o">=</span><span class="s1">&#39;/home/liying_lab/chenxinfeng/DATA/dannce/demo_single/rat14_1280x800x9_mono&#39;</span><span class="w"> </span><span class="c1"># dannce 的模型路径</span>
+
+
+<span class="c1">## 3. 文件名解析</span>
+<span class="nv">vfiles_nake</span><span class="o">=</span><span class="sb">`</span>ls<span class="w"> </span><span class="nv">$vdir</span>/*.mp4<span class="w"> </span><span class="p">|</span><span class="w"> </span>egrep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;com3d|sktdraw|mask&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/.mp4//&#39;</span><span class="sb">`</span>
+<span class="nv">vfiles</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$vfiles_nake</span><span class="s2">&quot;</span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">{}</span>.segpkl<span class="sb">`</span>
+<span class="nv">volsize_vfiles</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$vfiles</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$volsize</span><span class="w"> </span><span class="o">{}</span><span class="sb">`</span>
+
+
+<span class="c1">## 4. predict com3d</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.multiview_scripts_dev.s1_ballvideo2matpkl_full_faster<span class="w"> </span><span class="nv">$vdir</span><span class="w"> </span>--pannels<span class="w"> </span><span class="m">9</span><span class="w"> </span>--config<span class="w"> </span><span class="nv">$config</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$vfiles_nake</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-P<span class="w"> </span><span class="m">0</span><span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>lilab.multiview_scripts_dev.s4_matpkl2matcalibpkl<span class="w"> </span><span class="o">{}</span>.matpkl<span class="w"> </span><span class="nv">$vcalib</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$vfiles_nake</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-P<span class="w"> </span><span class="m">0</span><span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>lilab.dannce_single.s1_matcalibpkl_com3d_to_segpkl<span class="w"> </span><span class="o">{}</span>.matcalibpkl
+<span class="c1"># ls $vdir/*.segpkl | sed &#39;s/.segpkl/.mp4/&#39; | xargs -n 1 -P 0 python -m lilab.mmdet_dev.s4_segpkl_com3d_to_video --vox_size $volsize --maxlen 9000</span>
+
+
+<span class="c1">## 5. dannce predict</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$dannce_project</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$volsize_vfiles</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/.segpkl/.mp4/&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cat<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span>
+<span class="w">    </span>xargs<span class="w"> </span>-P<span class="w"> </span><span class="m">4</span><span class="w"> </span>-l<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;/home/liying_lab/chenxinfeng/.conda/envs/mmdet/bin/dannce-predict-video-trt ../../configs/dannce_rat14_1280x800x9_max_config.yaml --vol-size $1 --video-file $2 --gpu-id $(($0%4))&#39;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$vfiles</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/.segpkl/_dannce_predict.pkl/&#39;</span><span class="w"> </span><span class="p">|</span>
+<span class="w">    </span>xargs<span class="w"> </span>-P<span class="w"> </span><span class="m">0</span><span class="w"> </span>-l<span class="w"> </span>-r<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>lilab.dannce.s4_videopredictpkl2matcalibpkl
+
+<span class="c1"># Smooth foot_w16, body_w64, one hit</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$vfiles</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/.segpkl/.matcalibpkl/&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-l<span class="w"> </span>-P<span class="w"> </span><span class="m">6</span><span class="w"> </span>-r<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>lilab.smoothnet.s1_matcalibpkl2smooth_foot
+
+
+<span class="c1">## 6. 绘制 video</span>
+<span class="c1"># plot video</span>
+<span class="c1"># echo &quot;$vfiles&quot; | sed &#39;s/.segpkl/.matcalibpkl/&#39; | </span>
+<span class="c1">#     xargs -P 6 -l -r bash -c &#39;python -m lilab.mmpose.s3_matcalibpkl_2_video2d $0 --iview 1 --maxlen 9000&#39;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$vfiles</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/.segpkl/.smoothed_foot.matcalibpkl/&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>
+<span class="w">    </span>xargs<span class="w"> </span>-P<span class="w"> </span><span class="m">6</span><span class="w"> </span>-l<span class="w"> </span>-r<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;python -m lilab.mmpose.s3_matcalibpkl_2_video2d $0 --iview 1 --postfix smoothed_foot --maxlen 9000&#39;</span>
+
+
+<span class="c1">## 7. Clean</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$vfiles_nake</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>rm<span class="w"> </span><span class="o">{}</span>.matpkl<span class="w"> </span><span class="o">{}</span>_dannce_predict*<span class="w"> </span>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/dataset/" class="btn btn-neutral float-left" title="数据集制作&模型更新"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../application/" class="btn btn-neutral float-right" title="应用场景">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/dataset/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../application/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
