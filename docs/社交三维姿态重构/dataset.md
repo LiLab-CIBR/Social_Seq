@@ -57,15 +57,21 @@ ls -lh work_dirs/mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.*
 首先，使用 Label3D_Manager 进行数据标注。Label3D_manager 是在官方版本上做更改，以适应OBS 录制的视频，已经使用大鼠的14个关键点。
 ![anno](../../assets/images/rat_annotation_keypoint.jpg)
 
+应该得到 `anno.mat` 文件，其中包含标注的3D关键点信息。
 
+## 制备数据集
 ```
 conda activate mmdet
 
-datadir='/home/liying_lab/chenxinfeng/DATA/dannce/data/simglemarmoset_2560x1440x5_20240705_mm_voxel'
+source='/mnt/liying.cibr.ac.cn_usb3/wsy/ysj/segpkl/outframes'
+datadir='/home/liying_lab/chenxinfeng/DATA/dannce/data/bw_rat_1280x800x9_2024-11-27_photometry_voxel'
+
+cp -r $source $datadir
 python -m lilab.dannce.s1_anno2dataset $datadir/anno.mat 
 
 # 找到生成的*_voxel_anno_dannce.pkl，使用代码修正其身体中心点（以2D mask 中心点，三角化得到3D中心点）。
 python -m lilab.dannce.p2_dataset_com3d_refine_byseg ${datadir}_anno_dannce.pkl
+
 
 ```
 
@@ -76,8 +82,11 @@ python -m lilab.dannce.p2_dataset_com3d_refine_byseg ${datadir}_anno_dannce.pkl
 # cd 进入项目路径
 cd /home/liying_lab/chenxinfeng/DATA/dannce/demo/rat14_1280x800x9_mono_young
 
+# 改变项目配置文件，添加 数据集路径。
+echo io_max.yaml
+
 # 修改 io_max.yaml, 添加数据到 exp/label3d_file
-python /home/liying_lab/chenxinfeng/.conda/envs/mmdet/bin/dannce-train ../../configs/dannce_rat14_1280x800x9_max_config.yaml
+python -m dannce.cli_train  ../../configs/dannce_rat14_1280x800x9_max_config.yaml
 ```
 
 转化模型为 tensorrt 加速的模型。
@@ -86,22 +95,32 @@ python /home/liying_lab/chenxinfeng/.conda/envs/mmdet/bin/dannce-train ../../con
 cd /home/liying_lab/chenxinfeng/DATA/dannce/demo/rat14_1280x800x9_mono_young/DANNCE/train_results/MAX
 python -m lilab.dannce.t1_keras2onnx latest.hdf5
 
+choosecuda 3,0,1,2
 polygraphy run /home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/constrained_network.py \
     --precision-constraints obey \
     --trt-min-shapes input_1:[1,64,64,64,9] \
     --trt-max-shapes input_1:[4,64,64,64,9] \
     --trt-opt-shapes input_1:[2,64,64,64,9] \
-    --trt --fp16 --save-engine latest_dynamic.engine
+    --trt --fp16 --save-engine latest_dynamic.engine &
+
+choosecuda 0,1,2,3
+polygraphy run /home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/constrained_network.py \
+    --precision-constraints obey \
+    --input-shapes input_1:[2,64,64,64,9]\
+    --trt --fp16 --save-engine latest.engine &
 
 # Realtime 场景
 python -m lilab.dannce.t1_keras2onnx_rt latest.hdf5
 
+choosecuda 1,2,3,0
 polygraphy run /home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/constrained_network_rt.py \
     --precision-constraints obey \
     --trt-min-shapes input_1:[1,64,64,64,9] \
     --trt-max-shapes input_1:[2,64,64,64,9] \
     --trt-opt-shapes input_1:[1,64,64,64,9] \
     --trt --fp16 --save-engine latest.idx.engine
+
+wait
 ```
 
 最后得到 `latest_dynamic.engine` 和 `latest.idx.engine`。

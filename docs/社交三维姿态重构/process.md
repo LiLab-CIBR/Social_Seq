@@ -31,10 +31,10 @@ ls $vdir/*.segpkl | sed 's/.segpkl/.mp4/' | xargs -n 1 -P 8 -I {} python -m lila
 
 |         | Male | Female |
 | ------- | ---- | ------ |
-| DAY35   | 160  | 160    |
-| DAY50   | 190  | 180    |
-| DAY75   | 220  | 200    |
-| DAY成年 | 230  | 210    |
+| DAY35   | 190  | 190    |
+| DAY50   | 230  | 220    |
+| DAY75   | 250  | 240    |
+| DAY成年 | 260  | 240    |
 
 最后得到一系列视频和文件，包括：
 
@@ -75,9 +75,9 @@ volsize_vfiles="
 volsize_vfiles=$(echo "$volsize_vfiles" | grep -v '^[[:space:]]*$') #echo "$volsize_vfiles"
 vfiles=$(echo "$volsize_vfiles" | awk '{print $3}')                 #echo "$vfiles"
 
-# 2. 用DANNCE 预测得到3D姿态
+# 2. 用DANNCE 预测得到3D姿态, nGPU=4
 echo "$volsize_vfiles" | sed 's/.segpkl/.mp4/' | cat -n |
-    xargs -P 4 -l bash -c '/home/liying_lab/chenxinfeng/.conda/envs/mmdet/bin/dannce-predict-video-trt ../../configs/dannce_rat14_1280x800x9_max_config.yaml --vol-size-list $1 $2 --video-file $3 --gpu-id $(($0%3))'
+    xargs -P 4 -l bash -c 'python -m dannce.cli_trt ../../configs/dannce_rat14_1280x800x9_max_config.yaml --vol-size-list $1 $2 --video-file $3 --gpu-id $(($0%4))'
 # xargs -P 2 表示使用2个GPU，配合 choosecuda 0,1,2,3 确认使用gpu数量
 
 
