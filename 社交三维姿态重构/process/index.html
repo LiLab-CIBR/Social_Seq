@@ -173,23 +173,23 @@ ls<span class="w"> </span><span class="nv">$vdir</span>/*.segpkl<span class="w">
 <tbody>
 <tr>
 <td>DAY35</td>
-<td>160</td>
-<td>160</td>
+<td>190</td>
+<td>190</td>
 </tr>
 <tr>
 <td>DAY50</td>
-<td>190</td>
-<td>180</td>
+<td>230</td>
+<td>220</td>
 </tr>
 <tr>
 <td>DAY75</td>
-<td>220</td>
-<td>200</td>
+<td>250</td>
+<td>240</td>
 </tr>
 <tr>
 <td>DAY成年</td>
-<td>230</td>
-<td>210</td>
+<td>260</td>
+<td>240</td>
 </tr>
 </tbody>
 </table>
@@ -232,9 +232,9 @@ conda<span class="w"> </span>activate<span class="w"> </span>mmdet
 <span class="nv">volsize_vfiles</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$volsize_vfiles</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;^[[:space:]]*$&#39;</span><span class="k">)</span><span class="w"> </span><span class="c1">#echo &quot;$volsize_vfiles&quot;</span>
 <span class="nv">vfiles</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$volsize_vfiles</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $3}&#39;</span><span class="k">)</span><span class="w">                 </span><span class="c1">#echo &quot;$vfiles&quot;</span>
 
-<span class="c1"># 2. 用DANNCE 预测得到3D姿态</span>
+<span class="c1"># 2. 用DANNCE 预测得到3D姿态, nGPU=4</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$volsize_vfiles</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/.segpkl/.mp4/&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cat<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span>
-<span class="w">    </span>xargs<span class="w"> </span>-P<span class="w"> </span><span class="m">4</span><span class="w"> </span>-l<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;/home/liying_lab/chenxinfeng/.conda/envs/mmdet/bin/dannce-predict-video-trt ../../configs/dannce_rat14_1280x800x9_max_config.yaml --vol-size-list $1 $2 --video-file $3 --gpu-id $(($0%3))&#39;</span>
+<span class="w">    </span>xargs<span class="w"> </span>-P<span class="w"> </span><span class="m">4</span><span class="w"> </span>-l<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;python -m dannce.cli_trt ../../configs/dannce_rat14_1280x800x9_max_config.yaml --vol-size-list $1 $2 --video-file $3 --gpu-id $(($0%4))&#39;</span>
 <span class="c1"># xargs -P 2 表示使用2个GPU，配合 choosecuda 0,1,2,3 确认使用gpu数量</span>
 
 

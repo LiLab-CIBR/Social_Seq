@@ -98,6 +98,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#3d">标注大鼠3D关键点</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">制备数据集</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#dannce">训练DANNCE模型</a>
     </li>
     </ul>
@@ -189,9 +191,14 @@ ls<span class="w"> </span>-lh<span class="w"> </span>work_dirs/mask_rcnn_r101_fp
 <h2 id="3d">标注大鼠3D关键点</h2>
 <p>首先，使用 Label3D_Manager 进行数据标注。Label3D_manager 是在官方版本上做更改，以适应OBS 录制的视频，已经使用大鼠的14个关键点。
 <img alt="anno" src="../../assets/images/rat_annotation_keypoint.jpg" /></p>
+<p>应该得到 <code>anno.mat</code> 文件，其中包含标注的3D关键点信息。</p>
+<h2 id="_4">制备数据集</h2>
 <div class="highlight"><pre><span></span><code>conda activate mmdet
 
-datadir=&#39;/home/liying_lab/chenxinfeng/DATA/dannce/data/simglemarmoset_2560x1440x5_20240705_mm_voxel&#39;
+source=&#39;/mnt/liying.cibr.ac.cn_usb3/wsy/ysj/segpkl/outframes&#39;
+datadir=&#39;/home/liying_lab/chenxinfeng/DATA/dannce/data/bw_rat_1280x800x9_2024-11-27_photometry_voxel&#39;
+
+cp -r $source $datadir
 python -m lilab.dannce.s1_anno2dataset $datadir/anno.mat 
 
 # 找到生成的*_voxel_anno_dannce.pkl，使用代码修正其身体中心点（以2D mask 中心点，三角化得到3D中心点）。
@@ -202,30 +209,43 @@ python -m lilab.dannce.p2_dataset_com3d_refine_byseg ${datadir}_anno_dannce.pkl
 <div class="highlight"><pre><span></span><code><span class="c1"># cd 进入项目路径</span>
 <span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/dannce/demo/rat14_1280x800x9_mono_young
 
+<span class="c1"># 改变项目配置文件，添加 数据集路径。</span>
+<span class="nb">echo</span><span class="w"> </span>io_max.yaml
+
 <span class="c1"># 修改 io_max.yaml, 添加数据到 exp/label3d_file</span>
-python<span class="w"> </span>/home/liying_lab/chenxinfeng/.conda/envs/mmdet/bin/dannce-train<span class="w"> </span>../../configs/dannce_rat14_1280x800x9_max_config.yaml
+python<span class="w"> </span>-m<span class="w"> </span>dannce.cli_train<span class="w">  </span>../../configs/dannce_rat14_1280x800x9_max_config.yaml
 </code></pre></div></p>
 <p>转化模型为 tensorrt 加速的模型。
 <div class="highlight"><pre><span></span><code><span class="c1"># Offline 场景。</span>
 <span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/dannce/demo/rat14_1280x800x9_mono_young/DANNCE/train_results/MAX
 python<span class="w"> </span>-m<span class="w"> </span>lilab.dannce.t1_keras2onnx<span class="w"> </span>latest.hdf5
 
+choosecuda<span class="w"> </span><span class="m">3</span>,0,1,2
 polygraphy<span class="w"> </span>run<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/constrained_network.py<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--precision-constraints<span class="w"> </span>obey<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trt-min-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">1</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trt-max-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">4</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trt-opt-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">2</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest_dynamic.engine
+<span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest_dynamic.engine<span class="w"> </span><span class="p">&amp;</span>
+
+choosecuda<span class="w"> </span><span class="m">0</span>,1,2,3
+polygraphy<span class="w"> </span>run<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/constrained_network.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--precision-constraints<span class="w"> </span>obey<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--input-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">2</span>,64,64,64,9<span class="o">]</span><span class="se">\</span>
+<span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest.engine<span class="w"> </span><span class="p">&amp;</span>
 
 <span class="c1"># Realtime 场景</span>
 python<span class="w"> </span>-m<span class="w"> </span>lilab.dannce.t1_keras2onnx_rt<span class="w"> </span>latest.hdf5
 
+choosecuda<span class="w"> </span><span class="m">1</span>,2,3,0
 polygraphy<span class="w"> </span>run<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/constrained_network_rt.py<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--precision-constraints<span class="w"> </span>obey<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trt-min-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">1</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trt-max-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">2</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trt-opt-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">1</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest.idx.engine
+
+<span class="nb">wait</span>
 </code></pre></div></p>
 <p>最后得到 <code>latest_dynamic.engine</code> 和 <code>latest.idx.engine</code>。</p>
               
