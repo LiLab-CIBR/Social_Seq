@@ -1,11 +1,7 @@
 # 设备组装和清单
-包含相机实验箱，实验电脑，分析服务器。
+包含相机实验箱，实验电脑，分析服务器。视频教程：xxx
 
-<div align="center">
-  <img src="../../assets/images/Fig_setup_computers.jpg" width="500" alt="ball_keypoint">
-</div>
-
-视频教程：xxx
+![OBS Studio](../../assets/images/Fig_setup_computers.jpg)
 
 ## 相机实验箱
 ---

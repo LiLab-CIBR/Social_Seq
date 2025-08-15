@@ -8,9 +8,9 @@
 | 用途     | 跑模型，跑流程，分析数据         | 测试代码，网页服务             |
 | 地点     | 信息化中心B区负二楼机房         | 实验室             |
 | 地址     | ssh chenxinfeng@`10.50.60.6`     | -   |
-| 系统     | Ubuntu 18.04                     | - 23                      |
+| 系统     | Ubuntu 18.04                     | -      |
 | 基础命令 | sudo apt install PACKAGE         | -|
-| 内存     | 256 GB                           | - GB                          |
+| 内存     | 256 GB                           | -|
 | 硬盘     | 1 TB固态 + 8 TB机械               | -    |
 | CPU      | Intel Silver 4314，32核心 64线程 | - |
 | GPU      | 4块 NVIDIA RTX3090 （24 GB显存） | -  |

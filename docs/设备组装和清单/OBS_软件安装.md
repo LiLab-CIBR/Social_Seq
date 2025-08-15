@@ -1,9 +1,12 @@
 OBS 软件安装
 ---
-
-![OBS Studio](../../assets/images/OBS_software.jpg)
-
 视频教程：xxx
+
+
+<div align="center">
+  <img src="../../assets/images/OBS_software.jpg" width="500" alt="ball_keypoint">
+</div>
+
 
 系统采用 OBS Studio（版本 **29.0**）进行视频录制。OBS 以其优秀的可配置性、稳定性和开源特性在视频直播和录制领域广泛应用。该软件支持多种来源输入，包括图像、文本、浏览器窗口、摄像头和麦克风等，**有效简化了多相机同步录制的复杂性**。其多线程负载优化和 GPU 视频编解码具有**出色的性能表现**。在本平台中，OBS 提供了实时预览、多相机布局、分辨率调整和编程接口等全面而灵活的视频录制解决方案。OBS 的具体配置详见下表。
 
