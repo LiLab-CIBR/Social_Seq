@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>数据集制作&模型更新 - Social-Seq doc</title>
+    <title>硬件清单 - Social-Seq doc</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u6570\u636e\u96c6\u5236\u4f5c\u0026\u6a21\u578b\u66f4\u65b0";
-        var mkdocs_page_input_path = "\u5c0f\u9f20\u56fe\u50cf\u5206\u5272\u589e\u5f3a/dataset.md";
+        var mkdocs_page_name = "\u786c\u4ef6\u6e05\u5355";
+        var mkdocs_page_input_path = "\u8bbe\u5907\u7ec4\u88c5\u548c\u6e05\u5355/shopping_list.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -48,6 +48,23 @@
                 <li class="toctree-l1"><a class="reference internal" href="../../about/">关于</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">设备组装和清单</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">硬件清单</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">相机实验箱</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">实验电脑硬件配置</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">云计算平台硬件配置</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nas">（可选）云存储硬件（NAS）配置</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">OBS软件安装</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">基础使用培训</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/">连接进入服务器</a>
@@ -55,17 +72,6 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/basic_command/">一些基础技能</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/installed_models/">已安装的深度学习模型</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">小鼠图像分割增强</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../process/">代码流程</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../application/">应用场景</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">数据集制作&模型更新</a>
-    <ul class="current">
-    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">小球矫正</span></p>
@@ -118,8 +124,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">小鼠图像分割增强</li>
-      <li class="breadcrumb-item active">数据集制作&模型更新</li>
+          <li class="breadcrumb-item">设备组装和清单</li>
+      <li class="breadcrumb-item active">硬件清单</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -128,62 +134,93 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="_1">数据集制作&amp;模型更新</h2>
-<blockquote>
-<p>开发者：xxx
-维护：xxx</p>
-</blockquote>
-<p>使用 labelme 标注。</p>
-<p>请逐步执行以下命令：
-<div class="highlight"><pre><span></span><code><span class="c1"># 1. 数据制备： label to coco</span>
-<span class="c1"># su chenxinfeng</span>
-conda<span class="w"> </span>activate<span class="w"> </span>DEEPLABCUT
-
-<span class="c1"># 将labelme数据标注的文件夹项目重命名。</span>
-<span class="c1">## 注意事项1：文件夹不要有中文，打标的图片不要有中文</span>
-<span class="c1">## 注意事项2：打标的图片数量 n&gt;20 为了保证训练效果</span>
-<span class="nv">LABEL_ME_POJECT</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_wpp/labelimages
-<span class="nv">NEW_NAME</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_wpp/mice_816x512_20241211
-
-mv<span class="w"> </span><span class="nv">$LABEL_ME_POJECT</span><span class="w"> </span><span class="nv">$NEW_NAME</span>
-
-<span class="c1"># 将labelme数据标注的文件夹项目转换为coco数据集格式。</span>
-<span class="c1"># 注意事项：类别的名字要去 MMDET_DATA_TARGET 里面看，不要自己乱写。</span>
-python<span class="w"> </span>-m<span class="w"> </span>lilab.cvutils.labelme_to_coco<span class="w"> </span><span class="nv">$NEW_NAME</span>
-
-<span class="c1"># 将coco数据集拆分训练集和验证集。 -s 参数表示训练集的比例，0.8 或 0.9为常用。</span>
-python<span class="w"> </span>-m<span class="w"> </span>lilab.cvutils.coco_split<span class="w"> </span>-s<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_trainval.json
-
-<span class="c1"># 拷贝打标数据集到 mmdet 的数据集目录下</span>
-<span class="nv">MMDET_DATA_TARGET</span><span class="o">=</span>/home/liying_lab/chenxinfeng/DATA/CBNetV2/data/mice_head
-cp<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_trainval.json<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_train.json<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_val.json<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>mice_816x512_20241211<span class="w">        </span><span class="nv">$MMDET_DATA_TARGET</span>/
-
-<span class="c1"># 2. 模型训练</span>
-conda<span class="w"> </span>activate<span class="w"> </span>mmpose
-<span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/CBNetV2/
-
-<span class="c1"># 修改配置文件，使用vscode打开。</span>
-<span class="c1"># 修改其中的 `data` 字段，指向刚刚拷贝的coco数据集目录。</span>
-<span class="nv">CONFIG</span><span class="o">=</span><span class="nv">$PWD</span>/mask_rcnn_r101_fpn_2x_coco_onemicehead_816x512.py
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$CONFIG</span>
-
-<span class="c1"># 使用多 GPU 或单 GPU 训练模型</span>
-<span class="c1"># tools/dist_train.sh $CONFIG 4</span>
-python<span class="w"> </span>tools/train.py<span class="w"> </span><span class="nv">$CONFIG</span>
-
-<span class="c1"># 3. 模型加速</span>
-python<span class="w"> </span>-m<span class="w"> </span>lilab.mmdet_dev.convert_mmdet2trt<span class="w"> </span><span class="nv">$CONFIG</span>
-
-<span class="c1"># 4. 查看模型是否更新成功</span>
-ls<span class="w"> </span>-lh<span class="w"> </span>work_dirs/mask_rcnn_r101_fpn_2x_coco_onemicehead_816x512/latest.*
-</code></pre></div></p>
+                <h1 id="_1">设备组装和清单</h1>
+<p>包含相机实验箱，实验电脑，分析服务器。
+<img alt="ball_keypoint" src="../../docs/assets/images/Fig_setup_computers.jpg" /></p>
+<p>视频教程：xxx</p>
+<h2 id="_2">相机实验箱</h2>
+<hr />
+<p>表格中列出了相机实验箱中使用的所有相机和材料。
+| 名称 | 参数 | 数量 | 购买链接 |
+| --- | --- | --- | --- |
+| K1S293 相机 | 1280x800分辨率，120fps，黑白 | 9 | <a href="https://item.taobao.com/item.htm?abbucket=16&amp;id=673966141469&amp;mi_id=0000013g7j7UpaJ64Exz65IlngXWkLZ9sfelfsEn2X13zX8&amp;ns=1&amp;skuId=4847993832885&amp;spm=a21n57.1.hoverItem.2&amp;utparam=%7B%22aplus_abtest%22%3A%22f141c2e8af0beb2b17c50d6928369058%22%7D&amp;xxc=taobaoSearch">淘宝购买链接</a> |
+| 铝型材支架 | 六边形，双层支架 | 1 | 自行加工- |
+| 云台和滑轨 | 9个 | 9 | <a href="https://detail.tmall.com/item.htm?ali_refid=a3_420434_1006%3A1235740172%3AH%3Ay5eWtaTmsQXaYHDf3rdNpw%3D%3D%3Acddb45a6e952fea324f7f8ca9b58a747&amp;ali_trackid=282_cddb45a6e952fea324f7f8ca9b58a747&amp;id=618612474440&amp;mi_id=00000WXWJPD9KZGe1JIPbpopt1j0eW1dCgR9iqFt5cqPX7I&amp;mm_sceneid=1_0_473760138_0&amp;priceTId=214784b117552392607548476e139d&amp;skuId=4589499395015&amp;spm=a21n57.1.hoverItem.19&amp;utparam=%7B%22aplus_abtest%22%3A%224f075094f900fbfd5878013dac96718e%22%7D&amp;xxc=ad_ztc">淘宝购买链接</a> |
+| 红光照明LED | 环境光照明 | 6 | <a href="https://detail.tmall.com/item.htm?abbucket=16&amp;id=894491969439&amp;mi_id=0000gIiVlXkfMSs1hqx-2s6runtTm23KD83tPFYnpdfCihI&amp;ns=1&amp;priceTId=2147808d17552395078942562e1572&amp;sku_properties=1627207%3A26922829615&amp;spm=a21n57.1.hoverItem.2&amp;utparam=%7B%22aplus_abtest%22%3A%22b7a00053266c2f6523b7c342bd40fbe4%22%7D&amp;xxc=taobaoSearch">淘宝购买链接</a> |
+| 氧化铝标定板 |  棋盘，相机标定；型号GP290 12x9 | 1 |<a href="https://item.taobao.com/item.htm?abbucket=0&amp;id=558737448467&amp;ns=1&amp;spm=a21n57.1.0.0.2699523cr0RQDF">淘宝购买链接</a> |
+| 金属小球 | 用于相机外参标定，直径 &lt;2 cm | 1 | 随便找 |
+| 亚克力遮光板 | 用于遮挡背景杂物，防止图像干扰。尺寸根据实验需求。 | 7 | <a href="https://item.taobao.com/item.htm?id=623132143028&amp;spm=tbpc.boughtlist.suborder_itemtitle.1.5cb72e8dIZHSFZ">淘宝购买链接</a> |</p>
+<p>注意事项：
+- 相机的镜头合适焦距需要自己测试，相机远近、试验箱大小等因素会影响焦距选择。
+- 建议让相机厂家给每个相机不同的软件标志符（不同命名），方便区分。
+- 滑轨不是那么必要，因为可以用焦距来调整相机拍摄视野。但是云台是必要的，因为需要调整相机的角度。
+- 红光照明LED放在支架6个角落上，均匀照明。否则单一光源容易导致图像阴影，导致后续动物分析精度下降。灯光强度较高，需要用遮挡一部分，使得最后的光照在20lux左右。
+- 相机不要直连电脑的USB口，因为主板的USB带宽严重受限，不能同时连多相机。请使用专业级PCIE-USB拓展卡（U3412U）！！</p>
+<h2 id="_3">实验电脑硬件配置</h2>
+<p>用于采集多相机视频数据，并使用OBS Studio进行视频录制。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>型号</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>操作系统</td>
+<td>Windows 10</td>
+<td>-</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>Intel Core i7-12700</td>
+<td>-</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>NVIDIA RTX 3060</td>
+<td>OBS Studio调用其 HEVC 视频编码器</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>32GB DDR4 3200MHz</td>
+<td>-</td>
+</tr>
+<tr>
+<td>存储</td>
+<td>SSD 1TB; HDD 8TB</td>
+<td>-</td>
+</tr>
+<tr>
+<td>PCIE-USB 拓展卡</td>
+<td>深圳市速速优科技<a href="https://item.taobao.com/item.htm?abbucket=16&amp;id=658885755395&amp;mi_id=0000iSwRLbEyAYBCJVYfM0f7ww3y3O_0bG8EWEWZGVaHbrs&amp;ns=1&amp;priceTId=2147836c17552404402055026e123c&amp;skuId=4746490928189&amp;spm=a21n57.1.hoverItem.2&amp;utparam=%7B%22aplus_abtest%22%3A%22bc9d0ba5e6325e017beba457917b9061%22%7D&amp;xxc=taobaoSearch">U3412U</a>， 6口USB</td>
+<td>强烈推荐，数量x2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">云计算平台硬件配置</h2>
+<p>用于训练模型，推理模型；数据分析，可视化；闭环行为干预的云计算平台。
+| 名称 | 型号 | 备注 |
+| ---- | ---- | ---- | 
+| 厂家  | 浪潮 | - |
+| 操作系统 | Ubuntu 18.04 | - |
+| CPU | Intel Xeon 4314 dual | 双路CPU |
+| GPU | NVIDIA RTX 3090 | 数量x4 |
+| 内存 | 256GB DDR4 3200MHz | - |
+| 存储 | SSD 1TB; HDD 8TB | - |</p>
+<h2 id="nas">（可选）云存储硬件（NAS）配置</h2>
+<p>用于存储大量实验视频数据和分析结果，并支持多用户同时访问。
+| 名称 | 型号 | 备注 |
+| ---- | ---- | ---- | 
+| 群辉1 | DS2419+， 96 TB| - |
+| 群辉2 | RS2821RP+， 200 TB | - |</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../application/" class="btn btn-neutral float-left" title="应用场景"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/process/" class="btn btn-neutral float-right" title="代码流程">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../about/" class="btn btn-neutral float-left" title="关于"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class="btn btn-neutral float-right" title="OBS软件安装">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -206,10 +243,10 @@ ls<span class="w"> </span>-lh<span class="w"> </span>work_dirs/mask_rcnn_r101_fp
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../application/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/process/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>应用场景 - Social-Seq doc</title>
+    <title>OBS软件安装 - Social-Seq doc</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u5e94\u7528\u573a\u666f";
-        var mkdocs_page_input_path = "\u5c0f\u9f20\u56fe\u50cf\u5206\u5272\u589e\u5f3a/application.md";
+        var mkdocs_page_name = "OBS\u8f6f\u4ef6\u5b89\u88c5";
+        var mkdocs_page_input_path = "\u8bbe\u5907\u7ec4\u88c5\u548c\u6e05\u5355/OBS_\u8f6f\u4ef6\u5b89\u88c5.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -48,6 +48,15 @@
                 <li class="toctree-l1"><a class="reference internal" href="../../about/">关于</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">设备组装和清单</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../shopping_list/">硬件清单</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">OBS软件安装</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">基础使用培训</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/">连接进入服务器</a>
@@ -55,17 +64,6 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/basic_command/">一些基础技能</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/installed_models/">已安装的深度学习模型</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">小鼠图像分割增强</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../process/">代码流程</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">应用场景</a>
-    <ul class="current">
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../dataset/">数据集制作&模型更新</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">小球矫正</span></p>
@@ -118,8 +116,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">小鼠图像分割增强</li>
-      <li class="breadcrumb-item active">应用场景</li>
+          <li class="breadcrumb-item">设备组装和清单</li>
+      <li class="breadcrumb-item active">OBS软件安装</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -128,21 +126,57 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="maskrcnn">小鼠图像身体分割,使用MaskRCNN模型</h1>
+                <h2 id="obs">OBS 软件安装</h2>
+<p><img alt="OBS Studio" src="../../docs/assets/images/OBS_software.jpg" /></p>
+<p>视频教程：xxx</p>
+<p>系统采用 OBS Studio（版本 <strong>29.0</strong>）进行视频录制。OBS 以其优秀的可配置性、稳定性和开源特性在视频直播和录制领域广泛应用。该软件支持多种来源输入，包括图像、文本、浏览器窗口、摄像头和麦克风等，<strong>有效简化了多相机同步录制的复杂性</strong>。其多线程负载优化和 GPU 视频编解码具有<strong>出色的性能表现</strong>。在本平台中，OBS 提供了实时预览、多相机布局、分辨率调整和编程接口等全面而灵活的视频录制解决方案。OBS 的具体配置详见下表。</p>
 <blockquote>
-<p>开发者：xxx
-维护：xxx</p>
+<p>OBS 版本29.0, 下载地址： https://obsproject.com/download</p>
 </blockquote>
-<p>身体区域重点显示。在复杂背景下，可以很好的分割出小鼠的身体。再放入anymaze软件中，可以很好的进行行为分析。
-<img alt="mice_body_mask" src="../../assets/images/mice_body_mask.jpg" /></p>
-<p>头部区域重点显示
-<img alt="mice_head_mask" src="../../assets/images/mice_head_mask.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>主要功能</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>来源 &gt; 添加 &gt; 视频采集设备</td>
+<td>添加 9 个K1S293相机</td>
+<td>单个相机分辨率下拉列表中，选择 1280×800，帧率为最高 (即120fps)，帧编码为MJPEG</td>
+</tr>
+<tr>
+<td>设置&gt; 输出&gt; 录像</td>
+<td>录像文件格式</td>
+<td>类型为标准； 文件名为无空格； 输出容器为 MP4； 编码器为 NVIDIA NVENC HEVC; 码率为30 Mbps；预设为高质量。</td>
+</tr>
+<tr>
+<td>设置&gt; 视频</td>
+<td>画布分辨率和帧率</td>
+<td>画布分辨率 3840×2400，为 9 个相机拼接后的像素和；不缩放；帧率 30 fps。</td>
+</tr>
+<tr>
+<td>菜单 &gt; 工具 &gt; WebSocket 服务器</td>
+<td>外部代码控制 OBS 录制开关</td>
+<td>端口号 4455; 不使用密码（取消权鉴框）；推荐配合F2 同步助手使用</td>
+</tr>
+</tbody>
+</table>
+<p>在 OBS 软件的具体配置过程中，需重点关注以下技术细节：</p>
+<ol>
+<li>在将多相机视频流添加至 OBS 画布时，应避免对相机视角进行拉伸或裁剪，以防止图像数据丢失并确保后续多相机图像读取的准确定位。</li>
+<li>多相机图像在 OBS 画布中应紧密排列，相机编号需遵循从左到右、从上到下的顺序。</li>
+<li>有些相机拍摄的图像上下颠倒，需在 OBS 软件上进行 180°旋转修正，但不要使用镜像。</li>
+</ol>
+<p>完成上述配置后，即可通过 OBS 界面启动录制，同步记录 9 个相机的行为实验视频。通常，15分钟的实验视频约为3.4GB。使用 Potplayer 或者 VLC 等播放器，可以方便地查看视频。</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../process/" class="btn btn-neutral float-left" title="代码流程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../dataset/" class="btn btn-neutral float-right" title="数据集制作&模型更新">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../shopping_list/" class="btn btn-neutral float-left" title="硬件清单"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/" class="btn btn-neutral float-right" title="连接进入服务器">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -165,10 +199,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../process/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../shopping_list/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../dataset/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
