@@ -2,7 +2,9 @@
 
 欢迎来到 Social-Seq 项目！这是一个用于解析动物密切接触时的多动物分类、三维姿态重构、社交类别识别、社交序列标签。通过构造实时闭环光遗传干预系统，该项目有望用于治疗孤独症（ASD）社交障碍。
 
-![抽象图](docs/assets/images/figure_abstract.jpg)
+<div align="center">
+  <img src="docs/assets/images/figure_abstract.jpg" width="600" alt="抽象图">
+</div>
 代码地址 ：https://github.com/LiLab-CIBR/Social_Seq
 项目文档 ：https://lilab-cibr.github.io/Social_Seq/
 
@@ -79,7 +81,10 @@ Social-Seq 项目旨在通过计算机视觉和机器学习技术，分析动物
 - 解决方案：使用云计算实现行为识别，进而实现行为控制。实验视频通过云平台上传，在云端进行行为识别，识别结果通过云平台返回。模型和代码经过轻量化改造，以及并行编程优化（将多个模型分摊到多个GPU中流水线并行），降低计算延迟。建立了孤独症行为-光遗传强化学习范式，在识别到玩耍行为时，即可给与多巴胺（dopamine，DA）释放光刺激，进而实现行为强化。
 - 效果：行为识别延迟为266ms，识别准确率为80%。经过特异性光遗传强化学习，孤独症大鼠的玩耍行为得到了突出改善，社交能力增强，非社交行为减少。
 
-![行为控制](docs/assets/images/Fig7_closed-loop.jpg)
+<div align="center">
+  <img src="docs/assets/images/Fig7_closed-loop.jpg" width="800" alt="行为控制">
+</div>
+
 ## 应用价值
 
 - **孤独症研究**：为孤独症社交障碍的治疗提供技术支持
