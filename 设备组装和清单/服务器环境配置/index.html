@@ -56,11 +56,29 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">服务器环境配置</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">强烈建议安装软件列表</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">硬件配置</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">测试安装成功：</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">软件环境</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">其它三方工具：</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">强烈建议安装软件列表</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">测试安装成功</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#nvidia-cuda-driver">测试 nvidia cuda driver</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nvidia-cuda-compiler">测试 Nvidia Cuda Compiler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tensorrt">测试 TensorRT 命令行工具</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#polygraphy-nvidia">测试 polygraphy (NVIDIA 官方工具) 命令行工具</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ffmpeg">测试 FFmpeg 命令行工具</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#docker">测试 Docker 命令行工具</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">三方深度学习工具包</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1-open-mmlabmmdetection">1. OPEN-MMLAB/MMDETECTION</a>
     </li>
@@ -71,6 +89,18 @@
     <li class="toctree-l3"><a class="reference internal" href="#4-dannce">4. DANNCE</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5-smoothnet">5. SmoothNet</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python">安装本项目创建和改造的 python 包</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-lilab">1. LILAB 分析工具包</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-ffmpegcv">2. FFMPEGCV 工具包</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-multiview_calib">3. multiview_calib 工具包</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4">4. 其它改造工具包</a>
     </li>
         </ul>
     </li>
@@ -147,18 +177,38 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="_1">服务器环境配置</h1>
-<p><strong>目前软件存在兼容性问题，建议使用早一点的版本</strong>。</p>
-<p>服务器硬件配置包括：Intel Xeon 4314 CPU、256 GB 内存、4 块 NVIDIA GeForce RTX 3090 GPU 显卡、1 TB 固态硬盘和 8 TB 机械硬盘。</p>
-<p>软件环境包括 Ubuntu 18.04 操作系统，CUDA 11.4、cuDNN 8.8 和TensorRT 8.6 深度学习框架，以及 Python 3.7.16、OpenCV-Python 4.8.0、TensorFlow 2.7.0和 PyTorch 1.11.0 等开发工具，用于深度学习模型训练和数据分析。</p>
+<p>只有配置好服务器环境，才能顺利运行本项目，包括模型训练、推理，动物行为分析流程。<a href="/figure_reproduce">论文图表复现🔗</a>不需要配置服务器环境，只需要配置本地环境即可。</p>
+<div class="admonition warning">
+<p class="admonition-title">服务器环境配置注意</p>
+<p>深度学习环境是本项目的核心基础。我们理解环境搭建可能是一个复杂且具有挑战性的过程，这也是整个AI领域普遍面临的难题。
+虽然我们在持续优化部署流程，但当前项目仍存在一些版本兼容性问题。我们建议您在配置环境时保持耐心，并具备一定的技术钻研精神，以应对可能出现的挑战。</p>
+</div>
+<hr />
+<h2 id="_2">硬件配置</h2>
+<p>服务器硬件配置包括：</p>
+<ul>
+<li><strong>CPU</strong>: Intel Xeon 4314</li>
+<li><strong>内存</strong>: 256 GB</li>
+<li><strong>GPU</strong>: 4 块 NVIDIA GeForce RTX 3090</li>
+<li><strong>存储</strong>: 1 TB 固态硬盘 + 8 TB 机械硬盘</li>
+</ul>
+<h2 id="_3">软件环境</h2>
+<p>软件环境包括：</p>
+<ul>
+<li><strong>操作系统</strong>: Ubuntu 18.04</li>
+<li><strong>深度学习框架</strong>: CUDA 11.4、cuDNN 8.8、TensorRT 8.6</li>
+<li><strong>开发工具</strong>: Python 3.7.16、OpenCV-Python 4.8.0、TensorFlow 2.7.0、PyTorch 1.11.0</li>
+</ul>
+<p>用于深度学习模型训练和数据分析。</p>
 <div class="admonition warning">
 <p class="admonition-title">重要警告</p>
-<p>目前仅支持 Ubuntu 系统和NVIDIA显卡，其他系统请自行查阅相关资料。</p>
+<p>目前仅支持 Ubuntu 系统和 NVIDIA 显卡，其他系统请自行查阅相关资料。</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">重要警告</p>
-<p>由于软件是在2019年配置的，因此部分软件版本可能已经过时，建议根据实际需求选择最新版本。同时，建议使用最新版本的 CUDA、cuDNN 和 TensorRT 等深度学习框架，以获得更好的性能和兼容性。大部分python库可以在 pip 和 conda 中找到，但是部分库可能难以兼容安装。本文档不再对兼容性进行详细说明，请自行查阅相关资料。</p>
+<p>由于软件是在2019年配置的，因此部分软件版本可能已经过时，建议根据实际需求选择最新版本。大部分 Python 库可以在 pip 和 conda 中找到，但是部分库可能难以兼容安装。本文档难以兼顾所有软件的最新版本，请自行查阅相关资料。</p>
 </div>
-<h2 id="_2">强烈建议安装软件列表</h2>
+<h2 id="_4">强烈建议安装软件列表</h2>
 <table>
 <thead>
 <tr>
@@ -221,7 +271,7 @@
 <td style="text-align: center;">Docker</td>
 <td style="text-align: center;">24.0.6</td>
 <td style="text-align: center;">28.3.0</td>
-<td style="text-align: center;">容器化，用于Mediamtx</td>
+<td style="text-align: center;">容器化，用于 Mediamtx</td>
 </tr>
 <tr>
 <td style="text-align: center;">FFmpeg</td>
@@ -237,79 +287,127 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">测试安装成功：</h2>
+<h2 id="_5">测试安装成功</h2>
 <p>所有软件安装完成后，需要进行测试，以确保安装成功。测试方法如下：</p>
-<p>测试 nvidia cuda driver
+<h3 id="nvidia-cuda-driver">测试 nvidia cuda driver</h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi
-</code></pre></div></p>
-<p>测试 Nvidia Cuda Compliler
+</code></pre></div>
+<h3 id="nvidia-cuda-compiler">测试 Nvidia Cuda Compiler</h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvcc<span class="w"> </span>--version
-</code></pre></div></p>
-<p>测试 TensorRT命令行工具
+</code></pre></div>
+<h3 id="tensorrt">测试 TensorRT 命令行工具</h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>trtexec<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx<span class="w"> </span>--saveEngine<span class="o">=</span>/path/to/model.engine
-</code></pre></div></p>
-<p>测试 polygraphy (NVIDIA官方工具) 命令行工具
+</code></pre></div>
+<h3 id="polygraphy-nvidia">测试 polygraphy (NVIDIA 官方工具) 命令行工具</h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>polygraphy<span class="w"> </span>inspect<span class="w"> </span>model<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx
-</code></pre></div></p>
-<p>测试 FFmpeg 命令行工具
+</code></pre></div>
+<h3 id="ffmpeg">测试 FFmpeg 命令行工具</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># ffmpeg generate a 640x480 video, 30 fps, 1 minute</span>
 $<span class="w"> </span>ffmpeg<span class="w"> </span>-f<span class="w"> </span>lavfi<span class="w"> </span>-i<span class="w"> </span><span class="nv">testsrc</span><span class="o">=</span><span class="nv">duration</span><span class="o">=</span><span class="m">60</span>:size<span class="o">=</span>640x480:rate<span class="o">=</span><span class="m">30</span><span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test.mp4
 
 <span class="c1"># convert it to hevc by NVIDIA HEVC encoder</span>
 $<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>/path/to/test.mp4<span class="w"> </span>-c:v<span class="w"> </span>hevc_nvenc<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test_hevc.mp4
-</code></pre></div></p>
-<p>测试 Docker 命令行工具
+</code></pre></div>
+<h3 id="docker">测试 Docker 命令行工具</h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>hello-world
 $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-e<span class="w"> </span><span class="nv">MTX_PROTOCOLS</span><span class="o">=</span>tcp<span class="w"> </span>-p<span class="w"> </span><span class="m">8554</span>:8554<span class="w"> </span>-p<span class="w"> </span><span class="m">1935</span>:1935<span class="w"> </span>bluenviron/mediamtx
-</code></pre></div></p>
-<h2 id="_4">其它三方工具：</h2>
+</code></pre></div>
+<h2 id="_6">三方深度学习工具包</h2>
 <h3 id="1-open-mmlabmmdetection">1. OPEN-MMLAB/MMDETECTION</h3>
-<p>这是一个提供了 MaskRCNN 的开源项目，用于目标检测和分割。我们进行了fork (2022年），并添加了自定义的模型和配置文件，以实现多大鼠分割。</p>
+<p>这是一个提供了 MaskRCNN 的开源项目，用于目标检测和分割。我们进行了 fork (2022年），并添加了自定义的模型和配置文件，以实现多大鼠分割。</p>
 <p>安装方法请参考 MMdetection 的<a href="https://mmdetection.readthedocs.io/en/latest/get_started.html">官方文档</a>。</p>
 <ul>
-<li>代码地址，https://github.com/chenxinfeng4/mmdetection.git</li>
+<li>代码地址: https://github.com/chenxinfeng4/mmdetection.git</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">重要警告</p>
-<p>我们fork的是 MMDET 1.x 版本，目前支持python3.7；官网最新的MMDET 是 3.x 版本，可能存在严重的兼容性问题。请根据实际需求选择合适的版本。</p>
+<p>我们 fork 的是 MMDET 1.x 版本，目前支持 python3.7；官网最新的 MMDET 是 3.x 版本，可能存在严重的兼容性问题。请根据实际需求选择合适的版本。</p>
 </div>
 <h3 id="2-open-mmlabmmpose">2. OPEN-MMLAB/MMPOSE</h3>
-<p>这是一个提供了 MaskRCNN 的开源项目，用于人体姿态关键点检测。我们进行了fork（2022年），并添加了自定义的模型和配置文件，以实现小球检测。</p>
+<p>这是一个提供了 MaskRCNN 的开源项目，用于人体姿态关键点检测。我们进行了 fork（2022年），并添加了自定义的模型和配置文件，以实现小球检测。</p>
 <p>安装方法请参考 MMpose 的<a href="https://mmpose.readthedocs.io/en/latest/installation.html">官方文档</a>。</p>
 <ul>
-<li>代码地址，https://github.com/chenxinfeng4/mmpose.git</li>
+<li>代码地址: https://github.com/chenxinfeng4/mmpose.git</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">重要警告</p>
-<p>我们fork的是 MMPOSE 0.x 版本。新版本和环境可能存在兼容性问题。请根据实际需求选择合适的版本。</p>
+<p>我们 fork 的是 MMPOSE 0.x 版本。新版本和环境可能存在兼容性问题。请根据实际需求选择合适的版本。</p>
 </div>
 <h3 id="3-yolo-v8">3. YOLO-v8</h3>
-<p>这是一个轻量级目标检测，实例分割的开源项目。我们进行了fork（2024年），并添加了自定义的模型和配置文件，以实现实时多大鼠分割。</p>
+<p>这是一个轻量级目标检测，实例分割的开源项目。我们进行了 fork（2024年），并添加了自定义的模型和配置文件，以实现实时多大鼠分割。</p>
 <ul>
-<li>代码地址，https://github.com/chenxinfeng4/ultralytics.git</li>
+<li>代码地址: https://github.com/chenxinfeng4/ultralytics.git</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">重要警告</p>
-<p>我们fork的版本，与最新版本可能存在兼容性问题。请根据实际需求选择合适的版本。</p>
+<p>我们 fork 的版本，与最新版本可能存在兼容性问题。请根据实际需求选择合适的版本。</p>
 </div>
 <h3 id="4-dannce">4. DANNCE</h3>
-<p>这是一个多视角动物姿态估计的库。我们进行了fork（2022年），并添加了自定义的模型和配置文件，以实现实时多大鼠3D关键点识别。</p>
+<p>这是一个多视角动物姿态估计的库。我们进行了 fork（2022年），并添加了自定义的模型和配置文件，以实现实时多大鼠3D关键点识别。</p>
 <ul>
-<li>代码地址，https://github.com/chenxinfeng4/dannce.git</li>
+<li>代码地址: https://github.com/chenxinfeng4/dannce.git</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">重要警告</p>
-<p>我们fork的版本，与最新版本可能存在兼容性问题。而且，该库的预测精度高，但速度慢。我们进行了速度优化，导致与原始代码存在一些差异，以及更多的兼容性问题。安装起来比较麻烦，我们正在优化安装文档。</p>
+<p>我们 fork 的版本，与最新版本可能存在兼容性问题。而且，该库的预测精度高，但速度慢。我们进行了速度优化，导致与原始代码存在一些差异，以及更多的兼容性问题。安装起来比较麻烦，我们正在优化安装文档。</p>
 </div>
 <h3 id="5-smoothnet">5. SmoothNet</h3>
-<p>这是一个姿态时间平滑的库。我们进行了fork（2022年），并添加了自定义的模型和配置文件，以实现实时多大鼠3D关键点平滑。</p>
+<p>这是一个姿态时间平滑的库。我们进行了 fork（2022年），并添加了自定义的模型和配置文件，以实现实时多大鼠3D关键点平滑。</p>
 <ul>
-<li>代码地址，https://github.com/chenxinfeng4/SmoothNet.git</li>
+<li>代码地址: https://github.com/chenxinfeng4/SmoothNet.git</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">重要警告</p>
-<p>我们fork的版本，与最新版本可能存在兼容性问题。请根据实际需求选择合适的版本。</p>
+<p>我们 fork 的版本，与最新版本可能存在兼容性问题。请根据实际需求选择合适的版本。</p>
 </div>
+<h2 id="python">安装本项目创建和改造的 python 包</h2>
+<h3 id="1-lilab">1. LILAB 分析工具包</h3>
+<p>包含了常见的分析工具，如相机标定流程，大鼠分割、姿态估计流程，行为识别流程，大数据挖掘相关工具等。</p>
+<ul>
+<li>代码地址: https://github.com/chenxinfeng4/LILAB-py.git</li>
+</ul>
+<p><strong>安装方法：</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chenxinfeng4/LILAB-py.git
+<span class="nb">cd</span><span class="w"> </span>LILAB-py
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">重要警告</p>
+<p>包含许多流程工具，依赖过于庞大，因此不进行自动依赖安装。如果 import 报错，则需要手动安装依赖。</p>
+</div>
+<h3 id="2-ffmpegcv">2. FFMPEGCV 工具包</h3>
+<p>GPU 加速的视频处理工具包，方便多相机视频读写，某些场景下比 OpenCV 快 9 倍。我开源之后，年下载量 <strong>7 万次</strong>。查看对应<a href="https://pypi.org/project/ffmpegcv">文档</a>。</p>
+<ul>
+<li>代码地址: https://github.com/chenxinfeng4/ffmpegcv.git</li>
+</ul>
+<p><strong>安装方法：</strong></p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ffmpegcv
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">重要警告</p>
+<p>使用 GPU 加速，需要有 NVIDIA-driver。</p>
+</div>
+<h3 id="3-multiview_calib">3. multiview_calib 工具包</h3>
+<p>相机外参标定（小球标定）的工具包。在三方库基础上，进行了优化，并添加了自定义的标定流程。查看对应<a href="https://github.com/chenxinfeng4/multiview_ball_calib">文档</a>。</p>
+<ul>
+<li>代码地址: https://github.com/chenxinfeng4/multiview_calib.git</li>
+</ul>
+<p><strong>安装方法：</strong></p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/multiview_calib.git
+
+<span class="c1"># 小球标定简易教程</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chenxinfeng4/multiview_ball_calib
+</code></pre></div>
+<h3 id="4">4. 其它改造工具包</h3>
+<p><strong>torch2trt</strong>: torch2trt 改造，支持 engine 文件直接载入。</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/torch2trt
+</code></pre></div>
+<p><strong>cocoapi</strong>: 将 cocoapi 进行多线程改造，提升速度。</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/cocoapi
+</code></pre></div>
+<p><strong>mmdetection-to-tensorrt</strong>: Mask-RCNN 模型转换为 tensorrt 模型。</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/mmdetection-to-tensorrt
+</code></pre></div>
               
             </div>
           </div><footer>
