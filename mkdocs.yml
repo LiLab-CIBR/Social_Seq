@@ -2,14 +2,14 @@ site_name: Social-Seq doc
 nav:
   - 首页: index.md
   - 关于: about.md
+  - 设备组装和清单:
+    - 硬件清单: 设备组装和清单/shopping_list.md
+    - OBS软件安装: 设备组装和清单/OBS_软件安装.md
+    
   - 基础使用培训:
     - 连接进入服务器: 基础使用培训/login_server.md
     - 一些基础技能: 基础使用培训/basic_command.md
     - 已安装的深度学习模型: 基础使用培训/installed_models.md
-  - 小鼠图像分割增强:
-    - 代码流程: 小鼠图像分割增强/process.md
-    - 应用场景: 小鼠图像分割增强/application.md
-    - 数据集制作&模型更新: 小鼠图像分割增强/dataset.md
 
   - 小球矫正:
     - 代码流程: 小球矫正/process.md
