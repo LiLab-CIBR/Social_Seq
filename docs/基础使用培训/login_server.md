@@ -7,14 +7,14 @@
 | -------- | -------------------------------- | ------------------------------ |
 | 用途     | 跑模型，跑流程，分析数据         | 测试代码，网页服务             |
 | 地点     | 信息化中心B区负二楼机房         | 实验室             |
-| 地址     | ssh chenxinfeng@`10.50.60.6`     | ssh chenxinfeng@`10.50.6.51`   |
-| 系统     | Ubuntu 20.04                     | Deepin 23                      |
-| 基础命令 | sudo apt install PACKAGE         | sudo apt install PACKAGE       |
-| 内存     | 256 GB                           | 12 GB                          |
-| 硬盘     | 1 TB固态 + 8 TB机械               | 300 GB                        |
-| CPU      | Intel Silver 4314，32核心 64线程 | Intel N100 4核心 4线程，X86_64 |
-| GPU      | 4块 NVIDIA RTX3090 （24 GB显存） | 无                             |
-| docker   | 支持                             | 支持                           |
+| 地址     | ssh chenxinfeng@`10.50.60.6`     | -   |
+| 系统     | Ubuntu 18.04                     | - 23                      |
+| 基础命令 | sudo apt install PACKAGE         | -|
+| 内存     | 256 GB                           | - GB                          |
+| 硬盘     | 1 TB固态 + 8 TB机械               | -    |
+| CPU      | Intel Silver 4314，32核心 64线程 | - |
+| GPU      | 4块 NVIDIA RTX3090 （24 GB显存） | -  |
+| docker   | 支持                             | -|
 
 ## 登录到服务器（/测试机）
 服务器支持 `远程桌面`, `ssh` 和 `vscode` 的登录方式。推荐使用 `vscode`。
@@ -33,7 +33,7 @@
 ### 2. 使用 ssh
 在 windows 客户电脑中，按住 `Win R` 快捷键，在弹出的 **运行** 窗口中，输入 `cmd` 指令。在弹出的终端命令窗中，输入下面命令，并输入密码。
 ```bash
-ssh chenxinfeng@10.50.6.51
+ssh chenxinfeng@10.50.60.6
 ```
 
 !!! Tips "提示"

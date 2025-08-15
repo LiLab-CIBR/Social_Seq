@@ -11,5 +11,13 @@
 * `Social 三维关键点重构` - 两只大鼠分割、关键点预测、平滑.
 * `Seq 行为标签` - 获取大鼠社交一致性的36类行为标签。
 
-## 贡献名单
-xxx
+## 代码发布 📅
+最后更新时间 2025-8-15，作者 ChenXinfeng。👨‍💻
+
+## 引用 📚
+Xinfeng Chen; Xianming Tao; Zhenchao Zhong; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li* (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation.
+
+陈昕枫. (2025). 基于深度学习的动物自由社交行为分析研究. 博士论文，北京大学.
+
+## 通讯作者 📬
+- 李莹：liying

@@ -1,11 +1,11 @@
 site_name: Social-Seq doc
 nav:
   - 首页: index.md
-  - 关于: about.md
+  - 文章图表复现: figure_reproduce.md
   - 设备组装和清单:
     - 硬件清单: 设备组装和清单/shopping_list.md
     - OBS软件安装: 设备组装和清单/OBS_软件安装.md
-    
+
   - 基础使用培训:
     - 连接进入服务器: 基础使用培训/login_server.md
     - 一些基础技能: 基础使用培训/basic_command.md

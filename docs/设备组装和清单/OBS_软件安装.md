@@ -1,7 +1,7 @@
 OBS 软件安装
 ---
 
-![OBS Studio](../../docs/assets/images/OBS_software.jpg)
+![OBS Studio](../../assets/images/OBS_software.jpg)
 
 视频教程：xxx
 

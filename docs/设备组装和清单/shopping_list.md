@@ -1,12 +1,16 @@
 # 设备组装和清单
 包含相机实验箱，实验电脑，分析服务器。
-![ball_keypoint](../../docs/assets/images/Fig_setup_computers.jpg)
+
+<div align="center">
+  <img src="../../assets/images/Fig_setup_computers.jpg" width="500" alt="ball_keypoint">
+</div>
 
 视频教程：xxx
 
 ## 相机实验箱
 ---
 表格中列出了相机实验箱中使用的所有相机和材料。
+
 | 名称 | 参数 | 数量 | 购买链接 |
 | --- | --- | --- | --- |
 | K1S293 相机 | 1280x800分辨率，120fps，黑白 | 9 | [淘宝购买链接](https://item.taobao.com/item.htm?abbucket=16&id=673966141469&mi_id=0000013g7j7UpaJ64Exz65IlngXWkLZ9sfelfsEn2X13zX8&ns=1&skuId=4847993832885&spm=a21n57.1.hoverItem.2&utparam=%7B%22aplus_abtest%22%3A%22f141c2e8af0beb2b17c50d6928369058%22%7D&xxc=taobaoSearch) |
@@ -39,6 +43,7 @@
 
 ## 云计算平台硬件配置
 用于训练模型，推理模型；数据分析，可视化；闭环行为干预的云计算平台。
+
 | 名称 | 型号 | 备注 |
 | ---- | ---- | ---- | 
 | 厂家  | 浪潮 | - |
@@ -51,6 +56,7 @@
 
 ## （可选）云存储硬件（NAS）配置
 用于存储大量实验视频数据和分析结果，并支持多用户同时访问。
+
 | 名称 | 型号 | 备注 |
 | ---- | ---- | ---- | 
 | 群辉1 | DS2419+， 96 TB| - |
