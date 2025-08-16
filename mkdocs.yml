@@ -6,7 +6,7 @@ nav:
     - 硬件清单: 设备组装和清单/shopping_list.md
     - OBS软件安装: 设备组装和清单/OBS_软件安装.md
     - 服务器环境配置: 设备组装和清单/服务器环境配置.md
-    
+
   - 基础使用培训:
     - 连接进入服务器: 基础使用培训/login_server.md
     - 一些基础技能: 基础使用培训/basic_command.md
@@ -31,6 +31,10 @@ nav:
     - 代码流程: 社交序列标签/process.md
     - 应用场景: 社交序列标签/application.md
     - 聚类和模板制作: 社交序列标签/dataset.md
+
+  - 闭环行为控制 (Live):
+    - 代码流程: 闭环行为控制/process.md
+    - 应用场景: 闭环行为控制/application.md
 
 theme:
   name: readthedocs
