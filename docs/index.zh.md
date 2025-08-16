@@ -5,6 +5,7 @@
 <div align="center">
   <img src="assets/images/figure_abstract.jpg" width="500" alt="抽象图">
 </div>
+<br>
 
 ## 包含内容
 * `硬软件系统安装` - 安装多相机系统，调试OBS，启用F2同步助手。

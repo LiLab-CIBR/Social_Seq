@@ -49,3 +49,46 @@ markdown_extensions:
 
 extra_css:
   - css/custom.css
+
+# 添加多语言插件配置
+plugins:
+  - search
+  - i18n:
+      languages:
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            首页: Home
+            文章图表复现: Figure Reproduction
+            设备组装和清单: Equipment Assembly & List
+            硬件清单: Hardware List
+            OBS软件安装: OBS Software Installation
+            服务器环境配置: Server Environment Configuration
+            基础使用培训: Basic Usage Training
+            连接进入服务器: Login to Server
+            一些基础技能: Basic Commands
+            已安装的深度学习模型: Installed Deep Learning Models
+            小球矫正: Ball Correction
+            代码流程: Workflow
+            应用场景: Applications
+            数据集制作&模型更新: Dataset & Model Updates
+            单鼠三维姿态计算: Single Mouse 3D Pose
+            代码流程: Workflow
+            应用场景: Applications
+            数据集制作&模型更新: Dataset & Model Updates
+            代码流程: Workflow
+            应用场景: Applications
+            数据集制作&模型更新: Dataset & Model Updates
+            代码流程: Workflow
+            应用场景: Applications
+            聚类和模板制作: Clustering & Template Creation
+            代码流程: Workflow
+            应用场景: Applications
+            社交三维姿态计算 (Social): Social 3D Pose (Social)
+            社交序列标签 (Seq): Sequence Labeling (Seq)
+            闭环行为控制 (Live): Closed-loop Control (Live)
+        - locale: zh
+          name: 中文
+          build: true
+          default: true
