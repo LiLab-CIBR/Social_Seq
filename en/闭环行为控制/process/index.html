@@ -41,6 +41,10 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
+                <li class="toctree-l1"><a class="" href="/en/">Language English</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../../">Home</a>
                 </li>
               </ul>
@@ -160,7 +164,7 @@
 <p>Developer: Chenxinfeng, update 2025-08-16</p>
 </blockquote>
 <p>The general code process for closed-loop behavior control is as follows:</p>
-<p><img alt="Closed-loop behavior control code process" src="../../assets/images/Fig7_closed-loop_code_illustration.jpg" /></p>
+<p><img alt="Closed-loop behavior control code process" src="../../../assets/images/Fig7_closed-loop_code_illustration.jpg" /></p>
 <p>The corresponding code operations are as follows:</p>
 <h2 id="1-start-virtual-camera-for-timestamp-marking">1. Start virtual camera for timestamp marking</h2>
 <p>Operate on the DAQ PC, which runs Windows. OBS Studio version 29.1. OBS needs to add a virtual camera ("OBS Virtual Camera"), and the Python code will output time codes (e.g., 163) to this camera frame. The time code value is determined by the PC clock and updated every 33ms (30fps to match the video frame rate). The current clock value is also stored on the server <code>10.50.7.109:20173</code> for other devices to access to get the current time code.</p>
@@ -210,7 +214,7 @@ python<span class="w"> </span>-m<span class="w"> </span>lilab.label_live.socketS
 </ul>
 <p>Then click the "Start Recording" button (note not "Start Live Streaming") to start streaming. If no error prompt pops up within 20 seconds, the streaming is successful.</p>
 <p>For a new DAQ PC, you need to reconfigure OBS. The specific steps are as follows:</p>
-<p><img alt="OBS Configuration" src="../../assets/images/Fig7_closed-loop_OBS.jpg" /></p>
+<p><img alt="OBS Configuration" src="../../../assets/images/Fig7_closed-loop_OBS.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Tip</p>
 <p>Resolution and encoding method are important parameters that affect streaming delay, especially the project's 3840x2400 is a high resolution. This RTSP parameter setting has been tested in various ways, with low delay and good picture quality. Other video streaming projects can refer to this parameter setting.</p>

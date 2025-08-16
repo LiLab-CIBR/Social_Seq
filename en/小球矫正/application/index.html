@@ -41,6 +41,10 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
+                <li class="toctree-l1"><a class="" href="/en/">Language English</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../../">Home</a>
                 </li>
               </ul>
@@ -177,10 +181,10 @@ Common camera calibration parameters include:
 </div>
 <h2 id="calibration-result-display">Calibration Result Display</h2>
 <p>Check the green prediction points' fit with the ball in the generated <code>*ball_keypoint.mp4</code>. The generated <code>*.calibpkl</code> is the multi-camera model file used for subsequent 3D reconstruction.</p>
-<p><img alt="ball_keypoint" src="../../assets/images/ball_calibrated.jpg" /></p>
+<p><img alt="ball_keypoint" src="../../../assets/images/ball_calibrated.jpg" /></p>
 <h2 id="calibration-accuracy-evaluation">Calibration Accuracy Evaluation</h2>
 <p>Check the code execution output. The <code>Reprojection errors</code> represent the reprojection error, which is the distance between the predicted point and the actual point. The smaller the error, the higher the calibration accuracy. Typically, it is allowed within <code>4.0+-2.0</code> pixels.</p>
-<p><img alt="ball_keypoint" src="../../assets/images/ball_calibrated_precision.jpg" /></p>
+<p><img alt="ball_keypoint" src="../../../assets/images/ball_calibrated_precision.jpg" /></p>
 <div class="admonition error">
 <p class="admonition-title">Error</p>
 <p>If the output error pixel is too large when running p_calibration.sh/the green points in the keypoint video cannot correctly follow the ball, it indicates incorrect calibration. This could be due to a large deviation in 2D ball recognition. Re-labeling is required, see "Ball Augmentation Training".</p>

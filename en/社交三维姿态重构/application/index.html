@@ -41,6 +41,10 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
+                <li class="toctree-l1"><a class="" href="/en/">Language English</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../../">Home</a>
                 </li>
               </ul>
@@ -142,17 +146,17 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="social-3d-pose-reconstruction">Social 3D Pose Reconstruction</h1>
-<p><img alt="pipeline" src="../../assets/images/rat_social_pose_pipeline.jpg" />
+<p><img alt="pipeline" src="../../../assets/images/rat_social_pose_pipeline.jpg" />
 Raw multi-view videos, after <code>segmentation</code>, <code>keypoint reconstruction</code> and <code>smoothing</code>, obtain stable 3D pose coordinates.</p>
 <h2 id="raw-video">Raw Video</h2>
 <p>The video comes from OBS Studio recorded 9-view camera video. The multi-camera images have been time-synchronized, with an error of 1 frame or less, which can be ignored.</p>
-<p><img alt="pipeline" src="../../assets/images/rat_raw_video.jpg" /></p>
+<p><img alt="pipeline" src="../../../assets/images/rat_raw_video.jpg" /></p>
 <h2 id="segmentation">Segmentation</h2>
 <p>Using the Mask-RCNN model, the identity of black and white rats is recognized, and the pixel area is segmented.</p>
-<p><img alt="pipeline" src="../../assets/images/rat_mask_video.jpg" /></p>
+<p><img alt="pipeline" src="../../../assets/images/rat_mask_video.jpg" /></p>
 <h2 id="keypoint-reconstruction">Keypoint Reconstruction</h2>
 <p>Execute DANNCE keypoint prediction + neural network smoothing to obtain 3D pose.</p>
-<p><img alt="pipeline" src="../../assets/images/rat_pose_video.jpg" /></p>
+<p><img alt="pipeline" src="../../../assets/images/rat_pose_video.jpg" /></p>
               
             </div>
           </div><footer>
