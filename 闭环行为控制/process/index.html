@@ -106,25 +106,25 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">代码流程</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-start-virtual-cam-for-time-stamping">1. Start Virtual-Cam for time stamping.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1">1. 启动虚拟摄像头进行时间戳标记</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-update-recent-camera-and-rat-model-in-code">2. Update recent camera and rat model in code.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2">2. 更新代码中的相机和大鼠模型</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-start-result-server-daemon">3. Start result server daemon.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3">3. 启动结果服务器守护进程</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-start-media-server-daemon-mediamtx">4. Start media server daemon Mediamtx.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#4-mediamtx">4. 启动媒体服务器守护进程 Mediamtx</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5-start-obs-video-streamming">5. Start OBS video streamming.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#5-obs">5. 启动 OBS 视频流</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#6-start-pipeline-code-for-behavior-recognition">6. Start pipeline code for behavior recognition.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#6">6. 启动行为识别流水线代码</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#7-start-social-seq-live-gui">7. Start Social-seq-live GUI.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#7-social-seq-live-gui">7. 启动 Social-seq-live GUI</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#8-start-ffmpeg-code-for-video-dumping-to-file">8. Start ffmpeg code for video dumping to file.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#8-ffmpeg">8. 启动 ffmpeg 代码以将视频转储到文件</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#9-arduino-laser-pulse">9. Arduino Laser pulse</a>
+    <li class="toctree-l2"><a class="reference internal" href="#9-arduino">9. Arduino 激光脉冲</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#close-obs-and-gui">Close OBS and GUI</a>
+    <li class="toctree-l2"><a class="reference internal" href="#obs-gui">关闭 OBS 和 GUI</a>
     </li>
     </ul>
                   </li>
@@ -161,108 +161,13 @@
 </blockquote>
 <p>闭环行为控制的代码流程梗概如下:</p>
 <p><img alt="闭环行为控制代码流程" src="../../assets/images/Fig7_closed-loop_code_illustration.jpg" /></p>
-<p>一下是对应的代码操作：</p>
-<h2 id="1-start-virtual-cam-for-time-stamping">1. Start <strong>Virtual-Cam</strong> for time stamping.</h2>
+<p>以下是对应的代码操作：</p>
+<h2 id="1">1. 启动虚拟摄像头进行时间戳标记</h2>
 <p>在DAQ的PC上进行操作，DAQ安装的是Windows系统。OBS Studio 29.1 版本。OBS 需要添加一个虚拟摄像头("OBS Virtual Camera")，python代码会往这个摄像头帧输出时间码（例如，163）。时间码的数值由PC的时钟决定，每33ms更新一次（30fps 匹配视频帧率），当前时钟的数值也会存储到 <code>10.50.7.109:20173</code> 的服务器上，供其他设备访问，以获取当前时间码。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># virtualcam.py</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pyvirtualcam</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">tqdm</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">socketserver</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
-
-<span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span> <span class="o">=</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span><span class="mi">20173</span>
-
-
-<span class="n">downratio</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">240</span><span class="o">//</span><span class="n">downratio</span><span class="p">,</span> <span class="mi">120</span><span class="o">//</span><span class="n">downratio</span>
-<span class="n">vout</span> <span class="o">=</span> <span class="n">pyvirtualcam</span><span class="o">.</span><span class="n">Camera</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="o">+</span><span class="mi">40</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;OBS Virtual Camera&#39;</span><span class="p">)</span> <span class="c1"># device=&#39;OBS Virtual Camera&#39;</span>
-<span class="n">isactivate</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">strn</span> <span class="o">=</span> <span class="s1">&#39;000&#39;</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">thread_cam</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">strn</span>
-    <span class="n">tbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">()</span>
-    <span class="n">n</span><span class="o">=</span><span class="mi">0</span>
-    <span class="k">global</span> <span class="n">isactivate</span>
-    <span class="n">countdown</span> <span class="o">=</span> <span class="mi">15</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">tbar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-        <span class="n">frame</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="o">+</span><span class="mi">40</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">isactivate</span><span class="p">:</span>
-            <span class="n">frame</span><span class="p">[:,</span><span class="n">width</span><span class="o">+</span><span class="mi">4</span><span class="p">:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span>
-            <span class="n">countdown</span> <span class="o">-=</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="n">countdown</span> <span class="o">&lt;=</span><span class="mi">0</span><span class="p">:</span>
-                <span class="n">isactivate</span> <span class="o">=</span> <span class="kc">False</span>
-                <span class="n">countdown</span> <span class="o">=</span> <span class="mi">15</span>
-
-        <span class="n">strn</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-        <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">strn</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="n">downratio</span><span class="p">,</span> <span class="mi">105</span><span class="o">//</span><span class="n">downratio</span><span class="p">),</span> 
-                    <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mi">4</span><span class="o">//</span><span class="n">downratio</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="n">vout</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
-        <span class="n">vout</span><span class="o">.</span><span class="n">sleep_until_next_frame</span><span class="p">()</span>
-
-
-<span class="k">class</span><span class="w"> </span><span class="nc">ThreadedTCPServer</span><span class="p">(</span><span class="n">socketserver</span><span class="o">.</span><span class="n">ThreadingMixIn</span><span class="p">,</span> <span class="n">socketserver</span><span class="o">.</span><span class="n">TCPServer</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">MyTCPHandler</span><span class="p">(</span><span class="n">socketserver</span><span class="o">.</span><span class="n">BaseRequestHandler</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The request handler class for our server.</span>
-
-<span class="sd">    It is instantiated once per connection to the server, and must</span>
-<span class="sd">    override the handle() method to implement communication to the</span>
-<span class="sd">    client.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># self.request is the TCP socket connected to the client</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;conn is :&quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">)</span> <span class="c1"># conn</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;addr is :&quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">client_address</span><span class="p">)</span> <span class="c1"># addr</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
-                <span class="n">msg</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">msgfilter</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span><span class="k">break</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Closed a request&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">msgfilter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-        <span class="k">global</span> <span class="n">isactivate</span>
-        <span class="k">if</span> <span class="n">msg</span><span class="o">==</span><span class="s1">&#39;start_record&#39;</span><span class="p">:</span>
-            <span class="n">isactivate</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="s1">&#39;starting&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">msg</span><span class="o">==</span><span class="s1">&#39;stop_record&#39;</span><span class="p">:</span>
-            <span class="n">isactivate</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="s1">&#39;stopping&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">msg</span><span class="o">==</span><span class="s1">&#39;get_status&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">strn</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">thread_cam</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;thread_cam&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;start socket server&#39;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">ThreadedTCPServer</span><span class="p">((</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">),</span> <span class="n">MyTCPHandler</span><span class="p">)</span> <span class="k">as</span> <span class="n">server</span><span class="p">:</span>
-        <span class="c1"># Activate the server; this will keep running until you</span>
-        <span class="c1"># interrupt the program with Ctrl-C</span>
-        <span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
-</code></pre></div>
-<p>在终端执行该脚本，启动虚拟摄像头，并开启socket服务。
-在github上下载，<a href="https://github.com/chenxinfeng4/social-seq-live-client-GUI/blob/main/pyvirtualcam_LED/virtual_LED.py"><code>virtual_LED.py</code>🔗</a>
+<p>在github上下载，<a href="https://github.com/chenxinfeng4/social-seq-live-client-GUI/blob/main/pyvirtualcam_LED/virtual_LED.py"><code>virtual_LED.py</code>🔗</a>.</p>
+<p>在终端执行该脚本，启动虚拟摄像头，并开启socket服务。</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>virtual_LED.py
-</code></pre></div></p>
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">提示</p>
 <p>建议将其存为windows 的 bat 文件，双击直接运行。该脚本还兼具虚拟LED颜色点亮的功能，可用于视频事件打标，例如用于光遗传Laser的触发事件打标。详细可参考 【#7】 GUI 的代码。</p>
@@ -271,16 +176,16 @@
 <p class="admonition-title">注意</p>
 <p>需要自行安装依赖库。让DAQ PC的防火墙开放 20173。</p>
 </div>
-<h2 id="2-update-recent-camera-and-rat-model-in-code">2. Update recent camera and <strong>rat model</strong> in code.</h2>
+<h2 id="2">2. 更新代码中的相机和大鼠模型</h2>
 <p>需要用户提供最新的多相机模型文件和大鼠社交关键点模型文件，并更新到代码中。前者用于3D重构；后者用于计算相同年龄大鼠的体长，便于行为特征归一化。通常，<code>大鼠社交关键点模型</code>文件包含了<code>多相机模型</code>，所以让多相机模型等于<code>大鼠社交关键点模型</code>即可。</p>
-<p>修改下面文件的<code>lilab/label_live/usv_yolo_seg_dannce_unit_test.py</code>中的 <code>CALIBPKL</code> 未多相机模型路径， <code>model_smooth_matcalibpkl</code> 为大鼠社交关键点模型路径。
+<p>修改下面文件的<code>lilab/label_live/usv_yolo_seg_dannce_unit_test.py</code>中的 <code>CALIBPKL</code> 为多相机模型路径， <code>model_smooth_matcalibpkl</code> 为大鼠社交关键点模型路径。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># PATH_TO_LILAB/lilab/label_live/usv_yolo_seg_dannce_unit_test.py</span>
 <span class="n">CALIBPKL</span> <span class="o">=</span> <span class="s1">&#39;/mnt/liying.cibr.ac.cn_Data_Temp_ZZC2/2506batch-chr2/test/ball/2025-06-13_10-16-58_ball.calibpkl&#39;</span>
 <span class="n">model_smooth_matcalibpkl</span> <span class="o">=</span> <span class="s1">&#39;/DATA/zhongzhenchao/2501chr2-shank3/all400p/2025-01-05_15-04-37_l7_sm1_pm6.smoothed_foot.matcalibpkl&#39;</span>
 
 <span class="n">model_smooth_matcalibpkl</span> <span class="o">=</span> <span class="n">CALIBPKL</span> <span class="o">=</span> <span class="s1">&#39;/a/b/c.matcalibpkl&#39;</span>
-</code></pre></div></p>
-<h2 id="3-start-result-server-daemon">3. Start <strong>result server</strong> daemon.</h2>
+</code></pre></div>
+<h2 id="3">3. 启动结果服务器守护进程</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>mmdet<span class="w"> </span><span class="c1"># activate the conda environment</span>
 python<span class="w"> </span>-m<span class="w"> </span>lilab.label_live.socketServer
 </code></pre></div>
@@ -288,15 +193,15 @@ python<span class="w"> </span>-m<span class="w"> </span>lilab.label_live.socketS
 <p class="admonition-title">注意</p>
 <p>注意Cloud Server防火墙，开放8002端口。如果出现端口被占用的情况，往往是因为上一个Python程序未正常关闭。请先关闭占用该端口的程序，或执行 <code>lsof -i:8002</code> 查看占用该端口的进程，然后kill掉该进程（<code>kill -9 进程号</code>）。稍等10秒，重启该程序。多次尝试。</p>
 </div>
-<h2 id="4-start-media-server-daemon-mediamtx">4. Start media server daemon <strong>Mediamtx</strong>.</h2>
-<p>在Cloud Server上启动Mediamtx，用于接收OBS的推流，并转发给客户端。
+<h2 id="4-mediamtx">4. 启动媒体服务器守护进程 Mediamtx</h2>
+<p>在Cloud Server上启动Mediamtx，用于接收OBS的推流，并转发给客户端。</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8554</span>:8554<span class="w"> </span>bluenviron/mediamtx
-</code></pre></div></p>
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <p>注意Cloud Server防火墙，开放8554端口。</p>
 </div>
-<h2 id="5-start-obs-video-streamming">5. Start <strong>OBS</strong> video streamming.</h2>
+<h2 id="5-obs">5. 启动 OBS 视频流</h2>
 <p>在DAQ PC上启动OBS，并推流到Cloud Server的Mediamtx。</p>
 <p>我已经配置好OBS，可以通过下面的简便操作启动推流配置：</p>
 <ul>
@@ -314,7 +219,7 @@ python<span class="w"> </span>-m<span class="w"> </span>lilab.label_live.socketS
 <p class="admonition-title">注意</p>
 <p>注意OBS的推流地址，需要填写Cloud Server的IP地址，应该是 <code>rtsp://10.50.60.6:8554/mystream_9cam</code>。可以通过 VLC 或 ffplay 等工具，测试是否能够正常播放该流。电脑的性能决定了推流的流畅度，如果电脑性能较差，可能推流不流畅，或者出现卡顿现象。另外，码率（bitrate）需要设低 8Mbps，否则推流延迟高。</p>
 </div>
-<h2 id="6-start-pipeline-code-for-behavior-recognition">6. Start <strong>pipeline</strong> code for behavior recognition.</h2>
+<h2 id="6">6. 启动行为识别流水线代码</h2>
 <p>在Cloud Server上启动行为识别程序，用于接收OBS的推流，并识别行为，将识别结果标签（Syllable ID）存放到 Result server daemon 中。</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>mmdet<span class="w">  </span><span class="c1"># activate the conda environment</span>
 <span class="nv">PATH</span><span class="o">=</span>/usr/bin:<span class="nv">$PATH</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>lilab.label_live.usv_yolo_seg_dannce_unit_test
@@ -327,7 +232,7 @@ python<span class="w"> </span>-m<span class="w"> </span>lilab.label_live.socketS
 <p class="admonition-title">注意</p>
 <p>检查终端输运行帧率（30fps）和延迟(&lt;10帧)。显示iteration 应该约为 30its/s，并且延迟帧数应该在6-10以内。太高的延迟帧（&gt;30帧），导致闭环刺激精度的严重下降。经验原因是 1.DAQ PC性能太差，需要重启OBS软件（通常）；或者2 是有人在使用Cloud Server，抢占了CPU和GPU资源，则清空这些用户的资源（提前组内沟通）。</p>
 </div>
-<h2 id="7-start-social-seq-live-gui">7. Start Social-seq-live <strong>GUI</strong>.</h2>
+<h2 id="7-social-seq-live-gui">7. 启动 Social-seq-live GUI</h2>
 <p>去github 上下载 <a href="https://github.com/chenxinfeng4/social-seq-live-client-GUI">Social-seq-live</a> 的代码，并安装依赖包。</p>
 <div class="highlight"><pre><span></span><code>python main.py   # GUI程序，“闭环控制”实验组
 python main_exclude.py   # GUI程序，“开环控制”对照组
@@ -342,7 +247,7 @@ python main_exclude.py   # GUI程序，“开环控制”对照组
 <li>填入<strong>Cloud Server</strong> 的IP地址，点击“Connect”按钮，连接到Result server daemon。</li>
 <li>选择 <strong>Arduino</strong> 串口，并点击“Connect”按钮，连接到Arduino。（<em>Arduino 需要初始化烧录代码，参考【#9】</em>）</li>
 </ul>
-<h2 id="8-start-ffmpeg-code-for-video-dumping-to-file">8. Start ffmpeg code for video dumping to file.</h2>
+<h2 id="8-ffmpeg">8. 启动 ffmpeg 代码以将视频转储到文件</h2>
 <p>在动物实验开始后，需要记录视频。由于原先的OBS 录像功能已经被占用，因此只能在Cloud Server 上记录视频。</p>
 <p>将下面的代码保存为<strong>Cloud Server</strong> 的 RT_record.sh 文件。每次动物实验开始后，并运行它。它会在 /DATA/chenxinfeng 目录下，保存一个视频文件。文件名是当前时间，例如 2025-01-01_12-00-00.mp4。</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -350,7 +255,7 @@ python main_exclude.py   # GUI程序，“开环控制”对照组
 <span class="nv">filename</span><span class="o">=</span><span class="sb">`</span>date<span class="w"> </span>--date<span class="o">=</span><span class="s1">&#39;2.2 seconds&#39;</span><span class="w"> </span>+<span class="s2">&quot;%Y-%m-%d_%H-%M-%S&quot;</span><span class="sb">`</span>
 /home/liying_lab/chenxinfeng/.conda/envs/mmdet/bin/ffmpeg.bak<span class="w"> </span>-rtsp_transport<span class="w"> </span>tcp<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:15:06<span class="w"> </span>-i<span class="w"> </span>rtsp://10.50.60.6:8554/mystream_9cam<span class="w">  </span>-ss<span class="w"> </span><span class="m">00</span>:00:02.2<span class="w"> </span>-c:v<span class="w"> </span>hevc_nvenc<span class="w">  </span>-b:v<span class="w"> </span>10M<span class="w"> </span>-maxrate:v<span class="w"> </span>20M<span class="w">  </span>-preset:v<span class="w"> </span>p4<span class="w"> </span>/DATA/chenxinfeng/<span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.mp4
 </code></pre></div>
-<h2 id="9-arduino-laser-pulse">9. Arduino Laser pulse</h2>
+<h2 id="9-arduino">9. Arduino 激光脉冲</h2>
 <p>去github 上下载 <a href="https://github.com/chenxinfeng4/social-seq-live-client-GUI/blob/main/seqlive_board/seqlive_board.ino">Arduino Laser pulse</a> 的代码，并进行烧录。</p>
 <p><div class="highlight"><pre><span></span><code>const<span class="w"> </span>int<span class="w"> </span><span class="nv">PinNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">;</span><span class="w">             </span>//<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>LED<span class="w"> </span>pin
 const<span class="w"> </span>float<span class="w"> </span><span class="nv">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.5<span class="p">;</span><span class="w">         </span>//<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>running,<span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sec.
@@ -358,7 +263,7 @@ const<span class="w"> </span>float<span class="w"> </span><span class="nv">Hz</s
 const<span class="w"> </span>float<span class="w"> </span><span class="nv">Duty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w">           </span>//<span class="w"> </span>duty,<span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>~1.
 </code></pre></div>
 该代码表示Arduino 的 D6 引脚，连接到激光器的触发引脚。单词刺激时间为 0.5 秒，激光频率为 40Hz，占空比为 0.2 （5ms）。</p>
-<h2 id="close-obs-and-gui">Close OBS and GUI</h2>
+<h2 id="obs-gui">关闭 OBS 和 GUI</h2>
 <p>在实验结束后，复原 OBS 的配置，关闭OBS软件；关闭Social seq live GUI。在Cloude Server上，关闭 <strong>pipeline</strong>。</p>
               
             </div>
