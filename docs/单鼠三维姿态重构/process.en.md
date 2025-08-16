@@ -1,0 +1,67 @@
+# 3D Pose Reconstruction of a Single Rat
+> Developer: Chen Xinfeng, 2025-8-15
+
+Requirements:
+* `*.calib` - Ball calibration file.
+* `vdir/*.mp4` - 9-view video of the rat.
+* `volsize` - The 3D space occupied by the animal, centered on the back.
+
+## Complete Code
+```bash
+## 1. Required Parameters
+vdir='/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/zyq_to_dzy/20221116/solo'  # Video file/folder to analyze
+vdir='/mnt/liying.cibr.ac_cn_Data_Temp/multiview_9/zyq_to_dzy/20221123/solo'
+vcalib=`ls /mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/dzy_oyy_ball/checked/0328-0330/solo/*.calibpkl`    # Ball calibration file
+volsize=210
+#vdir=/mnt/liying.cibr.ac_cn_Data_Temp/multiview_9/oyy/test_singlerat2022-11-24_17-08-23_baseline_rat1.mp4
+##  volsize for rats
+# |         | Male | Female |
+# | ------- | ---- | ------ |
+# | DAY35   | 160  | 160    |
+# | DAY50   | 190  | 180    |
+# | DAY75   | 220  | 200    |
+# | Adult   | 220  | 210    |
+
+## 2. Recommended (Default) Model Files
+config='/home/liying_lab/chenxinfeng/DATA/mmpose/res50_coco_com2d_512x320_oyy.py'           # Model configuration file for com2d
+dannce_project='/home/liying_lab/chenxinfeng/DATA/dannce/demo_single/rat14_1280x800x9_mono' # DANNCE model path
+
+
+## 3. Filename Parsing
+vfiles_nake=`ls $vdir/*.mp4 | egrep -v "com3d|sktdraw|mask" | sed 's/.mp4//'`
+vfiles=`echo "$vfiles_nake"| xargs -I {} echo {}.segpkl`
+volsize_vfiles=`echo "$vfiles" | xargs -I {} echo $volsize {}`
+
+
+## 4. Predict com3d
+python -m lilab.multiview_scripts_dev.s1_ballvideo2matpkl_full_faster $vdir --pannels 9 --config $config
+echo "$vfiles_nake" | xargs -n 1 -P 0 -I {} python -m lilab.multiview_scripts_dev.s4_matpkl2matcalibpkl {}.matpkl $vcalib
+echo "$vfiles_nake" | xargs -n 1 -P 0 -I {} python -m lilab.dannce_single.s1_matcalibpkl_com3d_to_segpkl {}.matcalibpkl
+# ls $vdir/*.segpkl | sed 's/.segpkl/.mp4/' | xargs -n 1 -P 0 python -m lilab.mmdet_dev.s4_segpkl_com3d_to_video --vox_size $volsize --maxlen 9000
+
+
+## 5. DANNCE Predict
+cd $dannce_project
+
+echo "$volsize_vfiles" | sed 's/.segpkl/.mp4/' | cat -n |
+    xargs -P 4 -l bash -c '/home/liying_lab/chenxinfeng/.conda/envs/mmdet/bin/dannce-predict-video-trt ../../configs/dannce_rat14_1280x800x9_max_config.yaml --vol-size $1 --video-file $2 --gpu-id $(($0%4))'
+
+echo "$vfiles" | sed 's/.segpkl/_dannce_predict.pkl/' |
+    xargs -P 0 -l -r python -m lilab.dannce.s4_videopredictpkl2matcalibpkl
+
+# Smooth foot_w16, body_w64, one hit
+echo "$vfiles" | sed 's/.segpkl/.matcalibpkl/' | xargs -l -P 6 -r python -m lilab.smoothnet.s1_matcalibpkl2smooth_foot
+
+
+## 6. Draw Video
+# plot video
+# echo "$vfiles" | sed 's/.segpkl/.matcalibpkl/' | 
+#     xargs -P 6 -l -r bash -c 'python -m lilab.mmpose.s3_matcalibpkl_2_video2d $0 --iview 1 --maxlen 9000'
+
+echo "$vfiles" | sed 's/.segpkl/.smoothed_foot.matcalibpkl/' | 
+    xargs -P 6 -l -r bash -c 'python -m lilab.mmpose.s3_matcalibpkl_2_video2d $0 --iview 1 --postfix smoothed_foot --maxlen 9000'
+
+
+## 7. Clean
+echo "$vfiles_nake" | xargs -n 1 -I {} rm {}.matpkl {}_dannce_predict* 
+```

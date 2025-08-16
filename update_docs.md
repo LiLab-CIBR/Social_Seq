@@ -4,3 +4,11 @@ main 分支的 docs/ 目录用于存放markdown格式的文档，用于 gh-pages
 使用 `mkdocs gh-deploy` 命令将 docs/ 目录中的markdown文件编译成html文件，并发布到 gh-pages分支。
 使用 `git push origin gh-pages` 命令将编译后的html文件推送到 gh-pages分支。
 等待github/action 编译完成后，就可以在 https://lilab-cibr.github.io/Social_Seq/ 访问文档了。
+
+
+# 翻译文档
+由于文档使用了英文，改变了了文档的路径，所以需要将英文文档中的图片路径，调整层级。
+```bash
+# 首次使用
+find . -name "*.en.md" -type f -exec sed -i '' 's|\.\./\.\./assets|\.\./\.\./\.\./assets|g' {} +
+```

@@ -2,6 +2,10 @@
 
 这是 Social-Seq 项目的一些说明文档。使用 Social-seq 解析动物密切接触时的三维姿态，社交类别，以及社交背后的情绪状态。通过构造实时行为分类系统，有望治疗孤独症（ASD）社交障碍。
 
+- 代码地址 📦：https://github.com/LiLab-CIBR/Social_Seq
+
+- 项目文档 📚：https://lilab-cibr.github.io/Social_Seq/
+
 <div align="center">
   <img src="assets/images/figure_abstract.jpg" width="500" alt="抽象图">
 </div>

@@ -1,5 +1,7 @@
 site_name: Social-Seq doc
 nav:
+  - Language English: 'https://lilab-cibr.github.io/Social_Seq/en/'
+  - 语言 中文: 'https://lilab-cibr.github.io/Social_Seq/'
   - 首页: index.md
   - 文章图表复现: figure_reproduce.md
   - 设备组装和清单:
@@ -40,7 +42,9 @@ theme:
   name: readthedocs
   collapse_navigation: true  # 允许折叠导航
   sticky_navigation: true   # 侧边栏在滚动时固定
-  # navigation_depth: 4
+  language_selector: true  # 显示语言选择器
+  language: zh
+
 
 markdown_extensions:
   - admonition
