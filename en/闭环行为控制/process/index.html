@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Workflow - Social-Seq doc</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Workflow";
+        var mkdocs_page_input_path = "\u95ed\u73af\u884c\u4e3a\u63a7\u5236/process.en.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../" class="icon icon-home"> Social-Seq doc
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../figure_reproduce/">Figure Reproduction</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Equipment Assembly & List</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/shopping_list/">Hardware List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">OBS Software Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Server Environment Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic Usage Training</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/">Login to Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/basic_command/">Basic Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/installed_models/">Installed Deep Learning Models</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ball Correction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Single Mouse 3D Pose</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Social 3D Pose (Social)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sequence Labeling (Seq)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/dataset/">Clustering & Template Creation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Closed-loop Control (Live)</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Workflow</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-start-virtual-camera-for-timestamp-marking">1. Start virtual camera for timestamp marking</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-update-camera-and-rat-model-in-code">2. Update camera and rat model in code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-start-result-server-daemon">3. Start result server daemon</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-start-media-server-daemon-mediamtx">4. Start media server daemon Mediamtx</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-start-obs-video-stream">5. Start OBS video stream</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-start-behavior-recognition-pipeline-code">6. Start behavior recognition pipeline code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-start-social-seq-live-gui">7. Start Social-seq-live GUI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-start-ffmpeg-code-to-dump-video-to-file">8. Start ffmpeg code to dump video to file</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-arduino-laser-pulse">9. Arduino Laser pulse</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#close-obs-and-gui">Close OBS and GUI</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../application/">Applications</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Social-Seq doc</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Closed-loop Control (Live)</li>
+      <li class="breadcrumb-item active">Workflow</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="code-process">Code Process</h1>
+<blockquote>
+<p>Developer: Chenxinfeng, update 2025-08-16</p>
+</blockquote>
+<p>The general code process for closed-loop behavior control is as follows:</p>
+<p><img alt="Closed-loop behavior control code process" src="../../assets/images/Fig7_closed-loop_code_illustration.jpg" /></p>
+<p>The corresponding code operations are as follows:</p>
+<h2 id="1-start-virtual-camera-for-timestamp-marking">1. Start virtual camera for timestamp marking</h2>
+<p>Operate on the DAQ PC, which runs Windows. OBS Studio version 29.1. OBS needs to add a virtual camera ("OBS Virtual Camera"), and the Python code will output time codes (e.g., 163) to this camera frame. The time code value is determined by the PC clock and updated every 33ms (30fps to match the video frame rate). The current clock value is also stored on the server <code>10.50.7.109:20173</code> for other devices to access to get the current time code.</p>
+<p>Download from github, <a href="https://github.com/chenxinfeng4/social-seq-live-client-GUI/blob/main/pyvirtualcam_LED/virtual_LED.py"><code>virtual_LED.py</code>🔗</a>.</p>
+<p>Execute this script in the terminal to start the virtual camera and start the socket service.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>virtual_LED.py
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Tip</p>
+<p>It is recommended to save it as a windows bat file and double-click to run directly. This script also has the function of lighting up the virtual LED color, which can be used for video event tagging, such as for optogenetic Laser trigger event tagging. For details, please refer to 【#7】 GUI code.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>You need to install the dependent libraries yourself. Let the DAQ PC firewall open 20173.</p>
+</div>
+<h2 id="2-update-camera-and-rat-model-in-code">2. Update camera and rat model in code</h2>
+<p>Users need to provide the latest multi-camera model file and rat social keypoint model file, and update them in the code. The former is used for 3D reconstruction; the latter is used to calculate the body length of rats of the same age, which is convenient for behavior feature normalization. Usually, the <code>Rat Social Keypoint Model</code> file contains the <code>Multi-Camera Model</code>, so let the multi-camera model equal the <code>Rat Social Keypoint Model</code>.</p>
+<p>Modify <code>CALIBPKL</code> in <code>lilab/label_live/usv_yolo_seg_dannce_unit_test.py</code> to the multi-camera model path, and <code>model_smooth_matcalibpkl</code> to the rat social keypoint model path.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># PATH_TO_LILAB/lilab/label_live/usv_yolo_seg_dannce_unit_test.py</span>
+<span class="n">CALIBPKL</span> <span class="o">=</span> <span class="s1">&#39;/mnt/liying.cibr.ac.cn_Data_Temp_ZZC2/2506batch-chr2/test/ball/2025-06-13_10-16-58_ball.calibpkl&#39;</span>
+<span class="n">model_smooth_matcalibpkl</span> <span class="o">=</span> <span class="s1">&#39;/DATA/zhongzhenchao/2501chr2-shank3/all400p/2025-01-05_15-04-37_l7_sm1_pm6.smoothed_foot.matcalibpkl&#39;</span>
+
+<span class="n">model_smooth_matcalibpkl</span> <span class="o">=</span> <span class="n">CALIBPKL</span> <span class="o">=</span> <span class="s1">&#39;/a/b/c.matcalibpkl&#39;</span>
+</code></pre></div>
+<h2 id="3-start-result-server-daemon">3. Start result server daemon</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>mmdet<span class="w"> </span><span class="c1"># activate the conda environment</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.label_live.socketServer
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>Pay attention to the Cloud Server firewall and open port 8002. If the port is occupied, it is often because the previous Python program did not close normally. Please close the program that occupies this port first, or execute <code>lsof -i:8002</code> to view the process that occupies this port, and then kill the process (<code>kill -9 process number</code>). Wait for 10 seconds and restart the program. Try multiple times.</p>
+</div>
+<h2 id="4-start-media-server-daemon-mediamtx">4. Start media server daemon Mediamtx</h2>
+<p>Start Mediamtx on Cloud Server to receive OBS streaming and forward it to clients.</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8554</span>:8554<span class="w"> </span>bluenviron/mediamtx
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>Pay attention to the Cloud Server firewall and open port 8554.</p>
+</div>
+<h2 id="5-start-obs-video-stream">5. Start OBS video stream</h2>
+<p>Start OBS on DAQ PC and stream to Cloud Server's Mediamtx.</p>
+<p>I have configured OBS, and you can start the streaming configuration through the following simple operation:</p>
+<ul>
+<li>Select, menu&gt;Profile&gt;Social-seq-live streaming </li>
+<li>Select, menu&gt;Scene Collection&gt;Social-seq-live-push</li>
+</ul>
+<p>Then click the "Start Recording" button (note not "Start Live Streaming") to start streaming. If no error prompt pops up within 20 seconds, the streaming is successful.</p>
+<p>For a new DAQ PC, you need to reconfigure OBS. The specific steps are as follows:</p>
+<p><img alt="OBS Configuration" src="../../assets/images/Fig7_closed-loop_OBS.jpg" /></p>
+<div class="admonition info">
+<p class="admonition-title">Tip</p>
+<p>Resolution and encoding method are important parameters that affect streaming delay, especially the project's 3840x2400 is a high resolution. This RTSP parameter setting has been tested in various ways, with low delay and good picture quality. Other video streaming projects can refer to this parameter setting.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>Pay attention to OBS's streaming address, which needs to fill in the Cloud Server's IP address, should be <code>rtsp://10.50.60.6:8554/mystream_9cam</code>. You can use tools such as VLC or ffplay to test whether the stream can be played normally. The computer's performance determines the smoothness of the streaming. If the computer's performance is poor, the streaming may not be smooth or there may be stuttering. In addition, the bitrate needs to be set low at 8Mbps, otherwise the streaming delay will be high.</p>
+</div>
+<h2 id="6-start-behavior-recognition-pipeline-code">6. Start behavior recognition pipeline code</h2>
+<p>Start the behavior recognition program on Cloud Server to receive OBS streaming, recognize behaviors, and store the recognition result labels (Syllable ID) in the Result server daemon.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>mmdet<span class="w">  </span><span class="c1"># activate the conda environment</span>
+<span class="nv">PATH</span><span class="o">=</span>/usr/bin:<span class="nv">$PATH</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>lilab.label_live.usv_yolo_seg_dannce_unit_test
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>Pay attention to check for error messages. Make sure OBS has started streaming normally and the streaming address is correct.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>Check the terminal output frame rate (30fps) and delay (&lt;10 frames). The display iteration should be about 30its/s, and the delay frame count should be within 6-10. Too high a delay frame (&gt;30 frames) will seriously reduce the accuracy of closed-loop stimulation. The empirical reason is 1. The DAQ PC performance is too poor and needs to restart the OBS software (usually); or 2. Someone is using Cloud Server, preempting CPU and GPU resources, then clear these users' resources (communicate in advance).</p>
+</div>
+<h2 id="7-start-social-seq-live-gui">7. Start Social-seq-live GUI</h2>
+<p>Go to github to download <a href="https://github.com/chenxinfeng4/social-seq-live-client-GUI">Social-seq-live</a> code and install the dependent packages.</p>
+<div class="highlight"><pre><span></span><code>python main.py   # GUI program, &quot;closed-loop control&quot; experimental group
+python main_exclude.py   # GUI program, &quot;open-loop control&quot; control group
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>Note that the GUI programs for the "closed-loop control" experimental group and the "open-loop control" control group are different. The operation steps are the same. Closed-loop control automatically starts stimulation after recognizing behavior. Open-loop control needs to exclude target behavior and give stimulation randomly.</p>
+</div>
+<p>Then select the corresponding GUI program and start it. After connecting to <strong>Cloud Server</strong> and <strong>Arduino</strong>, behavior recognition and optogenetic control will start automatically.</p>
+<ul>
+<li>In the GUI, check the appropriate target behaviors, such as "pouncing", "pinning", "chasing", etc.</li>
+<li>Fill in the IP address of <strong>Cloud Server</strong> and click the "Connect" button to connect to the Result server daemon.</li>
+<li>Select the <strong>Arduino</strong> serial port and click the "Connect" button to connect to Arduino. (<em>Arduino needs to initialize the burning code, refer to 【#9】</em>)</li>
+</ul>
+<h2 id="8-start-ffmpeg-code-to-dump-video-to-file">8. Start ffmpeg code to dump video to file</h2>
+<p>After the animal experiment starts, the video needs to be recorded. Since the original OBS recording function has been occupied, the video can only be recorded on Cloud Server.</p>
+<p>Save the following code as the RT_record.sh file of <strong>Cloud Server</strong>. After each animal experiment starts, run it. It will save a video file in the /DATA/chenxinfeng directory. The file name is the current time, such as 2025-01-01_12-00-00.mp4.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># Save as RT_record file</span>
+<span class="nv">filename</span><span class="o">=</span><span class="sb">`</span>date<span class="w"> </span>--date<span class="o">=</span><span class="s1">&#39;2.2 seconds&#39;</span><span class="w"> </span>+<span class="s2">&quot;%Y-%m-%d_%H-%M-%S&quot;</span><span class="sb">`</span>
+/home/liying_lab/chenxinfeng/.conda/envs/mmdet/bin/ffmpeg.bak<span class="w"> </span>-rtsp_transport<span class="w"> </span>tcp<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:15:06<span class="w"> </span>-i<span class="w"> </span>rtsp://10.50.60.6:8554/mystream_9cam<span class="w">  </span>-ss<span class="w"> </span><span class="m">00</span>:00:02.2<span class="w"> </span>-c:v<span class="w"> </span>hevc_nvenc<span class="w">  </span>-b:v<span class="w"> </span>10M<span class="w"> </span>-maxrate:v<span class="w"> </span>20M<span class="w">  </span>-preset:v<span class="w"> </span>p4<span class="w"> </span>/DATA/chenxinfeng/<span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.mp4
+</code></pre></div>
+<h2 id="9-arduino-laser-pulse">9. Arduino Laser pulse</h2>
+<p>Go to github to download <a href="https://github.com/chenxinfeng4/social-seq-live-client-GUI/blob/main/seqlive_board/seqlive_board.ino">Arduino Laser pulse</a> code and burn it.</p>
+<p><div class="highlight"><pre><span></span><code>const<span class="w"> </span>int<span class="w"> </span><span class="nv">PinNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">;</span><span class="w">             </span>//<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>LED<span class="w"> </span>pin
+const<span class="w"> </span>float<span class="w"> </span><span class="nv">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.5<span class="p">;</span><span class="w">         </span>//<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>running,<span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sec.
+const<span class="w"> </span>float<span class="w"> </span><span class="nv">Hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">40</span><span class="p">;</span><span class="w">              </span>//<span class="w"> </span>frequency,<span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Hz.
+const<span class="w"> </span>float<span class="w"> </span><span class="nv">Duty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w">           </span>//<span class="w"> </span>duty,<span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>~1.
+</code></pre></div>
+This code indicates that Arduino's D6 pin is connected to the laser's trigger pin. The single stimulation time is 0.5 seconds, the laser frequency is 40Hz, and the duty cycle is 0.2 (5ms).</p>
+<h2 id="close-obs-and-gui">Close OBS and GUI</h2>
+<p>After the experiment ends, restore OBS configuration, close OBS software; close Social seq live GUI. On Cloude Server, close <strong>pipeline</strong>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/dataset/" class="btn btn-neutral float-left" title="Clustering & Template Creation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../application/" class="btn btn-neutral float-right" title="Applications">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/dataset/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../application/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

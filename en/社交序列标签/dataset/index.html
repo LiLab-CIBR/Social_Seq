@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Clustering & Template Creation - Social-Seq doc</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Clustering \u0026 Template Creation";
+        var mkdocs_page_input_path = "\u793e\u4ea4\u5e8f\u5217\u6807\u7b7e/dataset.en.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../" class="icon icon-home"> Social-Seq doc
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../figure_reproduce/">Figure Reproduction</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Equipment Assembly & List</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/shopping_list/">Hardware List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">OBS Software Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Server Environment Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic Usage Training</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/">Login to Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/basic_command/">Basic Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/installed_models/">Installed Deep Learning Models</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ball Correction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Single Mouse 3D Pose</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Social 3D Pose (Social)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sequence Labeling (Seq)</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Clustering & Template Creation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#from-keypoint-files-videos-to-social-features-and-behavior-labels">From Keypoint Files + Videos to Social Features and Behavior Labels</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#plotting-calculating-active-passive-consistency">Plotting &amp; Calculating Active-Passive Consistency</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-active-passive-consistency-to-optimize-clustering-with-active-learning">Using Active-Passive Consistency to Optimize Clustering with Active-Learning</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Closed-loop Control (Live)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/application/">Applications</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Social-Seq doc</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Sequence Labeling (Seq)</li>
+      <li class="breadcrumb-item active">Clustering & Template Creation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="create-social-clustering-template-from-scratch">Create Social Clustering Template from Scratch</h1>
+<h2 id="from-keypoint-files-videos-to-social-features-and-behavior-labels">From Keypoint Files + Videos to Social Features and Behavior Labels</h2>
+<p>After performing "Social 3D Pose Reconstruction", you should have "<em>smoothed_foot.matcalibpkl" keypoint files and "</em>_sktdraw_smoothed_foot.mp4" video files.</p>
+<p>Copy all these video and data files to a folder. Execute the following commands to sequentially <code>calculate social features - enrich close-range social interactions and split segments - Seq2Seq model to extract spatiotemporal features of social behavior - social clustering - render videos</code>.</p>
+<p>Please run this code line by line.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+conda<span class="w"> </span>activate<span class="w"> </span>OpenLabCluster
+
+<span class="c1"># Path where the code is stored (by Tao Xianming)</span>
+<span class="nb">cd</span><span class="w"> </span>/DATA/taoxianming/rat/script/openlabcluster/pc_feats41_DecSeqCluster_better_20231102
+
+<span class="nv">pathFeats</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/chenxf/Shank3HETxWT_202309/MM_FF
+
+<span class="c1"># Do not use cloud storage for ResPath, as the files are too fragmented and slow to access</span>
+<span class="nv">bhvResPath</span><span class="o">=</span>~/DATA/Shank3HETxWT_202309_MM_FF_openlabcluster
+<span class="nv">today</span><span class="o">=</span><span class="m">2023</span>-11-09<span class="w">  </span><span class="c1">##always date format</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$bhvResPath</span>
+
+<span class="c1">## create 400p</span>
+bash<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/openlabcluster_postprocess/create_400p.sh<span class="w"> </span><span class="nv">$pathFeats</span>
+
+<span class="c1">## Calculate raw features</span>
+python<span class="w"> </span>01_1_feats41fromPoints-IDswitch_mp.py<span class="w"> </span><span class="nv">$pathFeats</span>
+
+<span class="c1">## minmax and get close segments</span>
+python<span class="w"> </span>01_2_featsMM_clipsInCloseSegs_mp.py<span class="w"> </span><span class="nv">$pathFeats</span>
+
+python<span class="w"> </span>02_1_prepare_featureFiles_forOpenLabCluster.py<span class="w"> </span><span class="nv">$pathFeats</span><span class="w"> </span><span class="nv">$bhvResPath</span>
+
+<span class="c1">## split train:test=9:1</span>
+python<span class="w"> </span>02_2_makeProject_trainTest.py<span class="w"> </span><span class="nv">$bhvResPath</span><span class="w"> </span><span class="nv">$today</span>
+
+<span class="c1">## training Seq2Seq</span>
+<span class="nv">gpuID</span><span class="o">=</span><span class="m">0</span>
+python<span class="w"> </span>02_3_seq2seq_training-decSeq.py<span class="w"> </span><span class="nv">$bhvResPath</span><span class="w"> </span><span class="nv">$gpuID</span><span class="w"> </span><span class="nv">$today</span>
+
+<span class="c1">## behavior clustering</span>
+python<span class="w"> </span>03_1_decSeqFeats_PCA-balanceCluster.py<span class="w"> </span><span class="nv">$bhvResPath</span><span class="w"> </span><span class="nv">$today</span>
+
+<span class="c1">## Dec features in space, colored by cluster NO</span>
+python<span class="w"> </span>03_2_plot_decSeqFeatsPCS-trajectoryColorByLabels.py<span class="w"> </span><span class="nv">$bhvResPath</span><span class="w"> </span><span class="nv">$today</span>
+
+<span class="c1">## plot mp4 videos of each behavior cluster</span>
+python<span class="w"> </span>04_1_plot_decSeqCluster-Videos.py<span class="w"> </span><span class="nv">$pathFeats</span><span class="w"> </span><span class="nv">$bhvResPath</span><span class="w"> </span><span class="nv">$today</span>
+
+<span class="c1">## get behavior cluster sequence of each video</span>
+python<span class="w"> </span>04_2_getBhvClusterSeqs_eachVideo.py<span class="w"> </span><span class="nv">$pathFeats</span><span class="w"> </span><span class="nv">$bhvResPath</span><span class="w"> </span><span class="nv">$today</span>
+</code></pre></div>
+<p>This will generate <code>*_sequences.pkl</code> and <code>*_bio_labels.npz</code> behavior video label files; and <code>FWPCA*_blackFirst/svm_clu*_400p.mp4</code> video files corresponding to each behavior category.</p>
+<h2 id="plotting-calculating-active-passive-consistency">Plotting &amp; Calculating Active-Passive Consistency</h2>
+<p>Please run this code line by line.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+conda<span class="w"> </span>activate<span class="w"> </span>mmdet
+<span class="nb">cd</span><span class="w"> </span>/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/chenxf/00_BehaviorAnalysis-seq2seq/SexAge/Day55_Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32/
+
+<span class="c1">## 1. Merge files to generate clippredpkl file</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s1_merge_3_file<span class="w"> </span>.<span class="w"> </span>
+
+<span class="c1">## 2. UMAP of Embedding and Kmeans boundary</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s2_decisionBoundary_masaik_plot<span class="w"> </span>*.clippredpkl
+
+<span class="c1">## 3A. Kmeans hierarchical clustering</span>
+<span class="c1"># Preparation work. First, give each cluster a name. Open the script and paste the category names into the script; run it. Finally, the category names will be added to *.clippredpkl.</span>
+<span class="c1"># python -m lilab.openlabcluster_postprocess.s3a_cluster_givename_mergefile *.clippredpkl </span>
+
+<span class="c1">## 3B. Or temporarily not standardize class names</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s3a_cluster_givename_mergefile<span class="w"> </span>*.clippredpkl<span class="w"> </span>--auto-label
+
+<span class="c1">## 4. Then run the hierarchical clustering plot</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s3b_hiecluster_plot<span class="w"> </span>*.clippredpkl<span class="w"> </span><span class="p">&amp;</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s3b_hiecluster_plot_pro<span class="w"> </span>*.clippredpkl<span class="w"> </span><span class="p">&amp;</span>
+
+<span class="c1">## 5. Definition of Mirror or Mutual categories</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s3c_mirror_mutual_matrix_plot<span class="w"> </span>*.clippredpkl
+
+<span class="c1">## 6. Optional. Merge labels. For example, active-passive, or adjacent classes in the dendrogram. [Optional, not recommended]</span>
+<span class="c1"># Preparation work. Open the script and write the mergeable categories in the script; run it. Finally, the merged category names will be added to *.clippredpkl.</span>
+<span class="c1"># python -m lilab.openlabcluster_postprocess.s3a2_cluster_nodemerge *.clippredpkl</span>
+
+<span class="c1">## 7. Optional plotting. Moseq-like Motif plotting</span>
+<span class="c1"># Need to find the original keypoint coordinate files (stored in the SmoothFootPkl_DIR folder) to plot. Run the following code. In the same directory, a motifshowmulti result folder will be generated.</span>
+<span class="nv">SmoothFootPkl_DIR</span><span class="o">=</span>/A/B/C
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s4_moseq_like_motif_plot<span class="w"> </span>*.clippredpkl<span class="w"> </span><span class="nv">$SmoothFootPkl_DIR</span>
+</code></pre></div>
+<h2 id="using-active-passive-consistency-to-optimize-clustering-with-active-learning">Using Active-Passive Consistency to Optimize Clustering with Active-Learning</h2>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>mmdet
+
+<span class="c1"># Change directory to the kmeans clustering result path</span>
+<span class="nb">cd</span><span class="w"> </span>/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/chenxf/00_BehaviorAnalysis-seq2seq/SexAge/Day55_Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32/
+
+<span class="c1">#1. Recalculate mirror and export mirror category matrix heatmap &amp; mirror table</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a0_mirror_mutual_matrix_plot<span class="w"> </span>*.clippredpkl
+
+<span class="c1">#2. Filter representative segments to become new clippredpkl</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a1_mirror_mutual_filt_clippredpkl<span class="w"> </span>*.clippredpkl
+<span class="nb">cd</span><span class="w"> </span>./representitive_*_filt_perc*
+
+<span class="c1">#3. Previous unsupervised conventional analysis process -- check plots</span>
+<span class="c1">#3-1. UMAP of Embedding and Kmeans boundary</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s2_decisionBoundary_masaik_plot<span class="w"> </span>*.clippredpkl
+<span class="c1">#3-2. Then run hierarchical clustering plot</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s3b_hiecluster_plot_pro<span class="w"> </span>*.clippredpkl
+<span class="c1">#3-3. Definition of Mirror or Mutual categories</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s3c_mirror_mutual_matrix_plot<span class="w"> </span>*.clippredpkl
+
+<span class="c1">#B1. Create openlabcluster semi_seq2seq project, copy from seq2seq</span>
+conda<span class="w"> </span>activate<span class="w"> </span>OpenLabCluster
+
+<span class="nv">PROJECT_SEQ2SEQ</span><span class="o">=</span>/DATA/taoxianming/rat/data/Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32_k36/feats32-2024-04-11
+<span class="nv">PROJECT_REPR</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/chenxf/00_BehaviorAnalysis-seq2seq/SexAge/Day55_Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32_k36
+
+<span class="nv">PROJECT_SEMISEQ2SEQ</span><span class="o">=</span><span class="sb">`</span>python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a2_semiseqseq_data_prepare<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w">  </span><span class="nv">$PROJECT_SEQ2SEQ</span><span class="sb">`</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>
+<span class="c1">#B2. Initialize seq2seq</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a3_semiseqseq_init_train_seqseq<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">3</span>
+
+<span class="c1">#First iteration, from seq2seq to semiseq2seq</span>
+<span class="c1"># PROJECT_SEMISEQ2SEQ=/DATA/taoxianming/rat/data/Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32/semiseq2seq_iter0</span>
+<span class="c1"># PROJECT_REPR=/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/chenxf/00_BehaviorAnalysis-seq2seq/SexAge/Day55_Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32/representitive_*_filt_perc*</span>
+<span class="nv">PROJECT_SEMISEQ2SEQ</span><span class="o">=</span>/DATA/taoxianming/rat/data/Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32_k36/semiseq2seq_iter1
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a5b_export_latent_repr<span class="w">  </span><span class="nv">$PROJECT_REPR</span><span class="w">  </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w">  </span>--modeltype<span class="w"> </span>SemiSeq2SeqLite<span class="w">  </span><span class="c1">#--modeltype SemiSeq2SeqLite is default not selected</span>
+
+<span class="c1"># Train label recognition using SemiSeq2Seq model</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a4_semiseqseq_train<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter-now<span class="w"> </span><span class="m">0</span><span class="w"> </span>--modeltype<span class="w"> </span>SemiSeq2SeqLite
+<span class="c1"># Predict labels of all segments based on SemiSeq2Seq model</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a5_export_latent_iter_repr<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter<span class="w"> </span><span class="m">0</span><span class="w"> </span>--modeltype<span class="w"> </span>SemiSeq2SeqLite
+<span class="c1"># Generate new dataset from representative labels filtered from segment set</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a2a_clippredfile_refine<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semisupervise-decSeq-iter0-epoch5/*.clippredpkl<span class="w"> </span><span class="nv">$PROJECT_REPR</span>/*.clippredpkl
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a2b_iter_data_prepare<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter-from<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="c1">#create new data for iter1</span>
+
+
+<span class="c1">#Start iteration</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a4_semiseqseq_train<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter-now<span class="w"> </span><span class="m">1</span><span class="w"> </span>--modeltype<span class="w"> </span>SemiSeq2SeqLite
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a5_export_latent_iter_repr<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter<span class="w"> </span><span class="m">1</span><span class="w"> </span>--modeltype<span class="w"> </span>SemiSeq2SeqLite
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a2a_clippredfile_refine<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semisupervise-decSeq-iter1-epoch5/*.clippredpkl<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semisupervise-decSeq-iter0-epoch5/*.clippredpkl
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a2b_iter_data_prepare<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter-from<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="c1">#create new data for iter2</span>
+
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a4_semiseqseq_train<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter-now<span class="w"> </span><span class="m">2</span><span class="w"> </span>--modeltype<span class="w"> </span>SemiSeq2SeqLite
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a5_export_latent_iter_repr<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter<span class="w"> </span><span class="m">2</span><span class="w"> </span>--modeltype<span class="w"> </span>SemiSeq2SeqLite
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a2a_clippredfile_refine<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semisupervise-decSeq-iter2-epoch5/*.clippredpkl<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semisupervise-decSeq-iter1-epoch5/*.clippredpkl
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a2b_iter_data_prepare<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter-from<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="c1">#create new data for iter3</span>
+
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a4_semiseqseq_train<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter-now<span class="w"> </span><span class="m">3</span><span class="w"> </span>--modeltype<span class="w"> </span>SemiSeq2SeqLite
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a5_export_latent_iter_repr<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter<span class="w"> </span><span class="m">3</span><span class="w"> </span>--modeltype<span class="w"> </span>SemiSeq2SeqLite
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a2a_clippredfile_refine<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semisupervise-decSeq-iter3-epoch5/*.clippredpkl<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semisupervise-decSeq-iter2-epoch5/*.clippredpkl
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a2b_iter_data_prepare<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">5</span><span class="w"> </span>--iter-from<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c1">#create new data for iter3</span>
+
+<span class="c1"># 4. End of iteration, plotting</span>
+<span class="nv">ITER</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">EPOCH</span><span class="o">=</span><span class="m">6</span>
+
+<span class="c1">#Plot 400p</span>
+conda<span class="w"> </span>activate<span class="w"> </span>mmdet
+<span class="nv">DIR_400p</span><span class="o">=</span>/DATA/taoxianming/rat/data/Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/data
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a6b_clippredpkl_2_cluster400p<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semisupervise-decSeq-iter<span class="nv">$ITER</span>-epoch<span class="nv">$EPOCH</span>/*.clippredpkl<span class="w"> </span><span class="nv">$DIR_400p</span><span class="w"> </span>
+
+<span class="c1">#clippredpkl to seqencepkl</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a6_clippredpkl_2_seqencepkl<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semisupervise-decSeq-iter<span class="nv">$ITER</span>-epoch<span class="nv">$EPOCH</span>/*.clippredpkl
+<span class="c1">#Calculate chi dbi clustering metrics</span>
+ls<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/*/*.clippredpkl<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-P<span class="w"> </span><span class="m">8</span><span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.b1_chi_dbi<span class="w"> </span><span class="o">{}</span><span class="w"> </span>--PCA<span class="w"> </span><span class="m">12</span>
+
+<span class="c1"># Refer to clustering videos and active-passive consistency to rename. Open the script and modify the category names</span>
+ls<span class="w"> </span><span class="nv">$PROJECT_SEMISEQ2SEQ</span>/output/semi*/*.clippredpkl<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-P<span class="w"> </span><span class="m">8</span><span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.t1_cluster_name_rename<span class="w"> </span><span class="o">{}</span>
+
+<span class="c1">##Predict dataset and generate to Data.H5 file</span>
+<span class="c1">##Need to change feature_length: 32 (number of features) and cla_dim: - 36 num_class: - 36 (final cluster count of training set) in config.yaml file</span>
+conda<span class="w"> </span>activate<span class="w"> </span>OpenLabCluster
+<span class="nv">ITER</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">EPOCH</span><span class="o">=</span><span class="m">5</span>
+
+<span class="nv">PROJECT_SEQ2SEQ</span><span class="o">=</span>/DATA/taoxianming/rat/data/Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32_k36/semiseq2seq_iter1
+<span class="nv">PROJECT_REPR</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/chenxf/00_BehaviorAnalysis-seq2seq/SexAge/Day55_Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32/representitive_k36_filt_perc65
+<span class="nv">CLIPPREDPKL</span><span class="o">=</span><span class="nv">$PROJECT_SEQ2SEQ</span>/output/semisupervise-decSeq-iter<span class="nv">$ITER</span>-epoch<span class="nv">$EPOCH</span>/*.clippredpkl
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a5_export_latent_iter_repr<span class="w"> </span><span class="nv">$PROJECT_REPR</span><span class="w"> </span><span class="nv">$PROJECT_SEQ2SEQ</span><span class="w"> </span>--epoch<span class="w"> </span><span class="m">3</span><span class="w"> </span>--iter<span class="w"> </span><span class="m">3</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.a6_clippredpkl_2_seqencepkl<span class="w"> </span><span class="nv">$CLIPPREDPKL</span>
+<span class="c1"># python -m lilab.OpenLabCluster_train.t1_cluster_name_rename $CLIPPREDPKL</span>
+
+<span class="c1">#3. Previous unsupervised conventional analysis process -- check plots</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s2_decisionBoundary_masaik_plot<span class="w"> </span><span class="nv">$CLIPPREDPKL</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s3b_hiecluster_plot_pro<span class="w"> </span><span class="nv">$CLIPPREDPKL</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.openlabcluster_postprocess.s3c_mirror_mutual_matrix_plot<span class="w"> </span><span class="nv">$CLIPPREDPKL</span>
+
+<span class="c1">#Merge active-passive and re-cluster [optional]</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.OpenLabCluster_train.t2_halfmirror_hierachy<span class="w"> </span><span class="nv">$CLIPPREDPKL</span>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../application/" class="btn btn-neutral float-left" title="Applications"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/process/" class="btn btn-neutral float-right" title="Workflow">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../application/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/process/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

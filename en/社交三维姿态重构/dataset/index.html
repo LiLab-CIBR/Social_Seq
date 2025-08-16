@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Dataset & Model Updates - Social-Seq doc</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Dataset \u0026 Model Updates";
+        var mkdocs_page_input_path = "\u793e\u4ea4\u4e09\u7ef4\u59ff\u6001\u91cd\u6784/dataset.en.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../" class="icon icon-home"> Social-Seq doc
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../figure_reproduce/">Figure Reproduction</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Equipment Assembly & List</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/shopping_list/">Hardware List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">OBS Software Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Server Environment Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic Usage Training</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/">Login to Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/basic_command/">Basic Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/installed_models/">Installed Deep Learning Models</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ball Correction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Single Mouse 3D Pose</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Social 3D Pose (Social)</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Dataset & Model Updates</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#annotate-rat-segmentation">Annotate Rat Segmentation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#update-segmentation-model">Update Segmentation Model</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#annotate-rat-3d-keypoints">Annotate Rat 3D Keypoints</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prepare-dataset">Prepare Dataset</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sequence Labeling (Seq)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/dataset/">Clustering & Template Creation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Closed-loop Control (Live)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/application/">Applications</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Social-Seq doc</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Social 3D Pose (Social)</li>
+      <li class="breadcrumb-item active">Dataset & Model Updates</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="dataset-creation-model-update">Dataset Creation &amp; Model Update</h1>
+<h2 id="annotate-rat-segmentation">Annotate Rat Segmentation</h2>
+<p>First, use the Labelme software for data annotation. Use the <code>Polygon</code> tool to create labels for black rat <code>rat_black</code> and white rat <code>rat_white</code>.
+<img alt="anno" src="../../assets/images/rat_labelme_anno.jpg" /></p>
+<h2 id="update-segmentation-model">Update Segmentation Model</h2>
+<p>Run the following code line by line, where <code>mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py</code> is the model configuration file (default, recommended). If needed, it can be changed to other model configurations.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 1. Data preparation: labelme to coco</span>
+<span class="c1"># su chenxinfeng</span>
+conda<span class="w"> </span>activate<span class="w"> </span>DEEPLABCUT
+
+<span class="c1"># Rename the labelme data annotation folder project.</span>
+<span class="c1">## Note 1: The folder should not have Chinese characters, and the labeled images should not have Chinese characters.</span>
+<span class="c1">## Note 2: The number of labeled images n&gt;20 to ensure training effect.</span>
+<span class="nv">LABEL_ME_POJECT</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_xxx/labelimages
+<span class="nv">NEW_NAME</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_xxx/bw_rat_1280x800_20230524
+
+mv<span class="w"> </span><span class="nv">$LABEL_ME_POJECT</span><span class="w"> </span><span class="nv">$NEW_NAME</span>
+
+<span class="c1"># Convert the labelme data annotation folder project to coco dataset format.</span>
+<span class="c1"># Note: The category names should be checked in MMDET_DATA_TARGET, do not write them randomly.</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.cvutils.labelme_to_coco<span class="w"> </span><span class="nv">$NEW_NAME</span>
+
+<span class="c1"># Split the coco dataset into training set and validation set. The -s parameter indicates the proportion of the training set, 0.8 or 0.9 is commonly used.</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.cvutils.coco_split<span class="w"> </span>-s<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_trainval.json
+
+<span class="c1"># Copy the labeled dataset to the mmdet dataset directory</span>
+<span class="nv">MMDET_DATA_TARGET</span><span class="o">=</span>/home/liying_lab/chenxinfeng/DATA/CBNetV2/data/rats
+cp<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_trainval.json<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_train.json<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_val.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span><span class="w">        </span><span class="nv">$MMDET_DATA_TARGET</span>/
+
+<span class="c1"># 2. Model training</span>
+conda<span class="w"> </span>activate<span class="w"> </span>mmpose
+<span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/CBNetV2/
+
+<span class="c1"># Modify the configuration file, open it with vscode.</span>
+<span class="c1"># Modify the `data` field to point to the coco dataset directory just copied.</span>
+<span class="nv">CONFIG</span><span class="o">=</span><span class="nv">$PWD</span>/mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$CONFIG</span>
+
+<span class="c1"># Use multi GPU or single GPU to train the model</span>
+<span class="c1"># tools/dist_train.sh $CONFIG 4</span>
+python<span class="w"> </span>tools/train.py<span class="w"> </span><span class="nv">$CONFIG</span>
+
+<span class="c1"># 3. Model acceleration</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.mmdet_dev.convert_mmdet2trt<span class="w"> </span><span class="nv">$CONFIG</span>
+
+<span class="c1"># 4. Check if the model update is successful</span>
+ls<span class="w"> </span>-lh<span class="w"> </span>work_dirs/mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.*
+</code></pre></div>
+Finally, the updated <code>latest.trt</code> model weight file is obtained.</p>
+<h2 id="annotate-rat-3d-keypoints">Annotate Rat 3D Keypoints</h2>
+<p>First, use Label3D_Manager for data annotation. Label3D_manager is a modified version of the official version to adapt to videos recorded by OBS, and it already uses 14 keypoints of rats.
+<img alt="anno" src="../../assets/images/rat_annotation_keypoint.jpg" /></p>
+<p>You should get the <code>anno.mat</code> file, which contains the annotated 3D keypoint information.</p>
+<h2 id="prepare-dataset">Prepare Dataset</h2>
+<div class="highlight"><pre><span></span><code>Trae
+
+我需要查看&quot;社交三维姿态重构/application.md&quot;文件的内容，以便进行翻译。我将使用view_files工具查看该文件的前50行内容。
+
+docs/社交三维姿态重构/application.md 1 - 50
+
+我需要查看&quot;社交三维姿态重构/dataset.md&quot;文件的内容，以便进行翻译。我将使用view_files工具查看该文件的前50行内容。
+
+docs/社交三维姿态重构/dataset.md 1 - 50
+
+我需要检查英文目录中是否已存在&quot;社交三维姿态重构/application.md&quot;文件，若不存在则创建它并翻译内容。我将使用list_dir工具查看&quot;/Users/chenxinfeng/ml-project/CIBR_Social_Seq/docs/en/社交三维姿态重构&quot;目录。
+
+CIBR_Social_Seq/docs/en/社交三维姿态重构
+
+I will translate the content of &quot;社交三维姿态重构/application.md&quot; and &quot;社交三维姿态重构/dataset.md&quot; and create new files in the corresponding English directory.
+</code></pre></div>
+<h1 id="social-3d-pose-reconstruction">Social 3D Pose Reconstruction</h1>
+<p><img alt="pipeline" src="../../assets/images/rat_social_pose_pipeline.jpg" />
+Raw multi-view videos, after <code>segmentation</code>, <code>keypoint reconstruction</code> and <code>smoothing</code>, obtain 
+stable 3D pose coordinates.</p>
+<h2 id="raw-video">Raw Video</h2>
+<p>The video comes from OBS Studio recorded 9-view camera video. The multi-camera images have been 
+time-synchronized, with an error of 1 frame or less, which can be ignored.</p>
+<p><img alt="pipeline" src="../../assets/images/rat_raw_video.jpg" /></p>
+<h2 id="segmentation">Segmentation</h2>
+<p>Using the Mask-RCNN model, the identity of black and white rats is recognized, and the pixel 
+area is segmented.</p>
+<p><img alt="pipeline" src="../../assets/images/rat_mask_video.jpg" /></p>
+<h2 id="keypoint-reconstruction">Keypoint Reconstruction</h2>
+<p>Execute DANNCE keypoint prediction + neural network smoothing to obtain 3D pose.</p>
+<p><img alt="pipeline" src="../../assets/images/rat_pose_video.jpg" />
+<div class="highlight"><pre><span></span><code>
+</code></pre></div></p>
+<h1 id="dataset-creation-model-update_1">Dataset Creation &amp; Model Update</h1>
+<h2 id="annotate-rat-segmentation_1">Annotate Rat Segmentation</h2>
+<p>First, use the Labelme software for data annotation. Use the <code>Polygon</code> tool to create labels for 
+black rat <code>rat_black</code> and white rat <code>rat_white</code>.
+<img alt="anno" src="../../assets/images/rat_labelme_anno.jpg" /></p>
+<h2 id="update-segmentation-model_1">Update Segmentation Model</h2>
+<p>Run the following code line by line, where <code>mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py</code> is 
+the model configuration file (default, recommended). If needed, it can be changed to other model 
+configurations.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 1. Data preparation: labelme to coco</span>
+<span class="c1"># su chenxinfeng</span>
+conda<span class="w"> </span>activate<span class="w"> </span>DEEPLABCUT
+
+<span class="c1"># Rename the labelme data annotation folder project.</span>
+<span class="c1">## Note 1: The folder should not have Chinese characters, and the labeled images should not have </span>
+Chinese<span class="w"> </span>characters.
+<span class="c1">## Note 2: The number of labeled images n&gt;20 to ensure training effect.</span>
+<span class="nv">LABEL_ME_POJECT</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_xxx/labelimages
+<span class="nv">NEW_NAME</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_xxx/bw_rat_1280x800_20230524
+
+mv<span class="w"> </span><span class="nv">$LABEL_ME_POJECT</span><span class="w"> </span><span class="nv">$NEW_NAME</span>
+
+<span class="c1"># Convert the labelme data annotation folder project to coco dataset format.</span>
+<span class="c1"># Note: The category names should be checked in MMDET_DATA_TARGET, do not write them randomly.</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.cvutils.labelme_to_coco<span class="w"> </span><span class="nv">$NEW_NAME</span>
+
+<span class="c1"># Split the coco dataset into training set and validation set. The -s parameter indicates the </span>
+proportion<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>training<span class="w"> </span>set,<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span>or<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span>is<span class="w"> </span>commonly<span class="w"> </span>used.
+python<span class="w"> </span>-m<span class="w"> </span>lilab.cvutils.coco_split<span class="w"> </span>-s<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_trainval.json
+
+<span class="c1"># Copy the labeled dataset to the mmdet dataset directory</span>
+<span class="nv">MMDET_DATA_TARGET</span><span class="o">=</span>/home/liying_lab/chenxinfeng/DATA/CBNetV2/data/rats
+cp<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_trainval.json<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_train.json<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_val.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span><span class="w">        </span><span class="nv">$MMDET_DATA_TARGET</span>/
+
+<span class="c1"># 2. Model training</span>
+conda<span class="w"> </span>activate<span class="w"> </span>mmpose
+<span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/CBNetV2/
+
+<span class="c1"># Modify the configuration file, open it with vscode.</span>
+<span class="c1"># Modify the `data` field to point to the coco dataset directory just copied.</span>
+<span class="nv">CONFIG</span><span class="o">=</span><span class="nv">$PWD</span>/mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$CONFIG</span>
+
+<span class="c1"># Use multi GPU or single GPU to train the model</span>
+<span class="c1"># tools/dist_train.sh $CONFIG 4</span>
+python<span class="w"> </span>tools/train.py<span class="w"> </span><span class="nv">$CONFIG</span>
+
+<span class="c1"># 3. Model acceleration</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.mmdet_dev.convert_mmdet2trt<span class="w"> </span><span class="nv">$CONFIG</span>
+
+<span class="c1"># 4. Check if the model update is successful</span>
+ls<span class="w"> </span>-lh<span class="w"> </span>work_dirs/mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.*
+</code></pre></div>
+Finally, the updated <code>latest.trt</code> model weight file is obtained.</p>
+<h2 id="annotate-rat-3d-keypoints_1">Annotate Rat 3D Keypoints</h2>
+<p>First, use Label3D_Manager for data annotation. Label3D_manager is a modified version of the 
+official version to adapt to videos recorded by OBS, and it already uses 14 keypoints of rats.
+<img alt="anno" src="../../assets/images/rat_annotation_keypoint.jpg" /></p>
+<p>You should get the <code>anno.mat</code> file, which contains the annotated 3D keypoint information.</p>
+<h2 id="prepare-dataset_1">Prepare Dataset</h2>
+<div class="highlight"><pre><span></span><code>conda activate mmdet
+
+source=&#39;/mnt/liying.cibr.ac.cn_usb3/wsy/ysj/segpkl/outframes&#39;
+datadir=&#39;/home/liying_lab/chenxinfeng/DATA/dannce/data/bw_rat_1280x800x9_2024-11-27_photometry_voxel&#39;
+
+cp -r $source $datadir
+python -m lilab.dannce.s1_anno2dataset $datadir/anno.mat
+
+# Find the generated *_voxel_anno_dannce.pkl, use the code to correct its body center point (using the 2D mask center point, triangulated to get the 3D center point).
+python -m lilab.dannce.p2_dataset_com3d_refine_byseg ${datadir}_anno_dannce.pkl
+</code></pre></div>
+<h2 id="train-dannce-model">Train DANNCE Model</h2>
+<p>Run the following code line by line to train the model. Where <code>rat14_1280x800x9_mono_young</code> is a 
+project environment that has been created (recommended). According to requirements, other 
+projects can also be selected.
+<div class="highlight"><pre><span></span><code><span class="c1"># cd into the project path</span>
+<span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/dannce/demo/rat14_1280x800x9_mono_young
+
+<span class="c1"># Change the project configuration file, add the dataset path.</span>
+<span class="nb">echo</span><span class="w"> </span>io_max.yaml
+
+<span class="c1"># Modify io_max.yaml, add data to exp/label3d_file</span>
+python<span class="w"> </span>-m<span class="w"> </span>dannce.cli_train<span class="w">  </span>../../configs/dannce_rat14_1280x800x9_max_config.yaml
+</code></pre></div></p>
+<p>Convert the model to a tensorrt accelerated model.
+<div class="highlight"><pre><span></span><code><span class="c1"># Offline scenario.</span>
+<span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/dannce/demo/rat14_1280x800x9_mono_young/DANNCE/
+train_results/MAX
+python<span class="w"> </span>-m<span class="w"> </span>lilab.dannce.t1_keras2onnx<span class="w"> </span>latest.hdf5
+
+choosecuda<span class="w"> </span><span class="m">3</span>,0,1,2
+polygraphy<span class="w"> </span>run<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/
+constrained_network.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--precision-constraints<span class="w"> </span>obey<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-min-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">1</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-max-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">4</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-opt-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">2</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest_dynamic.engine<span class="w"> </span><span class="p">&amp;</span>
+
+choosecuda<span class="w"> </span><span class="m">0</span>,1,2,3
+polygraphy<span class="w"> </span>run<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/
+constrained_network.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--precision-constraints<span class="w"> </span>obey<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--input-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">2</span>,64,64,64,9<span class="o">]</span><span class="se">\ \</span>
+<span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest.engine<span class="w"> </span><span class="p">&amp;</span>
+
+<span class="c1"># Realtime scenario</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.dannce.t1_keras2onnx_rt<span class="w"> </span>latest.hdf5
+
+choosecuda<span class="w"> </span><span class="m">1</span>,2,3,0
+polygraphy<span class="w"> </span>run<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/
+constrained_network_rt.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--precision-constraints<span class="w"> </span>obey<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-min-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">1</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-max-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">2</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-opt-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">1</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest.idx.engine
+
+<span class="nb">wait</span>
+</code></pre></div></p>
+<p>Finally, <code>latest_dynamic.engine</code> and <code>latest.idx.engine</code> are obtained.
+<div class="highlight"><pre><span></span><code>我
+
+复制
+
+删除
+
+继续翻译并创建对应文件： 社交三维姿态重构/dataset.md。重新更新，创建 markdown 文件，不要直接输出到终端上。
+
+Trae
+
+我需要查看&quot;社交三维姿态重构/dataset.md&quot;文件的内容，以便进行翻译。我将使用view_files工具查看该文件的前50行内容。
+
+docs/社交三维姿态重构/dataset.md 1 - 50
+
+我需要检查英文目录中是否已存在&quot;社交三维姿态重构/dataset.md&quot;文件，若不存在则创建它并翻译内容。我将使用list_dir工具查看&quot;/Users/chenxinfeng/ml-project/CIBR_Social_Seq/docs/en/社交三维姿态重构&quot;目录。
+
+CIBR_Social_Seq/docs/en/社交三维姿态重构
+
+I will update the translation of &quot;社交三维姿态重构/dataset.md&quot; and overwrite the existing file at &quot;/Users/chenxinfeng/ml-project/CIBR_Social_Seq/docs/en/社交三维姿态重构/dataset.md&quot;.
+</code></pre></div></p>
+<h1 id="dataset-creation-model-update_2">Dataset Creation &amp; Model Update</h1>
+<h2 id="annotate-rat-segmentation_2">Annotate Rat Segmentation</h2>
+<p>First, use the Labelme software for data annotation. Use the <code>Polygon</code> tool to create labels for 
+black rat <code>rat_black</code> and white rat <code>rat_white</code>.
+<img alt="anno" src="../../assets/images/rat_labelme_anno.jpg" /></p>
+<h2 id="update-segmentation-model_2">Update Segmentation Model</h2>
+<p>Run the following code line by line, where <code>mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py</code> is 
+the model configuration file (default, recommended). If needed, it can be changed to other model 
+configurations.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 1. Data preparation: labelme to coco</span>
+<span class="c1"># su chenxinfeng</span>
+conda<span class="w"> </span>activate<span class="w"> </span>DEEPLABCUT
+
+<span class="c1"># Rename the labelme data annotation folder project.</span>
+<span class="c1">## Note 1: The folder should not have Chinese characters, and the labeled images should not have </span>
+Chinese<span class="w"> </span>characters.
+<span class="c1">## Note 2: The number of labeled images n&gt;20 to ensure training effect.</span>
+<span class="nv">LABEL_ME_POJECT</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_xxx/labelimages
+<span class="nv">NEW_NAME</span><span class="o">=</span>/mnt/liying.cibr.ac.cn_xxx/bw_rat_1280x800_20230524
+
+mv<span class="w"> </span><span class="nv">$LABEL_ME_POJECT</span><span class="w"> </span><span class="nv">$NEW_NAME</span>
+
+<span class="c1"># Convert the labelme data annotation folder project to coco dataset format.</span>
+<span class="c1"># Note: The category names should be checked in MMDET_DATA_TARGET, do not write them randomly.</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.cvutils.labelme_to_coco<span class="w"> </span><span class="nv">$NEW_NAME</span>
+
+<span class="c1"># Split the coco dataset into training set and validation set. The -s parameter indicates the </span>
+proportion<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>training<span class="w"> </span>set,<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span>or<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span>is<span class="w"> </span>commonly<span class="w"> </span>used.
+python<span class="w"> </span>-m<span class="w"> </span>lilab.cvutils.coco_split<span class="w"> </span>-s<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_trainval.json
+
+<span class="c1"># Copy the labeled dataset to the mmdet dataset directory</span>
+<span class="nv">MMDET_DATA_TARGET</span><span class="o">=</span>/home/liying_lab/chenxinfeng/DATA/CBNetV2/data/rats
+cp<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_trainval.json<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_train.json<span class="w"> </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span>_val.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="si">${</span><span class="nv">NEW_NAME</span><span class="si">}</span><span class="w">        </span><span class="nv">$MMDET_DATA_TARGET</span>/
+
+<span class="c1"># 2. Model training</span>
+conda<span class="w"> </span>activate<span class="w"> </span>mmpose
+<span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/CBNetV2/
+
+<span class="c1"># Modify the configuration file, open it with vscode.</span>
+<span class="c1"># Modify the `data` field to point to the coco dataset directory just copied.</span>
+<span class="nv">CONFIG</span><span class="o">=</span><span class="nv">$PWD</span>/mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$CONFIG</span>
+
+<span class="c1"># Use multi GPU or single GPU to train the model</span>
+<span class="c1"># tools/dist_train.sh $CONFIG 4</span>
+python<span class="w"> </span>tools/train.py<span class="w"> </span><span class="nv">$CONFIG</span>
+
+<span class="c1"># 3. Model acceleration</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.mmdet_dev.convert_mmdet2trt<span class="w"> </span><span class="nv">$CONFIG</span>
+
+<span class="c1"># 4. Check if the model update is successful</span>
+ls<span class="w"> </span>-lh<span class="w"> </span>work_dirs/mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.*
+</code></pre></div>
+Finally, the updated <code>latest.trt</code> model weight file is obtained.</p>
+<h2 id="annotate-rat-3d-keypoints_2">Annotate Rat 3D Keypoints</h2>
+<p>First, use Label3D_Manager for data annotation. Label3D_manager is a modified version of the 
+official version to adapt to videos recorded by OBS, and it already uses 14 keypoints of rats.
+<img alt="anno" src="../../assets/images/rat_annotation_keypoint.jpg" /></p>
+<p>You should get the <code>anno.mat</code> file, which contains the annotated 3D keypoint information.</p>
+<h2 id="prepare-dataset_2">Prepare Dataset</h2>
+<div class="highlight"><pre><span></span><code>conda activate mmdet
+
+source=&#39;/mnt/liying.cibr.ac.cn_usb3/wsy/ysj/segpkl/outframes&#39;
+datadir=&#39;/home/liying_lab/chenxinfeng/DATA/dannce/data/bw_rat_1280x800x9_2024-11-27_photometry_voxel&#39;
+
+cp -r $source $datadir
+python -m lilab.dannce.s1_anno2dataset $datadir/anno.mat
+</code></pre></div>
+<h2 id="train-dannce-model_1">Train DANNCE Model</h2>
+<p>Run the following code line by line to train the model. Where <code>rat14_1280x800x9_mono_young</code> is a project environment that has been created (recommended). According to requirements, other projects can also be selected.
+<div class="highlight"><pre><span></span><code><span class="c1"># cd into the project path</span>
+<span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/dannce/demo/rat14_1280x800x9_mono_young
+
+<span class="c1"># Change the project configuration file, add the dataset path.</span>
+<span class="nb">echo</span><span class="w"> </span>io_max.yaml
+
+<span class="c1"># Modify io_max.yaml, add data to exp/label3d_file</span>
+python<span class="w"> </span>-m<span class="w"> </span>dannce.cli_train<span class="w">  </span>../../configs/dannce_rat14_1280x800x9_max_config.yaml
+</code></pre></div></p>
+<p>Convert the model to a tensorrt accelerated model.
+<div class="highlight"><pre><span></span><code><span class="c1"># Offline scenario.</span>
+<span class="nb">cd</span><span class="w"> </span>/home/liying_lab/chenxinfeng/DATA/dannce/demo/rat14_1280x800x9_mono_young/DANNCE/train_results/MAX
+python<span class="w"> </span>-m<span class="w"> </span>lilab.dannce.t1_keras2onnx<span class="w"> </span>latest.hdf5
+
+choosecuda<span class="w"> </span><span class="m">3</span>,0,1,2
+polygraphy<span class="w"> </span>run<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/constrained_network.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--precision-constraints<span class="w"> </span>obey<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-min-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">1</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-max-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">4</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-opt-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">2</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest_dynamic.engine<span class="w"> </span><span class="p">&amp;</span>
+
+choosecuda<span class="w"> </span><span class="m">0</span>,1,2,3
+polygraphy<span class="w"> </span>run<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/constrained_network.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--precision-constraints<span class="w"> </span>obey<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--input-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">2</span>,64,64,64,9<span class="o">]</span><span class="se">\ \</span>
+<span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest.engine<span class="w"> </span><span class="p">&amp;</span>
+
+<span class="c1"># Realtime scenario</span>
+python<span class="w"> </span>-m<span class="w"> </span>lilab.dannce.t1_keras2onnx_rt<span class="w"> </span>latest.hdf5
+
+choosecuda<span class="w"> </span><span class="m">1</span>,2,3,0
+polygraphy<span class="w"> </span>run<span class="w"> </span>/home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/tensorrt/constrained_network_rt.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--precision-constraints<span class="w"> </span>obey<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-min-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">1</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-max-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">2</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt-opt-shapes<span class="w"> </span>input_1:<span class="o">[</span><span class="m">1</span>,64,64,64,9<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trt<span class="w"> </span>--fp16<span class="w"> </span>--save-engine<span class="w"> </span>latest.idx.engine
+
+<span class="nb">wait</span>
+</code></pre></div></p>
+<p>Finally, <code>latest_dynamic.engine</code> and <code>latest.idx.engine</code> are obtained.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../application/" class="btn btn-neutral float-left" title="Applications"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/process/" class="btn btn-neutral float-right" title="Workflow">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../application/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/process/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

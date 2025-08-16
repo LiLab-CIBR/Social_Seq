@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>OBS Software Installation - Social-Seq doc</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "OBS Software Installation";
+        var mkdocs_page_input_path = "\u8bbe\u5907\u7ec4\u88c5\u548c\u6e05\u5355/OBS_\u8f6f\u4ef6\u5b89\u88c5.en.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../" class="icon icon-home"> Social-Seq doc
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../figure_reproduce/">Figure Reproduction</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Equipment Assembly & List</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../shopping_list/">Hardware List</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">OBS Software Installation</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Server Environment Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic Usage Training</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/">Login to Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/basic_command/">Basic Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/installed_models/">Installed Deep Learning Models</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ball Correction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Single Mouse 3D Pose</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Social 3D Pose (Social)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sequence Labeling (Seq)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/dataset/">Clustering & Template Creation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Closed-loop Control (Live)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/application/">Applications</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Social-Seq doc</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Equipment Assembly & List</li>
+      <li class="breadcrumb-item active">OBS Software Installation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="obs-software-installation">OBS Software Installation</h2>
+<p>Video tutorial: xxx</p>
+<div align="center">
+  <img src="../../assets/images/OBS_software.jpg" width="500" alt="ball_keypoint">
+</div>
+
+<p>The system uses OBS Studio (version <strong>29.0</strong>) for video recording. OBS is widely used in the field of video live streaming and recording due to its excellent configurability, stability, and open-source characteristics. The software supports multiple input sources, including images, text, browser windows, cameras, and microphones, <strong>effectively simplifying the complexity of multi-camera synchronous recording</strong>. Its multi-threaded load optimization and GPU video encoding/decoding provide <strong>excellent performance</strong>. In this platform, OBS provides a comprehensive and flexible video recording solution with real-time preview, multi-camera layout, resolution adjustment, and programming interfaces. The specific configuration of OBS is detailed in the table below.</p>
+<blockquote>
+<p>OBS version 29.0, download address: https://obsproject.com/download</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Main Function</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sources &gt; Add &gt; Video Capture Device</td>
+<td>Add 9 K1S293 cameras</td>
+<td>In the resolution dropdown list for individual cameras, select 1280×800, frame rate as highest (i.e., 120fps), and frame encoding as MJPEG</td>
+</tr>
+<tr>
+<td>Settings &gt; Output &gt; Recording</td>
+<td>Recording file format</td>
+<td>Type as standard; filename without spaces; output container as MP4; encoder as NVIDIA NVENC HEVC; bitrate as 30 Mbps; preset as high quality.</td>
+</tr>
+<tr>
+<td>Settings &gt; Video</td>
+<td>Canvas resolution and frame rate</td>
+<td>Canvas resolution 3840×2400, which is the pixel sum after stitching 9 cameras; no scaling; frame rate 30 fps.</td>
+</tr>
+<tr>
+<td>Menu &gt; Tools &gt; WebSocket Server</td>
+<td>External code control of OBS recording switch</td>
+<td>Port number 4455; no password (uncheck authentication box); recommended to use with F2 Synchronization Assistant</td>
+</tr>
+</tbody>
+</table>
+<p>In the specific configuration process of OBS software, the following technical details should be focused on:</p>
+<ol>
+<li>When adding multi-camera video streams to the OBS canvas, stretching or cropping of camera views should be avoided to prevent image data loss and ensure accurate positioning of subsequent multi-camera image reading.</li>
+<li>Multi-camera images should be tightly arranged in the OBS canvas, and camera numbering should follow the order from left to right, top to bottom.</li>
+<li>Some cameras capture upside-down images, which need to be corrected by 180° rotation in OBS software, but do not use mirroring.</li>
+</ol>
+<p>After completing the above configuration, recording can be started through the OBS interface to synchronously record behavior experiment videos from 9 cameras. Typically, a 15-minute experiment video is about 3.4GB. Players like Potplayer or VLC can be used to conveniently view the videos.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../shopping_list/" class="btn btn-neutral float-left" title="Hardware List"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="btn btn-neutral float-right" title="Server Environment Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../shopping_list/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Server Environment Configuration - Social-Seq doc</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Server Environment Configuration";
+        var mkdocs_page_input_path = "\u8bbe\u5907\u7ec4\u88c5\u548c\u6e05\u5355/\u670d\u52a1\u5668\u73af\u5883\u914d\u7f6e.en.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../" class="icon icon-home"> Social-Seq doc
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../figure_reproduce/">Figure Reproduction</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Equipment Assembly & List</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../shopping_list/">Hardware List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">OBS Software Installation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Server Environment Configuration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#hardware-configuration">Hardware Configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#software-environment">Software Environment</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#strongly-recommended-software-list">Strongly Recommended Software List</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-installation-environment">Test Installation Environment</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#test-nvidia-cuda-driver">Test nvidia cuda driver</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-nvidia-cuda-compiler">Test Nvidia Cuda Compiler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-tensorrt-command-line-tools">Test TensorRT Command Line Tools</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-polygraphy-nvidia-official-tool-command-line-tools">Test polygraphy (NVIDIA Official Tool) Command Line Tools</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-ffmpeg-command-line-tools">Test FFmpeg Command Line Tools</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-docker-command-line-tools">Test Docker Command Line Tools</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#third-party-deep-learning-toolkits">Third-party Deep Learning Toolkits</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-open-mmlabmmdetection-model">1. OPEN-MMLAB/MMDETECTION Model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-open-mmlabmmpose-model">2. OPEN-MMLAB/MMPOSE Model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-yolo-v8-model">3. YOLO-v8 Model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-dannce-model">4. DANNCE Model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-smoothnet-model">5. SmoothNet Model</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#install-python-packages-created-and-modified-by-this-project">Install Python Packages Created and Modified by This Project</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-lilab-analysis-toolkit">1. LILAB Analysis Toolkit</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-ffmpegcv-toolkit">2. FFMPEGCV Toolkit</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-multiview_calib-toolkit">3. multiview_calib Toolkit</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-other-modified-toolkits">4. Other Modified Toolkits</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic Usage Training</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/">Login to Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/basic_command/">Basic Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/installed_models/">Installed Deep Learning Models</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ball Correction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Single Mouse 3D Pose</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%95%E9%BC%A0%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Social 3D Pose (Social)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sequence Labeling (Seq)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/dataset/">Clustering & Template Creation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Closed-loop Control (Live)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/application/">Applications</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Social-Seq doc</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Equipment Assembly & List</li>
+      <li class="breadcrumb-item active">Server Environment Configuration</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="server-environment-configuration">Server Environment Configuration</h1>
+<p>Only after configuring the server environment can the project run smoothly, including model training, inference, and animal behavior analysis processes. <a href="../../figure_reproduce">Paper Figure Reproduction🔗</a> does not require server environment configuration, only local environment configuration is needed.</p>
+<div class="admonition warning">
+<p class="admonition-title">Server Environment Configuration Notice</p>
+<p>The deep learning environment is the core foundation of this project. We understand that environment setup can be a complex and challenging process, which is a common problem throughout the AI field.
+Although we are continuously optimizing the deployment process, the current project still has some version compatibility issues. We recommend that you be patient when configuring the environment and have a certain spirit of technical research to deal with possible challenges.</p>
+</div>
+<hr />
+<h2 id="hardware-configuration">Hardware Configuration</h2>
+<p>Server hardware configuration includes:</p>
+<ul>
+<li><strong>CPU</strong>: Intel Xeon 4314</li>
+<li><strong>Memory</strong>: 256 GB</li>
+<li><strong>GPU</strong>: 4 NVIDIA GeForce RTX 3090 cards</li>
+<li><strong>Storage</strong>: 1 TB SSD + 8 TB HDD</li>
+</ul>
+<h2 id="software-environment">Software Environment</h2>
+<p>Software environment includes:</p>
+<ul>
+<li><strong>Operating System</strong>: Ubuntu 18.04</li>
+<li><strong>Deep Learning Framework</strong>: CUDA 11.4, cuDNN 8.8, TensorRT 8.6</li>
+<li><strong>Development Tools</strong>: Python 3.7.16, OpenCV-Python 4.8.0, TensorFlow 2.7.0, PyTorch 1.11.0</li>
+</ul>
+<p>Used for deep learning model training and data analysis.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important Warning</p>
+<p>Currently only supports Ubuntu system and NVIDIA graphics cards. Please refer to relevant materials for other systems.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Important Warning</p>
+<p>Since the software was configured in 2019, some software versions may be outdated. It is recommended to choose the latest versions according to actual needs. Most Python libraries can be found in pip and conda, but some libraries may be difficult to install compatibly. This document cannot accommodate all software's latest versions. Please refer to relevant materials.</p>
+</div>
+<h2 id="strongly-recommended-software-list">Strongly Recommended Software List</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Software Name</th>
+<th style="text-align: center;">Local Test Version (2022)</th>
+<th style="text-align: center;">2025 Version, Untested</th>
+<th style="text-align: center;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Ubuntu</td>
+<td style="text-align: center;">18.04</td>
+<td style="text-align: center;">24.04</td>
+<td style="text-align: center;">Operating system, recommended</td>
+</tr>
+<tr>
+<td style="text-align: center;">Python</td>
+<td style="text-align: center;">3.7.16</td>
+<td style="text-align: center;">3.12</td>
+<td style="text-align: center;">Development language, required</td>
+</tr>
+<tr>
+<td style="text-align: center;">CUDA</td>
+<td style="text-align: center;">11.4</td>
+<td style="text-align: center;">12.9</td>
+<td style="text-align: center;">Deep learning framework, required</td>
+</tr>
+<tr>
+<td style="text-align: center;">cuDNN</td>
+<td style="text-align: center;">8.8</td>
+<td style="text-align: center;">8.9</td>
+<td style="text-align: center;">Deep learning framework, required</td>
+</tr>
+<tr>
+<td style="text-align: center;">TensorRT</td>
+<td style="text-align: center;">8.6</td>
+<td style="text-align: center;">10.13</td>
+<td style="text-align: center;">Inference acceleration, required</td>
+</tr>
+<tr>
+<td style="text-align: center;">OpenCV-Python</td>
+<td style="text-align: center;">4.8.0</td>
+<td style="text-align: center;">4.12.0</td>
+<td style="text-align: center;">Image processing, required</td>
+</tr>
+<tr>
+<td style="text-align: center;">TensorFlow</td>
+<td style="text-align: center;">2.7.0</td>
+<td style="text-align: center;">2.16.0</td>
+<td style="text-align: center;">DANNCE model, required</td>
+</tr>
+<tr>
+<td style="text-align: center;">PyTorch</td>
+<td style="text-align: center;">1.11.0</td>
+<td style="text-align: center;">2.7.1</td>
+<td style="text-align: center;">Deep learning framework, required</td>
+</tr>
+<tr>
+<td style="text-align: center;">Docker</td>
+<td style="text-align: center;">24.0.6</td>
+<td style="text-align: center;">28.3.0</td>
+<td style="text-align: center;">Containerization, for Mediamtx</td>
+</tr>
+<tr>
+<td style="text-align: center;">FFmpeg</td>
+<td style="text-align: center;">4.x</td>
+<td style="text-align: center;">6.x</td>
+<td style="text-align: center;">Video reading and writing</td>
+</tr>
+<tr>
+<td style="text-align: center;">Mediamtx</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Video stream server, for closed-loop behavioral intervention</td>
+</tr>
+</tbody>
+</table>
+<h2 id="test-installation-environment">Test Installation Environment</h2>
+<p>After all software is installed, testing is required to ensure successful installation. Testing methods are as follows:</p>
+<h3 id="test-nvidia-cuda-driver">Test nvidia cuda driver</h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi
+</code></pre></div>
+<h3 id="test-nvidia-cuda-compiler">Test Nvidia Cuda Compiler</h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvcc<span class="w"> </span>--version
+</code></pre></div>
+<h3 id="test-tensorrt-command-line-tools">Test TensorRT Command Line Tools</h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>trtexec<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx<span class="w"> </span>--saveEngine<span class="o">=</span>/path/to/model.engine
+</code></pre></div>
+<h3 id="test-polygraphy-nvidia-official-tool-command-line-tools">Test polygraphy (NVIDIA Official Tool) Command Line Tools</h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>polygraphy<span class="w"> </span>inspect<span class="w"> </span>model<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx
+</code></pre></div>
+<h3 id="test-ffmpeg-command-line-tools">Test FFmpeg Command Line Tools</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># ffmpeg generate a 640x480 video, 30 fps, 1 minute</span>
+$<span class="w"> </span>ffmpeg<span class="w"> </span>-f<span class="w"> </span>lavfi<span class="w"> </span>-i<span class="w"> </span><span class="nv">testsrc</span><span class="o">=</span><span class="nv">duration</span><span class="o">=</span><span class="m">60</span>:size<span class="o">=</span>640x480:rate<span class="o">=</span><span class="m">30</span><span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test.mp4
+
+<span class="c1"># convert it to hevc by NVIDIA HEVC encoder</span>
+$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>/path/to/test.mp4<span class="w"> </span>-c:v<span class="w"> </span>hevc_nvenc<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test_hevc.mp4
+</code></pre></div>
+<h3 id="test-docker-command-line-tools">Test Docker Command Line Tools</h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-e<span class="w"> </span><span class="nv">MTX_PROTOCOLS</span><span class="o">=</span>tcp<span class="w"> </span>-p<span class="w"> </span><span class="m">8554</span>:8554<span class="w"> </span>-p<span class="w"> </span><span class="m">1935</span>:1935<span class="w"> </span>bluenviron/mediamtx
+</code></pre></div>
+<h2 id="third-party-deep-learning-toolkits">Third-party Deep Learning Toolkits</h2>
+<h3 id="1-open-mmlabmmdetection-model">1. OPEN-MMLAB/MMDETECTION Model</h3>
+<p>This is an open-source project that provides MaskRCNN for object detection and segmentation. We forked it (in 2022) and added custom models and configuration files to achieve multi-rat segmentation.</p>
+<p>Please refer to MMdetection's <a href="https://mmdetection.readthedocs.io/en/latest/get_started.html">official documentation</a> for installation instructions.</p>
+<ul>
+<li>Code address: https://github.com/chenxinfeng4/mmdetection.git</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Important Warning</p>
+<p>We forked MMDET 1.x version, which currently supports python3.7; the latest MMDET on the official website is 3.x version, which may have serious compatibility issues. Please choose the appropriate version according to actual needs.</p>
+</div>
+<h3 id="2-open-mmlabmmpose-model">2. OPEN-MMLAB/MMPOSE Model</h3>
+<p>This is an open-source project that provides MaskRCNN for human pose keypoint detection. We forked it (in 2022) and added custom models and configuration files to achieve ball detection.</p>
+<p>Please refer to MMpose's <a href="https://mmpose.readthedocs.io/en/latest/installation.html">official documentation</a> for installation instructions.</p>
+<ul>
+<li>Code address: https://github.com/chenxinfeng4/mmpose.git</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Important Warning</p>
+<p>We forked MMPOSE 0.x version. New versions and environments may have compatibility issues. Please choose the appropriate version according to actual needs.</p>
+</div>
+<h3 id="3-yolo-v8-model">3. YOLO-v8 Model</h3>
+<p>This is a lightweight object detection and instance segmentation open-source project. We forked it (in 2024) and added custom models and configuration files to achieve real-time multi-rat segmentation.</p>
+<ul>
+<li>Code address: https://github.com/chenxinfeng4/ultralytics.git</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Important Warning</p>
+<p>Our forked version may have compatibility issues with the latest version. Please choose the appropriate version according to actual needs.</p>
+</div>
+<h3 id="4-dannce-model">4. DANNCE Model</h3>
+<p>This is a library for multi-view animal pose estimation. We forked it (in 2022) and added custom models and configuration files to achieve real-time multi-rat 3D keypoint recognition.</p>
+<ul>
+<li>Code address: https://github.com/chenxinfeng4/dannce.git</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Important Warning</p>
+<p>Our forked version may have compatibility issues with the latest version. Moreover, this library has high prediction accuracy but slow speed. We performed speed optimization, which caused some differences from the original code and more compatibility issues. Installation is relatively troublesome, and we are optimizing the installation documentation.</p>
+</div>
+<h3 id="5-smoothnet-model">5. SmoothNet Model</h3>
+<p>This is a library for pose time smoothing. We forked it (in 2022) and added custom models and configuration files to achieve real-time multi-rat 3D keypoint smoothing.</p>
+<ul>
+<li>Code address: https://github.com/chenxinfeng4/SmoothNet.git</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Important Warning</p>
+<p>Our forked version may have compatibility issues with the latest version. Please choose the appropriate version according to actual needs.</p>
+</div>
+<h2 id="install-python-packages-created-and-modified-by-this-project">Install Python Packages Created and Modified by This Project</h2>
+<h3 id="1-lilab-analysis-toolkit">1. LILAB Analysis Toolkit</h3>
+<p>Contains common analysis tools, such as camera calibration process, rat segmentation and pose estimation process, behavior recognition process, big data mining related tools, etc.</p>
+<ul>
+<li>Code address: https://github.com/chenxinfeng4/LILAB-py.git</li>
+</ul>
+<p><strong>Installation method:</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chenxinfeng4/LILAB-py.git
+<span class="nb">cd</span><span class="w"> </span>LILAB-py
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Important Warning</p>
+<p>Contains many process tools with overly large dependencies, so automatic dependency installation is not performed. If import errors occur, dependencies need to be installed manually.</p>
+</div>
+<h3 id="2-ffmpegcv-toolkit">2. FFMPEGCV Toolkit</h3>
+<p>GPU-accelerated video processing toolkit, convenient for multi-camera video reading and writing, which is 9 times faster than OpenCV in certain scenarios. After I open-sourced it, the annual download volume is <strong>70,000 times</strong>. See corresponding <a href="https://pypi.org/project/ffmpegcv">documentation</a>.</p>
+<ul>
+<li>Code address: https://github.com/chenxinfeng4/ffmpegcv.git</li>
+</ul>
+<p><strong>Installation method:</strong></p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ffmpegcv
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Important Warning</p>
+<p>To use GPU acceleration, NVIDIA-driver is required.</p>
+</div>
+<h3 id="3-multiview_calib-toolkit">3. multiview_calib Toolkit</h3>
+<p>Camera extrinsic calibration (ball calibration) toolkit. Based on third-party libraries, it has been optimized and custom calibration processes have been added. See corresponding <a href="https://github.com/chenxinfeng4/multiview_ball_calib">documentation</a>.</p>
+<ul>
+<li>Code address: https://github.com/chenxinfeng4/multiview_calib.git</li>
+</ul>
+<p><strong>Installation method:</strong></p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/multiview_calib.git
+
+<span class="c1"># Simple ball calibration tutorial</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chenxinfeng4/multiview_ball_calib
+</code></pre></div>
+<h3 id="4-other-modified-toolkits">4. Other Modified Toolkits</h3>
+<p><strong>torch2trt</strong>: torch2trt modification, supporting direct loading of engine files.</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/torch2trt
+</code></pre></div>
+<p><strong>cocoapi</strong>: Multi-threading改造 of cocoapi to improve speed.</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/cocoapi
+</code></pre></div>
+<p><strong>mmdetection-to-tensorrt</strong>: Converting Mask-RCNN model to tensorrt model.</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/mmdetection-to-tensorrt
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class="btn btn-neutral float-left" title="OBS Software Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/" class="btn btn-neutral float-right" title="Login to Server">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
