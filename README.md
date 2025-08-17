@@ -31,20 +31,36 @@ The Social-Seq project aims to analyze animal (particularly rat) behavior patter
 ### 1. Equipment Assembly and Data Acquisition 📷
 Acquiring high-quality, highly synchronized multi-view videos to ensure data quality for behavior analysis.
 
+![Fig1. 硬件系统安装](docs/assets/images/fig1_setup.jpg)
+
+
 ### 2. Camera System Calibration 📐
-Calibrating the camera system to obtain relative positions and poses between cameras for subsequent rat 3D pose reconstruction.
+Calibrating the camera system to obtain relative positions and poses between cameras for subsequent rat 3D pose reconstruction. See [details](docs/小球矫正/application.md) 🔗.
+
+![小球矫正](docs/assets/images/ball_calibrated.jpg)
+
 
 ### 3. Social 3D Pose Reconstruction ✨
 Implementing segmentation, keypoint prediction and smoothing processing for two rats to obtain stable 3D pose coordinates.
 
+![社交姿态重构流程](docs/assets/images/rat_social_pose_pipeline.jpg)
+
 ### 4. Social Behavior Label Recognition 🏷️
 Obtaining 36 categories of social behavior labels through feature design, clustering and consistency optimization to achieve automated behavior classification.
+
+![社交特征设计](docs/assets/images/fig2_behaviorAtlas.jpg)
 
 ### 5. Social Difference Analysis 📈
 Analyzing behavior differences between different rat models based on behavior label distribution.
 
+![社交差异分析](docs/assets/images/Fig5_shank3_behavior_change.jpg)
+
 ### 6. Closed-loop Behavior Control ⚡️
 Implementing behavior control using optogenetics technology through real-time behavior analysis.
+
+<div align="center">
+  <img src="docs/assets/images/Fig7_closed-loop.jpg" width="500" alt="行为控制">
+</div>
 
 ## Application Value 💎
 
