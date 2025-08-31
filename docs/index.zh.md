@@ -26,5 +26,8 @@ Xinfeng Chen; Xianming Tao; Zhenchao Zhong; Yuanqing Zhang; Yixuan Li; Ye Ouyang
 
 陈昕枫. (2025). 基于深度学习的动物自由社交行为分析研究. 博士论文，北京大学.
 
+## 开源许可证
+本项目采用 MIT 许可证开源。您可以在遵守许可证条款的前提下自由使用、修改和分发本项目的代码。
+
 ## 通讯作者 📬
 - 李莹：liying
