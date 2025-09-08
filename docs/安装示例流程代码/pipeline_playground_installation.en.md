@@ -71,7 +71,7 @@ $ nvidia-smi  # within docker container, should display GPU information
 
 Convert deep learning models to TensorRT for improved performance. Since TensorRT models are bound to specific systems and hardware, this step must be performed on each new machine.
 
-> Note: This step only needs to be performed once per machine.
+> Note: This step only needs to be performed once per machine. The convertions will take ~20 minutes in total.
 
 ```bash
 $ bash /root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
@@ -83,7 +83,7 @@ $ bash /root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
 After running these commands, you will generate:
 
 - `model_mmpose/latest.full.engine`
-- `DANNCE/train_results/MAX/latest.engine`
+- `model_dannce/DANNCE/train_results/MAX/latest.engine`
 - `model_YOLOv8/last.full.engine`
 - `model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.trt`
 

@@ -6,7 +6,7 @@
 **修改**: 陶现明，2025-08-15
 
 ## 代码下载
-代码已上传至 Github，链接为：xxx。请到此链接下载代码。
+代码已上传至 Github，链接为：[Social_Seq-Paper-Figure-Replication](https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication)。请到此链接下载代码。
 
 ## Figures 图库
 运行此仓库中的代码以复现论文中的图表。
