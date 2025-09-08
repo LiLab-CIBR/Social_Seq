@@ -6,7 +6,7 @@ nav:
   - 文章图表复现: figure_reproduce.md
 
   - 安装示例流程代码: 
-    - 安装与运行游乐场: 安装示例流程代码/pipeline_playground_installation.md
+    - 游乐场: 安装示例流程代码/pipeline_playground_installation.md
     - 错误修复: 安装示例流程代码/bug_fix.md
 
   - 设备组装和清单:
@@ -66,7 +66,7 @@ plugins:
             首页: Home
             文章图表复现: Figure Reproduction
             安装示例流程代码: Pipeline Playground
-            安装与运行游乐场: Installation and run
+            游乐场: Install & Run
             错误修复: Bug Fix
             设备组装和清单: Equipment Assembly & List
             硬件清单: Hardware List
