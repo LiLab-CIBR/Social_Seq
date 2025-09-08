@@ -10,10 +10,10 @@ This repository contains the "SocialSeq" pipeline playground, designed to help u
 
 ## Key Features
 
-- **Ball Calibration for Multi-Camera System**: Using a ball as a calibration target provides better visibility than a chessboard, enabling faster extrinsic calibration of multi-camera systems.
-- **Social 3D Pose Estimation**: Processing multi-camera animal videos through Mask R-CNN for animal identification and segmentation, followed by DANNCE for 3D pose keypoint inference, and SmoothNet for motion keypoint smoothing. This results in accurate, occlusion-resistant social 3D poses.
-- **Sequence Labeling**: Extracting social-related features from 3D poses and segmenting them (0.8 seconds per segment). Using a Seq2seq-FCN model to classify each video segment, resulting in consistent social sequence labels.
-- **Closed-Loop Behavior Control** (Coming Soon): Establishing a real-time behavior analysis system with closed-loop feedback. This will involve multi-camera perception and recognition of animal social behaviors to establish optogenetic conditional stimulation.
+- **Ball Calibration for Multi-Camera System**: 
+- **Social 3D Pose Estimation**: 
+- **Sequence Labeling**: 
+
 
 ## System Requirements
 
@@ -95,42 +95,31 @@ Once you've completed the installation steps above, you can begin running the So
 
 ## Pipeline Components
 
-### 1. Ball Calibration for Multi-Camera System
+### 1. Ball Calibration
+Using a ball as a calibration target provides better visibility than a chessboard, enabling faster extrinsic calibration of multi-camera systems. For detailed information, refer to the [documentation](../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/).
+
 
 ```bash
 $ bash /root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
 ```
 
-For detailed information, refer to the [SocialSeq documentation](https://lilab-cibr.github.io/Social_Seq/en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/).
 
-### 2. Social 3D Pose Estimation
+### 2. Social 3D Pose (SOCIAL)
+Processing multi-camera animal videos through Mask R-CNN for animal identification and segmentation, followed by DANNCE for 3D pose keypoint inference, and SmoothNet for motion keypoint smoothing. This results in accurate, occlusion-resistant social 3D poses. For detailed information, refer to the [documentation](../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/).
 
-![img](https://lilab-cibr.github.io/Social_Seq/assets/images/rat_social_pose_pipeline.jpg)
 
 ```bash
 $ bash /root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh   # Mask R-CNN for ID segmentation
 $ bash /root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh       # DANNCE and SmoothNet for 3D pose reconstruction
 ```
 
-For detailed information, refer to the [SocialSeq documentation](https://lilab-cibr.github.io/Social_Seq/en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/).
 
-### 3. Sequence Labeling
+### 3. Sequence Labeling (SEQ)
+Extracting social-related features from 3D poses and segmenting them (0.8 seconds per segment). Using a Seq2seq-FCN model to classify each video segment, resulting in consistent social sequence labels. For detailed information, refer to the [documentation](../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/).
 
 ```bash
 $ bash /root/Downloads/pipeline/3-Sequence_Labeling/run_task.sh
 ```
 
-For detailed information, refer to the [SocialSeq documentation](https://lilab-cibr.github.io/Social_Seq/en/%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/).
-
-## References & Citations
-
-Thank you for using SocialSeq! Here are our recommendations for citing and documenting your use of SocialSeq in your Methods section:
-
-> Xinfeng Chen; Xianming Tao; Zhenchao Zhong; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li* (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation.
-
-> Xinfeng Chen 陈昕枫 (2025). Deep Learning-Based Framework for Analyzing Free Social Behavior in Model Animals. PhD Thesis, Peking University.
-
-## License
-
-This project is primarily licensed under the MIT License. Note that the software is provided "as is", without warranty of any kind, express or implied.
-
+### 4. Closed-Loop Control (LIVE)** (Coming Soon): 
+Establishing a real-time behavior analysis system with closed-loop feedback. This will involve multi-camera perception and recognition of animal social behaviors to establish optogenetic conditional stimulation.

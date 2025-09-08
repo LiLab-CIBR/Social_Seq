@@ -4,9 +4,11 @@ nav:
   - 语言 中文: 'https://lilab-cibr.github.io/Social_Seq/'
   - 首页: index.md
   - 文章图表复现: figure_reproduce.md
+
   - 安装示例流程代码: 
-    - 安装与运行游乐场: 安装示例流程代码/pipeline_playground.md
+    - 安装与运行游乐场: 安装示例流程代码/pipeline_playground_installation.md
     - 错误修复: 安装示例流程代码/bug_fix.md
+
   - 设备组装和清单:
     - 硬件清单: 设备组装和清单/shopping_list.md
     - OBS软件安装: 设备组装和清单/OBS_软件安装.md
@@ -21,11 +23,6 @@ nav:
     - 代码流程: 小球矫正/process.md
     - 应用场景: 小球矫正/application.md
     - 数据集制作&模型更新: 小球矫正/dataset.md
-
-  # - 单鼠三维姿态计算:
-  #   - 代码流程: 单鼠三维姿态重构/process.md
-  #   - 应用场景: 单鼠三维姿态重构/application.md
-  #   - 数据集制作&模型更新: 单鼠三维姿态重构/dataset.md
 
   - 社交三维姿态计算 (Social):
     - 代码流程: 社交三维姿态重构/process.md

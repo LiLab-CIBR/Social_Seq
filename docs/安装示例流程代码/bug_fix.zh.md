@@ -19,7 +19,7 @@ ln -s libcudadebugger.so.5* libcudadebugger.so.1   # 可选
 
 
 
-## Patch: LILAB-pkg (Must)
+## 补丁: LILAB-pkg (如有需要)
 为何需要补丁：该 Docker 不支持 NVIDIA 视频解码器 / 编码器，而主要的 LILAB-pkg 会用到 NVIDIA 视频包，因此需要将 Docker 中的相关包降级为 CPU 视频包。
 
 每当你从 GitHub 上更新 LILAB-pkg 后，都需要执行此补丁操作：
