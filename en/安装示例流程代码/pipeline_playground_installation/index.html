@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Install & Run - Social-Seq doc</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Install \u0026 Run";
+        var mkdocs_page_input_path = "\u5b89\u88c5\u793a\u4f8b\u6d41\u7a0b\u4ee3\u7801\\pipeline_playground_installation.en.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../" class="icon icon-home"> Social-Seq doc
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://lilab-cibr.github.io/Social_Seq/en/">Language English</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://lilab-cibr.github.io/Social_Seq/">语言 中文</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../figure_reproduce/">Figure Reproduction</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Pipeline Playground</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Install & Run</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#content">Content</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#key-features">Key Features</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#environment-verification">Environment Verification</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#model-initialization">Model Initialization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pipeline-components">Pipeline Components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-ball-calibration">1. Ball Calibration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-social-3d-pose-social">2. Social 3D Pose (SOCIAL)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-sequence-labeling-seq">3. Sequence Labeling (SEQ)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-closed-loop-control-live-coming-soon">4. Closed-Loop Control (LIVE)** (Coming Soon):</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bug_fix/">Bug Fix</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Equipment Assembly & List</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/shopping_list/">Hardware List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">OBS Software Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Server Environment Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic Usage Training</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/login_server/">Login to Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/basic_command/">Basic Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%9F%B9%E8%AE%AD/installed_models/">Installed Deep Learning Models</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ball Correction</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Social 3D Pose (Social)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E4%B8%89%E7%BB%B4%E5%A7%BF%E6%80%81%E9%87%8D%E6%9E%84/dataset/">Dataset & Model Updates</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sequence Labeling (Seq)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/dataset/">Clustering & Template Creation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Closed-loop Control (Live)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/process/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E9%97%AD%E7%8E%AF%E8%A1%8C%E4%B8%BA%E6%8E%A7%E5%88%B6/application/">Applications</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Social-Seq doc</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Pipeline Playground</li>
+      <li class="breadcrumb-item active">Install & Run</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="welcome-to-socialseq-playground-lets-quickly-install-and-play">Welcome to SocialSeq playground, let's quickly install and play.</h1>
+<p>SocialSeq is a comprehensive toolbox for pose estimation and behavior recognition of animals (particularly rodents) performing free social behaviors.</p>
+<h2 id="content">Content</h2>
+<p>This repository contains the "SocialSeq" pipeline playground, designed to help users understand the functionality and logic of the SocialSeq framework through a series of demonstration data processing tasks. The complete pipeline includes model packaging, raw data processing, and result visualization, allowing you to explore:</p>
+<p><strong>Use the web browser</strong> to edit and run the social-seq playground.</p>
+<p><img alt="img" src="../../../assets/images/web-gui.jpg" /></p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Ball Calibration for Multi-Camera System</strong>: </li>
+<li><strong>Social 3D Pose Estimation</strong>: </li>
+<li><strong>Sequence Labeling</strong>: </li>
+</ul>
+<h2 id="system-requirements">System Requirements</h2>
+<p>SocialSeq has been tested on the following configurations:</p>
+<ul>
+<li><strong>Windows 10</strong> (with WSL2) + AMD64 + NVIDIA RTX4090</li>
+<li><strong>Ubuntu</strong> + AMD64 + NVIDIA A100</li>
+<li><strong>Ubuntu</strong> + AMD64 + NVIDIA RTX3090</li>
+</ul>
+<p>Prerequisites, <strong>docker</strong> and <strong>nvidia driver</strong> should be installed.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>--version<span class="w">  </span><span class="c1"># Docker version should be &gt;= 24.0.6</span>
+$<span class="w"> </span>nvidia-smi<span class="w">        </span><span class="c1"># NVIDIA driver version should be &gt;= 550.54</span>
+</code></pre></div></p>
+<h2 id="installation">Installation</h2>
+<p>You need to set up Docker and download the models and data files:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Download link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar</td>
+<td>docker image</td>
+<td>百度云(准备中)</td>
+</tr>
+<tr>
+<td>lilab_socialseq_pipeline_code_with_data_20250903.zip</td>
+<td>docker image</td>
+<td>百度云(准备中)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>SOCIAL_SEQ_DOWNLOAD_PATH
+$<span class="w"> </span>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>./lilab_socialseq_pipeline_cuda_vscode_amd64_2025*.tar
+$<span class="w"> </span>docker<span class="w"> </span>images<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>lilab<span class="w">      </span><span class="c1"># resulting in an image file named &#39;lilab*&#39;</span>
+
+$<span class="w"> </span>unzip<span class="w"> </span>lilab_socialseq_pipeline_code_with_data_20250903.zip<span class="w"> </span>-d<span class="w"> </span>./pipeline<span class="w">  </span><span class="c1"># Unzip file</span>
+$<span class="w"> </span>ls<span class="w"> </span>./pipeline/1-Ball_Calibration<span class="w">   </span><span class="c1"># Check path</span>
+
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">PASSWORD</span><span class="o">=</span>2025cxf<span class="w">  </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span>./pipeline:/root/Downloads/pipeline<span class="w">  </span><span class="se">\</span>
+<span class="w">    </span>lilab/socialseq:codeserver-cuda-tensorrt-torch-tensorflow-mmdet-mmpose-dannce-yolo-20250903<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>/app/code-server/bin/code-server
+</code></pre></div>
+<p>Navigate to <code>http://localhost:8080</code> and enter the PASSWORD <code>2025cxf</code> to access the VS Code server environment where you can view, edit, and run SocialSeq code.</p>
+<blockquote>
+<p>If you're running Docker on a remote server, you should forward port 8080 to your local machine. See the [bug fix documentation] for more information.</p>
+</blockquote>
+<h4 id="environment-verification">Environment Verification</h4>
+<p>In the Docker VS Code server environment at <code>http://localhost:8080</code>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi<span class="w">  </span><span class="c1"># within docker container, should display GPU information</span>
+</code></pre></div>
+<blockquote>
+<p>If you encounter errors like <code>not found libnvidia-ml.so.1</code>, refer to the [bug fix documentation].</p>
+</blockquote>
+<h3 id="model-initialization">Model Initialization</h3>
+<p>Convert deep learning models to TensorRT for improved performance. Since TensorRT models are bound to specific systems and hardware, this step must be performed on each new machine.</p>
+<blockquote>
+<p>Note: This step only needs to be performed once per machine.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
+$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/convert_mmdet_model_to_tensorrt.sh
+$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
+$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
+</code></pre></div>
+<p>After running these commands, you will generate:</p>
+<ul>
+<li><code>model_mmpose/latest.full.engine</code></li>
+<li><code>DANNCE/train_results/MAX/latest.engine</code></li>
+<li><code>model_YOLOv8/last.full.engine</code></li>
+<li><code>model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.trt</code></li>
+</ul>
+<p>All set! You're now ready to run the SocialSeq pipeline with demo data.</p>
+<h2 id="quick-start">Quick Start</h2>
+<p>Once you've completed the installation steps above, you can begin running the SocialSeq pipeline components using the instructions in the following sections.</p>
+<h2 id="pipeline-components">Pipeline Components</h2>
+<h3 id="1-ball-calibration">1. Ball Calibration</h3>
+<p>Using a ball as a calibration target provides better visibility than a chessboard, enabling faster extrinsic calibration of multi-camera systems. For detailed information, refer to the <a href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">documentation</a>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
+</code></pre></div>
+<h3 id="2-social-3d-pose-social">2. Social 3D Pose (SOCIAL)</h3>
+<p>Processing multi-camera animal videos through Mask R-CNN for animal identification and segmentation, followed by DANNCE for 3D pose keypoint inference, and SmoothNet for motion keypoint smoothing. This results in accurate, occlusion-resistant social 3D poses. For detailed information, refer to the <a href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">documentation</a>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh<span class="w">   </span><span class="c1"># Mask R-CNN for ID segmentation</span>
+$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh<span class="w">       </span><span class="c1"># DANNCE and SmoothNet for 3D pose reconstruction</span>
+</code></pre></div>
+<h3 id="3-sequence-labeling-seq">3. Sequence Labeling (SEQ)</h3>
+<p>Extracting social-related features from 3D poses and segmenting them (0.8 seconds per segment). Using a Seq2seq-FCN model to classify each video segment, resulting in consistent social sequence labels. For detailed information, refer to the <a href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/">documentation</a>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/3-Sequence_Labeling/run_task.sh
+</code></pre></div>
+<h3 id="4-closed-loop-control-live-coming-soon">4. Closed-Loop Control (LIVE)** (Coming Soon):</h3>
+<p>Establishing a real-time behavior analysis system with closed-loop feedback. This will involve multi-camera perception and recognition of animal social behaviors to establish optogenetic conditional stimulation.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../figure_reproduce/" class="btn btn-neutral float-left" title="Figure Reproduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../bug_fix/" class="btn btn-neutral float-right" title="Bug Fix">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../figure_reproduce/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../bug_fix/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
