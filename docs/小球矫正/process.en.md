@@ -1,6 +1,4 @@
 # Code Process
-> Developer: xxx
-> Maintainer: xxx
 
 Calibration of multi-camera models. The input is a video file, and the output is the calibration result.
 
