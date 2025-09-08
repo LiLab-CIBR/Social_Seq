@@ -228,7 +228,7 @@ $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </spa
 <p>将深度学习模型转换为 TensorRT 以提高性能。由于 TensorRT 模型绑定到特定的系统和硬件，此步骤必须在每台新机器上执行。</p>
 <div class="admonition note">
 <p class="admonition-title">注意</p>
-<p>此步骤每台机器只需执行一次。</p>
+<p>此步骤每台机器只需执行一次。转换过程将花费 ~20 分钟。</p>
 </div>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
 $<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/convert_mmdet_model_to_tensorrt.sh
@@ -238,7 +238,7 @@ $<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/mo
 <p>运行这些命令后，您将生成：</p>
 <ul>
 <li><code>model_mmpose/latest.full.engine</code></li>
-<li><code>DANNCE/train_results/MAX/latest.engine</code></li>
+<li><code>model_dannce/DANNCE/train_results/MAX/latest.engine</code></li>
 <li><code>model_YOLOv8/last.full.engine</code></li>
 <li><code>model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.trt</code></li>
 </ul>

@@ -156,7 +156,7 @@ ln<span class="w"> </span>-s<span class="w"> </span>libcudadebugger.so.5*<span c
 <h2 id="patch-lilab-pkg-if-need">Patch: LILAB-pkg (If need)</h2>
 <p>Why patch: The docker is not support NVIDIA Video Decoder/Encoder. But the main LILAB-pkg use the NVIDIA Video packages. So the docker should downgrade to the CPU video package.</p>
 <p>Whenever you update the LILAB-pkg from github, do this patch.</p>
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>/root/Downloads/pipeline/LILAB-pkg-patch-for-docker<span class="w"> </span>~/LILAB-pkg/
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>/root/Downloads/pipeline/LILAB-pkg-patch-for-docker/*<span class="w"> </span>~/LILAB-pkg/
 </code></pre></div>
               
             </div>
