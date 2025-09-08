@@ -4,7 +4,7 @@ SocialSeq 流程游乐场（Pipeline playground）是一个基于docker打包的
 
 使用**网页浏览器**，探索 social-seq 游乐场。
 
-![img](../../../assets/images/web-gui.jpg)
+![img](../../assets/images/web-gui.jpg)
 
 
 ## 主要功能
