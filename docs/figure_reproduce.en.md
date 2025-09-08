@@ -6,7 +6,7 @@
 **Modified**: Tao Xianming, 2025-08-15
 
 ## Code Download
-The code has been uploaded to Github at: xxx. Please download the code from this link.
+The code has been uploaded to Github at: [Social_Seq-Paper-Figure-Replication](https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication). Please download the code from this link.
 
 ## Figures Gallery
 Run the code in this repository to reproduce the figures in the paper.

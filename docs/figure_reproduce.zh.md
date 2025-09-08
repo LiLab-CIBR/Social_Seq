@@ -14,6 +14,6 @@
 ![Fig2_S2](assets/Fig2_S2.jpg)
 ![Fig3_S3](assets/Fig3_S3.jpg)
 ![Fig4_S4](assets/Fig4_S4.jpg)
-![Fig6_S6](assets/Fig6_S6.jpg)
 ![Fig5_S5](assets/Fig5_S5.jpg)
+![Fig6_S6](assets/Fig6_S6.jpg)
 ![Fig7_S7](assets/Fig7_S7.jpg)
