@@ -207,6 +207,8 @@ $<span class="w"> </span>unzip<span class="w"> </span>lilab_socialseq_pipeline_c
 $<span class="w"> </span>ls<span class="w"> </span>./pipeline/1-Ball_Calibration<span class="w">   </span><span class="c1"># 检查路径</span>
 
 $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--name<span class="w"> </span>lilab_socialseq<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-e<span class="w"> </span><span class="nv">PASSWORD</span><span class="o">=</span>2025cxf<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>-v<span class="w"> </span>./pipeline:/root/Downloads/pipeline<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>lilab/socialseq:codeserver-cuda-tensorrt-torch-tensorflow-mmdet-mmpose-dannce-yolo-20250903<span class="w"> </span><span class="se">\</span>
@@ -214,15 +216,18 @@ $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </spa
 </code></pre></div>
 <p>导航到 <code>http://localhost:8080</code> 并输入密码 <code>2025cxf</code> 以访问 VS Code 服务器环境，在那里您可以查看、编辑和运行 SocialSeq 代码。</p>
 <blockquote>
-<p>如果您在远程服务器上运行 Docker，应将 8080 端口转发到本地机器。有关更多信息，请参见 [错误修复文档]。</p>
+<p>如果您在远程服务器上运行 Docker，应将 8080 端口转发到本地机器。有关更多信息，请参见 [错误修复]。</p>
 </blockquote>
+<p>或者通过docker terminal进入容器
+<div class="highlight"><pre><span></span><code>$ docker exec -it lilab_socialseq bash
+</code></pre></div></p>
 <h2 id="_4">环境验证</h2>
 <p>在 <code>http://localhost:8080</code> 的 Docker VS Code 服务器环境中：</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi<span class="w">  </span><span class="c1"># 在 docker 容器内，应显示 GPU 信息</span>
 </code></pre></div>
 <div class="admonition error">
 <p class="admonition-title">错误</p>
-<p>如果遇到类似 <code>not found libnvidia-ml.so.1</code> 的错误，请参见 [错误修复文档]。</p>
+<p>如果遇到类似 <code>not found libnvidia-ml.so.1</code> 的错误，这是正常现象，因为docker的nvidia驱动在windows和linux下路径不同。解决方法请参见 [错误修复]。</p>
 </div>
 <h2 id="_5">模型初始化</h2>
 <p>将深度学习模型转换为 TensorRT 以提高性能。由于 TensorRT 模型绑定到特定的系统和硬件，此步骤必须在每台新机器上执行。</p>
@@ -230,10 +235,13 @@ $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </spa
 <p class="admonition-title">注意</p>
 <p>此步骤每台机器只需执行一次。转换过程将花费 ~20 分钟。</p>
 </div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
-$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/convert_mmdet_model_to_tensorrt.sh
-$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
-$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
+
+bash<span class="w"> </span>/root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/convert_mmdet_model_to_tensorrt.sh
+
+bash<span class="w"> </span>/root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
+
+bash<span class="w"> </span>/root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
 </code></pre></div>
 <p>运行这些命令后，您将生成：</p>
 <ul>
@@ -247,16 +255,16 @@ $<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/mo
 <p>完成上述安装步骤后，您可以使用以下部分的说明开始运行 SocialSeq 游乐场组件。</p>
 <h3 id="1">1. 小球矫正</h3>
 <p>使用球作为校准目标比棋盘提供更好的可见性，能够更快地进行多摄像机系统的外部校准。详细信息请参见 <a href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">文档</a>。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
 </code></pre></div>
 <h3 id="2-social">2. 社交三维姿态计算 (SOCIAL)</h3>
 <p>通过 Mask R-CNN 处理多摄像机动物视频进行动物识别和分割，然后使用 DANNCE 进行 3D 姿态关键点推断，使用 SmoothNet 进行动作关键点平滑。详细信息请参见 <a href="https://lilab-cibr.github.io/Social_Seq/en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">文档</a>。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh<span class="w">   </span><span class="c1"># Mask R-CNN 用于 ID 分割</span>
-$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh<span class="w">       </span><span class="c1"># DANNCE 和 SmoothNet 用于 3D 姿态重建</span>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh<span class="w">   </span><span class="c1"># Mask R-CNN 用于 ID 分割</span>
+bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh<span class="w">       </span><span class="c1"># DANNCE 和 SmoothNet 用于 3D 姿态重建</span>
 </code></pre></div>
 <h3 id="3-seq">3. 社交序列标签 (SEQ)</h3>
 <p>从 3D 姿态中提取社交相关特征并对其进行分段（每段 0.8 秒）。使用 Seq2seq-FCN 模型对每个视频片段进行分类，产生一致的社交序列标签。详细信息请参见 <a href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/">文档</a>。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/3-Sequence_Labeling/run_task.sh
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/3-Sequence_Labeling/run_task.sh
 </code></pre></div>
 <h3 id="4-live">4. 闭环行为控制 (LIVE)</h3>
 <p>建立具有闭环反馈的实时行为分析系统。这将涉及多摄像机感知和识别动物社交行为，以建立光遗传学条件刺激。</p>

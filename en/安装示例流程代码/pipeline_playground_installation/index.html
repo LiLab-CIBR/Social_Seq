@@ -60,23 +60,15 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Install & Run</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#content">Content</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#key-features">Key Features</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#environment-verification">Environment Verification</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#model-initialization">Model Initialization</a>
+    <li class="toctree-l2"><a class="reference internal" href="#environment-verification">Environment Verification</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#model-initialization">Model Initialization</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#pipeline-components">Pipeline Components</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1-ball-calibration">1. Ball Calibration</a>
     </li>
@@ -84,7 +76,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3-sequence-labeling-seq">3. Sequence Labeling (SEQ)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4-closed-loop-control-live-coming-soon">4. Closed-Loop Control (LIVE)** (Coming Soon):</a>
+    <li class="toctree-l3"><a class="reference internal" href="#4-closed-loop-control-live-coming-soon">4. Closed-Loop Control (LIVE) (Coming Soon):</a>
     </li>
         </ul>
     </li>
@@ -169,18 +161,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="welcome-to-socialseq-playground-lets-quickly-install-and-play">Welcome to SocialSeq playground, let's quickly install and play.</h1>
-<p>SocialSeq is a comprehensive toolbox for pose estimation and behavior recognition of animals (particularly rodents) performing free social behaviors.</p>
-<h2 id="content">Content</h2>
-<p>This repository contains the "SocialSeq" pipeline playground, designed to help users understand the functionality and logic of the SocialSeq framework through a series of demonstration data processing tasks. The complete pipeline includes model packaging, raw data processing, and result visualization, allowing you to explore:</p>
-<p><strong>Use the web browser</strong> to edit and run the social-seq playground.</p>
+                <h1 id="whats-the-socialseq-pipeline-playground">What's the "SocialSeq pipeline playground"?</h1>
+<p>The <strong>SocialSeq pipeline playground</strong> is a docker container based virtual machine designed to help users understand the functionality and logic of the SocialSeq through a series of demonstration data processing tasks. The complete pipeline includes model packaging, raw data processing, and result visualization, allowing you to explore:</p>
+<p><strong>Use the web browser</strong> to explore the social-seq playground.</p>
 <p><img alt="img" src="../../../assets/images/web-gui.jpg" /></p>
-<h2 id="key-features">Key Features</h2>
-<ul>
-<li><strong>Ball Calibration for Multi-Camera System</strong>: </li>
-<li><strong>Social 3D Pose Estimation</strong>: </li>
-<li><strong>Sequence Labeling</strong>: </li>
-</ul>
 <h2 id="system-requirements">System Requirements</h2>
 <p>SocialSeq has been tested on the following configurations:</p>
 <ul>
@@ -188,10 +172,10 @@
 <li><strong>Ubuntu</strong> + AMD64 + NVIDIA A100</li>
 <li><strong>Ubuntu</strong> + AMD64 + NVIDIA RTX3090</li>
 </ul>
-<p>Prerequisites, <strong>docker</strong> and <strong>nvidia driver</strong> should be installed.
+<p>Prerequisites, <strong>docker</strong> and <strong>nvidia driver</strong> should be installed.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>--version<span class="w">  </span><span class="c1"># Docker version should be &gt;= 24.0.6</span>
 $<span class="w"> </span>nvidia-smi<span class="w">        </span><span class="c1"># NVIDIA driver version should be &gt;= 550.54</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="installation">Installation</h2>
 <p>You need to set up Docker and download the models and data files:</p>
 <table>
@@ -223,6 +207,8 @@ $<span class="w"> </span>unzip<span class="w"> </span>lilab_socialseq_pipeline_c
 $<span class="w"> </span>ls<span class="w"> </span>./pipeline/1-Ball_Calibration<span class="w">   </span><span class="c1"># Check path</span>
 
 $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--name<span class="w"> </span>lilab_socialseq<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-e<span class="w"> </span><span class="nv">PASSWORD</span><span class="o">=</span>2025cxf<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>-v<span class="w"> </span>./pipeline:/root/Downloads/pipeline<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>lilab/socialseq:codeserver-cuda-tensorrt-torch-tensorflow-mmdet-mmpose-dannce-yolo-20250903<span class="w"> </span><span class="se">\</span>
@@ -232,22 +218,27 @@ $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </spa
 <blockquote>
 <p>If you're running Docker on a remote server, you should forward port 8080 to your local machine. See the [bug fix documentation] for more information.</p>
 </blockquote>
-<h4 id="environment-verification">Environment Verification</h4>
+<p>Or use docker terminal
+<div class="highlight"><pre><span></span><code>$ docker exec -it lilab_socialseq bash
+</code></pre></div></p>
+<h2 id="environment-verification">Environment Verification</h2>
 <p>In the Docker VS Code server environment at <code>http://localhost:8080</code>:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi<span class="w">  </span><span class="c1"># within docker container, should display GPU information</span>
 </code></pre></div>
-<blockquote>
-<p>If you encounter errors like <code>not found libnvidia-ml.so.1</code>, refer to the [bug fix documentation].</p>
-</blockquote>
-<h3 id="model-initialization">Model Initialization</h3>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>If you encounter errors like <code>not found libnvidia-ml.so.1</code>, this is normal because the nvidia driver paths are different between Windows and Linux in docker. Refer to the [bug fix documentation] for solutions.</p>
+</div>
+<h2 id="model-initialization">Model Initialization</h2>
 <p>Convert deep learning models to TensorRT for improved performance. Since TensorRT models are bound to specific systems and hardware, this step must be performed on each new machine.</p>
-<blockquote>
-<p>Note: This step only needs to be performed once per machine. The convertions will take ~20 minutes in total.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
-$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/convert_mmdet_model_to_tensorrt.sh
-$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
-$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step only needs to be performed once per machine. The conversion process will take ~20 minutes.</p>
+</div>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
+bash<span class="w"> </span>/root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/convert_mmdet_model_to_tensorrt.sh
+bash<span class="w"> </span>/root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
+bash<span class="w"> </span>/root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
 </code></pre></div>
 <p>After running these commands, you will generate:</p>
 <ul>
@@ -256,25 +247,25 @@ $<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/mo
 <li><code>model_YOLOv8/last.full.engine</code></li>
 <li><code>model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.trt</code></li>
 </ul>
-<p>All set! You're now ready to run the SocialSeq pipeline with demo data.</p>
+<p>All set! You're now ready to run the <strong>SocialSeq pipeline playground</strong> with demo data.</p>
 <h2 id="quick-start">Quick Start</h2>
 <p>Once you've completed the installation steps above, you can begin running the SocialSeq pipeline components using the instructions in the following sections.</p>
-<h2 id="pipeline-components">Pipeline Components</h2>
 <h3 id="1-ball-calibration">1. Ball Calibration</h3>
 <p>Using a ball as a calibration target provides better visibility than a chessboard, enabling faster extrinsic calibration of multi-camera systems. For detailed information, refer to the <a href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">documentation</a>.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
 </code></pre></div>
 <h3 id="2-social-3d-pose-social">2. Social 3D Pose (SOCIAL)</h3>
-<p>Processing multi-camera animal videos through Mask R-CNN for animal identification and segmentation, followed by DANNCE for 3D pose keypoint inference, and SmoothNet for motion keypoint smoothing. This results in accurate, occlusion-resistant social 3D poses. For detailed information, refer to the <a href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">documentation</a>.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh<span class="w">   </span><span class="c1"># Mask R-CNN for ID segmentation</span>
-$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh<span class="w">       </span><span class="c1"># DANNCE and SmoothNet for 3D pose reconstruction</span>
+<p>Processing multi-camera animal videos through Mask R-CNN for animal identification and segmentation, followed by DANNCE for 3D pose keypoint inference, and SmoothNet for motion keypoint smoothing. For detailed information, refer to the <a href="https://lilab-cibr.github.io/Social_Seq/en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">documentation</a>.</p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh<span class="w">   </span><span class="c1"># Mask R-CNN for ID segmentation</span>
+bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh<span class="w">       </span><span class="c1"># DANNCE and SmoothNet for 3D pose reconstruction</span>
 </code></pre></div>
 <h3 id="3-sequence-labeling-seq">3. Sequence Labeling (SEQ)</h3>
 <p>Extracting social-related features from 3D poses and segmenting them (0.8 seconds per segment). Using a Seq2seq-FCN model to classify each video segment, resulting in consistent social sequence labels. For detailed information, refer to the <a href="../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/">documentation</a>.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/root/Downloads/pipeline/3-Sequence_Labeling/run_task.sh
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/3-Sequence_Labeling/run_task.sh
 </code></pre></div>
-<h3 id="4-closed-loop-control-live-coming-soon">4. Closed-Loop Control (LIVE)** (Coming Soon):</h3>
+<h3 id="4-closed-loop-control-live-coming-soon">4. Closed-Loop Control (LIVE) (Coming Soon):</h3>
 <p>Establishing a real-time behavior analysis system with closed-loop feedback. This will involve multi-camera perception and recognition of animal social behaviors to establish optogenetic conditional stimulation.</p>
+<p><em>Not yet added to the playground, preparation in progress</em></p>
               
             </div>
           </div><footer>

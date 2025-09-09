@@ -148,16 +148,64 @@
 </code></pre></div>
 <p>So that you can try this patch.
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/lib/x86_64-linux-gnu
-ln<span class="w"> </span>-s<span class="w"> </span>libnvidia-ml.so.5*<span class="w"> </span>libnvidia-ml.so.1<span class="w">  </span>
-ln<span class="w"> </span>-s<span class="w"> </span>libnvidia-ml.so.5*<span class="w"> </span>libnvidia-ml.so<span class="w">  </span><span class="c1">#optional</span>
-ln<span class="w"> </span>-s<span class="w"> </span>libcuda.so.5*<span class="w"> </span>libcuda.so.1<span class="w">   </span><span class="c1">#optional</span>
-ln<span class="w"> </span>-s<span class="w"> </span>libcudadebugger.so.5*<span class="w"> </span>libcudadebugger.so.1<span class="w">   </span><span class="c1">#optional</span>
+ln<span class="w"> </span>-sf<span class="w"> </span>libnvidia-ml.so.5*<span class="w"> </span>libnvidia-ml.so.1<span class="w">  </span>
+ln<span class="w"> </span>-sf<span class="w"> </span>libnvidia-ml.so.5*<span class="w"> </span>libnvidia-ml.so
+ln<span class="w"> </span>-sf<span class="w"> </span>libcuda.so.5*<span class="w"> </span>libcuda.so.1<span class="w">   </span><span class="c1">#optional</span>
+ln<span class="w"> </span>-sf<span class="w"> </span>libcudadebugger.so.5*<span class="w"> </span>libcudadebugger.so.1<span class="w">   </span><span class="c1">#optional</span>
+ldconfig
+</code></pre></div></p>
+<p>You can check if torch is working properly
+<div class="highlight"><pre><span></span><code>python -c &quot;import torch; print(torch.zeros(3,3).cuda())&quot;
 </code></pre></div></p>
 <h2 id="patch-lilab-pkg-if-need">Patch: LILAB-pkg (If need)</h2>
 <p>Why patch: The docker is not support NVIDIA Video Decoder/Encoder. But the main LILAB-pkg use the NVIDIA Video packages. So the docker should downgrade to the CPU video package.</p>
 <p>Whenever you update the LILAB-pkg from github, do this patch.</p>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>/root/Downloads/pipeline/LILAB-pkg-patch-for-docker/*<span class="w"> </span>~/LILAB-pkg/
 </code></pre></div>
+<h2 id="host-port-8080-already-in-use">Host Port 8080 Already in Use</h2>
+<p>If you encounter the error "Error starting userland proxy: listen tcp 0.0.0.0:8080: bind: address already in use" when running the following command, it means that port 8080 on the host is already occupied.
+<div class="highlight"><pre><span></span><code>docker run --rm -it -p 8080:8080 ...
+</code></pre></div></p>
+<p>You need to modify the port mapping to another port (e.g., 8081, http://localhost:8081/), for example:
+<div class="highlight"><pre><span></span><code>docker run --rm -it -p 8081:8080 ...
+</code></pre></div></p>
+<h2 id="forward-remote-server-port-8080-to-local">Forward Remote Server Port 8080 to Local</h2>
+<p>You can skip this step if you are using Windows Docker.</p>
+<p><strong>Why forwarding is needed?</strong>
+Typically, the client computer running the web interface (e.g., IP 10.50.7.103) and the remote server (e.g., IP 10.50.60.6) are on different machines. Due to Chrome's restrictions, although vs-code-server (http://10.50.60.6:8080) can be accessed, advanced features (file browsing, Jupyter, etc.) are not permitted.</p>
+<p><strong>Solution</strong>
+Not recommended: Configure HTTPS upgrade, i.e., (https://10.50.60.6:8080), but this requires configuring SSL certificates on the remote server, which is cumbersome.</p>
+<p>Recommended: Forward the website port (http://10.50.60.6:8080) to the local machine. Forward the remote server's port 8080 (http://10.50.60.6:8080) to the local machine (http://localhost:8080, i.e., http://10.50.7.103:8080). Chrome browser can then access it normally. This is because Chrome has no restrictions on accessing localhost.</p>
+<div class="highlight"><pre><span></span><code>ssh -L 8080:10.50.60.6:8080 username@10.50.60.6
+</code></pre></div>
+<p><strong>Operating Steps</strong>
+Windows client computers can perform the following operations. Remember to replace the IP addresses with the actual server address and port.</p>
+<table>
+<thead>
+<tr>
+<th>Client Operating System</th>
+<th>Server Firewall Port 8080</th>
+<th>Proxy Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>Allow</td>
+<td>netsh interface portproxy add v4tov4 listenaddress=127.0.0.1 listenport=8080 connectaddress=10.50.60.6 connectport=8080</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>Allow</td>
+<td>socat TCP-LISTEN:8080,bind=127.0.0.1,fork TCP:10.50.60.6:8080</td>
+</tr>
+<tr>
+<td>General (SSH Tunnel)</td>
+<td>Closed</td>
+<td>ssh -L 8080:10.50.60.6:8080 username@10.50.60.6</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div><footer>
