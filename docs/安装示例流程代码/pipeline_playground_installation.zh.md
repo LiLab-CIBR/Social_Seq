@@ -40,6 +40,8 @@ $ unzip lilab_socialseq_pipeline_code_with_data_20250903.zip -d ./pipeline  # �
 $ ls ./pipeline/1-Ball_Calibration   # 检查路径
 
 $ docker run --rm -it -p 8080:8080 \
+    --gpus all \
+    --name lilab_socialseq \
     -e PASSWORD=2025cxf  \
     -v ./pipeline:/root/Downloads/pipeline  \
     lilab/socialseq:codeserver-cuda-tensorrt-torch-tensorflow-mmdet-mmpose-dannce-yolo-20250903 \
@@ -48,7 +50,12 @@ $ docker run --rm -it -p 8080:8080 \
 
 导航到 `http://localhost:8080` 并输入密码 `2025cxf` 以访问 VS Code 服务器环境，在那里您可以查看、编辑和运行 SocialSeq 代码。
 
-> 如果您在远程服务器上运行 Docker，应将 8080 端口转发到本地机器。有关更多信息，请参见 [错误修复文档]。
+> 如果您在远程服务器上运行 Docker，应将 8080 端口转发到本地机器。有关更多信息，请参见 [错误修复]。
+
+或者通过docker terminal进入容器
+```
+$ docker exec -it lilab_socialseq bash
+```
 
 ## 环境验证
 
@@ -59,7 +66,7 @@ $ nvidia-smi  # 在 docker 容器内，应显示 GPU 信息
 ```
 
 !!! error "错误"
-    如果遇到类似 `not found libnvidia-ml.so.1` 的错误，请参见 [错误修复文档]。
+    如果遇到类似 `not found libnvidia-ml.so.1` 的错误，这是正常现象，因为docker的nvidia驱动在windows和linux下路径不同。解决方法请参见 [错误修复]。
 
 ## 模型初始化
 
@@ -69,10 +76,14 @@ $ nvidia-smi  # 在 docker 容器内，应显示 GPU 信息
     此步骤每台机器只需执行一次。转换过程将花费 ~20 分钟。
 
 ```bash
-$ bash /root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
-$ bash /root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/convert_mmdet_model_to_tensorrt.sh
-$ bash /root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
-$ bash /root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
+bash /root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
+
+bash /root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/convert_mmdet_model_to_tensorrt.sh
+
+bash /root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
+
+bash /root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
+
 ```
 
 运行这些命令后，您将生成：
@@ -92,7 +103,7 @@ $ bash /root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
 使用球作为校准目标比棋盘提供更好的可见性，能够更快地进行多摄像机系统的外部校准。详细信息请参见 [文档](../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/)。
 
 ```bash
-$ bash /root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
+bash /root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
 ```
 
 
@@ -102,8 +113,8 @@ $ bash /root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
 
 
 ```bash
-$ bash /root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh   # Mask R-CNN 用于 ID 分割
-$ bash /root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh       # DANNCE 和 SmoothNet 用于 3D 姿态重建
+bash /root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh   # Mask R-CNN 用于 ID 分割
+bash /root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh       # DANNCE 和 SmoothNet 用于 3D 姿态重建
 ```
 
 
@@ -111,7 +122,7 @@ $ bash /root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh       # DA
 从 3D 姿态中提取社交相关特征并对其进行分段（每段 0.8 秒）。使用 Seq2seq-FCN 模型对每个视频片段进行分类，产生一致的社交序列标签。详细信息请参见 [文档](../../%E7%A4%BE%E4%BA%A4%E5%BA%8F%E5%88%97%E6%A0%87%E7%AD%BE/application/)。
 
 ```bash
-$ bash /root/Downloads/pipeline/3-Sequence_Labeling/run_task.sh
+bash /root/Downloads/pipeline/3-Sequence_Labeling/run_task.sh
 ```
 
 
