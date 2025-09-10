@@ -11,11 +11,11 @@ The **SocialSeq pipeline playground** is a docker container based virtual machin
 
 SocialSeq has been tested on the following configurations:
 
-- **Windows 10** (with WSL2) + AMD64 + NVIDIA RTX4090
-- **Ubuntu** + AMD64 + NVIDIA A100
-- **Ubuntu** + AMD64 + NVIDIA RTX3090
+- **Windows 10** (with WSL2) + x86_64 + NVIDIA RTX4090
+- **Debian 11** + x86_64 + NVIDIA A100
+- **Ubuntu 20.04** + x86_64 + NVIDIA RTX3090
 
-Prerequisites, **docker** and **nvidia driver** should be installed.
+Prerequisites, **Docker** and **Nvidia Driver** should be installed.
 
 ```bash
 $ docker --version  # Docker version should be >= 24.0.6
@@ -28,8 +28,8 @@ You need to set up Docker and download the models and data files:
 
 | Name | Type | Download link |
 | --- | --- | ---|
-| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | docker image | 百度云(准备中) |
-| lilab_socialseq_pipeline_code_with_data_20250903.zip | docker image | 百度云(准备中) |
+| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | docker image | [Download🔗](https://pan.baidu.com/s/1MDIEdxTpE32u07u2g7PP0Q?pwd=4jj2) |
+| lilab_socialseq_pipeline_code_with_data_20250903.zip | docker image | *Same above* |
 
 ```bash
 $ cd SOCIAL_SEQ_DOWNLOAD_PATH

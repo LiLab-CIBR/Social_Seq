@@ -11,9 +11,9 @@ SocialSeq 流程游乐场（Pipeline playground）是一个基于docker打包的
 
 SocialSeq 已在以下配置上进行了测试：
 
-- **Windows 10**（带 WSL2）+ AMD64 + NVIDIA RTX4090
-- **Ubuntu** + AMD64 + NVIDIA A100
-- **Ubuntu** + AMD64 + NVIDIA RTX3090
+- **Windows 10**（带 WSL2）+ x86_64 + NVIDIA RTX4090
+- **Debian 11** + x86_64 + NVIDIA A100
+- **Ubuntu 20.04** + x86_64 + NVIDIA RTX3090
 
 需要安装 **Docker** 和 **NVIDIA 驱动**：
 
@@ -28,8 +28,8 @@ $ nvidia-smi        # NVIDIA 驱动版本应 >= 550.54
 
 | 名称 | 类型 | 下载链接 |
 | --- | --- | ---|
-| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | Docker 镜像 | 百度云(准备中) |
-| lilab_socialseq_pipeline_code_with_data_20250903.zip | 代码与数据 | 百度云(准备中) |
+| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | Docker 镜像 | [下载🔗](https://pan.baidu.com/s/1MDIEdxTpE32u07u2g7PP0Q?pwd=4jj2) |
+| lilab_socialseq_pipeline_code_with_data_20250903.zip | 代码与数据 | *链接同上* |
 
 ```bash
 $ cd SOCIAL_SEQ_DOWNLOAD_PATH
