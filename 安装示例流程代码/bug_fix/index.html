@@ -146,7 +146,7 @@
 <p>如果你的服务器是 Linux 系统：</p>
 <div class="highlight"><pre><span></span><code>$ nvidia-smi  # 正常情况下应能看到 GPU 信息，若出现&quot;not found libnvidia-ml.so.1&quot;错误，则需要应用补丁。
 </code></pre></div>
-<p>此时，你可以尝试以下补丁操作：
+<p>此时，你可以进入docker容器，尝试以下补丁操作：
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/lib/x86_64-linux-gnu
 ln<span class="w"> </span>-sf<span class="w"> </span>libnvidia-ml.so.5*<span class="w"> </span>libnvidia-ml.so.1<span class="w">  </span>
 ln<span class="w"> </span>-sf<span class="w"> </span>libnvidia-ml.so.5*<span class="w"> </span>libnvidia-ml.so
