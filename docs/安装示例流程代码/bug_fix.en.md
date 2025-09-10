@@ -8,7 +8,7 @@ If you server is Linux.
 $ nvidia-smi  #should see the GPUs, errors `not found libnvidia-ml.so.1` should patch.
 ```
 
-So that you can try this patch.
+So that you can enter the Docker container, and try this patch.
 ```bash
 cd /usr/lib/x86_64-linux-gnu
 ln -sf libnvidia-ml.so.5* libnvidia-ml.so.1  

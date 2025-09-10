@@ -8,7 +8,7 @@
 $ nvidia-smi  # 正常情况下应能看到 GPU 信息，若出现"not found libnvidia-ml.so.1"错误，则需要应用补丁。
 ```
 
-此时，你可以尝试以下补丁操作：
+此时，你可以进入docker容器，尝试以下补丁操作：
 ```bash
 cd /usr/lib/x86_64-linux-gnu
 ln -sf libnvidia-ml.so.5* libnvidia-ml.so.1  
