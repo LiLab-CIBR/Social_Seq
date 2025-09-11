@@ -165,6 +165,10 @@
 <p>SocialSeq 流程游乐场（Pipeline playground）是一个基于docker打包的代码环境，旨在通过在demo数据的处理过程帮助用户理解 SocialSeq 框架的功能和逻辑。完整的流程包括模型打包、原始数据处理和结果可视化。</p>
 <p>使用<strong>网页浏览器</strong>，探索 SocialSeq 游乐场。</p>
 <p><img alt="img" src="../../assets/images/web-gui.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">注意</p>
+<p>游乐场仅用于演示 SocialSeq 框架各模型的<strong>推理过程</strong>，不包含模型的训练。后续的数据分析请另参照文档-<a href="../../figure_reproduce/"><strong>文章图表复现</strong></a>。</p>
+</div>
 <h2 id="_2">系统要求</h2>
 <p>SocialSeq 已在以下配置上进行了测试：</p>
 <ul>
@@ -203,7 +207,7 @@ $<span class="w"> </span>nvidia-smi<span class="w">        </span><span class="c
 $<span class="w"> </span>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>./lilab_socialseq_pipeline_cuda_vscode_amd64_2025*.tar
 $<span class="w"> </span>docker<span class="w"> </span>images<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>lilab<span class="w">      </span><span class="c1"># 结果将得到一个名为 &#39;lilab*&#39; 的镜像文件</span>
 
-$<span class="w"> </span>unzip<span class="w"> </span>lilab_socialseq_pipeline_code_with_data_20250903.zip<span class="w"> </span>-d<span class="w"> </span>./pipeline<span class="w">  </span><span class="c1"># 解压文件</span>
+$<span class="w"> </span>unzip<span class="w"> </span>lilab_socialseq_pipeline_code_with_data_2025*.zip<span class="w"> </span>-d<span class="w"> </span>./pipeline<span class="w">  </span><span class="c1"># 解压文件</span>
 $<span class="w"> </span>ls<span class="w"> </span>./pipeline/1-Ball_Calibration<span class="w">   </span><span class="c1"># 检查路径</span>
 
 $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
@@ -242,6 +246,9 @@ bash<span class="w"> </span>/root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x
 bash<span class="w"> </span>/root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
 
 bash<span class="w"> </span>/root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
+
+<span class="c1"># 给 LILAB-pkg 包打补丁</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/root/Downloads/pipeline/LILAB-pkg-patch-for-docker/*<span class="w"> </span>~/LILAB-pkg/
 </code></pre></div>
 <p>运行这些命令后，您将生成：</p>
 <ul>
