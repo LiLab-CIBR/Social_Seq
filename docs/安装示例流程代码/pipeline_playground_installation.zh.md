@@ -30,7 +30,7 @@ $ nvidia-smi        # NVIDIA 驱动版本应 >= 550.54
 
 | 名称 | 类型 | 下载链接 |
 | --- | --- | ---|
-| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | Docker 镜像 | [下载🔗](https://pan.baidu.com/s/1MDIEdxTpE32u07u2g7PP0Q?pwd=4jj2) |
+| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | Docker 镜像 | [下载🔗](https://pan.baidu.com/s/1MDIEdxTpE32u07u2g7PP0Q) |
 | lilab_socialseq_pipeline_code_with_data_20250903.zip | 代码与数据 | *链接同上* |
 
 ```bash
