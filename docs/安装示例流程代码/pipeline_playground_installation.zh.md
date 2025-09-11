@@ -6,6 +6,8 @@ SocialSeq 流程游乐场（Pipeline playground）是一个基于docker打包的
 
 ![img](../../assets/images/web-gui.jpg)
 
+!!! note "注意"
+    游乐场仅用于演示 SocialSeq 框架各模型的**推理过程**，不包含模型的训练。后续的数据分析请另参照文档-[**文章图表复现**](../figure_reproduce.zh.md)。
 
 ## 系统要求
 
@@ -36,7 +38,7 @@ $ cd SOCIAL_SEQ_DOWNLOAD_PATH
 $ docker load -i ./lilab_socialseq_pipeline_cuda_vscode_amd64_2025*.tar
 $ docker images | grep lilab      # 结果将得到一个名为 'lilab*' 的镜像文件
 
-$ unzip lilab_socialseq_pipeline_code_with_data_20250903.zip -d ./pipeline  # 解压文件
+$ unzip lilab_socialseq_pipeline_code_with_data_2025*.zip -d ./pipeline  # 解压文件
 $ ls ./pipeline/1-Ball_Calibration   # 检查路径
 
 $ docker run --rm -it -p 8080:8080 \
@@ -84,6 +86,8 @@ bash /root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
 
 bash /root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
 
+# 给 LILAB-pkg 包打补丁
+cp -r /root/Downloads/pipeline/LILAB-pkg-patch-for-docker/* ~/LILAB-pkg/
 ```
 
 运行这些命令后，您将生成：

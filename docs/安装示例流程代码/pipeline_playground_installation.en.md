@@ -6,6 +6,8 @@ The **SocialSeq pipeline playground** is a docker container based virtual machin
 
 ![img](../../../assets/images/web-gui.jpg)
 
+!!! note "Note"
+    The playground is only used to demonstrate the **inference process** of each model in the SocialSeq framework, and does not include model training. For subsequent data analysis, please refer to the document - [**Article Figure Reproduction**](../figure_reproduce.en.md).
 
 ## System Requirements
 
@@ -36,7 +38,7 @@ $ cd SOCIAL_SEQ_DOWNLOAD_PATH
 $ docker load -i ./lilab_socialseq_pipeline_cuda_vscode_amd64_2025*.tar
 $ docker images | grep lilab      # resulting in an image file named 'lilab*'
 
-$ unzip lilab_socialseq_pipeline_code_with_data_20250903.zip -d ./pipeline  # Unzip file
+$ unzip lilab_socialseq_pipeline_code_with_data_2025*.zip -d ./pipeline  # Unzip file
 $ ls ./pipeline/1-Ball_Calibration   # Check path
 
 $ docker run --rm -it -p 8080:8080 \
@@ -81,6 +83,9 @@ bash /root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
 bash /root/Downloads/pipeline/model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/convert_mmdet_model_to_tensorrt.sh
 bash /root/Downloads/pipeline/model_mmpose/convert_mmpose_model_to_tensorrt.sh
 bash /root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
+
+# Patch the LILAB-pkg package
+cp -r /root/Downloads/pipeline/LILAB-pkg-patch-for-docker/* ~/LILAB-pkg/
 ```
 
 After running these commands, you will generate:
