@@ -24,7 +24,7 @@
 
 首先，通过 `uv` 工具**安装依赖环境**。
 
-!!! warning "警告”
+!!! warning "警告"
     不要同时使用 `uv` 和 `conda`。这会导致包安装冲突。在运行以下代码之前，请先运行 `conda deactivate`。
 
 ```bash
