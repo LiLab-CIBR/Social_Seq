@@ -48,7 +48,7 @@ ls $vdir/*.segpkl | sed 's/.segpkl/.mp4/' | xargs -n 1 -P 8 -I {} python -m lila
     一次性不要跑太多视频。先跑几个视频试试看。效果佳，则可以接着运行剩下的视频。如果效果不佳，则要更新模型后，再重新跑视频。
 
 !!! error "错误"
-    如果开 `xx_mask.mp4` 视频分割效果差，则需要重修分割标注，更新模型。见数据与模型更新章节。如果 `xx_vol230.0.mp4` 体素方格偏差较大，说明小球矫正的文件有错误，需要从新矫正。
+    如果 `xx_mask.mp4` 视频分割效果差，则需要重修分割标注，更新模型。见数据与模型更新章节。如果 `xx_vol230.0.mp4` 体素方格偏差较大，说明小球矫正的文件有错误，需要重新小球矫正。
 
 ## 预测关键点
 <div class="image-row">
@@ -110,5 +110,4 @@ echo "$vfiles" | sed 's/.segpkl/.smoothed_foot.matcalibpkl/' | xargs -P 6 -l -r 
 验证：打开 `xx_3_sktdraw_smoothed_foot.mp4` 视频，查看关键点位置是否正确。保存好`xx.smoothed_foot.matcalibpkl`，这是包含社交三维姿态坐标的重要文件。
 
 !!! error "错误"
-    如果开 `xx_3_sktdraw_smoothed_foot.mp4` 视频分割效果差，可以检查偏差对应时刻的分割视频，意见检查小球矫正文件。DANNCE模型一般来说非常稳定，MASK-RCNN 分割模型容易收到环境光和背景影响，需要经常加训。见数据与模型更新章节。
-
+    如果 `xx_3_sktdraw_smoothed_foot.mp4` 视频分割效果差，可以检查偏差对应时刻的分割视频，意见检查小球矫正文件。DANNCE模型一般来说非常稳定，MASK-RCNN 分割模型容易收到环境光和背景影响，需要经常加训。见数据与模型更新章节。

@@ -17,12 +17,14 @@ The table below lists all cameras and materials used in the camera experimental 
 | Metal Ball | For camera extrinsic calibration, diameter <2 cm | 1 | Any source |
 | Acrylic Light Shield | Used to block background clutter and prevent image interference. Size according to experimental requirements. | 7 | [Taobao Purchase Link](https://item.taobao.com/item.htm?id=623132143028&spm=tbpc.boughtlist.suborder_itemtitle.1.5cb72e8dIZHSFZ) |
 
-Notes:
-- The appropriate focal length of the camera lens needs to be tested by yourself. Factors such as camera distance and experimental box size will affect the choice of focal length.
-- It is recommended to let the camera manufacturer provide different software identifiers (different names) for each camera to facilitate differentiation.
-- Sliders are not that necessary, as the field of view can be adjusted by focal length. However, PTZ is necessary because it is needed to adjust the camera angle.
-- Red light illumination LEDs are placed at the 6 corners of the bracket for even illumination. Otherwise, a single light source can easily cause image shadows, leading to reduced accuracy in subsequent animal analysis. The light intensity is high, so part of it needs to be blocked to achieve a final illumination of about 20 lux.
-- Do not connect cameras directly to the computer's USB port, as the motherboard's USB bandwidth is severely limited and cannot connect multiple cameras simultaneously. Please use a professional-grade PCIE-USB expansion card (U3412U)!!
+!!! note "Tips"
+    - The appropriate focal length of the camera lens needs to be tested by yourself. Factors such as camera distance and experimental arena size will affect the choice of focal length.
+    - It is recommended to let the camera manufacturer provide different software identifiers (different names) for each camera.
+    - Sliders are not that necessary, as the field of view can be adjusted by focal length. However, the camera gimbal head is necessary to adjust the camera angle.
+    - Red light illumination LEDs are placed at the 6 corners of around the arena for even illumination. Otherwise, a single light source can easily cause image shadows, leading to reduced accuracy in subsequent image analysis. The light intensity is controled to achieve a final illumination of about 20 lux.
+
+!!! error "Error"
+    Do not connect cameras directly to the computer's USB port, as the motherboard's USB bandwidth is severely limited and cannot connect multiple cameras simultaneously. Please use a professional-grade PCIE-USB expansion card (U3412U)!!
 
 ## Experimental Computer Hardware Configuration
 Used for collecting multi-camera video data and recording videos using OBS Studio.
