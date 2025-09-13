@@ -1,4 +1,6 @@
 # 小球矫正的概述
+*参考 “[安装示例代码 > 游乐场](../../安装示例流程代码/pipeline_playground_installation/)”，运行完整代码。*
+
 使用小球开发小球标定流程，实现了快速精准的多相机标定。详细也可以参考 [multiview_ball_calib](https://github.com/chenxinfeng4/multiview_ball_calib)。这里只放大致的流程。
 
 ![ball move](https://github.com/chenxinfeng4/multiview_ball_calib/raw/main/src_images/ball_move.gif)

@@ -1,4 +1,6 @@
 # Overview of Ball Calibration
+*Refer to “[PIPELINE PLAYGROUND > Install & Run](../../安装示例流程代码/pipeline_playground_installation/)”， and test the codes。*
+
 The ball calibration process was developed using a ball, achieving fast and accurate multi-camera calibration. For details, you can also refer to [multiview_ball_calib](https://github.com/chenxinfeng4/multiview_ball_calib). Here, we only present the general process.
 
 ![ball move](https://github.com/chenxinfeng4/multiview_ball_calib/raw/main/src_images/ball_move.gif)

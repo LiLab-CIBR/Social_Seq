@@ -1,6 +1,4 @@
 # Code Process
-> Developer: xxx
-> Maintainer: xxx
 
 ## Splitting Multiple Animals
 <div class="image-row">

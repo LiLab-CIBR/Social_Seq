@@ -1,4 +1,6 @@
 # 社交三维姿态重构
+*参考 “[安装示例代码 > 游乐场](../../安装示例流程代码/pipeline_playground_installation/)”，运行完整代码。*
+
 ![pipeline](../../assets/images/rat_social_pose_pipeline.jpg)
 原始的多视角视频，经过`分割`, `关键点重构` 和 `平滑` 之后，获取稳定的3D姿态坐标。
 

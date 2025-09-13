@@ -1,6 +1,6 @@
 # 代码流程
-> 开发者：xxx
-> 维护：xxx
+*参考 “[安装实例代码 > 游乐场](../../安装示例流程代码/pipeline_playground_installation/)”，运行完整代码。*
+
 
 ## 分割多动物
 <div class="image-row">

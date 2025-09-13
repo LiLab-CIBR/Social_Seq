@@ -138,11 +138,11 @@ Go to github to download [Arduino Laser pulse](https://github.com/chenxinfeng4/s
 
 ```bash
 const int PinNum = 6;             // the number of the LED pin
-const float duration = 0.5;         // time for running, unit = sec.
+const float duration = 1.0;         // time for running, unit = sec.
 const float Hz = 40;              // frequency, unit = Hz.
 const float Duty = 0.2;           // duty, unit = 0~1.
 ```
-This code indicates that Arduino's D6 pin is connected to the laser's trigger pin. The single stimulation time is 0.5 seconds, the laser frequency is 40Hz, and the duty cycle is 0.2 (5ms).
+This code indicates that Arduino's D6 pin is connected to the laser's trigger pin. The single stimulation time is 1.0 seconds, the laser frequency is 40Hz, and the duty cycle is 0.2 (5ms).
 
 ## Close OBS and GUI
 

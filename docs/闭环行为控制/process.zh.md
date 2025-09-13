@@ -138,11 +138,11 @@ filename=`date --date='2.2 seconds' +"%Y-%m-%d_%H-%M-%S"`
 
 ```bash
 const int PinNum = 6;             // the number of the LED pin
-const float duration = 0.5;         // time for running, unit = sec.
+const float duration = 1.0;         // time for running, unit = sec.
 const float Hz = 40;              // frequency, unit = Hz.
 const float Duty = 0.2;           // duty, unit = 0~1.
 ```
-该代码表示Arduino 的 D6 引脚，连接到激光器的触发引脚。单词刺激时间为 0.5 秒，激光频率为 40Hz，占空比为 0.2 （5ms）。
+该代码表示Arduino 的 D6 引脚，连接到激光器的触发引脚。单次刺激时间为 1.0 秒，激光频率为 40Hz，占空比为 0.2 （5ms）。
 
 ## 关闭 OBS 和 GUI
 
