@@ -47,18 +47,20 @@ docker run --rm -it -p 8081:8080 ...
 You can skip this step if you are using Windows Docker.
 
 **Why forwarding is needed?**
+
 Typically, the client computer (e.g., IP 10.50.7.103) running the web interface and the remote server (e.g., IP 10.50.60.6) are on different machines. Due to Chrome's restrictions, although vs-code-server (http://10.50.60.6:8080) can be accessed, advanced features (file browsing, Jupyter, etc.) are not permitted.
 
-**Solution**
-Recommended: Forward the remote server's port 8080 (http://10.50.60.6:8080) to the local machine (http://localhost:8080, i.e., http://10.50.7.103:8080). Chrome browser can then access it normally. This is because Chrome has no restrictions on accessing localhost.
+**Simple Solution** 
 
-Not recommended: Configure HTTPS upgrade, i.e., (https://10.50.60.6:8080), but this requires configuring SSL certificates on the remote server, which is cumbersome.
+Forward the remote server's port 8080 (http://10.50.60.6:8080) to the local machine (http://localhost:8080, i.e., http://10.50.7.103:8080). Chrome browser can then access it normally. This is because Chrome has no restrictions on accessing localhost.
 
 ```
 ssh -L 8080:10.50.60.6:8080 username@10.50.60.6
 ```
 
+
 **Operating Steps**
+
 Windows client computers can perform the following operations. Remember to replace the IP addresses with the actual server address and port.
 
 | Client Operating System | Server Firewall Port 8080 | Proxy Method |
