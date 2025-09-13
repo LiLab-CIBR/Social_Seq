@@ -16,7 +16,7 @@
 
 ## 代码和数据下载
 
-数据和代码已开源，链接为 [Figshare_DATA_20250818.zip](https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab) (**~1.0 GB**)。
+数据和代码已开源，链接为 [Figshare_DATA_20250818.zip🔗](https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab) (**~1.0 GB**)。
 下载后解压到文件夹，命名为`Figshare`。
 
 ## 安装

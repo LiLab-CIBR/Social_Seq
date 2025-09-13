@@ -15,7 +15,7 @@ Run the code in this repository to reproduce the figures in the paper.
 
 
 ## Code and Data Download
-The data and code have been open-sourced, with the link: [Figshare_DATA_20250818.zip](https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab) (**~1.0 GB**).
+The data and code have been open-sourced, with the link: [Figshare_DATA_20250818.zip🔗](https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab) (**~1.0 GB**).
 After downloading, unzip it into a folder named `Figshare`.
 
 ## Installation
