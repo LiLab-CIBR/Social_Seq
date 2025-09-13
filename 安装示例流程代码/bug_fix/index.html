@@ -143,8 +143,8 @@
               
                 <h2 id="linux-docker">补丁：Linux 主机 Docker（如有需要）</h2>
 <p>为何需要补丁：此 Docker 镜像在 Windows 主机上构建，在 Linux 主机上运行时可能会出现问题。</p>
-<p>如果你的服务器是 Linux 系统：</p>
-<div class="highlight"><pre><span></span><code>$ nvidia-smi  # 正常情况下应能看到 GPU 信息，若出现&quot;not found libnvidia-ml.so.1&quot;错误，则需要应用补丁。
+<p>如果你的服务器是 Linux 系统，请在docker容器中执行：</p>
+<div class="highlight"><pre><span></span><code>nvidia-smi  # 正常情况下应能看到 GPU 信息，若出现&quot;not found libnvidia-ml.so.1&quot;错误，则需要应用补丁。
 </code></pre></div>
 <p>此时，你可以进入docker容器，尝试以下补丁操作：
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/lib/x86_64-linux-gnu
@@ -171,15 +171,14 @@ ldconfig
 </code></pre></div></p>
 <h2 id="8080_1">远程服务器8080端口转发到本地</h2>
 <p>如果你使用的是 Windows Docker，可以跳过此步骤。</p>
-<p><strong>为什么需要转发？</strong>
-通常情况下，运行 web 界面的客户端电脑（例如，IP 10.50.7.103）和远程服务器（例如，IP 10.50.60.6）位于不同机器上。由于 Chrome 的限制，虽然可以访问 vs-code-server（http://10.50.60.6:8080），但高级功能（文件浏览、Jupyter 等）无法使用。</p>
-<p><strong>解决方法</strong>
-不推荐：配置升级 HTTPS 协议，即（https://10.50.60.6:8080），但这需要在远程服务器上配置 SSL 证书，过程较为繁琐。</p>
-<p>推荐：将网站端口（http://10.50.60.6:8080）转发到本地。将远程服务器的 8080 端口转发到本地（http://localhost:8080，即 http://10.50.7.103:8080），Chrome 浏览器即可正常访问。这是因为 Chrome 对 localhost 的访问没有限制。</p>
+<p><strong>为什么需要转发？</strong></p>
+<p>通常情况下，运行 web 界面的客户端电脑（例如，IP 10.50.7.103）和远程服务器（例如，IP 10.50.60.6）位于不同机器上。由于 Chrome 的限制，虽然可以访问 vs-code-server（http://10.50.60.6:8080），但高级功能（文件浏览、Jupyter 等）无法使用。</p>
+<p><strong>简单解决方法</strong></p>
+<p>将远程服务器的 8080 端口（http://10.50.60.6:8080）转发到本地（http://localhost:8080，即 http://10.50.7.103:8080），Chrome 浏览器即可正常访问。这是因为 Chrome 对 localhost 的访问没有限制。</p>
 <div class="highlight"><pre><span></span><code>ssh -L 8080:10.50.60.6:8080 username@10.50.60.6
 </code></pre></div>
-<p><strong>操作步骤</strong>
-Windows 客户端电脑可执行以下操作，注意替换 IP 地址为实际的服务器地址和端口。</p>
+<p><strong>操作步骤</strong></p>
+<p>Windows 客户端电脑可执行以下操作，注意替换 IP 地址为实际的服务器地址和端口。</p>
 <table>
 <thead>
 <tr>

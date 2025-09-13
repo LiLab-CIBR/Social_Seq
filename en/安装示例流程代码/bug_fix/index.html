@@ -143,8 +143,8 @@
               
                 <h2 id="patch-linux-host-docker-if-need">Patch:  Linux Host Docker (If need)</h2>
 <p>Why patch: This docker image is build in Windows host, somehow, have problems in linux host. </p>
-<p>If you server is Linux.</p>
-<div class="highlight"><pre><span></span><code>$ nvidia-smi  #should see the GPUs, errors `not found libnvidia-ml.so.1` should patch.
+<p>If you server is Linux, please run it in docker container.</p>
+<div class="highlight"><pre><span></span><code>nvidia-smi  #should see the GPUs, errors `not found libnvidia-ml.so.1` should patch.
 </code></pre></div>
 <p>So that you can enter the Docker container, and try this patch.
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/lib/x86_64-linux-gnu
@@ -171,15 +171,14 @@ ldconfig
 </code></pre></div></p>
 <h2 id="forward-remote-server-port-8080-to-local">Forward Remote Server Port 8080 to Local</h2>
 <p>You can skip this step if you are using Windows Docker.</p>
-<p><strong>Why forwarding is needed?</strong>
-Typically, the client computer running the web interface (e.g., IP 10.50.7.103) and the remote server (e.g., IP 10.50.60.6) are on different machines. Due to Chrome's restrictions, although vs-code-server (http://10.50.60.6:8080) can be accessed, advanced features (file browsing, Jupyter, etc.) are not permitted.</p>
-<p><strong>Solution</strong>
-Not recommended: Configure HTTPS upgrade, i.e., (https://10.50.60.6:8080), but this requires configuring SSL certificates on the remote server, which is cumbersome.</p>
-<p>Recommended: Forward the website port (http://10.50.60.6:8080) to the local machine. Forward the remote server's port 8080 (http://10.50.60.6:8080) to the local machine (http://localhost:8080, i.e., http://10.50.7.103:8080). Chrome browser can then access it normally. This is because Chrome has no restrictions on accessing localhost.</p>
+<p><strong>Why forwarding is needed?</strong></p>
+<p>Typically, the client computer (e.g., IP 10.50.7.103) running the web interface and the remote server (e.g., IP 10.50.60.6) are on different machines. Due to Chrome's restrictions, although vs-code-server (http://10.50.60.6:8080) can be accessed, advanced features (file browsing, Jupyter, etc.) are not permitted.</p>
+<p><strong>Simple Solution</strong> </p>
+<p>Forward the remote server's port 8080 (http://10.50.60.6:8080) to the local machine (http://localhost:8080, i.e., http://10.50.7.103:8080). Chrome browser can then access it normally. This is because Chrome has no restrictions on accessing localhost.</p>
 <div class="highlight"><pre><span></span><code>ssh -L 8080:10.50.60.6:8080 username@10.50.60.6
 </code></pre></div>
-<p><strong>Operating Steps</strong>
-Windows client computers can perform the following operations. Remember to replace the IP addresses with the actual server address and port.</p>
+<p><strong>Operating Steps</strong></p>
+<p>Windows client computers can perform the following operations. Remember to replace the IP addresses with the actual server address and port.</p>
 <table>
 <thead>
 <tr>

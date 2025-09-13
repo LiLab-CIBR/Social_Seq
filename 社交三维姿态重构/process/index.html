@@ -216,7 +216,7 @@ ls<span class="w"> </span><span class="nv">$vdir</span>/*.segpkl<span class="w">
 </div>
 <div class="admonition error">
 <p class="admonition-title">错误</p>
-<p>如果开 <code>xx_mask.mp4</code> 视频分割效果差，则需要重修分割标注，更新模型。见数据与模型更新章节。如果 <code>xx_vol230.0.mp4</code> 体素方格偏差较大，说明小球矫正的文件有错误，需要从新矫正。</p>
+<p>如果 <code>xx_mask.mp4</code> 视频分割效果差，则需要重修分割标注，更新模型。见数据与模型更新章节。如果 <code>xx_vol230.0.mp4</code> 体素方格偏差较大，说明小球矫正的文件有错误，需要重新小球矫正。</p>
 </div>
 <h2 id="_3">预测关键点</h2>
 <div class="image-row">
@@ -276,7 +276,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>mmdet
 <p>验证：打开 <code>xx_3_sktdraw_smoothed_foot.mp4</code> 视频，查看关键点位置是否正确。保存好<code>xx.smoothed_foot.matcalibpkl</code>，这是包含社交三维姿态坐标的重要文件。</p>
 <div class="admonition error">
 <p class="admonition-title">错误</p>
-<p>如果开 <code>xx_3_sktdraw_smoothed_foot.mp4</code> 视频分割效果差，可以检查偏差对应时刻的分割视频，意见检查小球矫正文件。DANNCE模型一般来说非常稳定，MASK-RCNN 分割模型容易收到环境光和背景影响，需要经常加训。见数据与模型更新章节。</p>
+<p>如果 <code>xx_3_sktdraw_smoothed_foot.mp4</code> 视频分割效果差，可以检查偏差对应时刻的分割视频，意见检查小球矫正文件。DANNCE模型一般来说非常稳定，MASK-RCNN 分割模型容易收到环境光和背景影响，需要经常加训。见数据与模型更新章节。</p>
 </div>
               
             </div>
