@@ -2,10 +2,10 @@
 ## Patch:  Linux Host Docker (If need)
 Why patch: This docker image is build in Windows host, somehow, have problems in linux host. 
 
-If you server is Linux.
+If you server is Linux, please run it in docker container.
 
 ```
-$ nvidia-smi  #should see the GPUs, errors `not found libnvidia-ml.so.1` should patch.
+nvidia-smi  #should see the GPUs, errors `not found libnvidia-ml.so.1` should patch.
 ```
 
 So that you can enter the Docker container, and try this patch.

@@ -2,10 +2,10 @@
 ## 补丁：Linux 主机 Docker（如有需要）
 为何需要补丁：此 Docker 镜像在 Windows 主机上构建，在 Linux 主机上运行时可能会出现问题。
 
-如果你的服务器是 Linux 系统：
+如果你的服务器是 Linux 系统，请在docker容器中执行：
 
 ```
-$ nvidia-smi  # 正常情况下应能看到 GPU 信息，若出现"not found libnvidia-ml.so.1"错误，则需要应用补丁。
+nvidia-smi  # 正常情况下应能看到 GPU 信息，若出现"not found libnvidia-ml.so.1"错误，则需要应用补丁。
 ```
 
 此时，你可以进入docker容器，尝试以下补丁操作：
