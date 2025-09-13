@@ -30,7 +30,7 @@ You need to set up Docker and download the models and data files:
 
 | Name | Type | Download link |
 | --- | --- | ---|
-| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | docker image | [Download🔗](https://pan.baidu.com/s/1MDIEdxTpE32u07u2g7PP0Q) |
+| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | docker image | [Download🔗](https://pan.baidu.com/s/1MDIEdxTpE32u07u2g7PP0Q?pwd=4jj2) |
 | lilab_socialseq_pipeline_code_with_data_20250903.zip | docker image | *Same above* |
 
 ```bash
