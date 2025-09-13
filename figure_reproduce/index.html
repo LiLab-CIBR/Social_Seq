@@ -55,9 +55,17 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">文章图表复现</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">代码下载</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#figures">Figures 图库</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">代码和数据下载</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">安装</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fig1cpdf">生成单个图表：Fig1C.pdf</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">通过一个命令生成所有图表</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">清理所有结果，复原</a>
     </li>
     </ul>
                 </li>
@@ -148,8 +156,6 @@
 <p>"(2025) Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation"</p>
 <p><strong>作者</strong>: 陈昕枫, 2025-08-09</p>
 <p><strong>修改</strong>: 陶现明，2025-08-15</p>
-<h2 id="_2">代码下载</h2>
-<p>代码已上传至 Github，链接为：<a href="https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication">Social_Seq-Paper-Figure-Replication</a>。请到此链接下载代码。</p>
 <h2 id="figures">Figures 图库</h2>
 <p>运行此仓库中的代码以复现论文中的图表。
 <img alt="Fig1_S1" src="../assets/Fig1_S1.jpg" />
@@ -159,6 +165,49 @@
 <img alt="Fig5_S5" src="../assets/Fig5_S5.jpg" />
 <img alt="Fig6_S6" src="../assets/Fig6_S6.jpg" />
 <img alt="Fig7_S7" src="../assets/Fig7_S7.jpg" /></p>
+<h2 id="_2">代码和数据下载</h2>
+<p>数据和代码已开源，链接为 <a href="https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab">Figshare_DATA_20250818.zip</a> (<strong>~1.0 GB</strong>)。
+下载后解压到文件夹，命名为<code>Figshare</code>。</p>
+<h2 id="_3">安装</h2>
+<p>支持 Windows、Linux 和 MacOS 系统。</p>
+<p>首先，通过 <code>uv</code> 工具<strong>安装依赖环境</strong>。</p>
+<p>!!!warning "警告”
+    不要同时使用 <code>uv</code> 和 <code>conda</code>。这会导致包安装冲突。在运行以下代码之前，请先运行 <code>conda deactivate</code>。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 在运行以下代码之前，请下载 FIGSHARE 代码和数据。</span>
+unzip<span class="w"> </span>Figshare_DATA_2025*.zip<span class="w"> </span>-d<span class="w"> </span>Figshare
+<span class="nb">cd</span><span class="w"> </span>Figshare
+
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>uv<span class="w">          </span><span class="c1"># UV 是一个轻量级的 Python 包管理器，类似于 conda。</span>
+
+uv<span class="w"> </span>sync<span class="w"> </span>--index-url<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple<span class="w">  </span><span class="c1"># 中国用户可选清华镜像源，否则安装速度很慢。</span>
+uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>--version<span class="w">  </span><span class="c1"># 验证 Python 版本（应为 3.12）</span>
+</code></pre></div>
+<p><strong>安装自定义包</strong>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/multiview_calib.git
+
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chenxinfeng4/LILAB-py.git<span class="w"> </span>../LILAB-py
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>../LILAB-py
+
+uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>lilab.multiview_scripts_dev.p1_checkboard_global<span class="w"> </span>-h<span class="w">   </span><span class="c1"># 验证安装</span>
+</code></pre></div></p>
+<h2 id="fig1cpdf">生成单个图表：Fig1C.pdf</h2>
+<p>您可以逐个运行 <code>Fig*/Fig*.py</code> 中的代码来生成图表。
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>Fig1_S1/Fig1C.py<span class="w">   </span><span class="c1"># 结果保存到 Fig1_S1/result/Fig1C.pdf</span>
+</code></pre></div></p>
+<blockquote>
+<p><strong>注意</strong>: 如果出现任何错误，请确保所有数据文件都已正确下载。</p>
+</blockquote>
+<h2 id="_4">通过一个命令生成所有图表</h2>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main.py<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<p>生成 Fig1<em>.pdf, FigS1</em>.pdf, Fig2*.pdf, ... 结果保存到相应的文件夹中。<code>Fig*/result/*.pdf</code>，例如 <code>Fig1_S1/result/Fig1E.pdf</code>。</p>
+<h2 id="_5">清理所有结果，复原</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">#1. 删除所有结果数据</span>
+uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main.py<span class="w"> </span>clean
+
+<span class="c1">#2. 或者手动删除所有结果数据</span>
+rm<span class="w"> </span>Fig*/result/*pdf<span class="w"> </span>Fig*/result/*pkl<span class="w"> </span>Fig*/result/*png
+</code></pre></div>
               
             </div>
           </div><footer>
