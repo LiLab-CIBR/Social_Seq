@@ -1,9 +1,7 @@
 # 论文代码复现
 "(2025) Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation"
 
-**作者**: 陈昕枫, 2025-08-09
-
-**修改**: 陶现明，2025-08-15
+**作者**: 陈昕枫, 2025-08-09. **修改**: 陶现明，2025-08-15.
 
 ## Figures 图库
 运行此仓库中的代码以复现论文中的图表。
@@ -26,7 +24,7 @@
 
 首先，通过 `uv` 工具**安装依赖环境**。
 
-!!!warning "警告”
+!!! warning "警告”
     不要同时使用 `uv` 和 `conda`。这会导致包安装冲突。在运行以下代码之前，请先运行 `conda deactivate`。
 
 ```bash
@@ -69,6 +67,7 @@ uv run python main.py test
 
 
 ## 清理所有结果，复原
+
 ```bash
 #1. 删除所有结果数据
 uv run python main.py clean

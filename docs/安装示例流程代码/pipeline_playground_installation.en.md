@@ -7,7 +7,7 @@ The **SocialSeq pipeline playground** is a docker container based virtual machin
 ![img](../../../assets/images/web-gui.jpg)
 
 !!! note "Note"
-    The playground is only used to demonstrate the **inference process** of each model in the SocialSeq framework, and does not include model training. For subsequent data analysis, please refer to the document - [**Article Figure Reproduction**](../figure_reproduce.en.md).
+    The playground is only used to demonstrate the **inference process** of each model in the SocialSeq framework, and does not include model training. For subsequent data analysis, please refer to the chapter - [**Figure Reproduction**](../figure_reproduce.en.md).
 
 ## System Requirements
 
@@ -30,8 +30,8 @@ You need to set up Docker and download the models and data files:
 
 | Name | Type | Download link |
 | --- | --- | ---|
-| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | docker image | [Download🔗](https://pan.baidu.com/s/1MDIEdxTpE32u07u2g7PP0Q?pwd=4jj2) |
-| lilab_socialseq_pipeline_code_with_data_20250903.zip | docker image | *Same above* |
+| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | docker image (**11.5 GB**) | [Download🔗](https://pan.baidu.com/s/1LKJx-wtOSx2FvIgiMVrNPg?pwd=c8du) |
+| lilab_socialseq_pipeline_code_with_data_20250903.zip | code and data (**1.6 GB**) | *Same above* |
 
 ```bash
 $ cd SOCIAL_SEQ_DOWNLOAD_PATH

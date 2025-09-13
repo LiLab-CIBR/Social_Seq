@@ -2,9 +2,8 @@
 
 These are some explanatory documents for the Social-Seq project. Social-seq is used to analyze the 3D poses, social categories, and emotional states behind social interactions of animals in close contact. By constructing a real-time behavior classification system, it is potentially useful for treating autism (ASD) social disorders.
 
-- Code Repository 📦：https://github.com/LiLab-CIBR/Social_Seq
 
-- Document here 📚：https://lilab-cibr.github.io/Social_Seq/
+- Document here 📚：[https://lilab-cibr.github.io/Social_Seq/en/](https://lilab-cibr.github.io/Social_Seq/en/)
 
 <div align="center">
   <img src="../assets/images/figure_abstract.jpg" width="500" alt="Abstract Diagram">
@@ -19,10 +18,10 @@ These are some explanatory documents for the Social-Seq project. Social-seq is u
 * `Seq Behavior Labeling` - Obtain 36 categories of consistent social behavior labels for rats.
 
 ## Code Release 📅
-Last updated on 2025-8-15 by ChenXinfeng. 👨‍💻
+Last updated on 2025-9-13 by ChenXinfeng. 👨‍💻
 
 ## References 📚
-Xinfeng Chen; Xianming Tao; Zhenchao Zhong; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li* (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation.
+Xinfeng Chen*; Xianming Tao*; Zhenchao Zhong*; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li# (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation.
 
 Xinfeng Chen 陈昕枫 (2025). Deep Learning-Based Framework for Analyzing Free Social Behavior in Model Animals. PhD Thesis, Peking University.
 

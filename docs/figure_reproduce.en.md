@@ -1,9 +1,7 @@
 # Paper Code Reproduction
 "(2025) Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation"
 
-**Author**: Chen Xinfeng, 2025-08-09
-
-**Modified**: Tao Xianming, 2025-08-15
+**Author**: Chen Xinfeng, 2025-08-09. **Modified**: Tao Xianming, 2025-08-15
 
 ## Figures Gallery
 Run the code in this repository to reproduce the figures in the paper.
@@ -25,7 +23,7 @@ Supports Windows, Linux, and MacOS systems.
 
 First, **install the dependency environment** using `uv`.
 
-!!!warning "Warning"
+!!! warning "Warning"
     Do not use `uv` and `conda` simultaneously, as this will cause package installation conflicts. Before running the following codes, please run `conda deactivate` first.
 
 ```bash
@@ -60,8 +58,9 @@ uv run python Fig1_S1/Fig1C.py   # The result is saved to Fig1_S1/result/Fig1C.p
 ```bash
 uv run python main.py test
 ```
+Figures such as Fig1*.pdf, FigS1*.pdf, Fig2*.pdf, ... will be generated and saved in the corresponding folders: Fig*/result/*.pdf, e.g., Fig1_S1/result/Fig1E.pdf.
 
-## Clean All Results，Reset
+## Clean All Results, Reset
 ```bash
 #1. Delete all result data
 uv run python main.py clean

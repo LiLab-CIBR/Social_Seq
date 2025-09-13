@@ -2,9 +2,8 @@
 
 这是 Social-Seq 项目的一些说明文档。使用 Social-seq 解析动物密切接触时的三维姿态，社交类别，以及社交背后的情绪状态。通过构造实时行为分类系统，有望治疗孤独症（ASD）社交障碍。
 
-- 代码地址 📦：https://github.com/LiLab-CIBR/Social_Seq
 
-- 项目文档 📚：https://lilab-cibr.github.io/Social_Seq/
+- 项目文档 📚：[https://lilab-cibr.github.io/Social_Seq/](https://lilab-cibr.github.io/Social_Seq/)
 
 <div align="center">
   <img src="assets/images/figure_abstract.jpg" width="500" alt="抽象图">
@@ -19,12 +18,12 @@
 * `Seq 行为标签` - 获取大鼠社交一致性的36类行为标签。
 
 ## 代码发布 📅
-最后更新时间 2025-8-15，作者 ChenXinfeng。👨‍💻
+最后更新时间 2025-9-13，作者 ChenXinfeng。👨‍💻
 
 ## 引用 📚
-Xinfeng Chen; Xianming Tao; Zhenchao Zhong; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li* (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation.
+Xinfeng Chen*; Xianming Tao*; Zhenchao Zhong*; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li# (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation.
 
-陈昕枫. (2025). 基于深度学习的动物自由社交行为分析研究. 博士论文，北京大学.
+陈昕枫 (2025). 基于深度学习的动物自由社交行为分析研究. 博士论文，北京大学.
 
 ## 开源许可证
 本项目采用 MIT 许可证开源。您可以在遵守许可证条款的前提下自由使用、修改和分发本项目的代码。

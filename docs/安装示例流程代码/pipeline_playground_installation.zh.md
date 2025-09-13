@@ -7,7 +7,7 @@ SocialSeq 流程游乐场（Pipeline playground）是一个基于docker打包的
 ![img](../../assets/images/web-gui.jpg)
 
 !!! note "注意"
-    游乐场仅用于演示 SocialSeq 框架各模型的**推理过程**，不包含模型的训练。后续的数据分析请另参照文档-[**文章图表复现**](../figure_reproduce.zh.md)。
+    游乐场仅用于演示 SocialSeq 框架各模型的**推理过程**，不包含模型的训练。后续的数据分析请另参照上一章节 [**文章图表复现**](../figure_reproduce.zh.md)。
 
 ## 系统要求
 
@@ -30,8 +30,8 @@ $ nvidia-smi        # NVIDIA 驱动版本应 >= 550.54
 
 | 名称 | 类型 | 下载链接 |
 | --- | --- | ---|
-| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | Docker 镜像 | [下载🔗](https://pan.baidu.com/s/1MDIEdxTpE32u07u2g7PP0Q?pwd=4jj2) |
-| lilab_socialseq_pipeline_code_with_data_20250903.zip | 代码与数据 | *链接同上* |
+| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | Docker 镜像 (**11.5 GB**)| [下载🔗](https://pan.baidu.com/s/1LKJx-wtOSx2FvIgiMVrNPg?pwd=c8du) |
+| lilab_socialseq_pipeline_code_with_data_20250903.zip | 代码与数据 (**1.6 GB**) | *链接同上* |
 
 ```bash
 $ cd SOCIAL_SEQ_DOWNLOAD_PATH
