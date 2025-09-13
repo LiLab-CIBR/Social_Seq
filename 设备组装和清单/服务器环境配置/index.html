@@ -75,7 +75,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_3">软件环境</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">强烈建议安装软件列表</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">依赖软件的版本测试列表</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_5">测试安装环境</a>
         <ul>
@@ -104,18 +104,6 @@
     <li class="toctree-l3"><a class="reference internal" href="#4-dannce">4. DANNCE 模型</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5-smoothnet">5. SmoothNet 模型</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#python">安装本项目创建和改造的 python 包</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#1-lilab">1. LILAB 分析工具包</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-ffmpegcv">2. FFMPEGCV 工具包</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-multiview_calib">3. multiview_calib 工具包</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4">4. 其它改造工具包</a>
     </li>
         </ul>
     </li>
@@ -196,6 +184,10 @@
 <p>深度学习环境是本项目的核心基础。我们理解环境搭建可能是一个复杂且具有挑战性的过程，这也是整个AI领域普遍面临的难题。
 虽然我们在持续优化部署流程，但当前项目仍存在一些版本兼容性问题。我们建议您在配置环境时保持耐心，并具备一定的技术钻研精神，以应对可能出现的挑战。</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">在<em>游乐场</em>中快速体验</p>
+<p>可以使用<a href="../../安装示例流程代码/pipeline_playground_installation">游乐场</a>进行视频分析处理相关的演示。游乐场基于Docker，将大部分深度学习环境打包好，方便用户快速体验。</p>
+</div>
 <hr />
 <h2 id="_2">硬件配置</h2>
 <p>服务器硬件配置包括：</p>
@@ -221,13 +213,15 @@
 <p class="admonition-title">重要警告</p>
 <p>由于软件是在2019年配置的，因此部分软件版本可能已经过时，建议根据实际需求选择最新版本。大部分 Python 库可以在 pip 和 conda 中找到，但是部分库可能难以兼容安装。本文档难以兼顾所有软件的最新版本，请自行查阅相关资料。</p>
 </div>
-<h2 id="_4">强烈建议安装软件列表</h2>
+<h2 id="_4">依赖软件的版本测试列表</h2>
+<p>推荐使用<a href="../../安装示例流程代码/pipeline_playground_installation">游乐场</a>进行软件测试。</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">软件名称</th>
 <th style="text-align: center;">本机测试版本号（2022年）</th>
-<th style="text-align: center;">2025年版本，未测试</th>
+<th style="text-align: center;">游乐场 Docker（推荐）</th>
+<th style="text-align: center;">2025年版本（未测试）</th>
 <th style="text-align: center;">备注</th>
 </tr>
 </thead>
@@ -235,12 +229,14 @@
 <tr>
 <td style="text-align: center;">Ubuntu</td>
 <td style="text-align: center;">18.04</td>
+<td style="text-align: center;">22.04</td>
 <td style="text-align: center;">24.04</td>
 <td style="text-align: center;">操作系统，推荐</td>
 </tr>
 <tr>
 <td style="text-align: center;">Python</td>
 <td style="text-align: center;">3.7.16</td>
+<td style="text-align: center;">3.8.10</td>
 <td style="text-align: center;">3.12</td>
 <td style="text-align: center;">开发语言，必须</td>
 </tr>
@@ -248,16 +244,19 @@
 <td style="text-align: center;">CUDA</td>
 <td style="text-align: center;">11.4</td>
 <td style="text-align: center;">12.9</td>
+<td style="text-align: center;">12.9</td>
 <td style="text-align: center;">深度学习框架，必须</td>
 </tr>
 <tr>
 <td style="text-align: center;">cuDNN</td>
 <td style="text-align: center;">8.8</td>
-<td style="text-align: center;">8.9</td>
+<td style="text-align: center;">9.12</td>
+<td style="text-align: center;">9.12</td>
 <td style="text-align: center;">深度学习框架，必须</td>
 </tr>
 <tr>
 <td style="text-align: center;">TensorRT</td>
+<td style="text-align: center;">8.6</td>
 <td style="text-align: center;">8.6</td>
 <td style="text-align: center;">10.13</td>
 <td style="text-align: center;">推理加速，必须</td>
@@ -266,34 +265,40 @@
 <td style="text-align: center;">OpenCV-Python</td>
 <td style="text-align: center;">4.8.0</td>
 <td style="text-align: center;">4.12.0</td>
+<td style="text-align: center;">4.12.0</td>
 <td style="text-align: center;">图像处理，必须</td>
 </tr>
 <tr>
 <td style="text-align: center;">TensorFlow</td>
 <td style="text-align: center;">2.7.0</td>
+<td style="text-align: center;">2.11.0</td>
 <td style="text-align: center;">2.16.0</td>
 <td style="text-align: center;">DANNCE 模型，必须</td>
 </tr>
 <tr>
 <td style="text-align: center;">PyTorch</td>
 <td style="text-align: center;">1.11.0</td>
+<td style="text-align: center;">1.12.1</td>
 <td style="text-align: center;">2.7.1</td>
 <td style="text-align: center;">深度学习框架，必须</td>
 </tr>
 <tr>
 <td style="text-align: center;">Docker</td>
 <td style="text-align: center;">24.0.6</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">28.3.0</td>
 <td style="text-align: center;">容器化，用于 Mediamtx</td>
 </tr>
 <tr>
 <td style="text-align: center;">FFmpeg</td>
 <td style="text-align: center;">4.x</td>
+<td style="text-align: center;">4.x</td>
 <td style="text-align: center;">6.x</td>
 <td style="text-align: center;">视频读写</td>
 </tr>
 <tr>
 <td style="text-align: center;">Mediamtx</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">视频流服务器，用于闭环行为干预</td>
@@ -306,10 +311,10 @@
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi
 </code></pre></div>
 <h3 id="nvidia-cuda-compiler">测试 Nvidia Cuda Compiler</h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvcc<span class="w"> </span>--version
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvcc<span class="w"> </span>--version<span class="w">  </span><span class="c1"># 游乐场并未安装 </span>
 </code></pre></div>
 <h3 id="tensorrt">测试 TensorRT 命令行工具</h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>trtexec<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx<span class="w"> </span>--saveEngine<span class="o">=</span>/path/to/model.engine
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>trtexec<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx<span class="w"> </span>--saveEngine<span class="o">=</span>/path/to/model.engine<span class="w">  </span><span class="c1"># 游乐场并未安装 </span>
 </code></pre></div>
 <h3 id="polygraphy-nvidia">测试 polygraphy (NVIDIA 官方工具) 命令行工具</h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>polygraphy<span class="w"> </span>inspect<span class="w"> </span>model<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx
@@ -318,8 +323,8 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># ffmpeg generate a 640x480 video, 30 fps, 1 minute</span>
 $<span class="w"> </span>ffmpeg<span class="w"> </span>-f<span class="w"> </span>lavfi<span class="w"> </span>-i<span class="w"> </span><span class="nv">testsrc</span><span class="o">=</span><span class="nv">duration</span><span class="o">=</span><span class="m">60</span>:size<span class="o">=</span>640x480:rate<span class="o">=</span><span class="m">30</span><span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test.mp4
 
-<span class="c1"># convert it to hevc by NVIDIA HEVC encoder</span>
-$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>/path/to/test.mp4<span class="w"> </span>-c:v<span class="w"> </span>hevc_nvenc<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test_hevc.mp4
+<span class="c1"># convert it to hevc</span>
+$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>/path/to/test.mp4<span class="w"> </span>-c:v<span class="w"> </span>hevc<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test_hevc.mp4
 </code></pre></div>
 <h3 id="docker">测试 Docker 命令行工具</h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>hello-world
@@ -373,54 +378,6 @@ $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </spa
 <p class="admonition-title">重要警告</p>
 <p>我们 fork 的版本，与最新版本可能存在兼容性问题。请根据实际需求选择合适的版本。</p>
 </div>
-<h2 id="python">安装本项目创建和改造的 python 包</h2>
-<h3 id="1-lilab">1. LILAB 分析工具包</h3>
-<p>包含了常见的分析工具，如相机标定流程，大鼠分割、姿态估计流程，行为识别流程，大数据挖掘相关工具等。</p>
-<ul>
-<li>代码地址: https://github.com/chenxinfeng4/LILAB-py.git</li>
-</ul>
-<p><strong>安装方法：</strong></p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chenxinfeng4/LILAB-py.git
-<span class="nb">cd</span><span class="w"> </span>LILAB-py
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">重要警告</p>
-<p>包含许多流程工具，依赖过于庞大，因此不进行自动依赖安装。如果 import 报错，则需要手动安装依赖。</p>
-</div>
-<h3 id="2-ffmpegcv">2. FFMPEGCV 工具包</h3>
-<p>GPU 加速的视频处理工具包，方便多相机视频读写，某些场景下比 OpenCV 快 9 倍。我开源之后，年下载量 <strong>7 万次</strong>。查看对应<a href="https://pypi.org/project/ffmpegcv">文档</a>。</p>
-<ul>
-<li>代码地址: https://github.com/chenxinfeng4/ffmpegcv.git</li>
-</ul>
-<p><strong>安装方法：</strong></p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ffmpegcv
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">重要警告</p>
-<p>使用 GPU 加速，需要有 NVIDIA-driver。</p>
-</div>
-<h3 id="3-multiview_calib">3. multiview_calib 工具包</h3>
-<p>相机外参标定（小球标定）的工具包。在三方库基础上，进行了优化，并添加了自定义的标定流程。查看对应<a href="https://github.com/chenxinfeng4/multiview_ball_calib">文档</a>。</p>
-<ul>
-<li>代码地址: https://github.com/chenxinfeng4/multiview_calib.git</li>
-</ul>
-<p><strong>安装方法：</strong></p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/multiview_calib.git
-
-<span class="c1"># 小球标定简易教程</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chenxinfeng4/multiview_ball_calib
-</code></pre></div>
-<h3 id="4">4. 其它改造工具包</h3>
-<p><strong>torch2trt</strong>: torch2trt 改造，支持 engine 文件直接载入。</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/torch2trt
-</code></pre></div>
-<p><strong>cocoapi</strong>: 将 cocoapi 进行多线程改造，提升速度。</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/cocoapi
-</code></pre></div>
-<p><strong>mmdetection-to-tensorrt</strong>: Mask-RCNN 模型转换为 tensorrt 模型。</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/mmdetection-to-tensorrt
-</code></pre></div>
               
             </div>
           </div><footer>

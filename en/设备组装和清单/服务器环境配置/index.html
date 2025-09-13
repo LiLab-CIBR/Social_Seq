@@ -75,7 +75,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#software-environment">Software Environment</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#strongly-recommended-software-list">Strongly Recommended Software List</a>
+    <li class="toctree-l2"><a class="reference internal" href="#dependent-software-list">Dependent Software List</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#test-installation-environment">Test Installation Environment</a>
         <ul>
@@ -104,18 +104,6 @@
     <li class="toctree-l3"><a class="reference internal" href="#4-dannce-model">4. DANNCE Model</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5-smoothnet-model">5. SmoothNet Model</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#install-python-packages-created-and-modified-by-this-project">Install Python Packages Created and Modified by This Project</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#1-lilab-analysis-toolkit">1. LILAB Analysis Toolkit</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-ffmpegcv-toolkit">2. FFMPEGCV Toolkit</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-multiview_calib-toolkit">3. multiview_calib Toolkit</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4-other-modified-toolkits">4. Other Modified Toolkits</a>
     </li>
         </ul>
     </li>
@@ -221,12 +209,14 @@ Although we are continuously optimizing the deployment process, the current proj
 <p class="admonition-title">Important Warning</p>
 <p>Since the software was configured in 2019, some software versions may be outdated. It is recommended to choose the latest versions according to actual needs. Most Python libraries can be found in pip and conda, but some libraries may be difficult to install compatibly. This document cannot accommodate all software's latest versions. Please refer to relevant materials.</p>
 </div>
-<h2 id="strongly-recommended-software-list">Strongly Recommended Software List</h2>
+<h2 id="dependent-software-list">Dependent Software List</h2>
+<p>Recommend using <a href="../../安装示例流程代码/pipeline_playground_installation">Pipeline Playground</a> to test the following software.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Software Name</th>
-<th style="text-align: center;">Local Test Version (2022)</th>
+<th style="text-align: center;">Host Test Version (2022)</th>
+<th style="text-align: center;">Playground in Docker (Recommended)</th>
 <th style="text-align: center;">2025 Version, Untested</th>
 <th style="text-align: center;">Notes</th>
 </tr>
@@ -235,12 +225,14 @@ Although we are continuously optimizing the deployment process, the current proj
 <tr>
 <td style="text-align: center;">Ubuntu</td>
 <td style="text-align: center;">18.04</td>
+<td style="text-align: center;">22.04</td>
 <td style="text-align: center;">24.04</td>
 <td style="text-align: center;">Operating system, recommended</td>
 </tr>
 <tr>
 <td style="text-align: center;">Python</td>
 <td style="text-align: center;">3.7.16</td>
+<td style="text-align: center;">3.8.10</td>
 <td style="text-align: center;">3.12</td>
 <td style="text-align: center;">Development language, required</td>
 </tr>
@@ -248,16 +240,19 @@ Although we are continuously optimizing the deployment process, the current proj
 <td style="text-align: center;">CUDA</td>
 <td style="text-align: center;">11.4</td>
 <td style="text-align: center;">12.9</td>
+<td style="text-align: center;">12.9</td>
 <td style="text-align: center;">Deep learning framework, required</td>
 </tr>
 <tr>
 <td style="text-align: center;">cuDNN</td>
 <td style="text-align: center;">8.8</td>
-<td style="text-align: center;">8.9</td>
+<td style="text-align: center;">9.12</td>
+<td style="text-align: center;">9.12</td>
 <td style="text-align: center;">Deep learning framework, required</td>
 </tr>
 <tr>
 <td style="text-align: center;">TensorRT</td>
+<td style="text-align: center;">8.6</td>
 <td style="text-align: center;">8.6</td>
 <td style="text-align: center;">10.13</td>
 <td style="text-align: center;">Inference acceleration, required</td>
@@ -266,34 +261,40 @@ Although we are continuously optimizing the deployment process, the current proj
 <td style="text-align: center;">OpenCV-Python</td>
 <td style="text-align: center;">4.8.0</td>
 <td style="text-align: center;">4.12.0</td>
+<td style="text-align: center;">4.12.0</td>
 <td style="text-align: center;">Image processing, required</td>
 </tr>
 <tr>
 <td style="text-align: center;">TensorFlow</td>
 <td style="text-align: center;">2.7.0</td>
+<td style="text-align: center;">2.11.0</td>
 <td style="text-align: center;">2.16.0</td>
 <td style="text-align: center;">DANNCE model, required</td>
 </tr>
 <tr>
 <td style="text-align: center;">PyTorch</td>
 <td style="text-align: center;">1.11.0</td>
+<td style="text-align: center;">1.12.1</td>
 <td style="text-align: center;">2.7.1</td>
 <td style="text-align: center;">Deep learning framework, required</td>
 </tr>
 <tr>
 <td style="text-align: center;">Docker</td>
 <td style="text-align: center;">24.0.6</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">28.3.0</td>
 <td style="text-align: center;">Containerization, for Mediamtx</td>
 </tr>
 <tr>
 <td style="text-align: center;">FFmpeg</td>
 <td style="text-align: center;">4.x</td>
+<td style="text-align: center;">4.x</td>
 <td style="text-align: center;">6.x</td>
 <td style="text-align: center;">Video reading and writing</td>
 </tr>
 <tr>
 <td style="text-align: center;">Mediamtx</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">Video stream server, for closed-loop behavioral intervention</td>
@@ -306,10 +307,10 @@ Although we are continuously optimizing the deployment process, the current proj
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi
 </code></pre></div>
 <h3 id="test-nvidia-cuda-compiler">Test Nvidia Cuda Compiler</h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvcc<span class="w"> </span>--version
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvcc<span class="w"> </span>--version<span class="w">  </span><span class="c1"># Not available for &quot;playground&quot;</span>
 </code></pre></div>
 <h3 id="test-tensorrt-command-line-tools">Test TensorRT Command Line Tools</h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>trtexec<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx<span class="w"> </span>--saveEngine<span class="o">=</span>/path/to/model.engine
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>trtexec<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx<span class="w"> </span>--saveEngine<span class="o">=</span>/path/to/model.engine<span class="w">  </span><span class="c1"># Not available for &quot;playground&quot;</span>
 </code></pre></div>
 <h3 id="test-polygraphy-nvidia-official-tool-command-line-tools">Test polygraphy (NVIDIA Official Tool) Command Line Tools</h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>polygraphy<span class="w"> </span>inspect<span class="w"> </span>model<span class="w"> </span>--onnx<span class="o">=</span>/path/to/model.onnx
@@ -318,8 +319,8 @@ Although we are continuously optimizing the deployment process, the current proj
 <div class="highlight"><pre><span></span><code><span class="c1"># ffmpeg generate a 640x480 video, 30 fps, 1 minute</span>
 $<span class="w"> </span>ffmpeg<span class="w"> </span>-f<span class="w"> </span>lavfi<span class="w"> </span>-i<span class="w"> </span><span class="nv">testsrc</span><span class="o">=</span><span class="nv">duration</span><span class="o">=</span><span class="m">60</span>:size<span class="o">=</span>640x480:rate<span class="o">=</span><span class="m">30</span><span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test.mp4
 
-<span class="c1"># convert it to hevc by NVIDIA HEVC encoder</span>
-$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>/path/to/test.mp4<span class="w"> </span>-c:v<span class="w"> </span>hevc_nvenc<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test_hevc.mp4
+<span class="c1"># convert it to hevc</span>
+$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>/path/to/test.mp4<span class="w"> </span>-c:v<span class="w"> </span>hevc<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-f<span class="w"> </span>mp4<span class="w"> </span>/path/to/test_hevc.mp4
 </code></pre></div>
 <h3 id="test-docker-command-line-tools">Test Docker Command Line Tools</h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>hello-world
@@ -345,6 +346,10 @@ $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </spa
 <div class="admonition warning">
 <p class="admonition-title">Important Warning</p>
 <p>We forked MMPOSE 0.x version. New versions and environments may have compatibility issues. Please choose the appropriate version according to actual needs.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Tip</p>
+<p>You can use the <a href="../../安装示例流程代码/pipeline_playground_installation">Playground</a> for demonstrations related to video analysis and processing. Based on Docker, the Playground packages most deep learning environments, allowing users to quickly experience its functionalities.</p>
 </div>
 <h3 id="3-yolo-v8-model">3. YOLO-v8 Model</h3>
 <p>This is a lightweight object detection and instance segmentation open-source project. We forked it (in 2024) and added custom models and configuration files to achieve real-time multi-rat segmentation.</p>
@@ -373,54 +378,6 @@ $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </spa
 <p class="admonition-title">Important Warning</p>
 <p>Our forked version may have compatibility issues with the latest version. Please choose the appropriate version according to actual needs.</p>
 </div>
-<h2 id="install-python-packages-created-and-modified-by-this-project">Install Python Packages Created and Modified by This Project</h2>
-<h3 id="1-lilab-analysis-toolkit">1. LILAB Analysis Toolkit</h3>
-<p>Contains common analysis tools, such as camera calibration process, rat segmentation and pose estimation process, behavior recognition process, big data mining related tools, etc.</p>
-<ul>
-<li>Code address: https://github.com/chenxinfeng4/LILAB-py.git</li>
-</ul>
-<p><strong>Installation method:</strong></p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chenxinfeng4/LILAB-py.git
-<span class="nb">cd</span><span class="w"> </span>LILAB-py
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Important Warning</p>
-<p>Contains many process tools with overly large dependencies, so automatic dependency installation is not performed. If import errors occur, dependencies need to be installed manually.</p>
-</div>
-<h3 id="2-ffmpegcv-toolkit">2. FFMPEGCV Toolkit</h3>
-<p>GPU-accelerated video processing toolkit, convenient for multi-camera video reading and writing, which is 9 times faster than OpenCV in certain scenarios. After I open-sourced it, the annual download volume is <strong>70,000 times</strong>. See corresponding <a href="https://pypi.org/project/ffmpegcv">documentation</a>.</p>
-<ul>
-<li>Code address: https://github.com/chenxinfeng4/ffmpegcv.git</li>
-</ul>
-<p><strong>Installation method:</strong></p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ffmpegcv
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Important Warning</p>
-<p>To use GPU acceleration, NVIDIA-driver is required.</p>
-</div>
-<h3 id="3-multiview_calib-toolkit">3. multiview_calib Toolkit</h3>
-<p>Camera extrinsic calibration (ball calibration) toolkit. Based on third-party libraries, it has been optimized and custom calibration processes have been added. See corresponding <a href="https://github.com/chenxinfeng4/multiview_ball_calib">documentation</a>.</p>
-<ul>
-<li>Code address: https://github.com/chenxinfeng4/multiview_calib.git</li>
-</ul>
-<p><strong>Installation method:</strong></p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/multiview_calib.git
-
-<span class="c1"># Simple ball calibration tutorial</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chenxinfeng4/multiview_ball_calib
-</code></pre></div>
-<h3 id="4-other-modified-toolkits">4. Other Modified Toolkits</h3>
-<p><strong>torch2trt</strong>: torch2trt modification, supporting direct loading of engine files.</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/torch2trt
-</code></pre></div>
-<p><strong>cocoapi</strong>: Multi-threading version of cocoapi to improve speed.</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/cocoapi
-</code></pre></div>
-<p><strong>mmdetection-to-tensorrt</strong>: Converting Mask-RCNN model to tensorrt model.</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/mmdetection-to-tensorrt
-</code></pre></div>
               
             </div>
           </div><footer>
