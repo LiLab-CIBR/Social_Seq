@@ -68,6 +68,7 @@ plugins:
             硬件清单: Hardware List
             OBS软件安装: OBS Software Installation
             服务器环境配置: Server Environment Configuration
+            服务器基本操作: Server Basic Operations
             已安装的深度学习模型: Installed Deep Learning Models
             小球矫正: Ball Correction
             代码流程: Workflow
