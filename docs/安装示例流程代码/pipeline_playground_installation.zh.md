@@ -26,12 +26,12 @@ $ nvidia-smi        # NVIDIA 驱动版本应 >= 550.54
 
 ## 安装指南
 
-您需要安装 Docker 并下载模型和数据文件：
+您需要安装 Docker 并下载[模型和数据文件🔗](https://pan.baidu.com/s/1LKJx-wtOSx2FvIgiMVrNPg?pwd=c8du)：
 
-| 名称 | 类型 | 下载链接 |
-| --- | --- | ---|
-| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | Docker 镜像 (**11.5 GB**) | [下载🔗](https://pan.baidu.com/s/1LKJx-wtOSx2FvIgiMVrNPg?pwd=c8du) |
-| lilab_socialseq_pipeline_code_with_data_20250903.zip | 代码与数据 (**1.6 GB**) | *链接同上* |
+| 名称 | 类型 |
+| --- | --- |
+| lilab_socialseq_pipeline_cuda_vscode_<br>amd64_20250903.tar | Docker 镜像 (**11.5 GB**) |
+| lilab_socialseq_pipeline_code_with_<br>data_20250903.zip  | 代码与数据 (**1.6 GB**) |
 
 ```bash
 $ cd SOCIAL_SEQ_DOWNLOAD_PATH
@@ -98,7 +98,7 @@ cp -r /root/Downloads/pipeline/LILAB-pkg-patch-for-docker/* ~/LILAB-pkg/
 - `model_YOLOv8/last.full.engine`
 - `model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.trt`
 
-🎉 全部设置完成！您现在可以使用演示数据运行 SocialSeq 游乐场了。
+全部设置完成！您现在可以使用演示数据运行 SocialSeq 游乐场了。
 
 ## 🚀 快速开始
 

@@ -26,12 +26,12 @@ $ nvidia-smi        # NVIDIA driver version should be >= 550.54
 
 ## Installation Guide
 
-You need to install Docker and download the model and data files:
+You need to install Docker and download the [model and data files🔗](https://pan.baidu.com/s/1LKJx-wtOSx2FvIgiMVrNPg?pwd=c8du):
 
-| Name | Type | Download link |
-| --- | --- | ---|
-| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | Docker image (**11.5 GB**) | [Download🔗](https://pan.baidu.com/s/1LKJx-wtOSx2FvIgiMVrNPg?pwd=c8du) |
-| lilab_socialseq_pipeline_code_with_data_20250903.zip | Code and data (**1.6 GB**) | *Same link above* |
+| Name | Type | 
+| --- | --- |
+| lilab_socialseq_pipeline_cuda_vscode_<br>amd64_20250903.tar | Docker image (**11.5 GB**) | 
+| lilab_socialseq_pipeline_code_with_<br>data_20250903.zip | Code and data (**1.6 GB**) |
 
 ```bash
 $ cd SOCIAL_SEQ_DOWNLOAD_PATH
@@ -95,7 +95,7 @@ After running these commands, you will generate the following files:
 - `model_YOLOv8/last.full.engine`
 - `model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.trt`
 
-🎉 All set! You're now ready to run the **SocialSeq pipeline playground** with demo data.
+All set! You're now ready to run the **SocialSeq pipeline playground** with demo data.
 
 ## 🚀 Quick Start
 
