@@ -1,6 +1,6 @@
-# What's the "SocialSeq pipeline playground"?
+# What is SocialSeq Pipeline Playground?
 
-The **SocialSeq pipeline playground** is a docker container based virtual machine designed to help users understand the functionality and logic of the SocialSeq through a series of demonstration data processing tasks. The complete pipeline includes model packaging, raw data processing, and result visualization, allowing you to explore:
+The **SocialSeq pipeline playground** is a Docker packaged code environment designed to help users understand the functionality and logic of the SocialSeq framework through the demonstration data processing process.
 
 **Use the web browser** to explore the social-seq playground.
 
@@ -17,26 +17,26 @@ SocialSeq has been tested on the following configurations:
 - **Debian 11** + x86_64 + NVIDIA A100
 - **Ubuntu 20.04** + x86_64 + NVIDIA RTX3090
 
-Prerequisites, **Docker** and **Nvidia Driver** should be installed.
+**Docker** and **NVIDIA Driver** need to be installed:
 
 ```bash
 $ docker --version  # Docker version should be >= 24.0.6
 $ nvidia-smi        # NVIDIA driver version should be >= 550.54
 ```
 
-## Installation
+## Installation Guide
 
-You need to set up Docker and download the models and data files:
+You need to install Docker and download the model and data files:
 
 | Name | Type | Download link |
 | --- | --- | ---|
-| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | docker image (**11.5 GB**) | [Download🔗](https://pan.baidu.com/s/1LKJx-wtOSx2FvIgiMVrNPg?pwd=c8du) |
-| lilab_socialseq_pipeline_code_with_data_20250903.zip | code and data (**1.6 GB**) | *Same above* |
+| lilab_socialseq_pipeline_cuda_vscode_amd64_20250903.tar | Docker image (**11.5 GB**) | [Download🔗](https://pan.baidu.com/s/1LKJx-wtOSx2FvIgiMVrNPg?pwd=c8du) |
+| lilab_socialseq_pipeline_code_with_data_20250903.zip | Code and data (**1.6 GB**) | *Same link above* |
 
 ```bash
 $ cd SOCIAL_SEQ_DOWNLOAD_PATH
 $ docker load -i ./lilab_socialseq_pipeline_cuda_vscode_amd64_2025*.tar
-$ docker images | grep lilab      # resulting in an image file named 'lilab*'
+$ docker images | grep lilab      # Result will be an image file named 'lilab*'
 
 $ unzip lilab_socialseq_pipeline_code_with_data_2025*.zip -d ./pipeline  # Unzip file
 $ ls ./pipeline/1-Ball_Calibration   # Check path
@@ -52,11 +52,11 @@ $ docker run --rm -it -p 8080:8080 \
 
 Navigate to `http://localhost:8080` and enter the PASSWORD `2025cxf` to access the VS Code server environment where you can view, edit, and run SocialSeq code.
 
+> If you're running Docker on a remote server, you should forward port 8080 to your local machine. For more information, please refer to [bug fix](./bug_fix.en.md).
 
-> If you're running Docker on a remote server, you should forward port 8080 to your local machine. See the [bug fix documentation] for more information.
+Or enter the container through the Docker terminal:
 
-Or use docker terminal
-```
+```bash
 $ docker exec -it lilab_socialseq bash
 ```
 
@@ -65,18 +65,18 @@ $ docker exec -it lilab_socialseq bash
 In the Docker VS Code server environment at `http://localhost:8080`:
 
 ```bash
-$ nvidia-smi  # within docker container, should display GPU information
+$ nvidia-smi  # In the Docker container, should display GPU information
 ```
 
 !!! error "Error"
-    If you encounter errors like `not found libnvidia-ml.so.1`, this is normal because the nvidia driver paths are different between Windows and Linux in docker. Refer to the [bug fix documentation] for solutions.
+    If you encounter errors like `not found libnvidia-ml.so.1`, this is normal because the NVIDIA driver paths are different between Windows and Linux in Docker. For solutions, please refer to [bug fix](./bug_fix).
 
 ## Model Initialization
 
 Convert deep learning models to TensorRT for improved performance. Since TensorRT models are bound to specific systems and hardware, this step must be performed on each new machine.
 
 !!! note "Note"
-    This step only needs to be performed once per machine. The conversion process will take ~20 minutes.
+    This step only needs to be performed once per machine. The conversion process will take approximately 20 minutes.
 
 ```bash
 bash /root/Downloads/pipeline/model_dannce/convert_dannce_hdf5_to_tensorrt.sh
@@ -88,18 +88,18 @@ bash /root/Downloads/pipeline/model_YOLOv8/convert_yolov8seg_to_tensorrt.sh
 cp -r /root/Downloads/pipeline/LILAB-pkg-patch-for-docker/* ~/LILAB-pkg/
 ```
 
-After running these commands, you will generate:
+After running these commands, you will generate the following files:
 
 - `model_mmpose/latest.full.engine`
 - `model_dannce/DANNCE/train_results/MAX/latest.engine`
 - `model_YOLOv8/last.full.engine`
 - `model_mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9/latest.trt`
 
-All set! You're now ready to run the **SocialSeq pipeline playground** with demo data.
+🎉 All set! You're now ready to run the **SocialSeq pipeline playground** with demo data.
 
-## Quick Start
+## 🚀 Quick Start
 
-Once you've completed the installation steps above, you can begin running the SocialSeq pipeline components using the instructions in the following sections.
+After completing the above installation steps, you can start running the playground.
 
 ### 1. Ball Calibration
 Using a ball as a calibration target provides better visibility than a chessboard, enabling faster extrinsic calibration of multi-camera systems. For detailed information, refer to the [documentation](../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/).
@@ -126,7 +126,7 @@ Extracting social-related features from 3D poses and segmenting them (0.8 second
 bash /root/Downloads/pipeline/3-Sequence_Labeling/run_task.sh
 ```
 
-### 4. Closed-Loop Control (LIVE) (Coming Soon): 
+### 4. Closed-Loop Control (LIVE)
 Establishing a real-time behavior analysis system with closed-loop feedback. This will involve multi-camera perception and recognition of animal social behaviors to establish optogenetic conditional stimulation.
 
 *Not yet added to the playground, preparation in progress*

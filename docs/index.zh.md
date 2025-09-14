@@ -11,14 +11,16 @@
 <br>
 
 ## 包含内容
-* `硬软件系统安装` - 安装多相机系统，调试OBS，启用F2同步助手。
-* `小球矫正` - 标定多相机系统的空间坐标系。
-* `小鼠图像分割` - 在复杂背景中，使用分割模型，增强小鼠信噪比。单鼠。
-* `Social 三维关键点重构` - 两只大鼠分割、关键点预测、平滑.
-* `Seq 行为标签` - 获取大鼠社交一致性的36类行为标签。
+* [**文章图表复现**](./figure_reproduction): 下载代码以复现论文中的图表。
+* [**安装示例流程代码**](./安装示例流程代码/pipeline_playground_installation/): 通过 Docker 镜像，快速安装运行项目核心代码。
+* [**设备组装和清单**](./设备组装和清单/shopping_list): 组装多相机系统，获取设备清单和服务器配置。
+* [**小球矫正**](./小球矫正/application): 标定多相机系统的空间坐标系。
+* [**社交三维姿态计算(SOCIAL)**](./社交三维姿态重构/application): 使用Mask R-CNN, DANNCE, SmoothNet 分割大鼠轮廓，获取社交三维姿态。
+* [**社交序列标签(SEQ)**](./社交序列标签/application): 获取大鼠社交一致性的36类行为标签。
+* [**闭环行为控制(LIVE)**](./闭环行为控制/application): 实时识别的社交标签触发光遗传条件刺激，强化 ASD 大鼠社交行为。
 
 ## 代码发布 📅
-最后更新时间 2025-9-13，作者 ChenXinfeng。👨‍💻
+最后更新时间 2025-9-14，作者 陈昕枫。
 
 ## 引用 📚
 Xinfeng Chen*; Xianming Tao*; Zhenchao Zhong*; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li# (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation.

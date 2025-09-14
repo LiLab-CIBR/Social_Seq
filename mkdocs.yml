@@ -1,11 +1,11 @@
-site_name: Social-Seq doc
+site_name: Social-Seq Documentation
 nav:
   - Language English: 'https://lilab-cibr.github.io/Social_Seq/en/'
   - 语言 中文: 'https://lilab-cibr.github.io/Social_Seq/'
   - 首页: index.md
   - 文章图表复现: figure_reproduce.md
 
-  - 安装示例流程代码: 
+  - 安装示例代码: 
     - 游乐场: 安装示例流程代码/pipeline_playground_installation.md
     - 错误修复: 安装示例流程代码/bug_fix.md
 
@@ -13,30 +13,26 @@ nav:
     - 硬件清单: 设备组装和清单/shopping_list.md
     - OBS软件安装: 设备组装和清单/OBS_软件安装.md
     - 服务器环境配置: 设备组装和清单/服务器环境配置.md
-
-  - 基础使用培训:
-    - 连接进入服务器: 基础使用培训/login_server.md
-    - 一些基础技能: 基础使用培训/basic_command.md
-    - 已安装的深度学习模型: 基础使用培训/installed_models.md
+    - 服务器基本操作: 设备组装和清单/服务器基本操作.md
 
   - 小球矫正:
-    - 代码流程: 小球矫正/process.md
     - 应用场景: 小球矫正/application.md
+    - 代码流程: 小球矫正/process.md
     - 数据集制作&模型更新: 小球矫正/dataset.md
 
   - 社交三维姿态计算 (Social):
-    - 代码流程: 社交三维姿态重构/process.md
     - 应用场景: 社交三维姿态重构/application.md
+    - 代码流程: 社交三维姿态重构/process.md
     - 数据集制作&模型更新: 社交三维姿态重构/dataset.md
 
   - 社交序列标签 (Seq):
-    - 代码流程: 社交序列标签/process.md
     - 应用场景: 社交序列标签/application.md
+    - 代码流程: 社交序列标签/process.md
     - 聚类和模板制作: 社交序列标签/dataset.md
 
   - 闭环行为控制 (Live):
-    - 代码流程: 闭环行为控制/process.md
     - 应用场景: 闭环行为控制/application.md
+    - 代码流程: 闭环行为控制/process.md
 
 theme:
   name: readthedocs
@@ -65,16 +61,13 @@ plugins:
           nav_translations:
             首页: Home
             文章图表复现: Figure Reproduction
-            安装示例流程代码: Pipeline Playground
+            安装示例代码: Pipeline Playground
             游乐场: Install & Run
             错误修复: Bug Fix
             设备组装和清单: Equipment Assembly & List
             硬件清单: Hardware List
             OBS软件安装: OBS Software Installation
             服务器环境配置: Server Environment Configuration
-            基础使用培训: Basic Usage Training
-            连接进入服务器: Login to Server
-            一些基础技能: Basic Commands
             已安装的深度学习模型: Installed Deep Learning Models
             小球矫正: Ball Correction
             代码流程: Workflow

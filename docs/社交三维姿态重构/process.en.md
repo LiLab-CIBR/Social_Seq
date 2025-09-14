@@ -49,10 +49,11 @@ Verification: Open the `xx_mask.mp4` video to check if the segmentation is corre
     If the segmentation effect of `xx_mask.mp4` video is poor, you need to re-annotate the segmentation and update the model. See the data and model update section. If the voxel grid deviation of `xx_vol230.0.mp4` is large, it indicates that the ball calibration file is incorrect and needs to be recalibrated.
 
 ## Predict Key Points
-<div class="image-row">
-    <!-- <img src="/assets/images/rat_raw_video.jpg" alt="Raw Video"> -->
-    <img src="../../../assets/images/rat_pose_video.jpg" alt="Mask Video">
-    <!-- <img src="/assets/images/rat_voxel_video.jpg" alt="Voxel Video"> -->
+<div style="text-align: center;">
+<video autoplay muted loop playsinline>
+<source src="../../../assets/videos/3Dposes2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 </div>
 
 ```bash

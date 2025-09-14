@@ -11,14 +11,16 @@ These are some explanatory documents for the Social-Seq project. Social-seq is u
 <br>
 
 ## Contents
-* `Hardware and Software System Installation` - Install multi-camera systems, debug OBS, and enable F2 synchronization assistant.
-* `Ball Calibration` - Calibrate the spatial coordinate system of the multi-camera system.
-* `Mouse Image Segmentation` - Use segmentation models to enhance the signal-to-noise ratio of mice in complex backgrounds. Single mouse.
-* `Social 3D Keypoint Reconstruction` - Two-rat segmentation, keypoint prediction, and smoothing.
-* `Seq Behavior Labeling` - Obtain 36 categories of consistent social behavior labels for rats.
-
+* [**Figure Reproduction**](./figure_reproduction): Download code to reproduce the figures in the paper.
+* [**Pipeline Playground**](./安装示例流程代码/pipeline_playground_installation/): Quickly install and run the core project code through Docker images.
+* [**Equipment Assembly & List**](./设备组装和清单/shopping_list): Assemble multi-camera systems, obtain equipment list and server configuration.
+* [**Ball Calibration**](./小球矫正/application): Calibrate the spatial coordinate system of the multi-camera system.
+* [**Social 3D Pose (SOCIAL)**](./社交三维姿态重构/application): Use Mask R-CNN, DANNCE, SmoothNet to segment rat contours and obtain social 3D poses.
+* [**Sequence Labeling (SEQ)**](./社交序列标签/application): Obtain 36 categories of consistent social behavior labels for rats.
+* [**Closed-loop Control (LIVE)**](./闭环行为控制/application): Real-time identified social labels trigger optogenetic conditional stimulation to reinforce ASD rat social behavior.
+ 
 ## Code Release 📅
-Last updated on 2025-9-13 by ChenXinfeng. 👨‍💻
+Last updated on 2025-9-14 by ChenXinfeng.
 
 ## References 📚
 Xinfeng Chen*; Xianming Tao*; Zhenchao Zhong*; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li# (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation.

@@ -51,10 +51,12 @@ ls $vdir/*.segpkl | sed 's/.segpkl/.mp4/' | xargs -n 1 -P 8 -I {} python -m lila
     如果 `xx_mask.mp4` 视频分割效果差，则需要重修分割标注，更新模型。见数据与模型更新章节。如果 `xx_vol230.0.mp4` 体素方格偏差较大，说明小球矫正的文件有错误，需要重新小球矫正。
 
 ## 预测关键点
-<div class="image-row">
-    <!-- <img src="/assets/images/rat_raw_video.jpg" alt="Raw Video"> -->
-    <img src="../../assets/images/rat_pose_video.jpg" alt="Mask Video">
-    <!-- <img src="/assets/images/rat_voxel_video.jpg" alt="Voxel Video"> -->
+
+<div style="text-align: center;">
+<video autoplay muted loop playsinline>
+<source src="../../assets/videos/3Dposes.mp4" type="video/mp4">
+您的浏览器不支持视频标签。
+</video>
 </div>
 
 ```bash
