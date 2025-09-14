@@ -10,7 +10,7 @@ Welcome to the Social-Seq project! This is a system for analyzing multi-animal c
 
 <div align="center">
   <a href="https://lilab-cibr.github.io/Social_Seq/">
-    <img src="docs/assets/images/figure_abstract.jpg" width="400" alt="Abstract Figure">
+    <img src="https://lilab-cibr.github.io/Social_Seq/assets/images/figure_abstract.jpg" width="400" alt="Abstract Figure">
   </a>
 </div>
 

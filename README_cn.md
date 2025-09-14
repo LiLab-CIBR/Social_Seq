@@ -9,7 +9,7 @@
 
 <div align="center">
   <a href="https://lilab-cibr.github.io/Social_Seq/">
-    <img src="docs/assets/images/figure_abstract.jpg" width="400" alt="摘要图">
+    <img src="https://lilab-cibr.github.io/Social_Seq/assets/images/figure_abstract.jpg" width="400" alt="摘要图">
   </a>
 </div>
 
