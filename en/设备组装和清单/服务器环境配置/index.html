@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="ChenXinfeng" />
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico" />
     <title>Server Environment Configuration - Social-Seq Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
@@ -22,6 +22,10 @@
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/markdown.min.js"></script>
       <script>hljs.highlightAll();</script> 
 </head>
 
@@ -45,7 +49,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="https://lilab-cibr.github.io/Social_Seq/">语言 中文</a>
+                <li class="toctree-l1"><a class="" href="https://lilab-cibr.github.io/Social_Seq">语言 中文</a>
                 </li>
               </ul>
               <ul>
@@ -70,44 +74,6 @@
                   <li class="toctree-l1"><a class="reference internal" href="../OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">OBS Software Installation</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Server Environment Configuration</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#hardware-configuration">Hardware Configuration</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#software-environment">Software Environment</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#dependent-software-versions">Dependent Software Versions</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#test-installation-environment">Test Installation Environment</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#test-nvidia-cuda-driver">Test nvidia cuda driver</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#test-nvidia-cuda-compiler">Test Nvidia Cuda Compiler</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#test-tensorrt-command-line-tools">Test TensorRT Command Line Tools</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#test-polygraphy-nvidia-official-tool-command-line-tools">Test polygraphy (NVIDIA Official Tool) Command Line Tools</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#test-ffmpeg-command-line-tools">Test FFmpeg Command Line Tools</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#test-docker-command-line-tools">Test Docker Command Line Tools</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#third-party-deep-learning-toolkits">Third-party Deep Learning Toolkits</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#1-open-mmlabmmdetection-model">1. OPEN-MMLAB/MMDETECTION Model</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-open-mmlabmmpose-model">2. OPEN-MMLAB/MMPOSE Model</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-yolo-v8-model">3. YOLO-v8 Model</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4-dannce-model">4. DANNCE Model</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#5-smoothnet-model">5. SmoothNet Model</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">Server Basic Operations</a>
                   </li>

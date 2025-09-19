@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="ChenXinfeng" />
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
     <title>服务器环境配置 - Social-Seq Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
@@ -22,6 +22,10 @@
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/markdown.min.js"></script>
       <script>hljs.highlightAll();</script> 
 </head>
 
@@ -45,7 +49,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="https://lilab-cibr.github.io/Social_Seq/">语言 中文</a>
+                <li class="toctree-l1"><a class="" href="https://lilab-cibr.github.io/Social_Seq">语言 中文</a>
                 </li>
               </ul>
               <ul>
@@ -70,44 +74,6 @@
                   <li class="toctree-l1"><a class="reference internal" href="../OBS_%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">OBS软件安装</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">服务器环境配置</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">硬件配置</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">软件环境</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">依赖软件的版本</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_5">测试安装环境</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#nvidia-cuda-driver">测试 nvidia cuda driver</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#nvidia-cuda-compiler">测试 Nvidia Cuda Compiler</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#tensorrt">测试 TensorRT 命令行工具</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#polygraphy-nvidia">测试 polygraphy (NVIDIA 官方工具) 命令行工具</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ffmpeg">测试 FFmpeg 命令行工具</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#docker">测试 Docker 命令行工具</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_6">三方深度学习工具包</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#1-open-mmlabmmdetection">1. OPEN-MMLAB/MMDETECTION 模型</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-open-mmlabmmpose">2. OPEN-MMLAB/MMPOSE 模型</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-yolo-v8">3. YOLO-v8 模型</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4-dannce">4. DANNCE 模型</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#5-smoothnet">5. SmoothNet 模型</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">服务器基本操作</a>
                   </li>

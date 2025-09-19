@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="ChenXinfeng" />
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico" />
     <title>Install & Run - Social-Seq Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
@@ -22,6 +22,10 @@
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/markdown.min.js"></script>
       <script>hljs.highlightAll();</script> 
 </head>
 
@@ -45,7 +49,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="https://lilab-cibr.github.io/Social_Seq/">语言 中文</a>
+                <li class="toctree-l1"><a class="" href="https://lilab-cibr.github.io/Social_Seq">语言 中文</a>
                 </li>
               </ul>
               <ul>
@@ -59,28 +63,6 @@
               <p class="caption"><span class="caption-text">Pipeline Playground</span></p>
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Install & Run</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#installation-guide">Installation Guide</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#environment-verification">Environment Verification</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#model-initialization">Model Initialization</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#quick-start">🚀 Quick Start</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#1-ball-calibration">1. Ball Calibration</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-social-3d-pose-social">2. Social 3D Pose (SOCIAL)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-sequence-labeling-seq">3. Sequence Labeling (SEQ)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4-closed-loop-control-live">4. Closed-Loop Control (LIVE)</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../bug_fix/">Bug Fix</a>
                   </li>
@@ -252,7 +234,7 @@ cp<span class="w"> </span>-r<span class="w"> </span>/root/Downloads/pipeline/LIL
 <div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
 </code></pre></div>
 <h3 id="2-social-3d-pose-social">2. Social 3D Pose (SOCIAL)</h3>
-<p>Processing multi-camera animal videos through Mask R-CNN for animal identification and segmentation, followed by DANNCE for 3D pose keypoint inference, and SmoothNet for motion keypoint smoothing. For detailed information, refer to the <a href="https://lilab-cibr.github.io/Social_Seq/en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">documentation</a>.</p>
+<p>Processing multi-camera animal videos through Mask R-CNN for animal identification and segmentation, followed by DANNCE for 3D pose keypoint inference, and SmoothNet for motion keypoint smoothing. For detailed information, refer to the <a href="https://lilab-cibr.github.io/Social_Seq//en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">documentation</a>.</p>
 <div class="highlight"><pre><span></span><code>bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh<span class="w">   </span><span class="c1"># Mask R-CNN for ID segmentation</span>
 bash<span class="w"> </span>/root/Downloads/pipeline/2-Social_3D_Pose/run_task_keypoint.sh<span class="w">       </span><span class="c1"># DANNCE and SmoothNet for 3D pose reconstruction</span>
 </code></pre></div>
