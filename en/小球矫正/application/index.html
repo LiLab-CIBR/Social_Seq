@@ -74,7 +74,7 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">Server Basic Operations</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Ball Correction</span></p>
+              <p class="caption"><span class="caption-text">Ball Calibration</span></p>
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Applications</a>
     <ul class="current">
@@ -126,7 +126,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../" class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Ball Correction</li>
+          <li class="breadcrumb-item">Ball Calibration</li>
       <li class="breadcrumb-item active">Applications</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -138,6 +138,12 @@
               
                 <h1 id="overview-of-ball-calibration">Overview of Ball Calibration</h1>
 <p><em>Refer to “<a href="../../安装示例流程代码/pipeline_playground_installation/">PIPELINE PLAYGROUND &gt; Install &amp; Run</a>”， and test the codes。</em></p>
+<div class="video-item">
+    <p class="video-legend">Video: Multi-camera extrinsic calibration using moving spherical marker</p>
+    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS2_calibrateion_24081618/playlist.m3u8"></video>
+</div>
+
+<p><br></p>
 <p>The ball calibration process was developed using a ball, achieving fast and accurate multi-camera calibration. For details, you can also refer to <a href="https://github.com/chenxinfeng4/multiview_ball_calib">multiview_ball_calib</a>. Here, we only present the general process.</p>
 <div style="display: flex; justify-content: space-between; align-items: center;">
 <div style="flex: 1; margin-right: 5px; min-width: 0;">
@@ -153,6 +159,8 @@ Your browser does not support the video tag.
 <p><img alt="transform" src="../../../assets/images/transform_2D_3D.jpg" /></p>
 <h2 id="why-use-a-ball-for-calibration">Why Use a Ball for Calibration</h2>
 <p>Calculating the extrinsic parameters (position and rotation angle) of multiple cameras is essential for establishing an accurate 3D coordinate model. Traditional checkerboard extrinsic calibration methods require multiple cameras to simultaneously capture the front pattern of the checkerboard, but in a surround multi-camera configuration, there are viewing angle limitations. The application efficiency of checkerboards is low, while using a ball is more efficient.</p>
+<script src="../../../assets/js/hls.js" defer></script>
+<script src="../../../assets/js/video-player.js" defer></script>
               
             </div>
           </div><footer>

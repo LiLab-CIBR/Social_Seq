@@ -74,7 +74,7 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%BE%E5%A4%87%E7%BB%84%E8%A3%85%E5%92%8C%E6%B8%85%E5%8D%95/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">Server Basic Operations</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Ball Correction</span></p>
+              <p class="caption"><span class="caption-text">Ball Calibration</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/">Applications</a>
                   </li>
@@ -142,6 +142,12 @@
               
                 <h1 id="social-label-sequencing">Social Label Sequencing</h1>
 <p><em>Refer to “<a href="../../安装示例流程代码/pipeline_playground_installation/">PIPELINE PLAYGROUND &gt; Install &amp; Run</a>”， and test the codes。</em></p>
+<div class="video-item">
+    <p class="video-legend">Video: Social modules are distinct, stereotyped and symmetric</p>
+    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS5_social_modules_24090117/playlist.m3u8"></video>
+</div>
+
+<p><br></p>
 <h2 id="social-feature-design">Social Feature Design</h2>
 <p>Obtaining the long-term body coordinate points of two animals provides the foundation for exploring animal social types through their trajectory changes. Based on these coordinate points, we designed a series of features (32 in total) to better showcase social characteristics.</p>
 <p>This includes 10 features of the animal's own movement. Considering that social behavior has unique interaction patterns, we also designed 10 interactive features between the two. During social exploration, rats exhibit many head and genital sniffing behaviors to familiarize themselves with each other. Therefore, we defined circular sniffing areas for the head and genitals and constructed 3 features to distinguish sniffing sites. During play fighting and mating mounting, rats exhibit overlapping of body trunks, so we designed 9 body overlap features.</p>
@@ -153,6 +159,8 @@
 <h2 id="social-consistency-clustering-optimization">Social Consistency Clustering Optimization</h2>
 <p>During the detailed review of behavior classification results, this study identified atypical clips in some categories that were inconsistent with expected behaviors from manual annotation. The inherent characteristics of social behavior provide unique conditions for optimization algorithms, allowing the same social interaction to be viewed from different individual perspectives. The same social interaction clip is labeled from two different role perspectives (2 labels), and consistent labels make the classification of that clip more reliable. This study classified social behaviors from the perspectives of white and black rats, obtaining dual labels, and identified consistency matching relationships between these labels. Among the 42 behavior categories, 36 complementary behaviors were automatically screened out. These 36 categories are called reliable clustering categories. The neural network was then retrained to reclassify all video clips into the 36 reliable clustering categories.</p>
 <p><img alt="cluster_mirror" src="../../../assets/images/cluster_mirror.jpg" /></p>
+<script src="../../../assets/js/hls.js" defer></script>
+<script src="../../../assets/js/video-player.js" defer></script>
               
             </div>
           </div><footer>
