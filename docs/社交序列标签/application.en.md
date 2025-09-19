@@ -4,7 +4,7 @@
 
 <div class="video-item">
     <p class="video-legend">Video: Social modules are distinct, stereotyped and symmetric</p>
-    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS5_social_modules_24090117/playlist.m3u8"></video>
+    <video controls muted playsinline class="responsive-video" data-src="../../../assets/hls_videos/VideoS5_social_modules_24090117/playlist.m3u8"></video>
 </div>
 
 <br>

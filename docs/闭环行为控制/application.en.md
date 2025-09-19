@@ -2,7 +2,7 @@
 
 <div class="video-item">
     <p class="video-legend">Video: Closed-loop behavior-triggered optogenetic stimulation</p>
-    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS6_closed-loop_250430/playlist.m3u8"></video>
+    <video controls muted playsinline class="responsive-video" data-src="../../../assets/hls_videos/VideoS6_closed-loop_250430/playlist.m3u8"></video>
 </div>
 
 <br>

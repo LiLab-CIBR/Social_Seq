@@ -7,7 +7,7 @@ Raw multi-view videos, after `segmentation`, `keypoint reconstruction` and `smoo
 
 <div class="video-item">
     <p class="video-legend">Video: Multi-animal 3D pose tracking using appearance-based segmentation</p>
-    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS3_3D_pose_24090417/playlist.m3u8"></video>
+    <video controls muted playsinline class="responsive-video" data-src="../../../assets/hls_videos/VideoS3_3D_pose_24090417/playlist.m3u8"></video>
 </div>
 
 <br>

@@ -3,7 +3,7 @@
 
 <div class="video-item">
     <p class="video-legend">视频: 多相机小球外参矫正</p>
-    <video controls muted playsinline style="width: 480px;" data-src="../../assets/hls_videos/VideoS2_calibrateion_24081618/playlist.m3u8"></video>
+    <video controls muted playsinline class="responsive-video" data-src="../../assets/hls_videos/VideoS2_calibrateion_24081618/playlist.m3u8"></video>
 </div>
 
 <br>
