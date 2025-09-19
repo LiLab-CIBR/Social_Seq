@@ -27,5 +27,6 @@ Your browser does not support the video tag.
 Calculating the extrinsic parameters (position and rotation angle) of multiple cameras is essential for establishing an accurate 3D coordinate model. Traditional checkerboard extrinsic calibration methods require multiple cameras to simultaneously capture the front pattern of the checkerboard, but in a surround multi-camera configuration, there are viewing angle limitations. The application efficiency of checkerboards is low, while using a ball is more efficient.
 
 
-<script src="../../../assets/js/hls.js" defer></script>
-<script src="../../../assets/js/video-player.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.8-0.canary.10141/hls.light.min.js"></script>
+<script src="../../../assets/js/hls.js"></script>
+<script src="../../../assets/js/video-player.js"></script>

@@ -28,5 +28,6 @@ During the detailed review of behavior classification results, this study identi
 
 ![cluster_mirror](../../../assets/images/cluster_mirror.jpg)
 
-<script src="../../../assets/js/hls.js" defer></script>
-<script src="../../../assets/js/video-player.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.8-0.canary.10141/hls.light.min.js"></script>
+<script src="../../../assets/js/hls.js"></script>
+<script src="../../../assets/js/video-player.js"></script>

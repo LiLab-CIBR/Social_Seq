@@ -68,5 +68,6 @@
 | 群辉2 | RS2821RP+， 200 TB | - |
 
 
-<script src="../../assets/js/hls.js" defer></script>
-<script src="../../assets/js/video-player.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.8-0.canary.10141/hls.light.min.js"></script>
+<script src="../../assets/js/hls.js"></script>
+<script src="../../assets/js/video-player.js"></script>

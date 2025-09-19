@@ -69,5 +69,6 @@ Used for storing large amounts of experimental video data and analysis results, 
 | Synology 1 | DS2419+, 96 TB| - |
 | Synology 2 | RS2821RP+, 200 TB | - |
 
-<script src="../../../assets/js/hls.js" defer></script>
-<script src="../../../assets/js/video-player.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.8-0.canary.10141/hls.light.min.js"></script>
+<script src="../../../assets/js/hls.js"></script>
+<script src="../../../assets/js/video-player.js"></script>

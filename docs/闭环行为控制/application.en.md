@@ -30,5 +30,6 @@ Test results (n=32 videos) show that the experimental group gives light during p
   <img src="../../../assets/images/Fig7_closed-loop_precision.jpg" width="500" alt="Behavior Control Precision">
 </div>
 
-<script src="../../../assets/js/hls.js" defer></script>
-<script src="../../../assets/js/video-player.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.8-0.canary.10141/hls.light.min.js"></script>
+<script src="../../../assets/js/hls.js"></script>
+<script src="../../../assets/js/video-player.js"></script>
