@@ -9,8 +9,6 @@ Includes camera experimental box, experimental computer, and analysis server. Vi
     <video controls muted playsinline class="responsive-video" data-src="../../../assets/hls_videos/VideoS1_multicam_24092111/playlist.m3u8"></video>
 </div>
 
-<br>
-
 
 ## Camera Experimental Box
 ---

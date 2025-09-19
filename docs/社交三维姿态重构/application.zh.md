@@ -9,7 +9,6 @@
     <video controls muted playsinline class="responsive-video" data-src="../../assets/hls_videos/VideoS3_3D_pose_24090417/playlist.m3u8"></video>
 </div>
 
-<br>
 
 ## 原始视频
 视频来自 OBS Studio 录制的9视角相机视频。多相机画面经过了时间同步，误差在1帧及以内，可以忽略。

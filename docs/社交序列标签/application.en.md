@@ -7,7 +7,6 @@
     <video controls muted playsinline class="responsive-video" data-src="../../../assets/hls_videos/VideoS5_social_modules_24090117/playlist.m3u8"></video>
 </div>
 
-<br>
 
 ## Social Feature Design
 Obtaining the long-term body coordinate points of two animals provides the foundation for exploring animal social types through their trajectory changes. Based on these coordinate points, we designed a series of features (32 in total) to better showcase social characteristics.

@@ -10,7 +10,6 @@ Raw multi-view videos, after `segmentation`, `keypoint reconstruction` and `smoo
     <video controls muted playsinline class="responsive-video" data-src="../../../assets/hls_videos/VideoS3_3D_pose_24090417/playlist.m3u8"></video>
 </div>
 
-<br>
 
 ## Raw Video
 The video comes from OBS Studio recorded 9-view camera video. The multi-camera images have been time-synchronized, with an error of 1 frame or less, which can be ignored.

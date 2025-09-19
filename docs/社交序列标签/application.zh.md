@@ -7,7 +7,6 @@
     <video controls muted playsinline class="responsive-video" data-src="../../../assets/hls_videos/VideoS5_social_modules_24090117/playlist.m3u8"></video>
 </div>
 
-<br>
 
 
 ## 社交特征设计
