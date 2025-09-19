@@ -1,7 +1,5 @@
 OBS Software Installation
 ---
-Video tutorial: xxx
-
 
 <div align="center">
   <img src="../../../assets/images/OBS_software.jpg" width="500" alt="ball_keypoint">

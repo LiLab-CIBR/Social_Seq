@@ -1,7 +1,10 @@
 site_name: Social-Seq Documentation
+site_favicon: assets/images/favicon.ico
+site_author: ChenXinfeng
+
 nav:
   - Language English: 'https://lilab-cibr.github.io/Social_Seq/en/'
-  - 语言 中文: 'https://lilab-cibr.github.io/Social_Seq/'
+  - 语言 中文: 'https://lilab-cibr.github.io/Social_Seq'
   - 首页: index.md
   - 文章图表复现: figure_reproduce.md
 
@@ -36,11 +39,14 @@ nav:
 
 theme:
   name: readthedocs
-  collapse_navigation: true  # 允许折叠导航
-  sticky_navigation: true   # 侧边栏在滚动时固定
-  language_selector: true  # 显示语言选择器
-  language: zh
-
+  titles_only: true
+  sticky_navigation: true
+  highlightjs: true
+  hljs_languages:
+    - python
+    - bash
+    - yaml
+    - markdown
 
 markdown_extensions:
   - admonition
@@ -53,6 +59,7 @@ extra_css:
 # 添加多语言插件配置
 plugins:
   - search
+  - macros
   - i18n:
       languages:
         - locale: en
@@ -93,3 +100,8 @@ plugins:
           name: 中文
           build: true
           default: true
+
+extra:
+  last_update: 2025-9-19
+  # home: 'https://lilab-social-seq.pages.dev'
+  home: 'https://lilab-cibr.github.io/Social_Seq/'

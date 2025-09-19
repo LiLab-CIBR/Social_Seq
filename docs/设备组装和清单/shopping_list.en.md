@@ -1,5 +1,5 @@
 # Equipment Assembly and List
-Includes camera experimental box, experimental computer, and analysis server. Video tutorial: xxx
+Includes camera experimental box, experimental computer, and analysis server.
 
 ![OBS Studio](../../../assets/images/Fig_setup_computers.jpg)
 

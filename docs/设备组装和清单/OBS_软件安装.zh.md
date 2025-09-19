@@ -1,7 +1,5 @@
 OBS 软件安装
 ---
-视频教程：xxx
-
 
 <div align="center">
   <img src="../../assets/images/OBS_software.jpg" width="500" alt="ball_keypoint">

@@ -112,7 +112,7 @@ bash /root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
 ```
 
 ### 2. 社交三维姿态计算 (SOCIAL)
-通过 Mask R-CNN 处理多摄像机动物视频进行动物识别和分割，然后使用 DANNCE 进行 3D 姿态关键点推断，使用 SmoothNet 进行动作关键点平滑。详细信息请参见 [文档](https://lilab-cibr.github.io/Social_Seq/en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/)。
+通过 Mask R-CNN 处理多摄像机动物视频进行动物识别和分割，然后使用 DANNCE 进行 3D 姿态关键点推断，使用 SmoothNet 进行动作关键点平滑。详细信息请参见 [文档]({{ home }}/en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/)。
 
 ```bash
 bash /root/Downloads/pipeline/2-Social_3D_Pose/run_task_segmentation.sh   # Mask R-CNN 用于 ID 分割

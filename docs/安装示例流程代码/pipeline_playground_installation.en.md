@@ -110,7 +110,7 @@ bash /root/Downloads/pipeline/1-Ball_Calibration/run_task.sh
 
 
 ### 2. Social 3D Pose (SOCIAL)
-Processing multi-camera animal videos through Mask R-CNN for animal identification and segmentation, followed by DANNCE for 3D pose keypoint inference, and SmoothNet for motion keypoint smoothing. For detailed information, refer to the [documentation](https://lilab-cibr.github.io/Social_Seq/en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/).
+Processing multi-camera animal videos through Mask R-CNN for animal identification and segmentation, followed by DANNCE for 3D pose keypoint inference, and SmoothNet for motion keypoint smoothing. For detailed information, refer to the [documentation]({{ home }}/en/%E5%B0%8F%E7%90%83%E7%9F%AB%E6%AD%A3/application/).
 
 
 ```bash
