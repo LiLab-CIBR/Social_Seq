@@ -1,7 +1,14 @@
 # 设备组装和清单
-包含相机实验箱，实验电脑，分析服务器。视频教程：xxx
-
+包含相机实验箱，实验电脑，分析服务器。
 ![OBS Studio](../../assets/images/Fig_setup_computers.jpg)
+
+<div class="video-item">
+    <p class="video-legend">视频: 多相机行为记录系统组装</p>
+    <video controls muted playsinline style="width: 480px;" data-src="../../assets/hls_videos/VideoS1_multicam_24092111/playlist.m3u8"></video>
+</div>
+
+<br>
+
 
 ## 相机实验箱
 ---
@@ -59,3 +66,7 @@
 | ---- | ---- | ---- | 
 | 群辉1 | DS2419+， 96 TB| - |
 | 群辉2 | RS2821RP+， 200 TB | - |
+
+
+<script src="../../assets/js/hls.js" defer></script>
+<script src="../../assets/js/video-player.js" defer></script>

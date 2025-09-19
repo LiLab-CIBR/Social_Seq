@@ -3,6 +3,15 @@ Includes camera experimental box, experimental computer, and analysis server. Vi
 
 ![OBS Studio](../../../assets/images/Fig_setup_computers.jpg)
 
+
+<div class="video-item">
+    <p class="video-legend">Video: Multi-camera behavioral recording setup</p>
+    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS1_multicam_24092111/playlist.m3u8"></video>
+</div>
+
+<br>
+
+
 ## Camera Experimental Box
 ---
 The table below lists all cameras and materials used in the camera experimental box.
@@ -59,3 +68,6 @@ Used for storing large amounts of experimental video data and analysis results, 
 | ---- | ---- | ---- | 
 | Synology 1 | DS2419+, 96 TB| - |
 | Synology 2 | RS2821RP+, 200 TB | - |
+
+<script src="../../../assets/js/hls.js" defer></script>
+<script src="../../../assets/js/video-player.js" defer></script>

@@ -1,5 +1,12 @@
 # Closed-loop Behavior Control ⚡️
 
+<div class="video-item">
+    <p class="video-legend">Video: Closed-loop behavior-triggered optogenetic stimulation</p>
+    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS6_closed-loop_250430/playlist.m3u8"></video>
+</div>
+
+<br>
+
 Achieve precise behavior control using optogenetic technology and form a closed-loop feedback system through real-time behavior analysis.
 
 - ❓ **Challenge**: Real-time behavior recognition involves heavy computational load, making it difficult to deploy complete models in experimental environments; small models on edge devices lack accuracy; non-specific dopamine stimulation has limited effects on improving autism behaviors.
@@ -22,3 +29,6 @@ Test results (n=32 videos) show that the experimental group gives light during p
 <div align="center">
   <img src="../../../assets/images/Fig7_closed-loop_precision.jpg" width="500" alt="Behavior Control Precision">
 </div>
+
+<script src="../../../assets/js/hls.js" defer></script>
+<script src="../../../assets/js/video-player.js" defer></script>

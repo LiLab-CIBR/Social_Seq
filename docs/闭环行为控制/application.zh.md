@@ -1,5 +1,12 @@
 # 闭环行为控制 ⚡️
 
+<div class="video-item">
+    <p class="video-legend">视频: 实时 "玩耍行为识别" 驱动光遗传刺激</p>
+    <video controls muted playsinline style="width: 480px;" data-src="../../assets/hls_videos/VideoS6_closed-loop_250430/playlist.m3u8"></video>
+</div>
+
+<br>
+
 利用光遗传技术实现精准行为控制，通过实时行为分析形成闭环反馈系统。
 
 - ❓ **挑战**：实时行为识别计算量大，完整模型难以在实验环境部署；边缘设备小模型精度不足；非特异性多巴胺刺激对孤独症行为改善效果有限。
@@ -22,3 +29,6 @@
 <div align="center">
   <img src="../../assets/images/Fig7_closed-loop_precision.jpg" width="500" alt="行为控制精度">
 </div>
+
+<script src="../../assets/js/hls.js" defer></script>
+<script src="../../assets/js/video-player.js" defer></script>

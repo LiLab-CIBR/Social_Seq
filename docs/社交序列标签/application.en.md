@@ -2,6 +2,13 @@
 *Refer to “[PIPELINE PLAYGROUND > Install & Run](../../安装示例流程代码/pipeline_playground_installation/)”， and test the codes。*
 
 
+<div class="video-item">
+    <p class="video-legend">Video: Social modules are distinct, stereotyped and symmetric</p>
+    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS5_social_modules_24090117/playlist.m3u8"></video>
+</div>
+
+<br>
+
 ## Social Feature Design
 Obtaining the long-term body coordinate points of two animals provides the foundation for exploring animal social types through their trajectory changes. Based on these coordinate points, we designed a series of features (32 in total) to better showcase social characteristics.
 
@@ -20,3 +27,6 @@ For each behavior category, we observed typical video clips and performed manual
 During the detailed review of behavior classification results, this study identified atypical clips in some categories that were inconsistent with expected behaviors from manual annotation. The inherent characteristics of social behavior provide unique conditions for optimization algorithms, allowing the same social interaction to be viewed from different individual perspectives. The same social interaction clip is labeled from two different role perspectives (2 labels), and consistent labels make the classification of that clip more reliable. This study classified social behaviors from the perspectives of white and black rats, obtaining dual labels, and identified consistency matching relationships between these labels. Among the 42 behavior categories, 36 complementary behaviors were automatically screened out. These 36 categories are called reliable clustering categories. The neural network was then retrained to reclassify all video clips into the 36 reliable clustering categories.
 
 ![cluster_mirror](../../../assets/images/cluster_mirror.jpg)
+
+<script src="../../../assets/js/hls.js" defer></script>
+<script src="../../../assets/js/video-player.js" defer></script>

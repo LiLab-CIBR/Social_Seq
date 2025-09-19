@@ -1,6 +1,15 @@
 # 社交标签序列化
 *参考 “[安装示例代码 > 游乐场](../../安装示例流程代码/pipeline_playground_installation/)”，运行完整代码。*
 
+
+<div class="video-item">
+    <p class="video-legend">视频: 社交聚类的可视化与对称性</p>
+    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS5_social_modules_24090117/playlist.m3u8"></video>
+</div>
+
+<br>
+
+
 ## 社交特征设计
 获取两只动物长时间身体坐标点，它们的轨迹变化信息为我们探索动物社交类型提供了基础。基于这些坐标点，我们设计
 了一系列特征（共32个），更好的展示社交的特点。
@@ -25,3 +34,6 @@
 在对行为分类结果的视频片段进行详尽审查的过程中，本研究识别出部分类别中存在与人工标注预期行为不一致的非典型片段。社交行为的固有特性为优化算法提供了独特条件，它允许从不同个体的视角审视同一社交互动。同一社交互动片段在两个不同角色视角下分别计算标签（2份标签），标签一致时该片段的分类更可靠。本研究从白鼠和黑鼠的视角分别对社交行为进行归类，得到双重标签，并识别这些标签的一致性匹配关系。在 42 个行为类别中自动筛选出 36 种具有互补性的行为。这 36 类行为被称为可靠的聚类类别。再训练神经网络，重新将所有视频片段划分到 36 类可靠聚类中。
 
 ![cluster_mirror](../../assets/images/cluster_mirror.jpg)
+
+<script src="../../assets/js/hls.js" defer></script>
+<script src="../../assets/js/video-player.js" defer></script>

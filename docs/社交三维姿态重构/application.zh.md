@@ -4,6 +4,13 @@
 ![pipeline](../../assets/images/rat_social_pose_pipeline.jpg)
 原始的多视角视频，经过`分割`, `关键点重构` 和 `平滑` 之后，获取稳定的3D姿态坐标。
 
+<div class="video-item">
+    <p class="video-legend">视频: 社交三维姿态重构——通过分割+关键点+平滑</p>
+    <video controls muted playsinline style="width: 480px;" data-src="../../../assets/hls_videos/VideoS3_3D_pose_24090417/playlist.m3u8"></video>
+</div>
+
+<br>
+
 ## 原始视频
 视频来自 OBS Studio 录制的9视角相机视频。多相机画面经过了时间同步，误差在1帧及以内，可以忽略。
 
@@ -19,3 +26,5 @@
 
 ![pipeline](../../assets/images/rat_pose_video.jpg)
 
+<script src="../../assets/js/hls.js" defer></script>
+<script src="../../assets/js/video-player.js" defer></script>
