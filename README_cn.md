@@ -18,7 +18,7 @@
 最后更新时间 2025-9-14，作者 ChenXinfeng
 
 ## 引用 📚
-Xinfeng Chen; Xianming Tao; Zhenchao Zhong; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li* (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. *Under review*.
+Xinfeng Chen; Xianming Tao; Zhenchao Zhong; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li* (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. *Under review*. <a href="https://lilab-cibr.github.io/Social_Seq/assets/chen_2025_socialseq_bioRXiv.pdf" target="_blank">[PDF 下载]</a>
 
 陈昕枫 (2025). 基于深度学习的动物自由社交行为分析研究. 博士论文，北京大学.
 
