@@ -41,7 +41,7 @@ theme:
   name: readthedocs
   titles_only: true
   sticky_navigation: true
-  highlightjs: true
+  highlightjs: false
   hljs_languages:
     - python
     - bash
@@ -53,13 +53,24 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 
+
+# 引入本地 highlight.js 样式 + 自定义CSS
 extra_css:
   - css/custom.css
+  - assets/highlight/css/github.min.css  # 本地 highlight 样式
+
+# 引入本地 highlight.js 脚本
+extra_javascript:
+  - assets/highlight/js/highlight.min.js
+  - assets/highlight/js/languages/python.min.js
+  - assets/highlight/js/languages/bash.min.js
+  - assets/highlight/js/languages/yaml.min.js
+  - assets/highlight/js/languages/markdown.min.js
+  - assets/highlight/js/highlight-init.js  # 新增：手动初始化 highlight.js
 
 # 添加多语言插件配置
 plugins:
   - search
-  - macros
   - i18n:
       languages:
         - locale: en
