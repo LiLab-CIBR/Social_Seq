@@ -20,7 +20,7 @@
 * [**闭环行为控制(LIVE)**](./闭环行为控制/application): 实时识别的社交标签触发光遗传条件刺激，强化 ASD 大鼠社交行为。
 
 ## 代码发布 📅
-最后更新时间 2025-9-19，作者 陈昕枫。
+最后更新时间 2025-12-8，作者 陈昕枫。
 
 ## 引用 📚
 Xinfeng Chen*; Xianming Tao*; Zhenchao Zhong*; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li# (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. *Under review*. <a href="./assets/chen_2025_socialseq_bioRXiv.pdf" target="_blank">[PDF 下载]</a>
