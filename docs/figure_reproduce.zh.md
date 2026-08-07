@@ -67,7 +67,7 @@ uv run python Fig1_S1/Fig1D.py   # 结果保存到 Fig1_S1/result/Fig1D.pdf
 uv run python main.py test
 ```
 
-生成 Fig1*.pdf, FigS1*.pdf, Fig2*.pdf, ... 结果保存到相应的文件夹中。`Fig*/result/*.pdf`，例如 `Fig1_S1/result/Fig1E.pdf`。
+生成 Fig1*.pdf, FigS1*.pdf, Fig2*.pdf, ... 结果保存到相应的文件夹中。`Fig*/result/*.pdf`，例如 `Fig1_S1/result/Fig1G.pdf`。
 
 
 ## 清理所有结果，复原

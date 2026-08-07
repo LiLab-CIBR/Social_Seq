@@ -64,7 +64,7 @@ uv run python Fig1_S1/Fig1D.py   # The result is saved to Fig1_S1/result/Fig1D.p
 ```bash
 uv run python main.py test
 ```
-Figures such as Fig1*.pdf, FigS1*.pdf, Fig2*.pdf, ... will be generated and saved in the corresponding folders: Fig*/result/*.pdf, e.g., Fig1_S1/result/Fig1E.pdf.
+Figures such as Fig1*.pdf, FigS1*.pdf, Fig2*.pdf, ... will be generated and saved in the corresponding folders: Fig*/result/*.pdf, e.g., Fig1_S1/result/Fig1G.pdf.
 
 ## Clean All Results, Reset
 ```bash
