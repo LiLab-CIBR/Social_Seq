@@ -18,6 +18,13 @@ Run the code in this repository to reproduce the figures in the paper.
 The data and code have been open-sourced, with the link: [Figshare_DATA_20250818.zip🔗](https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab) (**1.0 GB**).
 After downloading, unzip it into a folder named `Figshare`.
 
+The data are openly available for download at [Figshare_DATA_20250818.zip🔗](https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab) (**1.0 GB**).
+After downloading, extract the archive into a folder and name it Figshare.
+
+Source code is publicly available at [https://github.com/LiLab‑CIBR/Social_Seq‑Paper‑Figure‑Replication](https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication).
+
+The directory structures of the **data** and **code** are one‑to‑one matched. Manually **copy individual contents** from `Fig*/data/*` in the data folder into the corresponding code folder.
+
 ## Installation
 Supports Windows, Linux, and MacOS systems.
 

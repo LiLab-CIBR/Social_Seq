@@ -6,7 +6,7 @@ These are some explanatory documents for the Social-Seq project. Social-seq is u
 - Document here 📚：[https://lilab-cibr.github.io/Social_Seq/en/](https://lilab-cibr.github.io/Social_Seq/en/)
 
 <div align="center">
-  <img src="../assets/images/figure_abstract.jpg" width="500" alt="Abstract Diagram">
+  <img src="../assets/images/figure_abstract.webp" width="500" alt="Abstract Diagram">
 </div>
 <br>
 

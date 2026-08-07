@@ -6,7 +6,7 @@
 - 项目文档 📚：[https://lilab-cibr.github.io/Social_Seq/](https://lilab-cibr.github.io/Social_Seq)
 
 <div align="center">
-  <img src="assets/images/figure_abstract.jpg" width="500" alt="抽象图">
+  <img src="assets/images/figure_abstract.webp" width="500" alt="抽象图">
 </div>
 <br>
 
