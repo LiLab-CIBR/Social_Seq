@@ -15,10 +15,8 @@ Run the code in this repository to reproduce the figures in the paper.
 
 
 ## Code and Data Download
-The data and code have been open-sourced, with the link: [Figshare_DATA_20250818.zip🔗](https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab) (**1.0 GB**).
-After downloading, unzip it into a folder named `Figshare`.
 
-The data are openly available for download at [Figshare_DATA_20250818.zip🔗](https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab) (**1.0 GB**).
+The data are openly available for download at [Social_Seq_DATA.zip🔗](https://pan.baidu.com/s/1J5WT093xqDKwrX7q8C2Zqg?pwd=hvqx) (**3.9 GB**).
 After downloading, extract the archive into a folder and name it Figshare.
 
 Source code is publicly available at [https://github.com/LiLab‑CIBR/Social_Seq‑Paper‑Figure‑Replication](https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication).
@@ -35,8 +33,9 @@ First, **install the dependency environment** using `uv`.
 
 ```bash
 # Before running the following code, please download the FIGSHARE code and data.
-unzip Figshare_DATA_2025*.zip -d Figshare
+unzip Social_Seq_DATA*.zip -d Figshare
 cd Figshare
+git clone https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication . # Download the code
 
 python3 -m pip install uv          # UV is a lightweight Python package manager, similar to conda.
 

@@ -16,8 +16,11 @@
 
 ## 代码和数据下载
 
-数据和代码已开源，链接为 [Figshare_DATA_20250818.zip🔗](https://pan.baidu.com/s/1YNHOnwKm2-YS8ZePG0TTOA?pwd=j6ab) (**1.0 GB**)。
-下载后解压到文件夹，命名为`Figshare`。
+数据开放下载，链接为 [Social_Seq_DATA.zip🔗](https://pan.baidu.com/s/1J5WT093xqDKwrX7q8C2Zqg?pwd=hvqx) (**3.9 GB**)。下载后解压到文件夹，命名为`Figshare`。
+
+代码开放下载，链接为[https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication](https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication)。
+
+数据和代码目录一一对应，需将数据文件夹 `Fig*/data/*` 逐个复制到代码文件夹中。
 
 ## 安装
 支持 Windows、Linux 和 MacOS 系统。
@@ -29,8 +32,9 @@
 
 ```bash
 # 在运行以下代码之前，请下载 FIGSHARE 代码和数据。
-unzip Figshare_DATA_2025*.zip -d Figshare
+unzip Social_Seq_DATA*.zip -d Figshare
 cd Figshare
+git clone https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication .  # 下载代码到当前文件夹
 
 python3 -m pip install uv          # UV 是一个轻量级的 Python 包管理器，类似于 conda。
 

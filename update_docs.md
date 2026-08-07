@@ -9,6 +9,9 @@ main 分支的 docs/ 目录用于存放markdown格式的文档，用于 gh-pages
 # 翻译文档
 由于文档使用了英文，改变了了文档的路径，所以需要将英文文档中的图片路径，调整层级。
 ```bash
-# 首次使用
+# 首次使用，in mac
 find . -name "*.en.md" -type f -exec sed -i '' 's|\.\./\.\./assets|\.\./\.\./\.\./assets|g' {} +
+
+# in linux
+find . -name "*.en.md" -type f -exec sed -i 's|\.\./\.\./assets|\.\./\.\./\.\./assets|g' {} +
 ```
