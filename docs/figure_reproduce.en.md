@@ -53,10 +53,10 @@ uv pip install -e ../LILAB-py
 uv run python -m lilab.multiview_scripts_dev.p1_checkboard_global -h   # Verify the installation
 ```
 
-## Generate a Single Figure: Fig1C.pdf
+## Generate a Single Figure: Fig1D.pdf
 You can run the code in `Fig*/Fig*.py` one by one to generate figures.
 ```bash
-uv run python Fig1_S1/Fig1C.py   # The result is saved to Fig1_S1/result/Fig1C.pdf
+uv run python Fig1_S1/Fig1D.py   # The result is saved to Fig1_S1/result/Fig1D.pdf
 ```
 > **Note**: If any error occurs, please ensure that all data files have been downloaded correctly.
 

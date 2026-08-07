@@ -54,10 +54,10 @@ uv run python -m lilab.multiview_scripts_dev.p1_checkboard_global -h   # 验证�
 
 
 
-## 生成单个图表：Fig1C.pdf
+## 生成单个图表：Fig1D.pdf
 您可以逐个运行 `Fig*/Fig*.py` 中的代码来生成图表。
 ```bash
-uv run python Fig1_S1/Fig1C.py   # 结果保存到 Fig1_S1/result/Fig1C.pdf
+uv run python Fig1_S1/Fig1D.py   # 结果保存到 Fig1_S1/result/Fig1D.pdf
 ```
 
 > **注意**: 如果出现任何错误，请确保所有数据文件都已正确下载。
