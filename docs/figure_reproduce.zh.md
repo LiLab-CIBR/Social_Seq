@@ -1,5 +1,5 @@
 # 论文代码复现
-"(2025) Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation"
+"Chen X.F., Tao X.M., Zhong Z.C., Zhu F.Y., Zhang Y.Q., Wang Y.Z., Wang M., Sun L., Li Y.X., Ouyang Y., Ding Z.Y., An M., Zhao Y.Y., Zhou J.F., Zhang R., Xiong W., Ji N., Li Y., 2026. Sub-second dopaminergic reinforcement orchestrates juvenile social play and is disrupted in Shank3 deficiency. In preparation"
 
 **作者**: 陈昕枫, 2025-08-09. **修改**: 陶现明，2025-08-15. 陈昕枫, 2026-08-07.
 
@@ -16,7 +16,7 @@
 
 ## 代码和数据下载
 
-数据开放下载，链接为 [Social_Seq_DATA.zip🔗](https://pan.baidu.com/s/1J5WT093xqDKwrX7q8C2Zqg?pwd=hvqx) (**3.9 GB**)。下载后解压到文件夹，命名为`Figshare`。
+数据开放下载，链接为 `Social_Seq_DATA.rar` ([Mendeley Data🔗](https://data.mendeley.com/datasets/8w3b9xybzg) 或 [百度云🔗](https://pan.baidu.com/s/1AOTVayg2qMhh3KGjDtZh1Q?pwd=6mc3)，**4.1 GB**)。下载后解压到文件夹，命名为`Figshare`。
 
 代码开放下载，链接为[https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication](https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication)。
 
@@ -32,7 +32,7 @@
 
 ```bash
 # 在运行以下代码之前，请下载 FIGSHARE 代码和数据。
-unzip Social_Seq_DATA*.zip -d Figshare
+unrar x Social_Seq_DATA.rar Figshare/
 cd Figshare
 git clone https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication .  # 下载代码到当前文件夹
 

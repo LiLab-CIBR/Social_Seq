@@ -1,5 +1,5 @@
 # Paper Code Reproduction
-"(2025) Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation"
+"Chen X.F., Tao X.M., Zhong Z.C., Zhu F.Y., Zhang Y.Q., Wang Y.Z., Wang M., Sun L., Li Y.X., Ouyang Y., Ding Z.Y., An M., Zhao Y.Y., Zhou J.F., Zhang R., Xiong W., Ji N., Li Y., 2026. Sub-second dopaminergic reinforcement orchestrates juvenile social play and is disrupted in Shank3 deficiency. In preparation"
 
 **Author**: Chen Xinfeng, 2025-08-09. **Modified**: Tao Xianming, 2025-08-15. Chen Xinfeng, 2026-08-07.
 
@@ -16,7 +16,7 @@ Run the code in this repository to reproduce the figures in the paper.
 
 ## Code and Data Download
 
-The data are openly available for download at [Social_Seq_DATA.zip🔗](https://pan.baidu.com/s/1J5WT093xqDKwrX7q8C2Zqg?pwd=hvqx) (**3.9 GB**).
+The data are openly available for download at `Social_Seq_DATA.rar` ([Mendeley Data🔗](https://data.mendeley.com/datasets/8w3b9xybzg) or [BaiduYun🔗](https://pan.baidu.com/s/1AOTVayg2qMhh3KGjDtZh1Q?pwd=6mc3), **4.1 GB**).
 After downloading, extract the archive into a folder and name it Figshare.
 
 Source code is publicly available at [https://github.com/LiLab‑CIBR/Social_Seq‑Paper‑Figure‑Replication](https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication).
@@ -33,7 +33,7 @@ First, **install the dependency environment** using `uv`.
 
 ```bash
 # Before running the following code, please download the FIGSHARE code and data.
-unzip Social_Seq_DATA*.zip -d Figshare
+unrar x Social_Seq_DATA*.rar Figshare/  # Extract the data to Figshare
 cd Figshare
 git clone https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication . # Download the code
 
