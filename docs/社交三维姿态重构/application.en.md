@@ -1,5 +1,5 @@
 # Social 3D Pose Reconstruction
-*Refer to “[PIPELINE PLAYGROUND > Install & Run](../../安装示例流程代码/pipeline_playground_installation/)”， and test the codes。*
+*Refer to "[PIPELINE PLAYGROUND > Install & Run](../../安装示例流程代码/pipeline_playground_installation/)" and run the complete code.*
 
 ![pipeline](../../../assets/images/rat_social_pose_pipeline.jpg)
 Raw multi-view videos, after `segmentation`, `keypoint reconstruction` and `smoothing`, obtain stable 3D pose coordinates.

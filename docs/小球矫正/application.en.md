@@ -1,5 +1,5 @@
 # Overview of Ball Calibration
-*Refer to “[PIPELINE PLAYGROUND > Install & Run](../../安装示例流程代码/pipeline_playground_installation/)”， and test the codes。*
+*Refer to "[PIPELINE PLAYGROUND > Install & Run](../../安装示例流程代码/pipeline_playground_installation/)" and run the complete code.*
 
 <div class="video-item">
     <p class="video-legend">Video: Multi-camera extrinsic calibration using moving spherical marker</p>
@@ -25,6 +25,8 @@ Your browser does not support the video tag.
 
 ## Why Use a Ball for Calibration
 Calculating the extrinsic parameters (position and rotation angle) of multiple cameras is essential for establishing an accurate 3D coordinate model. Traditional checkerboard extrinsic calibration methods require multiple cameras to simultaneously capture the front pattern of the checkerboard, but in a surround multi-camera configuration, there are viewing angle limitations. The application efficiency of checkerboards is low, while using a ball is more efficient.
+
+For the specific calibration process, please refer to the next chapter.
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.8-0.canary.10141/hls.light.min.js"></script>

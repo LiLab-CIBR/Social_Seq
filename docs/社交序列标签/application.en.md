@@ -1,5 +1,5 @@
 # Social Label Sequencing
-*Refer to “[PIPELINE PLAYGROUND > Install & Run](../../安装示例流程代码/pipeline_playground_installation/)”， and test the codes。*
+*Refer to "[PIPELINE PLAYGROUND > Install & Run](../../安装示例流程代码/pipeline_playground_installation/)" and run the complete code.*
 
 
 <div class="video-item">

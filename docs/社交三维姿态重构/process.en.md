@@ -77,7 +77,7 @@ vfiles=$(echo "$volsize_vfiles" | awk '{print $3}')                 #echo "$vfil
 # 2. Use DANNCE to predict 3D pose, nGPU=4
 echo "$volsize_vfiles" | sed 's/.segpkl/.mp4/' | cat -n |
     xargs -P 4 -l bash -c 'python -m dannce.cli_trt ../../configs/dannce_rat14_1280x800x9_max_config.yaml --vol-size-list $1 $2 --video-file $3 --gpu-id $(($0%4))'
-# xargs -P 2 means using 2 GPUs,配合 choosecuda 0,1,2,3 to confirm the number of GPUs used
+# xargs -P 2 means using 2 GPUs; use `choosecuda 0,1,2,3` to confirm the number of GPUs used
 
 
 # 3. Draw "unsmoothed" pose trajectories (optional)
