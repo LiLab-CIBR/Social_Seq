@@ -138,7 +138,7 @@
 </div>
 
 <p><br></p>
-<p>We developed a ball-based calibration workflow that achieves fast and accurate multi-camera calibration. For details, you can also refer to <a href="https://github.com/chenxinfeng4/multiview_ball_calib">multiview_ball_calib</a>. Here, we only present the general process.</p>
+<p>The ball calibration process was developed using a ball, achieving fast and accurate multi-camera calibration. For details, you can also refer to <a href="https://github.com/chenxinfeng4/multiview_ball_calib">multiview_ball_calib</a>. Here, we only present the general process.</p>
 <div style="display: flex; justify-content: space-between; align-items: center;">
 <div style="flex: 1; margin-right: 5px; min-width: 0;">
 <video autoplay muted loop playsinline style="width: 100%; height: auto;">
@@ -152,7 +152,7 @@ Your browser does not support the video tag.
 </div>
 <p><img alt="transform" src="../../../assets/images/transform_2D_3D.jpg" /></p>
 <h2 id="why-use-a-ball-for-calibration">Why Use a Ball for Calibration</h2>
-<p>Calculating the extrinsic parameters (position and rotation angle) of multiple cameras is essential for establishing an accurate 3D coordinate model. Traditional checkerboard extrinsic calibration requires all cameras to simultaneously capture the front pattern of the checkerboard, but in a surround multi-camera configuration, this is limited by viewing angles. As a result, checkerboard calibration is inefficient, while using a ball is much more efficient.</p>
+<p>Calculating the extrinsic parameters (position and rotation angle) of multiple cameras is essential for establishing an accurate 3D coordinate model. Traditional checkerboard extrinsic calibration methods require multiple cameras to simultaneously capture the front pattern of the checkerboard, but in a surround multi-camera configuration, there are viewing angle limitations. The application efficiency of checkerboards is low, while using a ball is more efficient.</p>
 <p>For the specific calibration process, please refer to the next chapter.</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.8-0.canary.10141/hls.light.min.js"></script>
 <script src="../../../assets/js/hls.js"></script>

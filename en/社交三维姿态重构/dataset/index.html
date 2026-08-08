@@ -133,7 +133,7 @@
                 <h1 id="dataset-creation-model-update">Dataset Creation &amp; Model Update</h1>
 <h2 id="annotation-rat-segmentation">Annotation: Rat Segmentation</h2>
 <p>First, use the Labelme software for data annotation. Use the <code>Polygon</code> tool to create labels for <code>rat_black</code> (black rat) and <code>rat_white</code> (white rat).</p>
-<p><img alt="anno" src="../../../assets/images/rat_labelme_anno.jpg" /></p>
+<p><img alt="anno" src="../../assets/images/rat_labelme_anno.jpg" /></p>
 <h2 id="updating-the-segmentation-model">Updating the Segmentation Model</h2>
 <p>Run the following code line by line. <code>mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py</code> is the model configuration file (default, recommended). You can switch to other model configurations if needed.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. Data preparation: labelme to coco</span>
@@ -182,7 +182,7 @@ ls<span class="w"> </span>-lh<span class="w"> </span>work_dirs/mask_rcnn_r101_fp
 <p>Finally, you will obtain the updated <code>latest.trt</code> model weight file.</p>
 <h2 id="annotation-rat-3d-keypoints">Annotation: Rat 3D Keypoints</h2>
 <p>First, use Label3D_Manager for data annotation. Label3D_Manager is a modified version of the official release, adapted for OBS-recorded videos and preconfigured with the 14 rat keypoints.
-<img alt="anno" src="../../../assets/images/rat_annotation_keypoint.jpg" /></p>
+<img alt="anno" src="../../assets/images/rat_annotation_keypoint.jpg" /></p>
 <p>You should obtain an <code>anno.mat</code> file containing the annotated 3D keypoint information.</p>
 <h2 id="dataset-preparation">Dataset Preparation</h2>
 <div class="highlight"><pre><span></span><code>conda activate mmdet

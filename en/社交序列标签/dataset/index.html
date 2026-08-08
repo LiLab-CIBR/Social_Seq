@@ -131,10 +131,10 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="create-social-clustering-template-from-scratch">Create Social Clustering Template from Scratch</h1>
-<h2 id="from-keypoint-files-videos-to-social-features-and-behavior-labels">From Keypoint Files &amp; Videos to Social Features and Behavior Labels</h2>
-<p>After performing "Social 3D Pose Reconstruction", you will get "<em>smoothed_foot.matcalibpkl" keypoint files and "</em>_sktdraw_smoothed_foot.mp4" video files.</p>
-<p>Copy these two types of video and data files into the same folder, then run the following commands in sequence to complete the <code>calculate social features - enrich close-range social interactions and split segments - Seq2Seq model to extract spatiotemporal features of social behavior - social clustering - render videos</code> pipeline.</p>
-<p>Please run the following code line by line.</p>
+<h2 id="from-keypoint-files-videos-to-social-features-and-behavior-labels">From Keypoint Files + Videos to Social Features and Behavior Labels</h2>
+<p>After performing "Social 3D Pose Reconstruction", you should have "<em>smoothed_foot.matcalibpkl" keypoint files and "</em>_sktdraw_smoothed_foot.mp4" video files.</p>
+<p>Copy all these video and data files to a folder. Execute the following commands to sequentially <code>calculate social features - enrich close-range social interactions and split segments - Seq2Seq model to extract spatiotemporal features of social behavior - social clustering - render videos</code>.</p>
+<p>Please run this code line by line.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 conda<span class="w"> </span>activate<span class="w"> </span>OpenLabCluster
 
@@ -178,9 +178,9 @@ python<span class="w"> </span>04_1_plot_decSeqCluster-Videos.py<span class="w"> 
 <span class="c1">## get behavior cluster sequence of each video</span>
 python<span class="w"> </span>04_2_getBhvClusterSeqs_eachVideo.py<span class="w"> </span><span class="nv">$pathFeats</span><span class="w"> </span><span class="nv">$bhvResPath</span><span class="w"> </span><span class="nv">$today</span>
 </code></pre></div>
-<p>This will generate <code>*_sequences.pkl</code> and <code>*_bio_labels.npz</code> behavior video label files, as well as <code>FWPCA*_blackFirst/svm_clu*_400p.mp4</code> video files corresponding to each behavior category.</p>
-<h2 id="plotting-and-calculating-active-passive-consistency">Plotting and Calculating Active-Passive Consistency</h2>
-<p>Please run the following code line by line.</p>
+<p>This will generate <code>*_sequences.pkl</code> and <code>*_bio_labels.npz</code> behavior video label files; and <code>FWPCA*_blackFirst/svm_clu*_400p.mp4</code> video files corresponding to each behavior category.</p>
+<h2 id="plotting-calculating-active-passive-consistency">Plotting &amp; Calculating Active-Passive Consistency</h2>
+<p>Please run this code line by line.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 conda<span class="w"> </span>activate<span class="w"> </span>mmdet
 <span class="nb">cd</span><span class="w"> </span>/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/chenxf/00_BehaviorAnalysis-seq2seq/SexAge/Day55_Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32/

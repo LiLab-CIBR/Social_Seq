@@ -131,10 +131,10 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="_1">从零制作社交聚类的模板</h1>
-<h2 id="_2">从关键点文件与视频到社交特征和行为标签</h2>
-<p>完成“社交三维姿态重构”之后，你会得到“<em>smoothed_foot.matcalibpkl”关键点文件以及“</em>_sktdraw_smoothed_foot.mp4”视频文件。</p>
-<p>将这两类视频和数据文件拷贝到同一个文件夹中，然后依次执行下面的命令，完成<code>计算社交特征 - 富集近距离社交并拆分片段 - Seq2Seq模型抽提社交的时空特征 - 社交Cluster - 绘制视频</code>的完整流程。</p>
-<p>请逐行运行以下代码。</p>
+<h2 id="_2">从关键点文件+视频到社交特征和行为标签</h2>
+<p>在进行“社交三维姿态重构”之后，应该会有 “<em>smoothed_foot.matcalibpkl” 关键点文件和“</em>_sktdraw_smoothed_foot.mp4” 视频文件。</p>
+<p>将所有这两类视频和数据文件拷贝到一个文件夹中。执行下面命令，将逐次 <code>计算社交特征 - 富集近距离社交并拆分片段 - Seq2Seq模型抽提社交的时空特征 - 社交Cluster - 绘制视频</code>。</p>
+<p>请将该代码逐行运行。</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 conda<span class="w"> </span>activate<span class="w"> </span>OpenLabCluster
 
@@ -178,9 +178,9 @@ python<span class="w"> </span>04_1_plot_decSeqCluster-Videos.py<span class="w"> 
 <span class="c1">## get behavior cluster sequence of each video</span>
 python<span class="w"> </span>04_2_getBhvClusterSeqs_eachVideo.py<span class="w"> </span><span class="nv">$pathFeats</span><span class="w"> </span><span class="nv">$bhvResPath</span><span class="w"> </span><span class="nv">$today</span>
 </code></pre></div>
-<p>运行完成后，会得到 <code>*_sequences.pkl</code> 和 <code>*_bio_labels.npz</code> 两个行为视频标签文件，以及每类行为对应的 <code>FWPCA*_blackFirst/svm_clu*_400p.mp4</code> 视频文件。</p>
-<h2 id="_3">绘图与主被动一致性计算</h2>
-<p>请逐行运行以下代码。</p>
+<p>得到 <code>*_sequences.pkl</code> 和 <code>*_bio_labels.npz</code> 两个行为视频标签文件;<code>FWPCA*_blackFirst/svm_clu*_400p.mp4</code> 每类行为对应的视频文件。</p>
+<h2 id="_3">绘图 &amp; 计算主被动一致性</h2>
+<p>请将该代码逐行运行。</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 conda<span class="w"> </span>activate<span class="w"> </span>mmdet
 <span class="nb">cd</span><span class="w"> </span>/mnt/liying.cibr.ac.cn_Data_Temp/multiview_9/chenxf/00_BehaviorAnalysis-seq2seq/SexAge/Day55_Mix_analysis/SexAgeDay55andzzcWTinAUT_MMFF/result32/

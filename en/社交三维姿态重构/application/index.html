@@ -133,20 +133,20 @@
                 <h1 id="social-3d-pose-reconstruction">Social 3D Pose Reconstruction</h1>
 <p><em>Refer to "<a href="../../安装示例流程代码/pipeline_playground_installation/">PIPELINE PLAYGROUND &gt; Install &amp; Run</a>" and run the complete code.</em></p>
 <p><img alt="pipeline" src="../../../assets/images/rat_social_pose_pipeline.jpg" />
-After <code>segmentation</code>, <code>keypoint reconstruction</code>, and <code>smoothing</code>, the raw multi-view videos produce stable 3D pose coordinates.</p>
+Raw multi-view videos, after <code>segmentation</code>, <code>keypoint reconstruction</code> and <code>smoothing</code>, obtain stable 3D pose coordinates.</p>
 <div class="video-item">
     <p class="video-legend">Video: Multi-animal 3D pose tracking using appearance-based segmentation</p>
     <video controls muted playsinline class="responsive-video" data-src="../../../assets/hls_videos/VideoS3_3D_pose_24090417/playlist.m3u8"></video>
 </div>
 
 <h2 id="raw-video">Raw Video</h2>
-<p>The video comes from 9-view cameras recorded by OBS Studio. The multi-camera images have been time-synchronized, with an error within 1 frame, which is negligible.</p>
+<p>The video comes from OBS Studio recorded 9-view camera video. The multi-camera images have been time-synchronized, with an error of 1 frame or less, which can be ignored.</p>
 <p><img alt="pipeline" src="../../../assets/images/rat_raw_video.jpg" /></p>
 <h2 id="segmentation">Segmentation</h2>
-<p>The Mask-RCNN model is used to identify the black and white rats and segment their pixel regions.</p>
+<p>Using the Mask-RCNN model, the identity of black and white rats is recognized, and the pixel area is segmented.</p>
 <p><img alt="pipeline" src="../../../assets/images/rat_mask_video.jpg" /></p>
 <h2 id="keypoint-reconstruction">Keypoint Reconstruction</h2>
-<p>Run DANNCE keypoint prediction followed by neural network smoothing to obtain the 3D pose.</p>
+<p>Execute DANNCE keypoint prediction + neural network smoothing to obtain 3D pose.</p>
 <p><img alt="pipeline" src="../../../assets/images/rat_pose_video.jpg" /></p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.8-0.canary.10141/hls.light.min.js"></script>
 <script src="../../../assets/js/hls.js"></script>
