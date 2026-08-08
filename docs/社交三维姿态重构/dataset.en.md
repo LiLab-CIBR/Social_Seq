@@ -2,7 +2,7 @@
 ## Annotation: Rat Segmentation
 First, use the Labelme software for data annotation. Use the `Polygon` tool to create labels for `rat_black` (black rat) and `rat_white` (white rat).
 
-![anno](../../assets/images/rat_labelme_anno.jpg)
+![anno](../../../assets/images/rat_labelme_anno.jpg)
 
 ## Updating the Segmentation Model
 Run the following code line by line. `mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py` is the model configuration file (default, recommended). You can switch to other model configurations if needed.
@@ -56,7 +56,7 @@ Finally, you will obtain the updated `latest.trt` model weight file.
 
 ## Annotation: Rat 3D Keypoints
 First, use Label3D_Manager for data annotation. Label3D_Manager is a modified version of the official release, adapted for OBS-recorded videos and preconfigured with the 14 rat keypoints.
-![anno](../../assets/images/rat_annotation_keypoint.jpg)
+![anno](../../../assets/images/rat_annotation_keypoint.jpg)
 
 You should obtain an `anno.mat` file containing the annotated 3D keypoint information.
 
