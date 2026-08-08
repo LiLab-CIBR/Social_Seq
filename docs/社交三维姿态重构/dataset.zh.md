@@ -1,6 +1,7 @@
 # 数据集制作&模型更新
 ## 标注大鼠分割
 首先，使用 Labelme 软件进行数据标注。用 `Polygon` 工具，创建黑鼠 `rat_black` 和白鼠 `rat_white`的标签。
+
 ![anno](../../assets/images/rat_labelme_anno.jpg)
 
 ## 更新分割模型
