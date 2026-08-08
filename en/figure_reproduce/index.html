@@ -130,7 +130,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="paper-code-reproduction">Paper Code Reproduction</h1>
-<p>"(2025) Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. In preparation"</p>
+<p>"Chen X.F., Tao X.M., Zhong Z.C., Zhu F.Y., Zhang Y.Q., Wang Y.Z., Wang M., Sun L., Li Y.X., Ouyang Y., Ding Z.Y., An M., Zhao Y.Y., Zhou J.F., Zhang R., Xiong W., Ji N., Li Y., 2026. Sub-second dopaminergic reinforcement orchestrates juvenile social play and is disrupted in Shank3 deficiency. In preparation"</p>
 <p><strong>Author</strong>: Chen Xinfeng, 2025-08-09. <strong>Modified</strong>: Tao Xianming, 2025-08-15. Chen Xinfeng, 2026-08-07.</p>
 <h2 id="figures-gallery">Figures Gallery</h2>
 <p>Run the code in this repository to reproduce the figures in the paper.
@@ -142,7 +142,7 @@
 <img alt="Fig6_S6" src="../../assets/Fig6_S6.webp" />
 <img alt="Fig7_S7" src="../../assets/Fig7_S7.webp" /></p>
 <h2 id="code-and-data-download">Code and Data Download</h2>
-<p>The data are openly available for download at <a href="https://pan.baidu.com/s/1J5WT093xqDKwrX7q8C2Zqg?pwd=hvqx">Social_Seq_DATA.zip🔗</a> (<strong>3.9 GB</strong>).
+<p>The data are openly available for download at <code>Social_Seq_DATA.rar</code> (<a href="https://data.mendeley.com/datasets/8w3b9xybzg">Mendeley Data🔗</a> or <a href="https://pan.baidu.com/s/1AOTVayg2qMhh3KGjDtZh1Q?pwd=6mc3">BaiduYun🔗</a>, <strong>4.1 GB</strong>).
 After downloading, extract the archive into a folder and name it Figshare.</p>
 <p>Source code is publicly available at <a href="https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication">https://github.com/LiLab‑CIBR/Social_Seq‑Paper‑Figure‑Replication</a>.</p>
 <p>The directory structures of the <strong>data</strong> and <strong>code</strong> are one‑to‑one matched. Manually <strong>copy individual contents</strong> from <code>Fig*/data/*</code> in the data folder into the corresponding code folder.</p>
@@ -154,7 +154,7 @@ After downloading, extract the archive into a folder and name it Figshare.</p>
 <p>Do not use <code>uv</code> and <code>conda</code> simultaneously, as this will cause package installation conflicts. Before running the following codes, please run <code>conda deactivate</code> first.</p>
 </div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Before running the following code, please download the FIGSHARE code and data.</span>
-unzip<span class="w"> </span>Social_Seq_DATA*.zip<span class="w"> </span>-d<span class="w"> </span>Figshare
+unrar<span class="w"> </span>x<span class="w"> </span>Social_Seq_DATA*.rar<span class="w"> </span>Figshare/<span class="w">  </span><span class="c1"># Extract the data to Figshare</span>
 <span class="nb">cd</span><span class="w"> </span>Figshare
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication<span class="w"> </span>.<span class="w"> </span><span class="c1"># Download the code</span>
 
