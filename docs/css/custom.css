@@ -30,3 +30,79 @@
     height: auto;
     max-width: 480px;
 }
+
+.wy-nav-content {
+    position: relative;
+}
+
+.lang-switch {
+    position: absolute;
+    top: 10px;
+    right: 24px;
+    z-index: 1000;
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.lang-switch-btn {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid #2980b9;
+    border-radius: 4px;
+    background: #fff;
+    color: #2980b9;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-switch-btn:hover {
+    background: #2980b9;
+    color: #fff;
+}
+
+.lang-switch-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    padding: 6px;
+    min-width: 130px;
+    z-index: 1001;
+}
+
+.lang-switch-menu[hidden] {
+    display: none;
+}
+
+.lang-switch-item {
+    display: block;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.lang-switch-item:hover {
+    background: #f0f6fc;
+    color: #2980b9;
+}
+
+.lang-switch-item.active {
+    background: #2980b9;
+    color: #fff;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .lang-switch {
+        right: 12px;
+    }
+}

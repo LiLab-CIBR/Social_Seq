@@ -3,8 +3,6 @@ site_favicon: assets/images/favicon.ico
 site_author: ChenXinfeng
 
 nav:
-  - Language English: 'https://lilab-cibr.github.io/Social_Seq/en/'
-  - 语言 中文: 'https://lilab-cibr.github.io/Social_Seq'
   - 首页: index.md
   - 文章图表复现: figure_reproduce.md
 
@@ -67,6 +65,7 @@ extra_javascript:
   - assets/highlight/js/languages/yaml.min.js
   - assets/highlight/js/languages/markdown.min.js
   - assets/highlight/js/highlight-init.js  # 新增：手动初始化 highlight.js
+  - assets/js/lang-switch.js  # 语言切换悬浮按钮
 
 # 添加多语言插件配置
 plugins:
