@@ -51,7 +51,7 @@ Verification: Open the `xx_mask.mp4` video to check if the segmentation is corre
 ## Predict Key Points
 <div style="text-align: center;">
 <video autoplay muted loop playsinline>
-<source src="../../../assets/videos/3Dposes2.mp4" type="video/mp4">
+<source src="../../../assets/videos/3Dposes.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 </div>
