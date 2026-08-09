@@ -20,7 +20,7 @@ These are some explanatory documents for the Social-Seq project. Social-seq is u
 * [**Closed-loop Control (LIVE)**](./闭环行为控制/application): Real-time identified social labels trigger optogenetic conditional stimulation to reinforce ASD rat social behavior.
  
 ## Code Release 📅
-Last updated on 2025-12-8 by ChenXinfeng.
+Last updated on 2026-8-9 by ChenXinfeng.
 
 ## References 📚
 Xinfeng Chen*; Xianming Tao*; Zhenchao Zhong*; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li# (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. *Under review*. <a href="../assets/chen_2025_socialseq_bioRXiv.pdf" target="_blank">[PDF download]</a>
