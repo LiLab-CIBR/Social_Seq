@@ -15,7 +15,7 @@
 
 
 ## 代码发布 📅
-最后更新时间 2025-9-14，作者 ChenXinfeng
+最后更新时间 2026-8-9，作者 ChenXinfeng
 
 ## 引用 📚
 Xinfeng Chen; Xianming Tao; Zhenchao Zhong; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li* (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. *Under review*. <a href="https://lilab-cibr.github.io/Social_Seq/assets/chen_2025_socialseq_bioRXiv.pdf" target="_blank">[PDF 下载]</a>

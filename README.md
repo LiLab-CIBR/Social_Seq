@@ -14,6 +14,9 @@ Welcome to the Social-Seq project! This is a system for analyzing multi-animal c
   </a>
 </div>
 
+## Released Data 📅
+
+Last update 2026-8-9, ChenXinfeng
 
 ## Citations 📚
 Xinfeng Chen; Xianming Tao; Zhenchao Zhong; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li* (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. *Under review*. <a href="https://lilab-cibr.github.io/Social_Seq/assets/chen_2025_socialseq_bioRXiv.pdf" target="_blank">[PDF download]</a>
