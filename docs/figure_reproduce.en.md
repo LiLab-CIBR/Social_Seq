@@ -16,7 +16,7 @@ Run the code in this repository to reproduce the figures in the paper.
 
 ## Code and Data Download
 
-The data are openly available for download at `Social_Seq_DATA.rar` ([Mendeley Data🔗](https://data.mendeley.com/datasets/8w3b9xybzg) or [BaiduYun🔗](https://pan.baidu.com/s/1AOTVayg2qMhh3KGjDtZh1Q?pwd=6mc3), **4.1 GB**).
+The data are openly available for download at `Social_Seq_DATA.rar` ([Mendeley Data🔗](https://data.mendeley.com/datasets/8w3b9xybzg) or [BaiduYun🔗](https://pan.baidu.com/s/1vg79XEUFDD-SLJz3Es0pdg?pwd=5maf), **4.1 GB**).
 After downloading, extract the archive into a folder and name it Figshare.
 
 Source code is publicly available at [https://github.com/LiLab‑CIBR/Social_Seq‑Paper‑Figure‑Replication](https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication).

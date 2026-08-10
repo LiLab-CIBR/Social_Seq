@@ -11,7 +11,7 @@ These are some explanatory documents for the Social-Seq project. Social-seq is u
 <br>
 
 ## Contents
-* [**Figure Reproduction**](./figure_reproduction): Download code to reproduce the figures in the paper.
+* [**Figure Reproduction**](./figure_reproduce/): Download code to reproduce the figures in the paper.
 * [**Pipeline Playground**](./安装示例流程代码/pipeline_playground_installation/): Quickly install and run the core project code through Docker images.
 * [**Equipment Assembly & List**](./设备组装和清单/shopping_list): Assemble multi-camera systems, obtain equipment list and server configuration.
 * [**Ball Calibration**](./小球矫正/application): Calibrate the spatial coordinate system of the multi-camera system.

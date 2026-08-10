@@ -16,7 +16,7 @@
 
 ## 代码和数据下载
 
-数据开放下载，链接为 `Social_Seq_DATA.rar` ([Mendeley Data🔗](https://data.mendeley.com/datasets/8w3b9xybzg) 或 [百度云🔗](https://pan.baidu.com/s/1AOTVayg2qMhh3KGjDtZh1Q?pwd=6mc3)，**4.1 GB**)。下载后解压到文件夹，命名为`Figshare`。
+数据开放下载，链接为 `Social_Seq_DATA.rar` ([Mendeley Data🔗](https://data.mendeley.com/datasets/8w3b9xybzg) 或 [百度云🔗](https://pan.baidu.com/s/1vg79XEUFDD-SLJz3Es0pdg?pwd=5maf)，**4.1 GB**)。下载后解压到文件夹，命名为`Figshare`。
 
 代码开放下载，链接为[https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication](https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication)。
 
