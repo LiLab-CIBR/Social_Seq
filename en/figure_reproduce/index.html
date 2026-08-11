@@ -121,66 +121,62 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="paper-code-reproduction">Paper Code Reproduction</h1>
+                <h1 id="paper-figure-reproduction">Paper Figure Reproduction</h1>
 <p>"Chen X.F., Tao X.M., Zhong Z.C., Zhu F.Y., Zhang Y.Q., Wang Y.Z., Wang M., Sun L., Li Y.X., Ouyang Y., Ding Z.Y., An M., Zhao Y.Y., Zhou J.F., Zhang R., Xiong W., Ji N., Li Y., 2026. Sub-second dopaminergic reinforcement orchestrates juvenile social play and is disrupted in Shank3 deficiency. In preparation"</p>
-<p><strong>Author</strong>: Chen Xinfeng, 2025-08-09. <strong>Modified</strong>: Tao Xianming, 2025-08-15. Chen Xinfeng, 2026-08-07.</p>
+<p><strong>Author</strong>: Chen Xinfeng (2025-08-09). <strong>Revised</strong>: Tao Xianming (2025-08-15), Chen Xinfeng (2026-08-07).</p>
 <h2 id="figures-gallery">Figures Gallery</h2>
-<p>Run the code in this repository to reproduce the figures in the paper.
-<img alt="Fig1_S1" src="../../assets/Fig1_S1.webp" />
+<p>Run the code in this repository to reproduce all the figures in the paper. The images below show example outputs. Windows, Linux, and macOS are supported.</p>
+<p><img alt="Fig1_S1" src="../../assets/Fig1_S1.webp" />
 <img alt="Fig2_S2" src="../../assets/Fig2_S2.webp" />
 <img alt="Fig3_S3" src="../../assets/Fig3_S3.webp" />
 <img alt="Fig4_S4" src="../../assets/Fig4_S4.webp" />
 <img alt="Fig5_S5" src="../../assets/Fig5_S5.webp" />
 <img alt="Fig6_S6" src="../../assets/Fig6_S6.webp" />
 <img alt="Fig7_S7" src="../../assets/Fig7_S7.webp" /></p>
-<h2 id="code-and-data-download">Code and Data Download</h2>
-<p>The data are openly available for download at <code>Social_Seq_DATA.rar</code> (<a href="https://data.mendeley.com/datasets/8w3b9xybzg">Mendeley Data🔗</a> or <a href="https://pan.baidu.com/s/1vg79XEUFDD-SLJz3Es0pdg?pwd=5maf">BaiduYun🔗</a>, <strong>4.1 GB</strong>).
-After downloading, extract the archive into a folder and name it Figshare.</p>
-<p>Source code is publicly available at <a href="https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication">https://github.com/LiLab‑CIBR/Social_Seq‑Paper‑Figure‑Replication</a>.</p>
-<p>The directory structures of the <strong>data</strong> and <strong>code</strong> are one‑to‑one matched. Manually <strong>copy individual contents</strong> from <code>Fig*/data/*</code> in the data folder into the corresponding code folder.</p>
-<h2 id="installation">Installation</h2>
-<p>Supports Windows, Linux, and MacOS systems.</p>
+<h2 id="1-code-and-data-download">1. Code and Data Download</h2>
+<p>The data are openly available for download (file: <code>Social_Seq_DATA.rar</code>, ~4.1 GB) via <a href="https://data.mendeley.com/datasets/8w3b9xybzg">Mendeley Data🔗</a> or <a href="https://pan.baidu.com/s/1vg79XEUFDD-SLJz3Es0pdg?pwd=5maf">Baidu Cloud🔗</a>. After downloading, extract the archive and rename the folder to <code>Figshare</code>.</p>
+<p>The source code is openly available at <a href="https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication">https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication</a>.</p>
+<p>The directory structures of the data and code are one-to-one matched. Please manually copy the contents of <code>Fig*/data/*</code> from the data folder into the corresponding code folder.</p>
+<h2 id="2-installation-recommended-use-an-ai-agent">2. Installation (Recommended: Use an AI Agent)</h2>
+<p>You can use AI coding assistants such as OpenCode, Codex, or Claude. Just provide the following prompt, and they will automatically install the environment and generate all the figures.</p>
+<p><img alt="OpenCode" src="../../assets/images/OpenCode.webp" /></p>
+<blockquote>
+<p>Follow the instructions at https://lilab-cibr.github.io/Social_Seq/assets/figure_reproduce/AGENTS.md to install and run the project, and generate all the figures. My data is located at <code>C:\PATH\XXXXX\Social_Seq_DATA-v20260809.zip</code>. Please use a domestic mirror source; otherwise, the installation will be very slow.</p>
+</blockquote>
+<h2 id="3-manual-installation">3. Manual Installation</h2>
+<p>For the detailed manual installation steps, please refer to "https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication". The general process is as follows.</p>
 <p>First, <strong>install the dependency environment</strong> using <code>uv</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do not use <code>uv</code> and <code>conda</code> simultaneously, as this will cause package installation conflicts. Before running the following codes, please run <code>conda deactivate</code> first.</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Before running the following code, please download the FIGSHARE code and data.</span>
-unrar<span class="w"> </span>x<span class="w"> </span>Social_Seq_DATA*.rar<span class="w"> </span>Figshare/<span class="w">  </span><span class="c1"># Extract the data to Figshare</span>
-<span class="nb">cd</span><span class="w"> </span>Figshare
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication<span class="w"> </span>.<span class="w"> </span><span class="c1"># Download the code</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication<span class="w"> </span>.<span class="w">  </span><span class="c1"># Download the code to the current folder</span>
 
-python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>uv<span class="w">          </span><span class="c1"># UV is a lightweight Python package manager, similar to conda.</span>
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>uv<span class="w">          </span><span class="c1"># uv is a lightweight Python package manager, similar to conda</span>
 
-uv<span class="w"> </span>sync<span class="w">  </span><span class="c1"># Download the required packages and dependencies.</span>
+uv<span class="w"> </span>sync<span class="w"> </span>--index-url<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple<span class="w">  </span><span class="c1"># Users in mainland China may use the Tsinghua mirror; otherwise, the installation will be very slow</span>
 uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>--version<span class="w">  </span><span class="c1"># Verify the Python version (should be 3.12)</span>
 </code></pre></div>
+<blockquote>
+<p><strong>Note</strong>: Do not use <code>uv</code> and <code>conda</code> simultaneously, as this will cause package installation conflicts. Please run <code>conda deactivate</code> first before running the commands below.</p>
+</blockquote>
 <p><strong>Install Custom Packages</strong>
-<div class="highlight"><pre><span></span><code>uv pip install git+https://github.com/chenxinfeng4/multiview_calib.git
-
-git clone https://github.com/chenxinfeng4/LILAB-py.git ../LILAB-py
-uv pip install -e ../LILAB-py
-
-uv run python -m lilab.multiview_scripts_dev.p1_checkboard_global -h   # Verify the installation
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/multiview_calib.git
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/LILAB-py.git<span class="w"> </span>../LILAB-py
 </code></pre></div></p>
-<h2 id="generate-a-single-figure-fig1dpdf">Generate a Single Figure: Fig1D.pdf</h2>
-<p>You can run the code in <code>Fig*/Fig*.py</code> one by one to generate figures.
+<h3 id="generate-a-single-figure-fig1dpdf">Generate a Single Figure: Fig1D.pdf</h3>
+<p>You can also run the scripts <code>Fig*/Fig*.py</code> one by one to generate a single figure.
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>Fig1_S1/Fig1D.py<span class="w">   </span><span class="c1"># The result is saved to Fig1_S1/result/Fig1D.pdf</span>
 </code></pre></div></p>
 <blockquote>
-<p><strong>Note</strong>: If any error occurs, please ensure that all data files have been downloaded correctly.</p>
+<p><strong>Note</strong>: If any error occurs, please make sure all the data files have been downloaded correctly.</p>
 </blockquote>
-<h2 id="generate-all-figures-with-one-command">Generate All Figures with One Command</h2>
+<h3 id="generate-all-figures-with-one-command">Generate All Figures with One Command</h3>
 <p><div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main.py<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
-Figures such as Fig1<em>.pdf, FigS1</em>.pdf, Fig2<em>.pdf, ... will be generated and saved in the corresponding folders: Fig</em>/result/*.pdf, e.g., Fig1_S1/result/Fig1G.pdf.</p>
-<h2 id="clean-all-results-reset">Clean All Results, Reset</h2>
-<div class="highlight"><pre><span></span><code><span class="c1">#1. Delete all result data</span>
-uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main.py<span class="w"> </span>clean
-
-<span class="c1">#2. Or manually delete all result data</span>
-rm<span class="w"> </span>Fig*/result/*pdf<span class="w"> </span>Fig*/result/*pkl<span class="w"> </span>Fig*/result/*png
+Figures such as Fig1<em>.pdf, FigS1</em>.pdf, Fig2*.pdf, ... will be generated and saved to the corresponding folders: <code>Fig*/result/*.pdf</code>, e.g., <code>Fig1_S1/result/Fig1G.pdf</code>.</p>
+<h3 id="clean-all-results-and-reset">Clean All Results and Reset</h3>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main.py<span class="w"> </span>clean
 </code></pre></div>
+<p>Or manually delete all the result files:
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>Fig*/result/*pdf<span class="w"> </span>Fig*/result/*pkl<span class="w"> </span>Fig*/result/*png
+</code></pre></div></p>
               
             </div>
           </div><footer>
