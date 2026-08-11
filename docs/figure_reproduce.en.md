@@ -29,9 +29,11 @@ You can use AI coding assistants such as OpenCode, Codex, or Claude. Just provid
 
 ![OpenCode](assets/images/OpenCode.webp)
 
-> Follow the instructions at https://lilab-cibr.github.io/Social_Seq/assets/figure_reproduce/AGENTS.md to install and run the project, and generate all the figures. My data is located at `C:\PATH\XXXXX\Social_Seq_DATA-v20260809.zip`. Please use a domestic mirror source; otherwise, the installation will be very slow.
+Input the following prompt to OpenCode:
 
-## 3. Manual Installation
+> Follow the instructions at `"https://lilab-cibr.github.io/Social_Seq/assets/figure_reproduce/AGENTS.md"` to install and run the project, and generate all the figures. My data is located at `"C:\<<<<PATH_XXXXX>>>>\Social_Seq_DATA-v20260809.zip"`. Please use a domestic mirror source; otherwise, the installation will be very slow.
+
+## 3. Manual Installation (Not Recommended)
 
 For the detailed manual installation steps, please refer to "https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication". The general process is as follows.
 

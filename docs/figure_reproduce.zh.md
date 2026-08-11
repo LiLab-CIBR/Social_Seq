@@ -29,10 +29,12 @@
 
 ![OpenCode](assets/images/OpenCode.webp)
 
-> 请根据 https://lilab-cibr.github.io/Social_Seq/assets/figure_reproduce/AGENTS.md 中的提示词，安装并运行项目，生成所有图表。我的数据位于 `C:\路径xxxx\Social_Seq_DATA-v20260809.zip`，请使用国内镜像源，否则安装速度会很慢。
+输入完整提示词：
+
+> 请根据 `"https://lilab-cibr.github.io/Social_Seq/assets/figure_reproduce/AGENTS.md"` 指南，安装并运行项目，生成所有图表。我的数据位于 `"C:\<<<<路径xxxx>>>>\Social_Seq_DATA-v20260809.zip"`，请使用国内镜像源，否则安装速度会很慢。
 
 
-## 3. 手动安装
+## 3. 手动安装（不推荐）
 
 手动安装的具体步骤可参考 "https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication"，大致流程如下。
 

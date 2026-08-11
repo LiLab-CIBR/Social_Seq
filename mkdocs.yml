@@ -67,6 +67,9 @@ extra_javascript:
   - assets/highlight/js/highlight-init.js  # 新增：手动初始化 highlight.js
   - assets/js/lang-switch.js  # 语言切换悬浮按钮
 
+hooks:
+  - mkdocs_hooks.py
+
 # 添加多语言插件配置
 plugins:
   - search
