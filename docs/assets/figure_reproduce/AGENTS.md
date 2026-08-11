@@ -12,15 +12,21 @@ This document explains how an AI agent (or any automated assistant) can set up t
 - `main.py` — orchestrator: `python main.py test` runs every figure script and checks outputs; `python main.py clean` removes results.
 - `pyproject.toml` — Python project definition (UV-based, Python >= 3.12).
 - `Social_Seq_DATA-v*/` — the extracted data bundle (after download), one sibling structure mirroring `Fig*/data`.
-- `output/` — scratch output (may be created and deleted during runs).
 
-## Flow overview
+## Agent operating procedure
 
-1. Clone the repo.
-2. Set up the Python environment with `uv`.
-3. Install the two custom GitHub packages.
-4. **Check** whether the data is already installed; **install it only if missing** (the user downloads the bundle, then the agent extracts/merges it into `Fig*/data/`).
-5. Run single figures, or `python main.py test` for everything.
+Follow these steps **in order**. Work through the detailed sections below for exact commands.
+
+1. **[Step 1](#step-1--clone)** — Clone the repo and `cd` into it.
+2. **[Step 2](#step-2--environment-setup-uv)** — Set up the Python environment with `uv`.
+3. **[Step 3](#step-3--install-custom-packages-uv)** — Install the two custom GitHub packages and verify.
+4. **[Step 4](#step-4--source-data-check-then-install-download-extractmerge)** — Ensure the source data is in place:
+   - **Check first** via the [4a marker test](#4a-check-whether-the-data-is-already-installed).
+   - If all markers are `OK` → data is ready, skip to Step 5.
+   - If any marker is `MISSING` → the **user** downloads the bundle, then the agent extracts/merges it (4b → 4c → 4d), and re-runs the check (4e).
+5. **[Step 5](#step-5--run-figures)** — Run single figures, or `uv run python main.py test` for everything, then summarize the results.
+
+> **Rule of thumb:** never re-download or re-extract data that is already installed — always check before installing.
 
 ---
 
@@ -99,6 +105,7 @@ done
 - Mendeley Data: https://data.mendeley.com/datasets/8w3b9xybzg
 
 Ask the user to:
+
 1. Download `Social_Seq_DATA*.rar` (it may be named `Social_Seq_DATA.rar`, `Social_Seq_DATA-v20260809.rar`, etc. — detect whatever matches `Social_Seq_DATA*.rar`).
 2. Optionally extract it into a folder `Social_Seq_DATA*/` that contains `Fig1_S1/ ... Fig7_S7/`, each with a `data/` subtree.
 
@@ -157,6 +164,22 @@ uv run python Fig1_S1/Fig1D.py     # output -> Fig1_S1/result/Fig1D.pdf
 
 Any `Fig*/Fig*.py` or `Fig*/FigS*.py` can be run this way. Outputs land in the sibling `result/` folder.
 
+### Find the script for a given figure
+
+The script name usually encodes the figure number, one letter per figure. To generate a specific figure, look up the matching script inside its figure folder:
+
+- **Main figure** → `Fig<N><letter>.py`. E.g. *Figure 1D* → `Fig1_S1/Fig1D.py`, *Figure 3B* → `Fig3_S3/Fig3B.py`.
+- **Supplement figure** → `FigS<N><letter>.py`. E.g. *Supplement Figure 2F* → `FigS2F.py` (in `Fig2_S2/`).
+
+Multiple figures are sometimes grouped into **one** script; a single script may output several PDFs:
+
+- *Supplement Figure 2G/H/I/J* → `Fig2_S2/FigS2G_H_I_J.py`.
+- `Fig2_S2/Fig2E_2G_S2B.py` → outputs `Fig2E.pdf`, `Fig2G.pdf`, **and** `FigS2B.pdf`.
+
+Some scripts are `*_prepare.py` — they only prepare intermediate artifacts and produce no figure output themselves (e.g. `Fig1_S1/Fig1G_prepare.py`); run those first when a downstream script depends on their output.
+
+The **authoritative mapping** of script → folder → expected output files is the `test_cases` list in `run_test()` inside `main.py`, and the `DOWNLOAD_DATA.txt` in each figure folder. When in doubt about where a figure is generated, check `test_cases` or grep the `Fig*/*.py` for `savefig`/`save` calls.
+
 ### Clean previous results (optional)
 
 ```bash
@@ -173,19 +196,38 @@ uv run python main.py test
 
 `main.py test` runs every figure script in order, then checks that each expected output file was produced. It prints a green/red summary and exits `0` on full success, `1` if any figure failed or produced a missing output. Expected outputs for each script are enumerated in the `test_cases` list inside `main.py`.
 
+### Summarize the `main.py test` results
+
+After the run, build a concise summary. **Prefer quoting the last lines of `main.py`'s stdout/stderr** — they are authoritative and already aggregate everything:
+
+- Per-script lines: `[PASSED] <script>` or `[FAILED] <script>` (with `Missing ...` / exception details under each failure).
+- The **final TEST SUMMARY block** printed at the end:
+  - `Passed : <N>`
+  - `Failed : <N>`
+  - `Total : <N>`
+  - `Success: <N>/<M> (<P>%)`
+  - Either `All tests passed!` or a `Failed projects/scripts (N):` list.
+- The **process exit code**: `0` = all passed, `1` = at least one failure (or a missing output).
+
+If stdout/stderr is unavailable (e.g. only partial logs were kept), **compute the numbers manually from the `test_cases` list inside `main.py`**: treat the run as `Total = len(test_cases)`, count a case as passed when the script ran without exception and every file in its expected-output list exists under `Fig*/result/`, and as failed otherwise (missing script, exception, or a missing output file). Report `Passed = Total - Failed`.
+
+When reporting to the user, lead with `Passed`/`Failed`/`Total`/`Success%` and the exit code, then list the failed scripts (each with its cause) so they can be re-run individually with `uv run python <script>`.
+
 ---
 
 ## Troubleshooting an agent should know
 
-| Symptom                                                       | Likely cause                       | Fix                                                                                                                                 |
-| ------------------------------------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `uv` / `uv sync` errors                                   | conda env active                   | `conda deactivate`, then retry                                                                                                    |
-| `ModuleNotFoundError: lilab` / `multiview_calib`          | Step 3 skipped                     | re-run the two `uv pip install git+...` and the `-h` verify                                                                     |
-| 4a check prints `MISSING ...`                               | data bundle not installed yet      | follow Step 4b→4d (download `Social_Seq_DATA*.rar`, extract to `Social_Seq_DATA*/`, merge into `Fig*/data/`), then re-run 4a |
-| `FileNotFoundError` / assertion on data load                | figure `data/` not populated     | complete Step 4 merge; compare against `DOWNLOAD_DATA.txt`                                                                        |
-| Wrong Python version                                          | `.venv` stale                    | remove `.venv` and re-run `uv sync`                                                                                             |
-| Missing output after a run                                    | script errored, or data incomplete | scroll the script output, fix data, re-run the single `Fig*.py`                                                                   |
-| `git clone` / `uv pip install git+...` hangs or times out | `github.com` unreachable (China) | retry with the Gitee mirror URL (see[Network mirrors](#network-mirrors))                                                               |
+| Symptom                                                       | Likely cause                       | Fix                                                                                                                                    |
+| ------------------------------------------------------------- | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `uv` / `uv sync` errors                                   | conda env active                   | `conda deactivate`, then retry                                                                                                       |
+| `ModuleNotFoundError: lilab` / `multiview_calib`          | Step 3 skipped                     | re-run the two `uv pip install git+...` and the `-h` verify                                                                        |
+| 4a check prints `MISSING ...`                               | data bundle not installed yet      | follow Step 4b→4d (user downloads, agent extracts `Social_Seq_DATA*/` + merges into `Fig*/data/`), then re-run 4a                 |
+| `FileNotFoundError` / assertion on data load                | figure `data/` not populated     | complete Step 4 merge; compare against `DOWNLOAD_DATA.txt`                                                                           |
+| Wrong Python version                                          | `.venv` stale                    | remove `.venv` and re-run `uv sync`                                                                                                |
+| Missing output after a run                                    | script errored, or data incomplete | scroll the script output, fix data, re-run the single `Fig*.py`                                                                      |
+| Unsure which script draws a figure                            | —                                 | see "Find the script for a given figure"; check `test_cases` or grep `savefig`/`save`                                            |
+| Reporting `main.py test` results                            | —                                 | quote the stdout/stderr summary; if unavailable, recompute from the `test_cases` list (see "Summarize the `main.py test` results") |
+| `git clone` / `uv pip install git+...` hangs or times out | `github.com` unreachable (China) | retry with the Gitee mirror URL (see[Network mirrors](#network-mirrors))                                                                  |
 
 ## Command cheat-sheet
 
@@ -195,8 +237,8 @@ python3 -m pip install uv
 uv sync --index-url https://pypi.tuna.tsinghua.edu.cn/simple   # or without index-url
 uv pip install git+https://github.com/chenxinfeng4/multiview_calib.git
 uv pip install git+https://github.com/chenxinfeng4/LILAB-py.git
-# data: first CHECK (4a marker test) — only if missing: place Social_Seq_DATA*.rar in repo root,
-# extract it, then merge into Fig*/data (Step 4b→4d); re-run the check after.
+# data: first CHECK via the 4a marker test — only if missing: the user downloads Social_Seq_DATA*.rar
+# (and tells the agent its location), the agent extracts it -> Social_Seq_DATA*/ and merges into Fig*/data (Step 4b→4d); re-run the check after.
 uv run python Fig1_S1/Fig1D.py                    # single figure
 uv run python main.py test                        # all figures + verification
 ```
