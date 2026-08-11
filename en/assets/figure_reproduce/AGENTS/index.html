@@ -133,16 +133,22 @@
 <li><code>main.py</code> — orchestrator: <code>python main.py test</code> runs every figure script and checks outputs; <code>python main.py clean</code> removes results.</li>
 <li><code>pyproject.toml</code> — Python project definition (UV-based, Python &gt;= 3.12).</li>
 <li><code>Social_Seq_DATA-v*/</code> — the extracted data bundle (after download), one sibling structure mirroring <code>Fig*/data</code>.</li>
-<li><code>output/</code> — scratch output (may be created and deleted during runs).</li>
 </ul>
-<h2 id="flow-overview">Flow overview</h2>
+<h2 id="agent-operating-procedure">Agent operating procedure</h2>
+<p>Follow these steps <strong>in order</strong>. Work through the detailed sections below for exact commands.</p>
 <ol>
-<li>Clone the repo.</li>
-<li>Set up the Python environment with <code>uv</code>.</li>
-<li>Install the two custom GitHub packages.</li>
-<li><strong>Check</strong> whether the data is already installed; <strong>install it only if missing</strong> (the user downloads the bundle, then the agent extracts/merges it into <code>Fig*/data/</code>).</li>
-<li>Run single figures, or <code>python main.py test</code> for everything.</li>
+<li><strong><a href="#step-1--clone">Step 1</a></strong> — Clone the repo and <code>cd</code> into it.</li>
+<li><strong><a href="#step-2--environment-setup-uv">Step 2</a></strong> — Set up the Python environment with <code>uv</code>.</li>
+<li><strong><a href="#step-3--install-custom-packages-uv">Step 3</a></strong> — Install the two custom GitHub packages and verify.</li>
+<li><strong><a href="#step-4--source-data-check-then-install-download-extractmerge">Step 4</a></strong> — Ensure the source data is in place:</li>
+<li><strong>Check first</strong> via the <a href="#4a-check-whether-the-data-is-already-installed">4a marker test</a>.</li>
+<li>If all markers are <code>OK</code> → data is ready, skip to Step 5.</li>
+<li>If any marker is <code>MISSING</code> → the <strong>user</strong> downloads the bundle, then the agent extracts/merges it (4b → 4c → 4d), and re-runs the check (4e).</li>
+<li><strong><a href="#step-5--run-figures">Step 5</a></strong> — Run single figures, or <code>uv run python main.py test</code> for everything, then summarize the results.</li>
 </ol>
+<blockquote>
+<p><strong>Rule of thumb:</strong> never re-download or re-extract data that is already installed — always check before installing.</p>
+</blockquote>
 <hr />
 <h2 id="step-1-clone">Step 1 — Clone</h2>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/LiLab-CIBR/Social_Seq-Paper-Figure-Replication.git<span class="w"> </span>&lt;dir&gt;
@@ -202,9 +208,11 @@ uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </sp
 <li>Baidu Pan (pwd <code>5maf</code>): https://pan.baidu.com/s/1vg79XEUFDD-SLJz3Es0pdg?pwd=5maf</li>
 <li>Mendeley Data: https://data.mendeley.com/datasets/8w3b9xybzg</li>
 </ul>
-<p>Ask the user to:
-1. Download <code>Social_Seq_DATA*.rar</code> (it may be named <code>Social_Seq_DATA.rar</code>, <code>Social_Seq_DATA-v20260809.rar</code>, etc. — detect whatever matches <code>Social_Seq_DATA*.rar</code>).
-2. Optionally extract it into a folder <code>Social_Seq_DATA*/</code> that contains <code>Fig1_S1/ ... Fig7_S7/</code>, each with a <code>data/</code> subtree.</p>
+<p>Ask the user to:</p>
+<ol>
+<li>Download <code>Social_Seq_DATA*.rar</code> (it may be named <code>Social_Seq_DATA.rar</code>, <code>Social_Seq_DATA-v20260809.rar</code>, etc. — detect whatever matches <code>Social_Seq_DATA*.rar</code>).</li>
+<li>Optionally extract it into a folder <code>Social_Seq_DATA*/</code> that contains <code>Fig1_S1/ ... Fig7_S7/</code>, each with a <code>data/</code> subtree.</li>
+</ol>
 <p>The user then tells the agent the <strong>final location</strong> of either the <code>.rar</code> <strong>file</strong> or the already-extracted <code>Social_Seq_DATA*/</code> <strong>folder</strong> (for example, placed in the repository root, or at an arbitrary path the user specifies). The agent proceeds only once the item's final address is provided/known.</p>
 <h3 id="4c-extract-the-bundle-agent-assisted">4c. Extract the bundle (agent-assisted)</h3>
 <p>If the user provided an <strong>extracted folder</strong> (<code>Social_Seq_DATA*/</code>), skip extraction and go straight to <a href="#4d-merge-the-extracted-data-into-figdata">4d</a>.</p>
@@ -241,6 +249,19 @@ unar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$RAR<
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>Fig1_S1/Fig1D.py<span class="w">     </span><span class="c1"># output -&gt; Fig1_S1/result/Fig1D.pdf</span>
 </code></pre></div>
 <p>Any <code>Fig*/Fig*.py</code> or <code>Fig*/FigS*.py</code> can be run this way. Outputs land in the sibling <code>result/</code> folder.</p>
+<h3 id="find-the-script-for-a-given-figure">Find the script for a given figure</h3>
+<p>The script name usually encodes the figure number, one letter per figure. To generate a specific figure, look up the matching script inside its figure folder:</p>
+<ul>
+<li><strong>Main figure</strong> → <code>Fig&lt;N&gt;&lt;letter&gt;.py</code>. E.g. <em>Figure 1D</em> → <code>Fig1_S1/Fig1D.py</code>, <em>Figure 3B</em> → <code>Fig3_S3/Fig3B.py</code>.</li>
+<li><strong>Supplement figure</strong> → <code>FigS&lt;N&gt;&lt;letter&gt;.py</code>. E.g. <em>Supplement Figure 2F</em> → <code>FigS2F.py</code> (in <code>Fig2_S2/</code>).</li>
+</ul>
+<p>Multiple figures are sometimes grouped into <strong>one</strong> script; a single script may output several PDFs:</p>
+<ul>
+<li><em>Supplement Figure 2G/H/I/J</em> → <code>Fig2_S2/FigS2G_H_I_J.py</code>.</li>
+<li><code>Fig2_S2/Fig2E_2G_S2B.py</code> → outputs <code>Fig2E.pdf</code>, <code>Fig2G.pdf</code>, <strong>and</strong> <code>FigS2B.pdf</code>.</li>
+</ul>
+<p>Some scripts are <code>*_prepare.py</code> — they only prepare intermediate artifacts and produce no figure output themselves (e.g. <code>Fig1_S1/Fig1G_prepare.py</code>); run those first when a downstream script depends on their output.</p>
+<p>The <strong>authoritative mapping</strong> of script → folder → expected output files is the <code>test_cases</code> list in <code>run_test()</code> inside <code>main.py</code>, and the <code>DOWNLOAD_DATA.txt</code> in each figure folder. When in doubt about where a figure is generated, check <code>test_cases</code> or grep the <code>Fig*/*.py</code> for <code>savefig</code>/<code>save</code> calls.</p>
 <h3 id="clean-previous-results-optional">Clean previous results (optional)</h3>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main.py<span class="w"> </span>clean
 <span class="c1"># manual equivalent:</span>
@@ -250,6 +271,20 @@ rm<span class="w"> </span>Fig*/result/*pdf<span class="w"> </span>Fig*/result/*p
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main.py<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 <p><code>main.py test</code> runs every figure script in order, then checks that each expected output file was produced. It prints a green/red summary and exits <code>0</code> on full success, <code>1</code> if any figure failed or produced a missing output. Expected outputs for each script are enumerated in the <code>test_cases</code> list inside <code>main.py</code>.</p>
+<h3 id="summarize-the-mainpy-test-results">Summarize the <code>main.py test</code> results</h3>
+<p>After the run, build a concise summary. <strong>Prefer quoting the last lines of <code>main.py</code>'s stdout/stderr</strong> — they are authoritative and already aggregate everything:</p>
+<ul>
+<li>Per-script lines: <code>[PASSED] &lt;script&gt;</code> or <code>[FAILED] &lt;script&gt;</code> (with <code>Missing ...</code> / exception details under each failure).</li>
+<li>The <strong>final TEST SUMMARY block</strong> printed at the end:</li>
+<li><code>Passed : &lt;N&gt;</code></li>
+<li><code>Failed : &lt;N&gt;</code></li>
+<li><code>Total : &lt;N&gt;</code></li>
+<li><code>Success: &lt;N&gt;/&lt;M&gt; (&lt;P&gt;%)</code></li>
+<li>Either <code>All tests passed!</code> or a <code>Failed projects/scripts (N):</code> list.</li>
+<li>The <strong>process exit code</strong>: <code>0</code> = all passed, <code>1</code> = at least one failure (or a missing output).</li>
+</ul>
+<p>If stdout/stderr is unavailable (e.g. only partial logs were kept), <strong>compute the numbers manually from the <code>test_cases</code> list inside <code>main.py</code></strong>: treat the run as <code>Total = len(test_cases)</code>, count a case as passed when the script ran without exception and every file in its expected-output list exists under <code>Fig*/result/</code>, and as failed otherwise (missing script, exception, or a missing output file). Report <code>Passed = Total - Failed</code>.</p>
+<p>When reporting to the user, lead with <code>Passed</code>/<code>Failed</code>/<code>Total</code>/<code>Success%</code> and the exit code, then list the failed scripts (each with its cause) so they can be re-run individually with <code>uv run python &lt;script&gt;</code>.</p>
 <hr />
 <h2 id="troubleshooting-an-agent-should-know">Troubleshooting an agent should know</h2>
 <table>
@@ -274,7 +309,7 @@ rm<span class="w"> </span>Fig*/result/*pdf<span class="w"> </span>Fig*/result/*p
 <tr>
 <td>4a check prints <code>MISSING ...</code></td>
 <td>data bundle not installed yet</td>
-<td>follow Step 4b→4d (download <code>Social_Seq_DATA*.rar</code>, extract to <code>Social_Seq_DATA*/</code>, merge into <code>Fig*/data/</code>), then re-run 4a</td>
+<td>follow Step 4b→4d (user downloads, agent extracts <code>Social_Seq_DATA*/</code> + merges into <code>Fig*/data/</code>), then re-run 4a</td>
 </tr>
 <tr>
 <td><code>FileNotFoundError</code> / assertion on data load</td>
@@ -292,6 +327,16 @@ rm<span class="w"> </span>Fig*/result/*pdf<span class="w"> </span>Fig*/result/*p
 <td>scroll the script output, fix data, re-run the single <code>Fig*.py</code></td>
 </tr>
 <tr>
+<td>Unsure which script draws a figure</td>
+<td>—</td>
+<td>see "Find the script for a given figure"; check <code>test_cases</code> or grep <code>savefig</code>/<code>save</code></td>
+</tr>
+<tr>
+<td>Reporting <code>main.py test</code> results</td>
+<td>—</td>
+<td>quote the stdout/stderr summary; if unavailable, recompute from the <code>test_cases</code> list (see "Summarize the <code>main.py test</code> results")</td>
+</tr>
+<tr>
 <td><code>git clone</code> / <code>uv pip install git+...</code> hangs or times out</td>
 <td><code>github.com</code> unreachable (China)</td>
 <td>retry with the Gitee mirror URL (see<a href="#network-mirrors">Network mirrors</a>)</td>
@@ -304,8 +349,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </s
 uv<span class="w"> </span>sync<span class="w"> </span>--index-url<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple<span class="w">   </span><span class="c1"># or without index-url</span>
 uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/multiview_calib.git
 uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chenxinfeng4/LILAB-py.git
-<span class="c1"># data: first CHECK (4a marker test) — only if missing: place Social_Seq_DATA*.rar in repo root,</span>
-<span class="c1"># extract it, then merge into Fig*/data (Step 4b→4d); re-run the check after.</span>
+<span class="c1"># data: first CHECK via the 4a marker test — only if missing: the user downloads Social_Seq_DATA*.rar</span>
+<span class="c1"># (and tells the agent its location), the agent extracts it -&gt; Social_Seq_DATA*/ and merges into Fig*/data (Step 4b→4d); re-run the check after.</span>
 uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>Fig1_S1/Fig1D.py<span class="w">                    </span><span class="c1"># single figure</span>
 uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>main.py<span class="w"> </span><span class="nb">test</span><span class="w">                        </span><span class="c1"># all figures + verification</span>
 </code></pre></div>
