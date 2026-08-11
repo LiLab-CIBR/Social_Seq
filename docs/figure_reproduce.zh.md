@@ -31,7 +31,17 @@
 
 输入完整提示词：
 
-> 请根据 `"https://lilab-cibr.github.io/Social_Seq/assets/figure_reproduce/AGENTS.md"` 指南，安装并运行项目，生成所有图表。我的数据位于 `"C:\<<<<路径xxxx>>>>\Social_Seq_DATA-v20260809.zip"`，请使用国内镜像源，否则安装速度会很慢。
+> **示例 1 — 安装并生成所有图表：**
+>
+> “请根据 `https://lilab-cibr.github.io/Social_Seq/assets/figure_reproduce/AGENTS.md` 指南，安装并运行项目，生成所有图表。我的数据位于 `C:\<<<<路径xxxx>>>>\Social_Seq_DATA-v20260809.zip`，请使用国内镜像源，否则安装速度会很慢。”
+
+> **示例 2 — 清理所有结果，恢复初始状态：**
+>
+> “清理所有结果，恢复初始状态。”
+
+> **示例 3 — 生成单个图表：**
+>
+> “帮我生成 Figure 1D。”
 
 
 ## 3. 手动安装（不推荐）

@@ -25,13 +25,23 @@ The directory structures of the data and code are one-to-one matched. Please man
 
 ## 2. Installation (Recommended: Use an AI Agent)
 
-You can use AI coding assistants such as OpenCode, Codex, or Claude. Just provide the following prompt, and they will automatically install the environment and generate all the figures.
+You can use AI coding assistants such as OpenCode, Codex, or Claude. Just provide one of the prompts below, and they will automatically install the environment and generate all the figures.
 
 ![OpenCode](assets/images/OpenCode.webp)
 
-Input the following prompt to OpenCode:
+Provide the full prompt:
 
-> Follow the instructions at `"https://lilab-cibr.github.io/Social_Seq/assets/figure_reproduce/AGENTS.md"` to install and run the project, and generate all the figures. My data is located at `"C:\<<<<PATH_XXXXX>>>>\Social_Seq_DATA-v20260809.zip"`. Please use a domestic mirror source; otherwise, the installation will be very slow.
+> **Example 1 — install everything and generate all figures:**
+>
+> "Please follow the guide at `https://lilab-cibr.github.io/Social_Seq/assets/figure_reproduce/AGENTS.md` to install and run the project and generate all figures. My data is at `C:\<<<<path>>>>\Social_Seq_DATA-v20260809.zip`; please use the domestic mirror, otherwise installation may be very slow."
+
+> **Example 2 — clean all results / restore initial state:**
+>
+> "Clean all results and restore the initial state."
+
+> **Example 3 — generate a single figure:**
+>
+> "Please generate Figure 1D for me."
 
 ## 3. Manual Installation (Not Recommended)
 
