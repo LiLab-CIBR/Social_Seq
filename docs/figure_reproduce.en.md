@@ -1,5 +1,5 @@
 # Paper Figure Reproduction
-"Chen X.F., Tao X.M., Zhong Z.C., Zhu F.Y., Zhang Y.Q., Wang Y.Z., Wang M., Sun L., Li Y.X., Ouyang Y., Ding Z.Y., An M., Zhao Y.Y., Zhou J.F., Zhang R., Xiong W., Ji N., Li Y., 2026. Sub-second dopaminergic reinforcement orchestrates juvenile social play and is disrupted in Shank3 deficiency. In preparation"
+Chen, X., Tao, X., Zhong, Z., Zhu, F., Zhang, Y., Wang, Y., Wang, M., Li, Y., Sun, L., Ouyang, Y., Ding, Z., An, M., Zhao, Y., Zhou, J., Zhang, R., Xiong, W., Ji, N., Li, Y. (2026). Sub-second dopamine reinforcement shapes juvenile social play. Cell. [https://doi.org/10.1016/j.cell.2026.10.040](https://doi.org/10.1016/j.cell.2026.10.040)
 
 **Author**: Chen Xinfeng (2025-08-09). **Revised**: Tao Xianming (2025-08-15), Chen Xinfeng (2026-08-07).
 

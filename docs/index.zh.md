@@ -20,10 +20,10 @@
 * [**闭环行为控制(LIVE)**](./闭环行为控制/application): 实时识别的社交标签触发光遗传条件刺激，强化 ASD 大鼠社交行为。
 
 ## 代码发布 📅
-最后更新时间 2026-8-9，作者 陈昕枫。
+最后更新时间 2026-11-17，作者 陈昕枫。
 
 ## 引用 📚
-Xinfeng Chen*; Xianming Tao*; Zhenchao Zhong*; Yuanqing Zhang; Yixuan Li; Ye Ouyang; Zhaoyi Ding; Min An; Miao Wang; Ying Li# (2025). Decoding the Valence of Developmental Social Behavior: Dopamine Governs Social Motivation Deficits in Autism. *Under review*. <a href="./assets/chen_2025_socialseq_bioRXiv.pdf" target="_blank">[PDF 下载]</a>
+Chen, X., Tao, X., Zhong, Z., Zhu, F., Zhang, Y., Wang, Y., Wang, M., Li, Y., Sun, L., Ouyang, Y., Ding, Z., An, M., Zhao, Y., Zhou, J., Zhang, R., Xiong, W., Ji, N., Li, Y. (2026). Sub-second dopamine reinforcement shapes juvenile social play. Cell. [https://doi.org/10.1016/j.cell.2026.10.040](https://doi.org/10.1016/j.cell.2026.10.040)
 
 陈昕枫 (2025). 基于深度学习的动物自由社交行为分析研究. 博士论文，北京大学.
 
@@ -32,3 +32,4 @@ Xinfeng Chen*; Xianming Tao*; Zhenchao Zhong*; Yuanqing Zhang; Yixuan Li; Ye Ouy
 
 ## 通讯作者 📬
 - 李莹：liying
+- 吉妮: jini
