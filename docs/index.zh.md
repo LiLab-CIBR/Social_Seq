@@ -23,7 +23,7 @@
 最后更新时间 2026-11-17，作者 陈昕枫。
 
 ## 引用 📚
-Chen, X., Tao, X., Zhong, Z., Zhu, F., Zhang, Y., Wang, Y., Wang, M., Li, Y., Sun, L., Ouyang, Y., Ding, Z., An, M., Zhao, Y., Zhou, J., Zhang, R., Xiong, W., Ji, N., Li, Y. (2026). Sub-second dopamine reinforcement shapes juvenile social play. Cell. [https://doi.org/10.1016/j.cell.2026.10.040](https://doi.org/10.1016/j.cell.2026.10.040)
+Chen, X., Tao, X., Zhong, Z., Zhu, F., Zhang, Y., Wang, Y., Wang, M., Li, Y., Sun, L., Ouyang, Y., Ding, Z., An, M., Zhao, Y., Zhou, J., Zhang, R., Xiong, W., Ji, N., Li, Y. (2026). Sub-second dopamine reinforcement shapes juvenile social play. Cell. <a href="./assets/chen_2026.pdf" target="_blank">[下载 PDF]</a>
 
 陈昕枫 (2025). 基于深度学习的动物自由社交行为分析研究. 博士论文，北京大学.
 

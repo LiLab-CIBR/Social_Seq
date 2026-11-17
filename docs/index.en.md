@@ -23,7 +23,7 @@ These are some explanatory documents for the Social-Seq project. Social-seq is u
 Last updated on 2026-11-17 by ChenXinfeng.
 
 ## References 📚
-Chen, X., Tao, X., Zhong, Z., Zhu, F., Zhang, Y., Wang, Y., Wang, M., Li, Y., Sun, L., Ouyang, Y., Ding, Z., An, M., Zhao, Y., Zhou, J., Zhang, R., Xiong, W., Ji, N., Li, Y. (2026). Sub-second dopamine reinforcement shapes juvenile social play. Cell. [https://doi.org/10.1016/j.cell.2026.10.040](https://doi.org/10.1016/j.cell.2026.10.040)
+Chen, X., Tao, X., Zhong, Z., Zhu, F., Zhang, Y., Wang, Y., Wang, M., Li, Y., Sun, L., Ouyang, Y., Ding, Z., An, M., Zhao, Y., Zhou, J., Zhang, R., Xiong, W., Ji, N., Li, Y. (2026). Sub-second dopamine reinforcement shapes juvenile social play. Cell. <a href="../assets/chen_2026.pdf" target="_blank">[Download PDF]</a>
 
 Xinfeng Chen 陈昕枫 (2025). Deep Learning-Based Framework for Analyzing Free Social Behavior in Model Animals. PhD Thesis, Peking University.
 
